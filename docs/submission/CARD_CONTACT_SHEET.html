@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FrankenRepo — saved real cards, editorial shortlist</title>
+    <style>
+      @font-face {
+        font-family: Creepster;
+        src: url('../../apps/web/public/fonts/creepster-latin-400-normal.woff2');
+      }
+      @font-face {
+        font-family: 'Alegreya Sans';
+        src: url('../../apps/web/public/fonts/alegreya-sans-latin-400-normal.woff2');
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 40px;
+        background: #12171c;
+        color: #e4e6d9;
+        font:
+          18px/1.5 'Alegreya Sans',
+          sans-serif;
+      }
+      main {
+        max-width: 1320px;
+        margin: auto;
+      }
+      h1 {
+        font:
+          52px/1.1 Creepster,
+          serif;
+        margin: 12px 0;
+        color: #c8e999;
+      }
+      h2 {
+        font-size: 24px;
+        margin: 12px 0 4px;
+      }
+      p {
+        margin: 8px 0 16px;
+      }
+      .label {
+        color: #c8e999;
+        font-size: 14px;
+        letter-spacing: 2px;
+      }
+      .intro {
+        max-width: 900px;
+        color: #b5c0af;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+        margin-top: 30px;
+      }
+      article {
+        background: #1b2227;
+        border: 1px solid #485347;
+        padding: 18px;
+        border-radius: 6px;
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: 540px;
+        object-fit: contain;
+        background: #111719;
+      }
+      .meta {
+        color: #b6a0ce;
+        min-height: 54px;
+        font-size: 16px;
+      }
+      blockquote {
+        margin: 18px 0;
+        color: #d8eac2;
+        font-style: italic;
+      }
+      .review {
+        border-top: 1px solid #485347;
+        padding-top: 12px;
+        font-size: 16px;
+        color: #b5c0af;
+      }
+      a {
+        color: #c8e999;
+        text-underline-offset: 4px;
+      }
+      nav {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        font-size: 16px;
+      }
+      footer {
+        margin-top: 28px;
+        font-size: 16px;
+        color: #b5c0af;
+      }
+      @media (max-width: 850px) {
+        body {
+          padding: 24px 16px;
+        }
+        h1 {
+          font-size: 42px;
+        }
+        .cards {
+          grid-template-columns: 1fr;
+        }
+        img {
+          height: 600px;
+        }
+        .meta {
+          min-height: auto;
+        }
+      }
+      @media print {
+        body {
+          padding: 10px;
+          background: white;
+          color: black;
+        }
+        article {
+          break-inside: avoid;
+          background: white;
+        }
+        h1,
+        a,
+        .label,
+        .meta,
+        .intro,
+        .review,
+        blockquote,
+        footer {
+          color: #253b2b;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="label">
+        SAVED REAL RUNS · 28 OCT 2026 · EDITORIAL SHORTLIST
+      </div>
+      <h1>Excellent creatures. Questionable inventions.</h1>
+      <p class="intro">
+        Three unchanged Cloudflare Gemma outputs, selected for the article and
+        demonstration. Fictional descendants of observed public repositories.
+        The review notes are editorial; these are local saved artifacts, with no
+        live inference or replay on this page.
+      </p>
+      <section class="cards" aria-label="Saved cards">
+        <article>
+          <a href="../eval/runs/2026-10-27T23-15-18-165Z-chaotic-browser.png"
+            ><img
+              src="../eval/runs/2026-10-27T23-15-18-165Z-chaotic-browser.png"
+              alt="Unchanged birth certificate for The Scavenging Glider, a fictional HungryCrab and DesktopFly descendant."
+          /></a>
+          <h2>The Scavenging Glider</h2>
+          <p class="meta">
+            HungryCrab + desktop-fly<br />Chaotic · prompt v4 · comic lead
+          </p>
+          <blockquote>
+            “Stop trying to feed me those foreign files, I can't steer my legs
+            properly while chewing!”
+          </blockquote>
+          <p class="review">
+            Strong donor traits and the best complaint. The proposed
+            digest-to-movement mapping still needs a concrete rule.
+          </p>
+          <nav aria-label="Scavenging Glider files">
+            <a href="../eval/runs/2026-10-27T23-15-18-165Z-chaotic-browser.png"
+              >PNG</a
+            ><a href="../eval/runs/2026-10-27T23-15-18-165Z-chaotic-browser.svg"
+              >SVG</a
+            ><a
+              href="../eval/runs/2026-10-27T23-15-18-165Z-chaotic-browser.json"
+              >Receipt</a
+            >
+          </nav>
+        </article>
+        <article>
+          <a href="../eval/runs/2026-10-27T23-10-51-622Z-useful-browser.png"
+            ><img
+              src="../eval/runs/2026-10-27T23-10-51-622Z-useful-browser.png"
+              alt="Unchanged birth certificate for The Archivist of Lost Verses, a fictional Scriptorium and kinship research descendant."
+          /></a>
+          <h2>The Archivist of Lost Verses</h2>
+          <p class="meta">
+            Scriptorium + kinship research<br />Useful · prompt v3 · editorial
+            caution
+          </p>
+          <blockquote>
+            “It will forever struggle to prove if a metaphor is a true relative
+            or a mere stylistic forgery.”
+          </blockquote>
+          <p class="review">
+            A memorable archivist. Its sentiment-analysis claim is not supported
+            by the excerpt. Use to explain why a schema pass needs review.
+          </p>
+          <nav aria-label="Archivist files">
+            <a href="../eval/runs/2026-10-27T23-10-51-622Z-useful-browser.png"
+              >PNG</a
+            ><a href="../eval/runs/2026-10-27T23-10-51-622Z-useful-browser.svg"
+              >SVG</a
+            ><a href="../eval/runs/2026-10-27T23-10-51-622Z-useful-browser.json"
+              >Receipt</a
+            >
+          </nav>
+        </article>
+        <article>
+          <a href="../eval/runs/2026-10-27T22-55-05-380Z-chaotic-browser.png"
+            ><img
+              src="../eval/runs/2026-10-27T22-55-05-380Z-chaotic-browser.png"
+              alt="Unchanged birth certificate for The Routing Sieve-Gorgon, a fictional Flask and jq descendant."
+          /></a>
+          <h2>The Routing Sieve-Gorgon</h2>
+          <p class="meta">
+            Flask + jq<br />Chaotic · prompt v3 · technical control
+          </p>
+          <blockquote>
+            A frantic waiter, a single grape, a ghost and spinning brass rings.
+          </blockquote>
+          <p class="review">
+            Editorial scene summary above. Clear technical roles: Flask routes
+            requests, jq transforms JSON. The physical joke is loosely
+            connected.
+          </p>
+          <nav aria-label="Sieve-Gorgon files">
+            <a href="../eval/runs/2026-10-27T22-55-05-380Z-chaotic-browser.png"
+              >PNG</a
+            ><a href="../eval/runs/2026-10-27T22-55-05-380Z-chaotic-browser.svg"
+              >SVG</a
+            ><a
+              href="../eval/runs/2026-10-27T22-55-05-380Z-chaotic-browser.json"
+              >Receipt</a
+            >
+          </nav>
+        </article>
+      </section>
+      <footer>
+        Selection, captions and new prototype hypotheses:
+        <a href="EDITORIAL_SELECTION.md">editorial handoff</a>. Source-linked
+        assessment: <a href="../eval/PAIR_REVIEW_2026-10-28.md">pair review</a>.
+        No claim that these speculative integrations work. Font credits and
+        licenses: <a href="../../ASSETS_CREDITS.md">asset credits</a>.
+      </footer>
+    </main>
+  </body>
+</html>

@@ -19,6 +19,12 @@ The creature above is an illustrated specimen, not model output.
 [Mobile capture](docs/images/lab-mobile.png).
 [Actual live GitHub inspection](docs/images/inspection-live-desktop.png).
 
+New real pair runs: HungryCrab + desktop-fly (Chaotic) and Scriptorium +
+ex-ussr-kinship-research (Useful). See the [inheritance review](docs/eval/PAIR_REVIEW_2026-10-28.md),
+[article/demo selection](docs/submission/EDITORIAL_SELECTION.md) and
+[local card contact sheet](docs/submission/CARD_CONTACT_SHEET.html).
+The review distinguishes memorable characters from unsupported technical ideas.
+
 ## First run
 
 The lab starts with two distinct random donors from a 16-repository cabinet.

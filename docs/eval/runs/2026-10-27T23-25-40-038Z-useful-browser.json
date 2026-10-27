@@ -1,0 +1,48 @@
+{
+  "kind": "LIVE_BROWSER_RITUAL",
+  "startedAt": "2026-10-27T23:25:40.038Z",
+  "endedAt": "2026-10-27T23:25:43.426Z",
+  "latencyMs": 2997,
+  "inputs": [
+    "drevendev/Scriptorium",
+    "DenisSergeevitch/ex-ussr-kinship-research"
+  ],
+  "mode": "useful",
+  "recording": false,
+  "localOrigin": "http://127.0.0.1:3001",
+  "readiness": {
+    "model": "unknown",
+    "storage": "disabled",
+    "version": "0.1.0",
+    "recordedSamples": 0,
+    "features": {
+      "gallery": false,
+      "permalinks": false,
+      "voice": false
+    }
+  },
+  "stages": [
+    {
+      "state": "queued",
+      "observedAt": "2026-10-27T23:25:41.962Z"
+    },
+    {
+      "state": "failed",
+      "observedAt": "2026-10-27T23:25:42.966Z"
+    }
+  ],
+  "state": "failed",
+  "ritualId": "11eb5d18-fc58-46d9-a8b9-5ed9c0094ae8",
+  "error": {
+    "code": "MODEL_QUOTA",
+    "message": "The lab reached its daily model-call budget. No paid fallback is configured.",
+    "retryable": true
+  },
+  "record": null,
+  "pageErrors": [],
+  "exports": [],
+  "limits": {
+    "maxOutputTokensPerCall": 1000,
+    "maxAttemptsPerRitual": 2
+  }
+}

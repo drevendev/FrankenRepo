@@ -11,11 +11,15 @@ Original artwork and audio are covered by the repository MIT license. No externa
 images, SFX recordings, model image generator or private portfolio source are bundled.
 
 Custom typography is self-hosted, with no Google Fonts/CDN request at runtime:
-Creepster (Sideshow / Font Diner) for the haunted display lettering, and IM Fell
-English (Igino Marini) for readable old-book serif type. Unmodified Latin WOFF2
-files came from @fontsource/creepster and @fontsource/im-fell-english, version 5.3.0.
-Both are SIL Open Font License 1.1, separate from MIT. Complete supplied licenses
-are in apps/web/public/fonts/OFL-Creepster.txt and OFL-IM-Fell-English.txt.
+Creepster (Sideshow / Font Diner) for the haunted display lettering, IM Fell
+English (Igino Marini) for old-book serif type, Alegreya Sans (Juan Pablo del Peral /
+Huerta Tipográfica) for readable humanist body copy, and IBM Plex Mono (IBM) for
+instrument labels and repository inputs. See the original
+[Alegreya Sans project](https://github.com/huertatipografica/Alegreya-Sans) and
+[IBM Plex project](https://github.com/IBM/plex).
+Unmodified Latin WOFF2 files came from the matching @fontsource packages,
+version 5.3.0. All four families are SIL Open Font License 1.1, separate from MIT.
+Complete supplied OFL-*.txt licenses are in apps/web/public/fonts/.
 docs/FONT_SOURCES.json records exact package URLs, file sizes and SHA-256 hashes.
 Portable SVG/PNG exports retain their system serif rendering; they do not depend
 on an external font server.

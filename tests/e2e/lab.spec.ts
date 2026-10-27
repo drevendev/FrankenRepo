@@ -68,10 +68,18 @@ test('mode changes animate locally and custom fonts load from this server', asyn
     await page.evaluate(
       () =>
         document.fonts.check('24px Creepster') &&
-        document.fonts.check('18px "IM Fell English"'),
+        document.fonts.check('18px "IM Fell English"') &&
+        document.fonts.check('16px "Alegreya Sans"') &&
+        document.fonts.check('12px "IBM Plex Mono"'),
     ),
   ).toBe(true);
-  expect(fontResponses.length).toBeGreaterThanOrEqual(2);
+  expect(fontResponses.length).toBeGreaterThanOrEqual(4);
+  await expect(page.locator('body')).toHaveCSS('font-family', /Alegreya Sans/);
+  await expect(page.locator('#donor-a')).toHaveCSS(
+    'font-family',
+    /IBM Plex Mono/,
+  );
+  await expect(page.locator('.hero h1')).toHaveCSS('font-family', /Creepster/);
   expect(
     fontResponses.every((url) => new URL(url).hostname === '127.0.0.1'),
   ).toBe(true);

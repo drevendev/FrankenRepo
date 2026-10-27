@@ -19,7 +19,8 @@ Existing specification and handoff files were preserved. No Drive content was ed
 - The illustrated idle specimen is artwork, explicitly labelled. Genuine model artifacts now exist as dated evaluation files, but no
   recorded/replay mode is offered in the app.
 - First real Cursed browser/API flow succeeded on 2026-10-28 Asia/Nicosia.
-  Useful/Chaotic v3 now also have real browser receipts and an editorial comparison.
+  Useful/Chaotic v3 and a Chaotic v4 repeat now also have real browser receipts,
+  including the HungryCrab/fly and Scriptorium/kinship pairs and editorial reviews.
   Larger evaluation and public challenge acceptance remain unverified.
 - Two local API/web ports share an explicit origin allowlist. Behind a hosted
   reverse proxy all visitors share the conservative socket-IP quota unless

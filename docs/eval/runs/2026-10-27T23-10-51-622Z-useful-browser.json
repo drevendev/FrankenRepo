@@ -1,0 +1,304 @@
+{
+  "kind": "LIVE_BROWSER_RITUAL",
+  "startedAt": "2026-10-27T23:10:51.622Z",
+  "endedAt": "2026-10-27T23:11:03.678Z",
+  "latencyMs": 11682,
+  "inputs": [
+    "drevendev/Scriptorium",
+    "DenisSergeevitch/ex-ussr-kinship-research"
+  ],
+  "mode": "useful",
+  "recording": false,
+  "localOrigin": "http://127.0.0.1:3001",
+  "readiness": {
+    "model": "unknown",
+    "storage": "disabled",
+    "version": "0.1.0",
+    "recordedSamples": 0,
+    "features": {
+      "gallery": false,
+      "permalinks": false,
+      "voice": false
+    }
+  },
+  "stages": [
+    {
+      "state": "queued",
+      "observedAt": "2026-10-27T23:10:54.066Z"
+    },
+    {
+      "state": "splicing",
+      "observedAt": "2026-10-27T23:10:55.066Z"
+    },
+    {
+      "state": "completed",
+      "observedAt": "2026-10-27T23:11:01.129Z"
+    }
+  ],
+  "state": "completed",
+  "ritualId": "3037bd2c-a302-41bb-8da3-6964c49279b7",
+  "error": null,
+  "record": {
+    "schemaVersion": "frankenrepo/monster/v1",
+    "id": "72556a40-b836-46e3-a737-d06f12fb4b78",
+    "createdAt": "2026-10-27T23:11:00.834Z",
+    "mode": "useful",
+    "model": {
+      "provider": "cloudflare",
+      "id": "@cf/google/gemma-4-26b-a4b-it",
+      "promptVersion": "frankenrepo/prompt/v3"
+    },
+    "parents": [
+      {
+        "ref": "drevendev/Scriptorium",
+        "url": "https://github.com/drevendev/Scriptorium",
+        "observedAt": "2026-10-27T23:10:53.479Z",
+        "defaultBranch": "master",
+        "commitSha": "61617a516369b352702196d590a38f0729e65f57",
+        "license": "UNKNOWN",
+        "description": null,
+        "topics": [],
+        "languages": ["Python", "JavaScript", "HTML"],
+        "readme": "# Scriptorium · Literary language reader **[🌐 Open the interactive Scriptorium Reader (GitHub Pages) →](https://drevendev.github.io/Scriptorium/)** **Russian-first public Reader (merged as PR #333; live HTTP not independently verified):** GitHub Pages uses `master / (root)`. The new home page groups **10 Russian-language works**: six with actual source-pinned observations and four clearly marked as work in progress. The 6 measured books provide **153 fields, 129 numeric observations and 24 explicitly unavailable values**. Search, book-to-book rate comparisons, chart bars, JSON exports and source metadata are reader-facing; cross-language original/translation analysis is not yet present. The multi-route Python-generated Reader remains a **separate local/CI build** in `build/site`, rather than the root branch Pages experience; its retained FantLab matrix currently covers four measured books and one unmeasured source. The Hyperboloid generated route described below is separately measured and does not silently alter that matrix. **Shareable book views (root Reader source):** Every measured Russian edition can now be opened directly in the same-page metric explorer, for example [Beketova's Russian translation](https://drevendev.github.io/Scriptorium/?book=beketova#measurements) or [Silver Dove](https://drevendev.github.io/Scriptorium/?book=silver#measurements). These addresses select only allow-listed, verified measurement records; pending/invalid IDs fall back to Anna Karenina. ",
+        "evidence": [
+          {
+            "id": "A:description",
+            "field": "description",
+            "value": "UNKNOWN",
+            "sourceUrl": "https://github.com/drevendev/Scriptorium",
+            "observedAt": "2026-10-27T23:10:53.479Z",
+            "status": "unknown"
+          },
+          {
+            "id": "A:topics",
+            "field": "topics",
+            "value": "UNKNOWN",
+            "sourceUrl": "https://github.com/drevendev/Scriptorium",
+            "observedAt": "2026-10-27T23:10:53.479Z",
+            "status": "unknown"
+          },
+          {
+            "id": "A:languages",
+            "field": "languages",
+            "value": "Python, JavaScript, HTML",
+            "sourceUrl": "https://api.github.com/repos/drevendev/Scriptorium/languages",
+            "observedAt": "2026-10-27T23:10:53.479Z",
+            "status": "observed"
+          },
+          {
+            "id": "A:readme",
+            "field": "readme",
+            "value": "# Scriptorium · Literary language reader **[🌐 Open the interactive Scriptorium Reader (GitHub Pages) →](https://drevendev.github.io/Scriptorium/)** **Russian-first public Reader (merged as PR #333; live HTTP not independently verified):** GitHub Pages uses `master / (root)`. The new home page groups **10 Russian-language works**: six with actual source-pinned observations and four clearly marked as work in progress. The 6 measured books provide **153 fields, 129 numeric observations and 24 explicitly unavailable values**. Search, book-to-book rate comparisons, chart bars, JSON exports and source metadata are reader-facing; cross-language original/translation analysis is not yet present. The multi-route Python-generated Reader remains a **separate local/CI build** in `build/site`, rather than the root branch Pages experience; its retained FantLab matrix currently covers four measured books and one unmeasured source. The Hyperboloid generated route described below is separately measured and does not silently alter that matrix. **Shareable book views (root Reader source):** Every measured Russian edition can now be opened directly in the same-page metric explorer, for example [Beketova's Russian translation](https://drevendev.github.io/Scriptorium/?book=beketova#measurements) or [Silver Dove](https://drevendev.github.io/Scriptorium/?book=silver#measurements). These addresses select only allow-listed, verified measurement records; pending/invalid IDs fall back to Anna Karenina. ",
+            "sourceUrl": "https://api.github.com/repos/drevendev/Scriptorium/readme?ref=61617a516369b352702196d590a38f0729e65f57",
+            "observedAt": "2026-10-27T23:10:53.479Z",
+            "status": "partial"
+          },
+          {
+            "id": "A:license",
+            "field": "license",
+            "value": "UNKNOWN",
+            "sourceUrl": "https://github.com/drevendev/Scriptorium",
+            "observedAt": "2026-10-27T23:10:53.479Z",
+            "status": "unknown"
+          }
+        ],
+        "warnings": []
+      },
+      {
+        "ref": "DenisSergeevitch/ex-ussr-kinship-research",
+        "url": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+        "observedAt": "2026-10-27T23:10:53.432Z",
+        "defaultBranch": "main",
+        "commitSha": "de5e988ac95ed36dbc738574f20057340a6948ff",
+        "license": "MIT",
+        "description": "Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Replies in your language.",
+        "topics": [
+          "agent-skills",
+          "archives",
+          "claude-code",
+          "codex",
+          "family-history",
+          "familysearch",
+          "genealogy",
+          "ussr"
+        ],
+        "languages": ["Python", "HTML"],
+        "readme": "# ex-USSR Kinship Research ![ex-USSR Kinship Research cover](docs/cover.jpg) **An evidence-first genealogy skill for AI agents (Codex, Claude Code and other Agent Skills runtimes).** It turns an agent into a careful family-history researcher for the former USSR, the Soviet Union and the Russian Empire. The agent reads church books and civil records, military, deportation and repression files, and unindexed archive scans. It keeps every find traceable, separates records from interpretation and says plainly what is proven and what is not. Coverage includes all 15 former Soviet republics: Russia, Ukraine, Belarus, Moldova, Estonia, Latvia, Lithuania, Georgia, Armenia, Azerbaijan, Kazakhstan, Kyrgyzstan, Tajikistan, Turkmenistan and Uzbekistan. Archives are chosen by the event's historical jurisdiction and current record custodian; a regional example does not replace local research. The skill's instructions are written in Russian, but **the agent talks to you in your language**: English, Ukrainian, Russian, Polish, German and so on. It quotes sources in their original spelling with a translation, and builds search queries in the languages of the records. --- ## What it does - **Case intake and scope.** One research question, known facts, who may be alive, what is off-limits. - **Reproducible registers.** Persons, artifacts, claims, relationships and a full search log (CSV), plus a final report template. - **Historical jurisdiction model.** It resolves every event to the state, pr",
+        "evidence": [
+          {
+            "id": "B:description",
+            "field": "description",
+            "value": "Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Replies in your language.",
+            "sourceUrl": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+            "observedAt": "2026-10-27T23:10:53.432Z",
+            "status": "observed"
+          },
+          {
+            "id": "B:topics",
+            "field": "topics",
+            "value": "agent-skills, archives, claude-code, codex, family-history, familysearch, genealogy, ussr",
+            "sourceUrl": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+            "observedAt": "2026-10-27T23:10:53.432Z",
+            "status": "observed"
+          },
+          {
+            "id": "B:languages",
+            "field": "languages",
+            "value": "Python, HTML",
+            "sourceUrl": "https://api.github.com/repos/DenisSergeevitch/ex-ussr-kinship-research/languages",
+            "observedAt": "2026-10-27T23:10:53.432Z",
+            "status": "observed"
+          },
+          {
+            "id": "B:readme",
+            "field": "readme",
+            "value": "# ex-USSR Kinship Research ![ex-USSR Kinship Research cover](docs/cover.jpg) **An evidence-first genealogy skill for AI agents (Codex, Claude Code and other Agent Skills runtimes).** It turns an agent into a careful family-history researcher for the former USSR, the Soviet Union and the Russian Empire. The agent reads church books and civil records, military, deportation and repression files, and unindexed archive scans. It keeps every find traceable, separates records from interpretation and says plainly what is proven and what is not. Coverage includes all 15 former Soviet republics: Russia, Ukraine, Belarus, Moldova, Estonia, Latvia, Lithuania, Georgia, Armenia, Azerbaijan, Kazakhstan, Kyrgyzstan, Tajikistan, Turkmenistan and Uzbekistan. Archives are chosen by the event's historical jurisdiction and current record custodian; a regional example does not replace local research. The skill's instructions are written in Russian, but **the agent talks to you in your language**: English, Ukrainian, Russian, Polish, German and so on. It quotes sources in their original spelling with a translation, and builds search queries in the languages of the records. --- ## What it does - **Case intake and scope.** One research question, known facts, who may be alive, what is off-limits. - **Reproducible registers.** Persons, artifacts, claims, relationships and a full search log (CSV), plus a final report template. - **Historical jurisdiction model.** It resolves every event to the state, pr",
+            "sourceUrl": "https://api.github.com/repos/DenisSergeevitch/ex-ussr-kinship-research/readme?ref=de5e988ac95ed36dbc738574f20057340a6948ff",
+            "observedAt": "2026-10-27T23:10:53.432Z",
+            "status": "partial"
+          },
+          {
+            "id": "B:license",
+            "field": "license",
+            "value": "MIT",
+            "sourceUrl": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+            "observedAt": "2026-10-27T23:10:53.432Z",
+            "status": "observed"
+          }
+        ],
+        "warnings": []
+      }
+    ],
+    "evidence": [
+      {
+        "id": "A:description",
+        "field": "description",
+        "value": "UNKNOWN",
+        "sourceUrl": "https://github.com/drevendev/Scriptorium",
+        "observedAt": "2026-10-27T23:10:53.479Z",
+        "status": "unknown"
+      },
+      {
+        "id": "A:topics",
+        "field": "topics",
+        "value": "UNKNOWN",
+        "sourceUrl": "https://github.com/drevendev/Scriptorium",
+        "observedAt": "2026-10-27T23:10:53.479Z",
+        "status": "unknown"
+      },
+      {
+        "id": "A:languages",
+        "field": "languages",
+        "value": "Python, JavaScript, HTML",
+        "sourceUrl": "https://api.github.com/repos/drevendev/Scriptorium/languages",
+        "observedAt": "2026-10-27T23:10:53.479Z",
+        "status": "observed"
+      },
+      {
+        "id": "A:readme",
+        "field": "readme",
+        "value": "# Scriptorium · Literary language reader **[🌐 Open the interactive Scriptorium Reader (GitHub Pages) →](https://drevendev.github.io/Scriptorium/)** **Russian-first public Reader (merged as PR #333; live HTTP not independently verified):** GitHub Pages uses `master / (root)`. The new home page groups **10 Russian-language works**: six with actual source-pinned observations and four clearly marked as work in progress. The 6 measured books provide **153 fields, 129 numeric observations and 24 explicitly unavailable values**. Search, book-to-book rate comparisons, chart bars, JSON exports and source metadata are reader-facing; cross-language original/translation analysis is not yet present. The multi-route Python-generated Reader remains a **separate local/CI build** in `build/site`, rather than the root branch Pages experience; its retained FantLab matrix currently covers four measured books and one unmeasured source. The Hyperboloid generated route described below is separately measured and does not silently alter that matrix. **Shareable book views (root Reader source):** Every measured Russian edition can now be opened directly in the same-page metric explorer, for example [Beketova's Russian translation](https://drevendev.github.io/Scriptorium/?book=beketova#measurements) or [Silver Dove](https://drevendev.github.io/Scriptorium/?book=silver#measurements). These addresses select only allow-listed, verified measurement records; pending/invalid IDs fall back to Anna Karenina. ",
+        "sourceUrl": "https://api.github.com/repos/drevendev/Scriptorium/readme?ref=61617a516369b352702196d590a38f0729e65f57",
+        "observedAt": "2026-10-27T23:10:53.479Z",
+        "status": "partial"
+      },
+      {
+        "id": "A:license",
+        "field": "license",
+        "value": "UNKNOWN",
+        "sourceUrl": "https://github.com/drevendev/Scriptorium",
+        "observedAt": "2026-10-27T23:10:53.479Z",
+        "status": "unknown"
+      },
+      {
+        "id": "B:description",
+        "field": "description",
+        "value": "Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Replies in your language.",
+        "sourceUrl": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+        "observedAt": "2026-10-27T23:10:53.432Z",
+        "status": "observed"
+      },
+      {
+        "id": "B:topics",
+        "field": "topics",
+        "value": "agent-skills, archives, claude-code, codex, family-history, familysearch, genealogy, ussr",
+        "sourceUrl": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+        "observedAt": "2026-10-27T23:10:53.432Z",
+        "status": "observed"
+      },
+      {
+        "id": "B:languages",
+        "field": "languages",
+        "value": "Python, HTML",
+        "sourceUrl": "https://api.github.com/repos/DenisSergeevitch/ex-ussr-kinship-research/languages",
+        "observedAt": "2026-10-27T23:10:53.432Z",
+        "status": "observed"
+      },
+      {
+        "id": "B:readme",
+        "field": "readme",
+        "value": "# ex-USSR Kinship Research ![ex-USSR Kinship Research cover](docs/cover.jpg) **An evidence-first genealogy skill for AI agents (Codex, Claude Code and other Agent Skills runtimes).** It turns an agent into a careful family-history researcher for the former USSR, the Soviet Union and the Russian Empire. The agent reads church books and civil records, military, deportation and repression files, and unindexed archive scans. It keeps every find traceable, separates records from interpretation and says plainly what is proven and what is not. Coverage includes all 15 former Soviet republics: Russia, Ukraine, Belarus, Moldova, Estonia, Latvia, Lithuania, Georgia, Armenia, Azerbaijan, Kazakhstan, Kyrgyzstan, Tajikistan, Turkmenistan and Uzbekistan. Archives are chosen by the event's historical jurisdiction and current record custodian; a regional example does not replace local research. The skill's instructions are written in Russian, but **the agent talks to you in your language**: English, Ukrainian, Russian, Polish, German and so on. It quotes sources in their original spelling with a translation, and builds search queries in the languages of the records. --- ## What it does - **Case intake and scope.** One research question, known facts, who may be alive, what is off-limits. - **Reproducible registers.** Persons, artifacts, claims, relationships and a full search log (CSV), plus a final report template. - **Historical jurisdiction model.** It resolves every event to the state, pr",
+        "sourceUrl": "https://api.github.com/repos/DenisSergeevitch/ex-ussr-kinship-research/readme?ref=de5e988ac95ed36dbc738574f20057340a6948ff",
+        "observedAt": "2026-10-27T23:10:53.432Z",
+        "status": "partial"
+      },
+      {
+        "id": "B:license",
+        "field": "license",
+        "value": "MIT",
+        "sourceUrl": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+        "observedAt": "2026-10-27T23:10:53.432Z",
+        "status": "observed"
+      }
+    ],
+    "draft": {
+      "name": "The Archivist of Lost Verses",
+      "hook": "It wanders through dusty digital corridors, attempting to map the lineage of every syllable ever inked.",
+      "brain": {
+        "text": "It parses structured literary metrics to categorize the density of poetic sentiment.",
+        "evidenceIds": ["A:readme"]
+      },
+      "body": {
+        "text": "It hunts for repressed genealogical connections within unindexed historical scans.",
+        "evidenceIds": ["B:readme"]
+      },
+      "curse": {
+        "text": "It will forever struggle to prove if a metaphor is a true relative or a mere stylistic forgery.",
+        "evidenceIds": ["A:readme", "B:readme"]
+      },
+      "firstWords": "Deep within the stacks, a ledger begins to weep.",
+      "usefulMutation": "A proposed 'Ancestry-to-Metric' workflow where Scriptorium provides literary field data and ex-ussr-kinship-research transforms archival records into a genealogy-linked JSON summary.",
+      "uncertainty": "It is unclear if the agent could reliably distinguish between a person's name and a book title in messy scans.",
+      "humorTags": ["gothic-library", "bureaucratic-horror"]
+    },
+    "sprite": {
+      "recipeVersion": "frankenrepo/sprite/v1",
+      "seed": "3037bd2c-a302-41bb-8da3-6964c49279b7",
+      "body": 0,
+      "head": 0,
+      "accessory": 4,
+      "palette": 1,
+      "expression": 2,
+      "flavor": 2
+    },
+    "publication": {
+      "state": "ephemeral"
+    },
+    "lineage": {
+      "parentMonsterIds": [],
+      "depth": 0
+    },
+    "contentHash": "d91f0c62abbbb71d3e12995bf8fed2afbdf9b586145b5809efda1e8d816cec40"
+  },
+  "pageErrors": [],
+  "exports": [
+    "docs/eval/runs/2026-10-27T23-10-51-622Z-useful-browser.png",
+    "docs/eval/runs/2026-10-27T23-10-51-622Z-useful-browser.svg",
+    "docs/eval/runs/2026-10-27T23-10-51-622Z-useful-browser.txt",
+    "docs/eval/runs/2026-10-27T23-10-51-622Z-useful-browser-certificate.png"
+  ],
+  "limits": {
+    "maxOutputTokensPerCall": 1000,
+    "maxAttemptsPerRitual": 2
+  }
+}

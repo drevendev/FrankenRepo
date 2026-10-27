@@ -1,12 +1,21 @@
 # Real model runs — updated 2026-10-28
 
-**Seven successful real browser rituals through Chromium → Node API → Cloudflare Gemma.**
+**Ten successful real browser rituals through Chromium → Node API → Cloudflare Gemma.**
 
 The first Cursed v1 run is documented below. Six further Useful/Chaotic runs compare
-v1, v2 and final v3 prompts. [Full inheritance review and every artifact](INHERITANCE_REVIEW.md).
-Final v3: [Useful](runs/2026-10-27T22-54-55-349Z-useful-browser.json) ·
+v1, v2 and then-current v3 prompts. [Flask/jq inheritance review](INHERITANCE_REVIEW.md).
+Three later successes cover the owner-requested HungryCrab/desktop-fly Chaotic and
+Scriptorium/kinship Useful pairs, plus a v4 Chaotic repeat. The
+[new pair review](PAIR_REVIEW_2026-10-28.md) links every new receipt and export,
+including the unsupported interpretations that still need work. The
+[editorial selection](../submission/EDITORIAL_SELECTION.md) prepares captions and
+separately labelled prototype ideas for the article and demo.
+Historical v3 Flask/jq: [Useful](runs/2026-10-27T22-54-55-349Z-useful-browser.json) ·
 [Chaotic](runs/2026-10-27T22-55-05-380Z-chaotic-browser.json).
-Current v3 Cursed has not been rerun.
+Current-prompt Cursed has not been rerun.
+The attempted Scriptorium/kinship Useful v4 repeat stopped at the local
+`MODEL_QUOTA` guard. Its failure receipt and screenshot are linked in the new
+pair review; it is not counted among the ten successful model outputs.
 
 ## First Cursed run — historical receipt
 

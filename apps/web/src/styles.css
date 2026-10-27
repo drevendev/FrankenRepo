@@ -1,5 +1,5 @@
 :root {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--body);
   color: #e4e6d9;
   background: #12171c;
   font-synthesis: none;
@@ -12,7 +12,8 @@
   --violet: #b6a0ce;
   --paper: #efe7d1;
   --serif: Georgia, 'Times New Roman', serif;
-  --mono: 'Courier New', monospace;
+  --body: 'Alegreya Sans', 'Trebuchet MS', sans-serif;
+  --mono: 'IBM Plex Mono', 'Courier New', monospace;
 }
 * {
   box-sizing: border-box;
@@ -758,9 +759,7 @@ footer {
   color: #cdd9bf;
 }
 .footer-brand span {
-  font:
-    9px Arial,
-    sans-serif;
+  font: 11px var(--body);
   color: #a1ae9a;
   margin-left: 15px;
 }
@@ -980,9 +979,7 @@ blockquote {
   color: #d5e2c4;
 }
 .dna-disclosure summary span {
-  font:
-    10px Arial,
-    sans-serif;
+  font: 12px var(--body);
   color: var(--muted);
   margin-left: 20px;
 }
@@ -2033,6 +2030,41 @@ blockquote {
 }
 
 @font-face {
+  font-family: 'Alegreya Sans';
+  src: url('/fonts/alegreya-sans-latin-400-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Alegreya Sans';
+  src: url('/fonts/alegreya-sans-latin-500-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 500 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Alegreya Sans';
+  src: url('/fonts/alegreya-sans-latin-700-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 700 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('/fonts/ibm-plex-mono-latin-400-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('/fonts/ibm-plex-mono-latin-600-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 500 900;
+  font-display: swap;
+}
+@font-face {
   font-family: 'Creepster';
   src: url('/fonts/creepster-latin-400-normal.woff2') format('woff2');
   font-style: normal;
@@ -2131,9 +2163,7 @@ blockquote {
   border: 1px solid #5c7051;
   border-radius: 3px;
   color: #e0e9d4;
-  font:
-    11px Arial,
-    sans-serif;
+  font: 13px var(--body);
   text-overflow: ellipsis;
 }
 .sample-selectors select:focus-visible {

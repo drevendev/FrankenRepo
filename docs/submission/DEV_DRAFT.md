@@ -14,8 +14,8 @@ The lab accepts two public GitHub references and collects a bounded set of
 source-linked observations. It never runs donor code. Missing observations stay
 unknown. The original SVG creature kit has deterministic parts, the interface
 supports keyboard and reduced motion, and certificate export is browser-tested
-using explicit fixtures and dated real Cloudflare Gemma runs. The real inputs were
-pallets/flask and jqlang/jq; see ../eval/REAL_RUNS.md for unchanged output,
+using explicit fixtures and dated real Cloudflare Gemma runs. Real inputs include
+Flask/jq, HungryCrab/DesktopFly and Scriptorium/kinship; see ../eval/REAL_RUNS.md for unchanged output,
 observed commits and saved PNG/SVG evidence.
 
 ## The first real spark
@@ -35,6 +35,35 @@ Useful/Chaotic runs compare prompt versions v1/v2/v3; see
 ../eval/INHERITANCE_REVIEW.md. The latest prompt makes Flask route requests and
 jq transform JSON, while Chaotic adds an absurd waiter/ghost scene. The technical
 idea remains modest, and the captioned demonstration still needs recording.
+
+## A repository-eating fly and a suspicious archivist
+
+The more personal pair was HungryCrab, which distills other repositories into
+digests, and DesktopFly, whose simulated motor activity moves an articulated fly.
+In Chaotic mode Gemma first invented a bug-finding insect. It was funny, but the
+sources did not explain how a walking simulation would detect bugs. Passing the
+JSON schema was clearly not enough.
+
+After tightening the prompt, The Scavenging Glider complained: “Stop trying to
+feed me those foreign files, I can't steer my legs properly while chewing!”
+Now the joke grew from both parents. The proposed mapping from a digest to motor
+behavior remained vague, so I kept the card as a comic character and marked its
+technical idea as unfinished.
+
+![Saved real Chaotic output: The Scavenging Glider](../eval/runs/2026-10-27T23-15-18-165Z-chaotic-browser.png)
+
+Scriptorium and ex-USSR Kinship Research produced The Archivist of Lost Verses:
+a creature worried that a metaphor might be a relative. That is a useful comic
+image for the article, but its claim about measuring poetic sentiment was not in
+the source excerpt. Literary measurements and source registers cannot establish
+feelings or family relationships. The [pair review](../eval/PAIR_REVIEW_2026-10-28.md)
+keeps the attractive parts and the mistakes visible. The
+[editorial shortlist](EDITORIAL_SELECTION.md) supplies exact assets, captions and
+separately labelled prototype ideas for the next round.
+
+The lesson is part of the product: unusual parents can create a memorable
+personality, while a meaningful prototype still needs a specific bridge between
+their actual operations. A new prompt is an experiment, not a quality guarantee.
 
 ## A real failure learned during implementation
 
@@ -61,7 +90,7 @@ inspection and honest unknowns; original code/assets were written for this app.
 ## Limitations and publication checklist
 
 No permanent storage, public gallery, deployment or independent-user walkthrough
-has been verified. One real model artifact exists, but no replay mode is offered.
+has been verified. Several real model artifacts exist, but no replay mode is offered.
 The owner reports Workers Free; no billing changes were made. Neuron usage and
 the billing dashboard were not captured, so measured cost is not claimed.
 Per-process limits do not establish an unlimited free hosted service.

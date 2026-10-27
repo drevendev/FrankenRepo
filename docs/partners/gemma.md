@@ -23,8 +23,9 @@ including inspection/export; provider-only latency was not measured. No fixtures
 ## Qualification and limitations
 
 Local invocation and exports are verified. Public demo: false. Render hosting:
-unverified. Useful/Chaotic live outputs: not run. Creative usefulness and humor
-need wider review; the first useful mutation is broad fictional flavor.
+unverified. Useful/Chaotic live outputs and their exact prompt versions are
+documented below. Creative usefulness and humor need wider review; the first
+useful mutation is broad fictional flavor.
 
 Owner reports Workers Free and authorized these credentials. No billing/card
 changes occurred. Exact upstream attempt count (bounded at two), usage/Neurons
@@ -42,6 +43,24 @@ Six additional real rituals compare prompts v1/v2/v3 on the same Flask/jq pair.
 The final v3 modes both name the parents' distinct roles and avoid inline citation
 codes; Chaotic additionally creates an absurd physical scene. Novelty is modest.
 [All outputs, timings and editorial limits](../eval/INHERITANCE_REVIEW.md).
-Current-v3 Cursed is not separately verified. No new partner categories or public
+Current-prompt Cursed is not separately verified. No new partner categories or public
 hosting are claimed. Reproduce one selected mode with node scripts/verify-live-browser.mjs useful
 (or chaotic); each invocation is a fresh model call, not replay.
+
+## New donor pairs and prompt v4
+
+The owner-requested HungryCrab + desktop-fly Chaotic and Scriptorium +
+ex-ussr-kinship-research Useful runs completed with v3. A real v4 Chaotic repeat
+improved the chewing/steering complaint and grounded inherited traits, while its
+technical bridge remains vague. The Useful v3 output invented sentiment analysis
+that was not observed. These are saved results, not a claim of uniformly good
+model ideas. [All new receipts and assessment](../eval/PAIR_REVIEW_2026-10-28.md),
+[editorial selection](../submission/EDITORIAL_SELECTION.md).
+
+After rebuilding the prompt, the restarted local process was additionally capped
+at two upstream calls for the repeat verification. The local .env, Cloudflare
+account limits and billing settings were not changed. Historical process usage
+was not instrumented; restarts reset the in-memory counter.
+The final Useful v4 repeat reached that local budget and saved a `MODEL_QUOTA`
+failure instead of a card. Useful v4 quality is not verified. This is not a
+claim that the Cloudflare account's free allowance is exhausted.

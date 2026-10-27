@@ -237,7 +237,7 @@ function Apparatus({
             x="33"
             y="406"
             fill="#7a8977"
-            fontFamily="monospace"
+            fontFamily="var(--mono)"
             fontSize="10"
           >
             FIG. A — CONTROLLED BAD IDEA
@@ -246,7 +246,7 @@ function Apparatus({
             x="437"
             y="406"
             fill="#7a8977"
-            fontFamily="monospace"
+            fontFamily="var(--mono)"
             fontSize="10"
           >
             NO. 0001

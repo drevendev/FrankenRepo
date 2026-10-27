@@ -42,6 +42,61 @@
           "sha256": "248300df1647bec49155a5cada1d65f719ae633ef48564d1f19b135a8a5b7f5f"
         }
       ]
+    },
+    {
+      "family": "Alegreya Sans",
+      "package": "@fontsource/alegreya-sans",
+      "version": "5.3.0",
+      "source": "https://registry.npmjs.org/@fontsource/alegreya-sans/-/alegreya-sans-5.3.0.tgz",
+      "upstream": "https://github.com/huertatipografica/Alegreya-Sans",
+      "license": "OFL-1.1",
+      "files": [
+        {
+          "name": "OFL-Alegreya-Sans.txt",
+          "bytes": 6088,
+          "sha256": "88e1533e966154efb4a5279bbbc919d94e85d2a0d864849ecd6e1506b74a38c2"
+        },
+        {
+          "name": "alegreya-sans-latin-400-normal.woff2",
+          "bytes": 23708,
+          "sha256": "b2a5a35a2563a2f9bf9fb91939fc6ea6c115e9811cda5c4a37d02f623c7c4dbe"
+        },
+        {
+          "name": "alegreya-sans-latin-500-normal.woff2",
+          "bytes": 23928,
+          "sha256": "55b61d22cc7afd0bca94d17a84f0e92963b8f5216dbfbde56b2f6cf530c9b2dd"
+        },
+        {
+          "name": "alegreya-sans-latin-700-normal.woff2",
+          "bytes": 23976,
+          "sha256": "5acd19a588614d23e52b741a21dd8555178ab4932c3195c6d8fb4b296f84acae"
+        }
+      ]
+    },
+    {
+      "family": "IBM Plex Mono",
+      "package": "@fontsource/ibm-plex-mono",
+      "version": "5.3.0",
+      "source": "https://registry.npmjs.org/@fontsource/ibm-plex-mono/-/ibm-plex-mono-5.3.0.tgz",
+      "upstream": "https://github.com/IBM/plex",
+      "license": "OFL-1.1",
+      "files": [
+        {
+          "name": "OFL-IBM-Plex-Mono.txt",
+          "bytes": 5299,
+          "sha256": "23b0a9d0c6d3f140a0b77e483c5cfa6bba574325ef5cb189ed9f2fec4884533f"
+        },
+        {
+          "name": "ibm-plex-mono-latin-400-normal.woff2",
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        {
+          "name": "ibm-plex-mono-latin-600-normal.woff2",
+          "bytes": 15620,
+          "sha256": "0d1f0b8d0722224e32e9f28261bdc86c79115be73444ae5eceb73976a1bcdf83"
+        }
+      ]
     }
   ]
 }

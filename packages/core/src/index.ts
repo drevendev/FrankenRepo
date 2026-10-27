@@ -104,14 +104,14 @@ export type DonorGenome = {
   evidence: EvidenceAtom[];
   warnings: string[];
 };
-export const PROMPT_VERSION = 'frankenrepo/prompt/v3';
+export const PROMPT_VERSION = 'frankenrepo/prompt/v4';
 export const MODE_PRESETS = {
   useful:
     'USEFUL: restrained gothic humor. Invent a modest developer tool with a clearly named user action. usefulMutation must name a concrete input, an operation combining BOTH donor mechanisms, and a visible output artifact. Describe a proposed prototype, never a proven capability.',
   cursed:
     'CURSED: gothic character comedy. Make a specific donor-mechanism mismatch into the creature’s fictional personal inconvenience, never a defect of either real repository. Keep one concrete, small prototype idea using BOTH donors.',
   chaotic:
-    'CHAOTIC: the hook MUST show an absurd non-computing workplace or impossible physical ritual with an actor, action and object. Turn A’s actual operation into the creature’s bizarre job; make B’s actual operation transform the material it handles. Make a visible comic scene, not a spooky description of ordinary programming. Keep a concrete small prototype underneath it. Darkness, chaos and data-weaver slogans alone are insufficient.',
+    'CHAOTIC: the hook MUST show an absurd physical job with an actor, action and object. The object and the comic obstacle must come from the two selected donor mechanisms; do not attach a random chef, ghost or prop to an unrelated technical idea. Carry the SAME collision through hook, curse and firstWords so the joke has a recognizable cause. Keep a concrete small prototype underneath it. Darkness, chaos and data-weaver slogans alone are insufficient.',
 } satisfies Record<RitualMode, string>;
 
 export function validateDraft(

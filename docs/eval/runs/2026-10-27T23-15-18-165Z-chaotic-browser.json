@@ -1,0 +1,305 @@
+{
+  "kind": "LIVE_BROWSER_RITUAL",
+  "startedAt": "2026-10-27T23:15:18.165Z",
+  "endedAt": "2026-10-27T23:15:37.372Z",
+  "latencyMs": 18802,
+  "inputs": ["drevendev/HungryCrab", "DenisSergeevitch/desktop-fly"],
+  "mode": "chaotic",
+  "recording": false,
+  "localOrigin": "http://127.0.0.1:3001",
+  "readiness": {
+    "model": "unknown",
+    "storage": "disabled",
+    "version": "0.1.0",
+    "recordedSamples": 0,
+    "features": {
+      "gallery": false,
+      "permalinks": false,
+      "voice": false
+    }
+  },
+  "stages": [
+    {
+      "state": "queued",
+      "observedAt": "2026-10-27T23:15:20.726Z"
+    },
+    {
+      "state": "splicing",
+      "observedAt": "2026-10-27T23:15:21.728Z"
+    },
+    {
+      "state": "validating",
+      "observedAt": "2026-10-27T23:15:27.817Z"
+    },
+    {
+      "state": "completed",
+      "observedAt": "2026-10-27T23:15:34.952Z"
+    }
+  ],
+  "state": "completed",
+  "ritualId": "73c294f4-549c-4185-9fc9-5c443ce5afb9",
+  "error": null,
+  "record": {
+    "schemaVersion": "frankenrepo/monster/v1",
+    "id": "e09f6609-4d98-4604-8885-3d297633ba00",
+    "createdAt": "2026-10-27T23:15:34.738Z",
+    "mode": "chaotic",
+    "model": {
+      "provider": "cloudflare",
+      "id": "@cf/google/gemma-4-26b-a4b-it",
+      "promptVersion": "frankenrepo/prompt/v4"
+    },
+    "parents": [
+      {
+        "ref": "drevendev/HungryCrab",
+        "url": "https://github.com/drevendev/HungryCrab",
+        "observedAt": "2026-10-27T23:15:20.131Z",
+        "defaultBranch": "master",
+        "commitSha": "29f42fc6285f307118ab47328b13fc015743ffb9",
+        "license": "MIT",
+        "description": "Eat a foreign repository, digest it, and extract everything useful for your own repo without violating licenses.",
+        "topics": [
+          "agent-skills",
+          "claude-code",
+          "cli",
+          "developer-tools",
+          "git",
+          "license-compliance",
+          "python",
+          "repository-mining"
+        ],
+        "languages": ["Python", "CSS"],
+        "readme": "# Hungry Crab ```text o . . o . O /\\ /\\ / \\ _____________________________________ / \\ | | / \\ | | | /\\ | | \\\\\\\\\\\\\\ /////// | | /\\ | | \\/ | | (@@@) (@@@) | | \\/ | \\ / | | \\ / \\ \\ | /\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/ | / / \\ \\_____| |_____/ / \\______\\_____________________________________/______/ / / | | \\ \\ / / | | \\ \\ ``` > **Eat a foreign repository. Digest it. Serve what is worth keeping, legally.** [![CI](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml/badge.svg)](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml) [![Release](https://img.shields.io/github/v/release/drevendev/HungryCrab?color=blue)](https://github.com/drevendev/HungryCrab/releases/latest) [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE) [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](pyproject.toml) [![Conventional Commits](https://img.shields.io/badge/commits-conventional-fe5196.svg)](https://www.conventionalcommits.org) Somewhere out there is a repository that fixed your flaky CI two years ago, wrote the `AGENTS.md` you keep meaning to write, and learned the hard way which file breaks every single time anyone touches it. Reading it properly costs you an afternoon. Reading fifty of them costs you a month. The crab reads them for you. It drags the prey into a local cache, dissects it with fifteen deterministic miners, and boils a whole repository down to a digest small enough for an agent to actually read. Then it holds that digest ",
+        "evidence": [
+          {
+            "id": "A:description",
+            "field": "description",
+            "value": "Eat a foreign repository, digest it, and extract everything useful for your own repo without violating licenses.",
+            "sourceUrl": "https://github.com/drevendev/HungryCrab",
+            "observedAt": "2026-10-27T23:15:20.131Z",
+            "status": "observed"
+          },
+          {
+            "id": "A:topics",
+            "field": "topics",
+            "value": "agent-skills, claude-code, cli, developer-tools, git, license-compliance, python, repository-mining",
+            "sourceUrl": "https://github.com/drevendev/HungryCrab",
+            "observedAt": "2026-10-27T23:15:20.131Z",
+            "status": "observed"
+          },
+          {
+            "id": "A:languages",
+            "field": "languages",
+            "value": "Python, CSS",
+            "sourceUrl": "https://api.github.com/repos/drevendev/HungryCrab/languages",
+            "observedAt": "2026-10-27T23:15:20.131Z",
+            "status": "observed"
+          },
+          {
+            "id": "A:readme",
+            "field": "readme",
+            "value": "# Hungry Crab ```text o . . o . O /\\ /\\ / \\ _____________________________________ / \\ | | / \\ | | | /\\ | | \\\\\\\\\\\\\\ /////// | | /\\ | | \\/ | | (@@@) (@@@) | | \\/ | \\ / | | \\ / \\ \\ | /\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/ | / / \\ \\_____| |_____/ / \\______\\_____________________________________/______/ / / | | \\ \\ / / | | \\ \\ ``` > **Eat a foreign repository. Digest it. Serve what is worth keeping, legally.** [![CI](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml/badge.svg)](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml) [![Release](https://img.shields.io/github/v/release/drevendev/HungryCrab?color=blue)](https://github.com/drevendev/HungryCrab/releases/latest) [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE) [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](pyproject.toml) [![Conventional Commits](https://img.shields.io/badge/commits-conventional-fe5196.svg)](https://www.conventionalcommits.org) Somewhere out there is a repository that fixed your flaky CI two years ago, wrote the `AGENTS.md` you keep meaning to write, and learned the hard way which file breaks every single time anyone touches it. Reading it properly costs you an afternoon. Reading fifty of them costs you a month. The crab reads them for you. It drags the prey into a local cache, dissects it with fifteen deterministic miners, and boils a whole repository down to a digest small enough for an agent to actually read. Then it holds that digest ",
+            "sourceUrl": "https://api.github.com/repos/drevendev/HungryCrab/readme?ref=29f42fc6285f307118ab47328b13fc015743ffb9",
+            "observedAt": "2026-10-27T23:15:20.131Z",
+            "status": "partial"
+          },
+          {
+            "id": "A:license",
+            "field": "license",
+            "value": "MIT",
+            "sourceUrl": "https://github.com/drevendev/HungryCrab",
+            "observedAt": "2026-10-27T23:15:20.131Z",
+            "status": "observed"
+          }
+        ],
+        "warnings": []
+      },
+      {
+        "ref": "DenisSergeevitch/desktop-fly",
+        "url": "https://github.com/DenisSergeevitch/desktop-fly",
+        "observedAt": "2026-10-27T23:15:20.257Z",
+        "defaultBranch": "master",
+        "commitSha": "32b00011e83c3dc85fa3ea0b3934155b04f1635d",
+        "license": "UNKNOWN",
+        "description": "A 3D fruit fly living on your macOS desktop, driven by a live spiking simulation of the real FlyWire connectome",
+        "topics": [],
+        "languages": ["Swift", "JavaScript", "Python"],
+        "readme": "DesktopFly 🪰 A 3D fruit fly that lives on your macOS desktop, with spiking simulations built from FlyWire brain wiring and the MaleCNS brain-to-leg network. It combines identified neural circuits with modeled senses, joints and behavior. The fly's brain window: 23,210 real neuron soma positions from FlyWire v783, with live spikes flashing at real neuron locations. The two glowing yellow markers are the Giant Fibers — the escape command neurons. Click any region to stimulate it. ## Changelog ### 1.1.0 — 2026-09-05 - **Motor-driven legs:** added a MaleCNS v1.0 extract with 1,045 neurons and 17,224 measured connections. Simulated motor activity drives articulated joints, forward/backward stepping and steering, with joint and foot-contact feedback. The existing FlyWire brain connects through a modeled interface. - **Smooth behavior changes:** walking, grooming, sleep and flight preserve the current joint pose. Returning to walking carries that pose and its velocity into the mechanics. Body turns, landing pitch and wing folding now ease between states instead of snapping. - **Wing and ledge fixes:** raised and reshaped wing hinges prevent body clipping. Moving a window out from under the fly triggers takeoff instead of teleporting it to the window's new edge; threat turns stop overriding later steering once the dart ends. - **Consistent timing and Windows support:** the full neural/body feedback loop runs at 120 Hz independently of display refresh. The Electron port shares the mo",
+        "evidence": [
+          {
+            "id": "B:description",
+            "field": "description",
+            "value": "A 3D fruit fly living on your macOS desktop, driven by a live spiking simulation of the real FlyWire connectome",
+            "sourceUrl": "https://github.com/DenisSergeevitch/desktop-fly",
+            "observedAt": "2026-10-27T23:15:20.257Z",
+            "status": "observed"
+          },
+          {
+            "id": "B:topics",
+            "field": "topics",
+            "value": "UNKNOWN",
+            "sourceUrl": "https://github.com/DenisSergeevitch/desktop-fly",
+            "observedAt": "2026-10-27T23:15:20.257Z",
+            "status": "unknown"
+          },
+          {
+            "id": "B:languages",
+            "field": "languages",
+            "value": "Swift, JavaScript, Python",
+            "sourceUrl": "https://api.github.com/repos/DenisSergeevitch/desktop-fly/languages",
+            "observedAt": "2026-10-27T23:15:20.257Z",
+            "status": "observed"
+          },
+          {
+            "id": "B:readme",
+            "field": "readme",
+            "value": "DesktopFly 🪰 A 3D fruit fly that lives on your macOS desktop, with spiking simulations built from FlyWire brain wiring and the MaleCNS brain-to-leg network. It combines identified neural circuits with modeled senses, joints and behavior. The fly's brain window: 23,210 real neuron soma positions from FlyWire v783, with live spikes flashing at real neuron locations. The two glowing yellow markers are the Giant Fibers — the escape command neurons. Click any region to stimulate it. ## Changelog ### 1.1.0 — 2026-09-05 - **Motor-driven legs:** added a MaleCNS v1.0 extract with 1,045 neurons and 17,224 measured connections. Simulated motor activity drives articulated joints, forward/backward stepping and steering, with joint and foot-contact feedback. The existing FlyWire brain connects through a modeled interface. - **Smooth behavior changes:** walking, grooming, sleep and flight preserve the current joint pose. Returning to walking carries that pose and its velocity into the mechanics. Body turns, landing pitch and wing folding now ease between states instead of snapping. - **Wing and ledge fixes:** raised and reshaped wing hinges prevent body clipping. Moving a window out from under the fly triggers takeoff instead of teleporting it to the window's new edge; threat turns stop overriding later steering once the dart ends. - **Consistent timing and Windows support:** the full neural/body feedback loop runs at 120 Hz independently of display refresh. The Electron port shares the mo",
+            "sourceUrl": "https://api.github.com/repos/DenisSergeevitch/desktop-fly/readme?ref=32b00011e83c3dc85fa3ea0b3934155b04f1635d",
+            "observedAt": "2026-10-27T23:15:20.257Z",
+            "status": "partial"
+          },
+          {
+            "id": "B:license",
+            "field": "license",
+            "value": "UNKNOWN",
+            "sourceUrl": "https://github.com/DenisSergeevitch/desktop-fly",
+            "observedAt": "2026-10-27T23:15:20.257Z",
+            "status": "unknown"
+          }
+        ],
+        "warnings": []
+      }
+    ],
+    "evidence": [
+      {
+        "id": "A:description",
+        "field": "description",
+        "value": "Eat a foreign repository, digest it, and extract everything useful for your own repo without violating licenses.",
+        "sourceUrl": "https://github.com/drevendev/HungryCrab",
+        "observedAt": "2026-10-27T23:15:20.131Z",
+        "status": "observed"
+      },
+      {
+        "id": "A:topics",
+        "field": "topics",
+        "value": "agent-skills, claude-code, cli, developer-tools, git, license-compliance, python, repository-mining",
+        "sourceUrl": "https://github.com/drevendev/HungryCrab",
+        "observedAt": "2026-10-27T23:15:20.131Z",
+        "status": "observed"
+      },
+      {
+        "id": "A:languages",
+        "field": "languages",
+        "value": "Python, CSS",
+        "sourceUrl": "https://api.github.com/repos/drevendev/HungryCrab/languages",
+        "observedAt": "2026-10-27T23:15:20.131Z",
+        "status": "observed"
+      },
+      {
+        "id": "A:readme",
+        "field": "readme",
+        "value": "# Hungry Crab ```text o . . o . O /\\ /\\ / \\ _____________________________________ / \\ | | / \\ | | | /\\ | | \\\\\\\\\\\\\\ /////// | | /\\ | | \\/ | | (@@@) (@@@) | | \\/ | \\ / | | \\ / \\ \\ | /\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/ | / / \\ \\_____| |_____/ / \\______\\_____________________________________/______/ / / | | \\ \\ / / | | \\ \\ ``` > **Eat a foreign repository. Digest it. Serve what is worth keeping, legally.** [![CI](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml/badge.svg)](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml) [![Release](https://img.shields.io/github/v/release/drevendev/HungryCrab?color=blue)](https://github.com/drevendev/HungryCrab/releases/latest) [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE) [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](pyproject.toml) [![Conventional Commits](https://img.shields.io/badge/commits-conventional-fe5196.svg)](https://www.conventionalcommits.org) Somewhere out there is a repository that fixed your flaky CI two years ago, wrote the `AGENTS.md` you keep meaning to write, and learned the hard way which file breaks every single time anyone touches it. Reading it properly costs you an afternoon. Reading fifty of them costs you a month. The crab reads them for you. It drags the prey into a local cache, dissects it with fifteen deterministic miners, and boils a whole repository down to a digest small enough for an agent to actually read. Then it holds that digest ",
+        "sourceUrl": "https://api.github.com/repos/drevendev/HungryCrab/readme?ref=29f42fc6285f307118ab47328b13fc015743ffb9",
+        "observedAt": "2026-10-27T23:15:20.131Z",
+        "status": "partial"
+      },
+      {
+        "id": "A:license",
+        "field": "license",
+        "value": "MIT",
+        "sourceUrl": "https://github.com/drevendev/HungryCrab",
+        "observedAt": "2026-10-27T23:15:20.131Z",
+        "status": "observed"
+      },
+      {
+        "id": "B:description",
+        "field": "description",
+        "value": "A 3D fruit fly living on your macOS desktop, driven by a live spiking simulation of the real FlyWire connectome",
+        "sourceUrl": "https://github.com/DenisSergeevitch/desktop-fly",
+        "observedAt": "2026-10-27T23:15:20.257Z",
+        "status": "observed"
+      },
+      {
+        "id": "B:topics",
+        "field": "topics",
+        "value": "UNKNOWN",
+        "sourceUrl": "https://github.com/DenisSergeevitch/desktop-fly",
+        "observedAt": "2026-10-27T23:15:20.257Z",
+        "status": "unknown"
+      },
+      {
+        "id": "B:languages",
+        "field": "languages",
+        "value": "Swift, JavaScript, Python",
+        "sourceUrl": "https://api.github.com/repos/DenisSergeevitch/desktop-fly/languages",
+        "observedAt": "2026-10-27T23:15:20.257Z",
+        "status": "observed"
+      },
+      {
+        "id": "B:readme",
+        "field": "readme",
+        "value": "DesktopFly 🪰 A 3D fruit fly that lives on your macOS desktop, with spiking simulations built from FlyWire brain wiring and the MaleCNS brain-to-leg network. It combines identified neural circuits with modeled senses, joints and behavior. The fly's brain window: 23,210 real neuron soma positions from FlyWire v783, with live spikes flashing at real neuron locations. The two glowing yellow markers are the Giant Fibers — the escape command neurons. Click any region to stimulate it. ## Changelog ### 1.1.0 — 2026-09-05 - **Motor-driven legs:** added a MaleCNS v1.0 extract with 1,045 neurons and 17,224 measured connections. Simulated motor activity drives articulated joints, forward/backward stepping and steering, with joint and foot-contact feedback. The existing FlyWire brain connects through a modeled interface. - **Smooth behavior changes:** walking, grooming, sleep and flight preserve the current joint pose. Returning to walking carries that pose and its velocity into the mechanics. Body turns, landing pitch and wing folding now ease between states instead of snapping. - **Wing and ledge fixes:** raised and reshaped wing hinges prevent body clipping. Moving a window out from under the fly triggers takeoff instead of teleporting it to the window's new edge; threat turns stop overriding later steering once the dart ends. - **Consistent timing and Windows support:** the full neural/body feedback loop runs at 120 Hz independently of display refresh. The Electron port shares the mo",
+        "sourceUrl": "https://api.github.com/repos/DenisSergeevitch/desktop-fly/readme?ref=32b00011e83c3dc85fa3ea0b3934155b04f1635d",
+        "observedAt": "2026-10-27T23:15:20.257Z",
+        "status": "partial"
+      },
+      {
+        "id": "B:license",
+        "field": "license",
+        "value": "UNKNOWN",
+        "sourceUrl": "https://github.com/DenisSergeevitch/desktop-fly",
+        "observedAt": "2026-10-27T23:15:20.257Z",
+        "status": "unknown"
+      }
+    ],
+    "draft": {
+      "name": "The Scavenging Glider",
+      "hook": "A frantic actor attempts to polish a heavy silver platter, but a tiny winged scavenger keeps diving down to swallow the silverware whole.",
+      "brain": {
+        "text": "It identifies specific useful components within a massive external repository to prepare them for digestion.",
+        "evidenceIds": ["A:readme"]
+      },
+      "body": {
+        "text": "It uses simulated motor activity and articulated joints to steer its tiny body through a desktop environment.",
+        "evidenceIds": ["B:readme"]
+      },
+      "curse": {
+        "text": "The creature cannot stop digesting external code repositories using its spiking neural circuits to drive its frantic legs.",
+        "evidenceIds": ["A:readme", "B:readme"]
+      },
+      "firstWords": "Stop trying to feed me those foreign files, I can't steer my legs properly while chewing!",
+      "usefulMutation": "A researcher asks if a specific logic pattern exists in a library; HungryCrab produces a code digest that DesktopFly transforms into a simulated motor behavior via a mapping of logic flows to joint movements.",
+      "uncertainty": "It is unknown if the spiking simulation can maintain a stable flight path while processing large code digests.",
+      "humorTags": ["code-eater", "neural-chaos"]
+    },
+    "sprite": {
+      "recipeVersion": "frankenrepo/sprite/v1",
+      "seed": "73c294f4-549c-4185-9fc9-5c443ce5afb9",
+      "body": 0,
+      "head": 2,
+      "accessory": 1,
+      "palette": 2,
+      "expression": 2,
+      "flavor": 14
+    },
+    "publication": {
+      "state": "ephemeral"
+    },
+    "lineage": {
+      "parentMonsterIds": [],
+      "depth": 0
+    },
+    "contentHash": "d46e9b639a2103771a984f53771b6543f1310ed8a96fc6b9f6250d9a87a9d8cf"
+  },
+  "pageErrors": [],
+  "exports": [
+    "docs/eval/runs/2026-10-27T23-15-18-165Z-chaotic-browser.png",
+    "docs/eval/runs/2026-10-27T23-15-18-165Z-chaotic-browser.svg",
+    "docs/eval/runs/2026-10-27T23-15-18-165Z-chaotic-browser.txt",
+    "docs/eval/runs/2026-10-27T23-15-18-165Z-chaotic-browser-certificate.png"
+  ],
+  "limits": {
+    "maxOutputTokensPerCall": 1000,
+    "maxAttemptsPerRitual": 2
+  }
+}

@@ -1,5 +1,8 @@
 # Наследование доноров: Useful и Chaotic — 28 октября 2026
 
+Историческое сравнение Flask/jq v1–v3. Новые пары и последующее изменение
+промпта: [PAIR_REVIEW_2026-10-28.md](PAIR_REVIEW_2026-10-28.md).
+
 Пара во всех шести новых реальных ритуалах: **pallets/flask + jqlang/jq**.
 Модель: Cloudflare @cf/google/gemma-4-26b-a4b-it, temperature 0.8,
 до 1000 выходных токенов, максимум один repair на ритуал. Все ритуалы completed,
