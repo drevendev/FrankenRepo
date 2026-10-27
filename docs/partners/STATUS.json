@@ -1,19 +1,19 @@
 {
   "schemaVersion": "frankenrepo/partner-status/v1",
-  "updatedOn": "2026-10-27",
-  "verifiedCount": 0,
+  "updatedOn": "2026-10-28",
+  "verifiedCount": 1,
   "publicDemoUrl": null,
   "categories": [
     {
       "name": "Gemma",
       "priority": "P0",
-      "status": "IMPLEMENTED",
-      "reason": "Cloudflare/Ollama adapters implemented and contract-tested. No working runtime/model or authorized free account provided; no successful model invocation.",
-      "evidencePath": null,
-      "verifiedAt": null,
+      "status": "VERIFIED",
+      "reason": "One real local Chromium/API Cursed ritual completed using Cloudflare @cf/google/gemma-4-26b-a4b-it on the owner-authorized Workers Free account; schema/evidence and PNG/SVG exports passed. This does not verify public hosting or creative quality across modes.",
+      "evidencePath": "docs/partners/gemma.md",
+      "verifiedAt": "2026-10-27T22:31:01.862Z",
       "enabledInPublicDemo": false,
-      "workingUserScenario": null,
-      "costEvidence": "No service activation or billable partner calls were made."
+      "workingUserScenario": "Inspect pallets/flask + jqlang/jq, pull the Cursed lever, receive The JSON-Wrapped Serpent of Pallets, inspect factual sources, export PNG/SVG.",
+      "costEvidence": "Owner reports Workers Free. No billing/plan change was made; no payment method was added. Neuron usage, exact provider call count and billing dashboard were not captured."
     },
     {
       "name": "Render",

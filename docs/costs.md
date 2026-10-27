@@ -19,3 +19,13 @@ No activation may use a required billing card, overage or automatic upgrade.
 Local Ollama installation/download is an explicit operator step; weights/hardware
 are not bundled. All optional partner account, credit, license and billing status
 remains unverified or blocked in partners/STATUS.json.
+
+## First live usage — 2026-10-28
+
+The owner reported Workers Free, supplied credentials locally and authorized one
+real browser ritual. It completed using the configured Gemma model. No plan,
+billing setting or card was changed; no paid fallback was used. The active
+server process is configured for six model calls per UTC day, including repair.
+One ritual completed; exact upstream attempt count, Neuron/token usage and
+billing dashboard evidence were not captured. Do not claim measured dollar cost
+or remaining account quota from this receipt alone. See eval/REAL_RUNS.md.

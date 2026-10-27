@@ -7,9 +7,11 @@ a configured Gemma model to invent a fictional creature, then download its
 Monster Birth Certificate. Observed facts stay linked to their sources.
 The creature is an imaginative interpretation, not a judgment of a project.
 
-**Local foundation implemented; live Gemma generation is not yet verified.**
-The default lab honestly reports that its model is unavailable. No recorded
-Gemma output, persistent gallery, public repository or deployment is supplied.
+**First real Gemma ritual verified locally on 28 October 2026 (Asia/Nicosia).**
+Cloudflare Gemma generated a schema-valid creature from pallets/flask and jqlang/jq
+through the actual browser/API, with PNG/SVG export. [Live receipt and result](docs/eval/REAL_RUNS.md).
+Without configured credentials the default model remains disabled. Persistent
+gallery, public repository and deployment are not supplied.
 
 ![The actual local laboratory with illustrated specimen, model disabled](docs/images/lab-desktop.png)
 
@@ -52,8 +54,8 @@ atmosphere and never stand in for an actual API stage.
 
 For the public contest demo, the selected primary target is
 [Cloudflare-hosted Gemma 4 26B A4B IT](docs/MODEL_DECISION.md). Its public Free-plan
-eligibility was checked; this account's access and real inference are still
-unverified. The local Ollama setup below is the fallback.
+eligibility was checked; real inference through this account is now verified
+for one local Cursed ritual. The local Ollama setup below is the fallback.
 
 For the recommended setup, follow the
 [step-by-step Cloudflare Free guide in Russian](docs/CLOUDFLARE_SETUP_RU.md):
@@ -75,11 +77,11 @@ docs/eval/runs/ and include actual model, installed digest, input pair, timings
 and result/failure. Review humor and recognizability manually; schema validity
 does not establish creative quality. See [real-run status](docs/eval/REAL_RUNS.md).
 
-Cloudflare is an alternative server adapter, not an activated service.
+The Cloudflare adapter completed its first authorized local browser ritual.
 Only use an explicitly authorized account with confirmed free/no-card access:
 set MODEL_PROVIDER=cloudflare, CF_ACCOUNT_ID, CF_API_TOKEN and the exact
-CF_GEMMA_MODEL. Provider availability and this spec's preferred model have not
-been verified for an account. No credentials are bundled or read from other projects.
+CF_GEMMA_MODEL. One real local run is recorded; wider quality, quota and hosted access remain
+unverified. No credentials are bundled or read from other projects.
 
 ## What is implemented
 
@@ -91,7 +93,7 @@ been verified for an account. No credentials are bundled or read from other proj
 | Certificate   | Source-aware traits, first words, speculative useful mutation, PNG/SVG + alt text + copied share text                                               |
 | Jobs          | Actual stages, scoped idempotency, quota/concurrency caps, cancellation, fifteen-minute ephemeral TTL                                               |
 | Persistence   | Disabled; no public gallery, sharing link, account, voice or breeding                                                                               |
-| Qualification | Zero verified partner categories; real GitHub smoke passed, real Gemma blocked                                                                      |
+| Qualification | Gemma verified locally with a live receipt; other categories and public hosting unverified                                                          |
 
 ## Verification
 

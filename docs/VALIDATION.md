@@ -56,3 +56,18 @@ Corresponding endpoints/integrations are disabled or absent.
   activation were needed for sound and decorative effects.
 - Added docs/CLOUDFLARE_SETUP_RU.md using current official account/token/model
   and pricing instructions. No token was created or credential read/used.
+
+## First real Gemma browser run — 2026-10-28
+
+Owner-authorized Cloudflare Free credentials loaded on server restart. The real
+pallets/flask + jqlang/jq Cursed flow completed, created a schema-valid record,
+rendered in Chromium and exported PNG/SVG/alt text without page errors. The
+saved content hash, exact evidence IDs, commit SHA formats and absence of supplied
+credentials in all run artifacts were checked independently after saving.
+The actual exported PNG was visually inspected. See eval/REAL_RUNS.md.
+
+After saving the receipt, npm run verify passed all 57 tests and the build.
+The 12 offline Playwright scenarios also passed on isolated port 3002 with
+MODEL_PROVIDER=disabled and matching origin allowlist; the real configured
+server on port 3001 was left running. No extra live rituals were performed
+by these regressions. Default screenshots were preserved.

@@ -15,4 +15,5 @@ footage, fabricated inference or test fixture footage as evidence of live AI.
 
 If the recording replays an unchanged prior result, disclose RECORDED and the exact
 model invocation instead. A fresh arbitrary donor pair requires an actual live call.
-Current blocker: no real Gemma run or final screen recording.
+One real Cursed Gemma browser run now exists (../eval/REAL_RUNS.md). The final
+45–60-second captioned screen recording and other live modes remain unrecorded.

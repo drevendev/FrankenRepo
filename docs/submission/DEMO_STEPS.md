@@ -1,8 +1,9 @@
 # Demonstration handoff
 
-Current local demonstration: npm ci; npm run dev; open http://127.0.0.1:5173;
-use sample donors; inspect real public DNA. Observe the honest unavailable-model
-state. This is the implemented foundation, not a complete model-generation demo.
+Current verification, 28 October 2026: one real Cursed browser/API ritual with
+Cloudflare Gemma completed and exported successfully; see ../eval/REAL_RUNS.md.
+The credentials remain local. A fresh unconfigured checkout still reports its
+model unavailable; the saved output is not served as fake live inference.
 
 To finish the real vertical slice:
 

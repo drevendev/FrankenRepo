@@ -35,3 +35,11 @@ Review both-donor recognizability, humor, coherence, actual latency and failures
 Keep unchanged receipts. Only after these succeed should Gemma become VERIFIED.
 Render additionally needs owner-authorized deployment and its own successful
 public-browser receipt. These categories are not interchangeable.
+
+## Verification update — 2026-10-28
+
+The owner supplied Workers Free configuration and authorized a real test.
+The browser/API Cursed flow completed successfully with the exact selected model.
+See [the live receipt](eval/REAL_RUNS.md). This supersedes the access blocker
+above for this local scenario; public deployment and broader quality remain unverified.
+No account signup, billing change or card was added by the executor.

@@ -1,3 +1,9 @@
+> Latest update, 2026-10-28: the owner supplied Cloudflare Free settings and
+> authorized a real run. One Cursed browser/API ritual completed with valid
+> sources and PNG/SVG exports. Gemma is VERIFIED locally; one partner category
+> has live evidence. See [REAL_RUNS](eval/REAL_RUNS.md). No public deployment.
+> The initialization report below records the earlier 27 October state.
+
 # Initialization status — 2026-10-27
 
 Implemented: independent Node 24 / TypeScript workspaces, React/Vite gothic lab,

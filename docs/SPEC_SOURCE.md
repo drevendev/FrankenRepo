@@ -18,8 +18,9 @@ Existing specification and handoff files were preserved. No Drive content was ed
   twenty-four-hour job collection. The UI exposes no persistence claims.
 - The illustrated idle specimen is artwork, explicitly labelled. No genuine
   recorded Gemma outputs existed, so no recorded/replay mode is offered.
-- No successful real model run has occurred. This prevents declaring Slice 1
-  or contest acceptance complete; optional partner SDK work remains deferred.
+- First real Cursed browser/API flow succeeded on 2026-10-28 Asia/Nicosia.
+  Useful/Chaotic live runs, larger evaluation and public challenge acceptance
+  remain unverified; optional partner SDK work follows this first live slice.
 - Two local API/web ports share an explicit origin allowlist. Behind a hosted
   reverse proxy all visitors share the conservative socket-IP quota unless
   a separately reviewed trusted-proxy design is added.
