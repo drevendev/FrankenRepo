@@ -1,0 +1,12 @@
+{
+  "name": "@frankenrepo/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@frankenrepo/core": "0.1.0",
+    "@frankenrepo/adapters": "0.1.0",
+    "@frankenrepo/ritual": "0.1.0",
+    "hono": "4.13.14"
+  }
+}

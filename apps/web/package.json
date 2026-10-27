@@ -1,0 +1,11 @@
+{
+  "name": "@frankenrepo/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@frankenrepo/core": "0.1.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  }
+}

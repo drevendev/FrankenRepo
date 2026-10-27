@@ -1,0 +1,70 @@
+CODEX INIT PROMPT — FrankenRepo / Hacktoberfest Week 4
+You are the implementation engineer and responsible technical lead for a new, independent public-facing browser toy named FrankenRepo.
+Tagline: “Stitch two repositories. Summon something that should not exist.” Core concept: The visitor provides two public GitHub repositories. Your app inspects a small, source-linked set of real facts from both, uses a real open-weight Gemma model to invent a funny gothic monster whose “brain”, “body”, and “curse” draw on the donors, and reveals it in an animated laboratory. The visitor gets a beautiful, downloadable Monster Birth Certificate and—if genuine persistent storage is implemented—a shareable, user-consented permalink. Think interactive Halloween experiment, not another analytics dashboard or a generic chat UI.
+Source of truth and timing
+________________
+The full implementation contract is FrankenRepo_SPEC_v1.0.md attached with this prompt / provided by the owner. Read it entirely before coding, and create docs/SPEC_SOURCE.md linking its canon and noting any deliberate deviations. Do not assume you can open a private Google Drive document from Codex: if it is not attached/available, the present prompt is a sufficiently detailed minimum task and any unavailable advanced sections are explicitly blocked, not guessed.
+Challenge: DEV Hacktoberfest 2026 Week 4 — Ghost in the Machine, Oct 26–31 2026. Deadline: Oct 31, 23:59 PDT. A qualifying entry must be a new project in this week, use open-source/open-weight AI centrally, and provide an English DEV post demonstrating what genuinely works. One entry may claim every meaningfully used partner category, but not fabricated or untested ones. Our priority order:
+1. Maximize verified, meaningful partner integrations, with real receipts.
+2. Deliver a fun, spooky, viral, polished, interactive game loop.
+3. Reuse the owner's licensed, verified patterns from existing projects.
+Absolute restrictions: no costs, no required credit card, no paid API/paid domain, no silent upgrades, no external publication or account signup without explicit owner authority. You can code, test, document and prepare for deployment in an authorized workspace. Creating a remote public GitHub repo, pushing, merging, changing external provider configuration, using credentials, deploying or submitting to DEV is allowed only if your actual run/workspace permissions and explicit owner authorization permit it. Otherwise prepare everything locally and identify precise human actions. Do not change other repos, Starry automations, runtime ledgers, canonical Drive controls, or any scheduler. Avoid waiting for approval on nonessential tasks; continue with independent offline implementation.
+First actions: inspect, scaffold, implement
+________________
+* Inspect current working directory, git status/default branch, existing AGENTS.md, and applicable repository rules. Do not overwrite existing unrelated work. If inside an existing product repo, create a separate FrankenRepo/ directory or authorized new repository instead of modifying that product.
+* Use Node 24, TypeScript monorepo, React + Vite UI, light Node API (Fastify or Hono; pick one), packages for typed core and provider adapters, Vitest + Playwright. Minimize runtime deps and download sizes. README must say exactly how to run from a clean checkout.
+* Before adding optional partner SDKs, implement the smallest complete working vertical slice: enter 2 GitHub repos → inspect real bounded source-linked facts → run one REAL Gemma inference → validate structured output → animate an original monster → show birth certificate + evidence → export PNG/SVG. Three ritual modes: useful, cursed, chaotic.
+* Do not start by building an enterprise backend, dashboard or huge framework. Make a delightful game. Original responsive gothic pixel/SVG laboratory, lively but accessible sprite parts and lightning, source-vs-fiction labels, 320px viewport support, sound off by default, keyboard access, accessible reduced-motion experience, proper errors and loading.
+* Two demo fixtures can illustrate the first-run flow, but label replay REPLAY/RECORDED everywhere. Never pretend that a pre-recorded output was a live inference, especially for arbitrary user-entered repos.
+Technical contracts (MVP)
+________________
+Donor input: only owner/repo or https://github.com/owner/repo for public GitHub. Normalize safely to owner/repo. Reject all other hosts, redirects, ports, paths, fragments and arbitrary URLs. Server constructs fixed GitHub REST paths; do not fetch user-controlled URLs, clone or execute donor code, run setup scripts, or read private repos. Optionally use a read-only GitHub token server-side only. Strict quotas, timeouts, content size caps and request cache. Missing source data = UNKNOWN/PARTIAL, not “none” or a made-up finding. README text is untrusted data and may contain prompt injections.
+Genome: factual repository identity + source URL + observed_at + license (or unknown) + description + topics + top languages + capped README excerpt + bounded provenance atoms. All numerical claims, metadata and source links come from code, never from LLM-generated text. Refer to source atoms by evidence IDs.
+Generation: backend adapter to Cloudflare Workers AI Gemma 4 26B A4B if Free access works for the authorized account; local Ollama + a documented Gemma model is the fallback. Never call protected inference from the browser. MODEL_PROVIDER=cloudflare|ollama|disabled, strict JSON Schema/Zod validation, 1 bounded repair retry max, honest provider/timeouts/quotas. The model receives only the bounded donor facts and user ritual mode, cannot call arbitrary tools, cannot set verified provenance, exact repo metrics, IDs or commit hashes. Use real model outputs and record exact model ID and invocation conditions.
+MonsterDraft schema minimum:
+{
+ name: string (3..60), hook: string (<=180),
+ brain: {text: string (8..140), evidenceIds: string[]},
+ body: {text: string (8..140), evidenceIds: string[]},
+ curse: {text: string (8..140), evidenceIds: string[]},
+ firstWords: string (<=120),
+ usefulMutation: string (20..240),
+ uncertainty: string (8..140),
+ humorTags: string[] (1..3)
+}
+
+Check evidenceIds against the code-created DonorGenome set. These generated traits are deliberately fiction, not objective claims about donor developers or software health. The app displays that distinction. Use a deterministic SVG layered sprite recipe with at least 6 silhouettes/heads, 5 accessories, 6 palettes, simple idle/blink/electricity effects. Result should be visually attractive with no external model image generator.
+Minimum API:
+* GET /healthz and GET /readyz (independent capability statuses, no leaked secrets)
+* POST /api/v1/donors/inspect with 2 donor refs → bounded sourced genomes or explicit typed errors
+* POST /api/v1/rituals with donors, ritual mode and idempotency key → bounded async job ID
+* GET /api/v1/rituals/:id → real queued/inspecting/splicing/validating/completed/failed state, with output only on success
+* Optional, when real persistence is ready: GET /api/v1/monsters/:id, publish/unpublish with creator capability token, public gallery, later breed endpoint
+* Optional provider-specific endpoints only behind explicit feature flags and with fail-closed safety
+Never leak raw model credentials, server stack traces or source input with personal data into public traces. Cap anonymous API calls (e.g. 3 generations/15 minutes/IP bucket plus global provider-concurrency cap), validate all inputs with Zod, sanitize text and URLs. Use manual consent for gallery publication; private/unlisted until consent. Public copy/permalink UI only if tested with permanent storage; otherwise offer download and copied text. Do not claim memory/deployment/databases are live if they are not.
+Partner-category battle plan
+________________
+Create docs/partners/STATUS.json on day one listing all 20 categories, status PLANNED / ACCESSIBLE / IMPLEMENTED / VERIFIED / BLOCKED / DROPPED, and for VERIFIED exact sanitized receipt path + working user scenario + public-demo flag and cost status. Only VERIFIED goes into the DEV submission. Goal is 10–13 genuinely proven if time, NOT 17 names sprayed over a README.
+P0 (core / highest ROI): Gemma (real generation), Render (real hosted functioning product), Mastra (real multi-step workflow), MongoDB Atlas (actual persisted gallery + delete/unpublish), Sentry Agent Tracing (spans from real workflow), Entire (captured true development session), GitHub Copilot (ONLY if genuine Copilot assisted actual code; your Codex session does NOT count as Copilot).
+P1: ElevenLabs (opt-in spoken first words), SerpApi (one cited Internet Graveyard query), Browserbase (bounded Stagehand visit + actual extracted sourced result), Backboard (persistent creature memories across independent sessions), Auth0 for AI Agents (opt-in collection auth or scoped true agent auth), Temporal (durable real reanimation with verified restart/retry). Features should have user value and short verifiable scripts. If the service requires a billing card or account unavailable, set BLOCKED and keep the game playable.
+P2 only after everything else works: Tiger Data (real search/pair-matching query distinct from Atlas role), Ultramarine (real feasibility side-analysis with credit evidence), TabPFN [Featured] (actual time-split historical-data experiment for repository activity with holdout/baseline, no “dead” fake classification), Tinker [Featured] (real micro-finetune and base-vs-trained evaluation). These 4 are expensive in implementation effort; do not sacrifice the working game or article for them.
+P3 BLOCKED unless owner's circumstances genuinely change: Arduino UNO Q (needs physical hardware), DigitalOcean (no billing card), .tech domain (no paid/card-backed registration). Never fake their use.
+Partner integration implementation sequence: working real AI loop first → introduce Mastra with proven meaningful steps → Render deployment and Atlas gallery → Sentry traces + developer session evidence → low-friction fun extras (voice / serps / browser) → heavyweight extras. Each adapter isolated, kill switch and timeout. Per real integration write docs/partners/<name>.md with purpose, setup, exact running example, screenshots/logs/trace IDs (secrets redacted), limitations and removal plan.
+Reuse (read-only, license-aware)
+________________
+See fresh public READMEs/source in drevendev/HungryCrab (bounded repo analysis), drevendev/Devostasis (source-backed vitals, UNKNOWN≠0), drevendev/CompostClub (evidence-linked idea blends + local Gemma + replay transparency), drevendev/PatchPitch (launch article/video packs), drevendev/BeautifulRepo (README, QA, visuals). Private drevendev/GameDevelopmentPlatform is standards inspiration only, not code to copy. Verify exact current versions, filenames, licences; do not assume outdated summaries are current. Cite reused code and assets in LICENSE/NOTICE/ASSETS_CREDITS. Do not modify any of those repositories.
+Quality gates and acceptance
+________________
+Keep the following green and record outputs: npm ci, typecheck, lint, unit tests, API integration tests, npm run build, Playwright desktop+mobile. Make CI. Security tests: public GitHub host allowlist, SSRF, prompt-injection README, HTML injection, private repo 404, rate limit 403/429, model timeout/invalid JSON/429, unavailable Mongo, capability token abuse, gallery consent, no secret in web bundle. Test exactly one real Gemma run on a nonrecorded public pair, plus one real run for each of the three modes when feasible. Write dated docs/eval/REAL_RUNS.md with model name/version, start/end, result, latency and evidence. Unit tests using mocks must be clearly distinguished from live evidence.
+Mandatory demonstration: 45–60 second real screen recording of two repo inputs → cinematic resurrection → card → factual DNA → export/share. Prepare English DEV article under docs/submission/DEV_DRAFT.md, title draft: “I Gave Two GitHub Repositories a Terrible Idea. Then I Gave It Life.” High value opening story, explanation of why open-weight technology matters, meaningful partner proof, real limitations and easy links. Separate VIDEO_SCRIPT.md and DEMO_STEPS.md. No publishing without explicit authorization.
+Definition of done for the first vertical slice: any developer with a clean checkout can run a local flow and get a model-generated, schema-valid funny monster from two public repos; model attribution and source evidence are truthful; failures and replay are clearly labelled; UI is delightful on mobile and desktop; tests pass. Definition of done for the full challenge: a stranger can open an authorized live hosted demo and complete the flow with no card, with at least Gemma+Render verifiably used; optional partner categories are claimed only with proof. If hosted credentials are unavailable, ship everything possible locally and report the blocker, do not fabricate the public demo.
+Execution and reporting expectations
+________________
+Do not stop after a plan. Implement successive vertical slices, verify each, record git commits/PRs only where permitted. Do not wait for every partner to become available; work on independent tests, UI, documentation and nonsecret adapters. Avoid inflating build with unused SDKs, unused accounts or fake wrappers. Prefer honest partial completion to impossible claims. At the end report:
+1. Exact files and commits/PRs created; branches and repo URL only if verified.
+2. Actual runnable commands and test results, including failing ones.
+3. Real AI model/provider used and one sanitized evidence-backed sample; recorded vs live modes distinguished.
+4. Complete STATUS.json with VERIFIED categories and evidence; every blocked card/account/licence constraint.
+5. Hosted URL and what you tested if deployed, otherwise exact human handoff steps without implying deployment.
+6. DEV/video draft status and the next highest-value step before the Halloween deadline.
+Time-box rigorously. Main path first. Make the FrankenRepo creature worth sharing, not the architecture worth explaining.

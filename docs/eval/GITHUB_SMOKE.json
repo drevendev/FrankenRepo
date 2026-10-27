@@ -1,0 +1,26 @@
+{
+  "kind": "LIVE_PUBLIC_GITHUB_READ",
+  "startedAt": "2026-10-27T21:17:54.959Z",
+  "endedAt": "2026-10-27T21:17:56.309Z",
+  "modelInvoked": false,
+  "donors": [
+    {
+      "ref": "pallets/flask",
+      "url": "https://github.com/pallets/flask",
+      "observedAt": "2026-10-27T21:17:55.993Z",
+      "commitSha": "d086db856be187255b8ec61ef409357393020f32",
+      "license": "BSD-3-Clause",
+      "languages": ["Python", "HTML", "Shell"],
+      "warnings": []
+    },
+    {
+      "ref": "jqlang/jq",
+      "url": "https://github.com/jqlang/jq",
+      "observedAt": "2026-10-27T21:17:55.991Z",
+      "commitSha": "ac35c7dcbb991fa0f3c3196dd00ca479211e9847",
+      "license": "UNKNOWN",
+      "languages": ["C", "M4", "Shell"],
+      "warnings": []
+    }
+  ]
+}

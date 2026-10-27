@@ -1,0 +1,10 @@
+node_modules
+dist
+package-lock.json
+FrankenRepo_SPEC_v1.0.md
+FrankenRepo_CODEX_INIT_v1.0.md
+README_CODEX_HANDOFF.md
+.local
+test-results
+playwright-report
+docs/images
