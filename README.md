@@ -136,7 +136,7 @@ must not be described as real Gemma runs. Screenshots show the actual default UI
 
 This is a local-first preview. Model text can still invent unsupported capabilities,
 and the in-memory quotas/storage are unsuitable for scaling a public demo.
-See the [eight tracked issues](docs/KNOWN_ISSUES.md) before hosting or relying on
+See the [tracked issues](docs/KNOWN_ISSUES.md) before hosting or relying on
 a proposed mutation. No deployment or new paid service is included in this release.
 
 MIT source. Dependencies/model terms are separate. [Credits](ASSETS_CREDITS.md).

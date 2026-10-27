@@ -108,10 +108,12 @@ by these regressions. Default screenshots were preserved.
 - Reachable Git history and tracked files were checked for configured credentials,
   environment files and private keys before the first push. Only .env.example
   is public; node_modules, builds, .local and .env remain excluded.
-- Eight evidence-backed issues and a [release snapshot](KNOWN_ISSUES.md) record
+- Nine evidence-backed issues and a [release snapshot](KNOWN_ISSUES.md) record
   the remaining limitations. The card showcase contains unchanged selected
   outputs/receipts, editorial caveats and SHA-256 checksums.
-- Remote CI results are available separately in
-  [GitHub Actions](https://github.com/drevendev/FrankenRepo/actions/workflows/ci.yml).
-  A configured workflow is not, by itself, a successful remote run. Application
-  deployment and the final captioned recording remain unverified.
+- The first [remote Linux CI run](https://github.com/drevendev/FrankenRepo/actions/runs/40603823884)
+  passed on commit 7d0fd9725576f672a4713a5eacf08c25769d8f63: clean npm install,
+  full verify, dependency audit and sixteen browser scenarios. Its deprecated
+  action-runtime warning is tracked in issue #9. Later commit results are
+  listed separately in [GitHub Actions](https://github.com/drevendev/FrankenRepo/actions/workflows/ci.yml).
+  Application deployment and the final captioned recording remain unverified.
