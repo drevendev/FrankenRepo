@@ -1,7 +1,7 @@
 # Demonstration handoff
 
-Current verification, 28 October 2026: one real Cursed browser/API ritual with
-Cloudflare Gemma completed and exported successfully; see ../eval/REAL_RUNS.md.
+Current verification, 28 October 2026: real Cursed and Useful/Chaotic browser/API
+rituals with Cloudflare Gemma completed and exported successfully; see ../eval/REAL_RUNS.md.
 The credentials remain local. A fresh unconfigured checkout still reports its
 model unavailable; the saved output is not served as fake live inference.
 

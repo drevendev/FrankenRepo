@@ -1,5 +1,93 @@
 import { test, expect } from '@playwright/test';
 import { TEST_DONORS, testMonster } from '../fixtures';
+import { SAMPLE_REPOS } from '../../apps/web/src/samples';
+
+test('specimen cabinet offers requested repos and rerolls without calling inspection', async ({
+  page,
+}, info) => {
+  let inspections = 0;
+  page.on('request', (r) => {
+    if (r.url().includes('/donors/inspect')) inspections++;
+  });
+  await page.goto('/');
+  await page.getByText('Open the specimen cabinet', { exact: false }).click();
+  for (const repo of SAMPLE_REPOS)
+    await expect(
+      page.locator('#sample-A option[value="' + repo.ref + '"]'),
+    ).toHaveCount(1);
+  await page.locator('#donor-a').fill('custom/brain');
+  await page.locator('#donor-b').fill('custom/body');
+  await page
+    .getByLabel('Donor A specimen')
+    .selectOption('drevendev/HungryCrab');
+  await page
+    .getByLabel('Donor B specimen')
+    .selectOption('DenisSergeevitch/desktop-fly');
+  await expect(page.locator('#donor-a')).toHaveValue('drevendev/HungryCrab');
+  await expect(page.locator('#donor-b')).toHaveValue(
+    'DenisSergeevitch/desktop-fly',
+  );
+  await expect(
+    page.locator('#sample-B option[value="drevendev/HungryCrab"]'),
+  ).toHaveJSProperty('disabled', true);
+  const previous = [
+    await page.locator('#donor-a').inputValue(),
+    await page.locator('#donor-b').inputValue(),
+  ].sort();
+  await page.getByRole('button', { name: 'Shuffle samples' }).click();
+  expect(
+    [
+      await page.locator('#donor-a').inputValue(),
+      await page.locator('#donor-b').inputValue(),
+    ].sort(),
+  ).not.toEqual(previous);
+  expect(inspections).toBe(0);
+  await page.setViewportSize({ width: 320, height: 812 });
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+  await page.screenshot({
+    path: '.local/specimen-cabinet-' + info.project.name + '.png',
+    fullPage: true,
+  });
+});
+
+test('mode changes animate locally and custom fonts load from this server', async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  const fontResponses: string[] = [];
+  page.on('response', (r) => {
+    if (r.url().endsWith('.woff2') && r.ok()) fontResponses.push(r.url());
+  });
+  await page.goto('/');
+  await page.evaluate(() => document.fonts.ready);
+  expect(
+    await page.evaluate(
+      () =>
+        document.fonts.check('24px Creepster') &&
+        document.fonts.check('18px "IM Fell English"'),
+    ),
+  ).toBe(true);
+  expect(fontResponses.length).toBeGreaterThanOrEqual(2);
+  expect(
+    fontResponses.every((url) => new URL(url).hostname === '127.0.0.1'),
+  ).toBe(true);
+  await page.getByRole('radio', { name: 'Useful', exact: false }).check();
+  await expect(page.locator('.chemistry-useful')).toBeVisible();
+  await expect(page.locator('.apparatus')).toHaveAttribute(
+    'data-chemistry',
+    'useful',
+  );
+  await expect(page.locator('.chemistry-shift')).toHaveCount(0, {
+    timeout: 2000,
+  });
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.getByRole('radio', { name: 'Chaotic', exact: false }).check();
+  await expect(page.locator('.chemistry-shift')).toHaveCount(0);
+});
 
 test('sound is opt-in, uses one real audio context, and pauses when hidden or muted', async ({
   page,
@@ -149,9 +237,16 @@ test('default lab is honest, keyboard usable, and fits small screens', async ({
     page.getByRole('link', { name: 'Skip to the laboratory' }),
   ).toBeFocused();
   await page.getByRole('button', { name: 'Use sample donors' }).click();
-  await expect(page.getByLabel('The brain', { exact: false })).toHaveValue(
-    'withastro/astro',
-  );
+  const randomPair = await Promise.all([
+    page.locator('#donor-a').inputValue(),
+    page.locator('#donor-b').inputValue(),
+  ]);
+  expect(randomPair[0]).not.toBe(randomPair[1]);
+  expect(
+    randomPair.every((ref) => SAMPLE_REPOS.some((repo) => repo.ref === ref)),
+  ).toBe(true);
+  await page.locator('#donor-a').fill('withastro/astro');
+  await page.locator('#donor-b').fill('excalidraw/excalidraw');
   await page.getByRole('button', { name: 'Swap donors' }).click();
   await expect(page.locator('#donor-a')).toHaveValue('excalidraw/excalidraw');
   await expect(page.getByRole('button', { name: 'Sound off' })).toHaveAttribute(
@@ -265,7 +360,8 @@ test('failed provider preserves donor inputs, with no fabricated certificate', a
     }),
   );
   await page.goto('/');
-  await page.getByRole('button', { name: 'Use sample donors' }).click();
+  await page.locator('#donor-a').fill('withastro/astro');
+  await page.locator('#donor-b').fill('excalidraw/excalidraw');
   await page.getByRole('button', { name: 'Inspect donors' }).click();
   await page.getByRole('button', { name: 'Pull the lever' }).click();
   await expect(page.getByRole('alert')).toContainText(

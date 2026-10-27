@@ -29,3 +29,8 @@ server process is configured for six model calls per UTC day, including repair.
 One ritual completed; exact upstream attempt count, Neuron/token usage and
 billing dashboard evidence were not captured. Do not claim measured dollar cost
 or remaining account quota from this receipt alone. See eval/REAL_RUNS.md.
+
+The subsequent Useful/Chaotic review added six completed rituals across prompt
+v1/v2/v3. Prompt deployments required server restarts; the configured six-call
+process cap and external Free tier were not changed. Exact repair attempts and
+provider usage remain unmeasured. See eval/INHERITANCE_REVIEW.md.

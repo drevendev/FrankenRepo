@@ -71,3 +71,25 @@ The 12 offline Playwright scenarios also passed on isolated port 3002 with
 MODEL_PROVIDER=disabled and matching origin allowlist; the real configured
 server on port 3001 was left running. No extra live rituals were performed
 by these regressions. Default screenshots were preserved.
+
+## Inheritance, specimen cabinet and typography — 28 October 2026
+
+- npm run verify passed: 61 core/API/sample tests, strict types, lint, formatting,
+  web/API build and JavaScript budget (107,549 gzip bytes; all JS chunks).
+- Isolated model-disabled Chromium suite passed 16 desktop/mobile scenarios,
+  including sample randomization, requested repo options, no automatic inspect,
+  duplicate prevention, mode pulse, same-origin font delivery, reduced motion,
+  320px layout, existing audio and mocked provider/export paths.
+- The first cabinet assertions failed because the control-oriented disabled
+  matcher did not recognize an option already carrying native disabled=true.
+  The corrected native DOM-property assertion passed; no app restriction was removed.
+- Six new real browser rituals completed: Useful/Chaotic each for prompts v1/v2/v3.
+  See eval/INHERITANCE_REVIEW.md for unchanged outputs and a non-blind assessment.
+  These were not statistical performance tests. No further modes/pairs were batch-run.
+- All seven total receipts, 35 associated artifacts, source IDs, content hashes
+  and supplied-credential exclusion passed audit. v3 outputs pass the current
+  guard; historical v2 inline IDs remain preserved as a documented weakness.
+- Font binaries and full OFL licenses match FONT_SOURCES.json hashes. Assets
+  are self-hosted; no runtime CDN fonts or new npm dependencies were added.
+- Updated desktop/mobile pages, open cabinet and final exported/model cards were
+  visually inspected. Public hosting and cross-browser font rendering remain unverified.

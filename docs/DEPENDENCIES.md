@@ -1,5 +1,9 @@
 # Dependency record
 
+Self-hosted font assets are vendored data rather than runtime npm dependencies:
+Creepster and IM Fell English, Fontsource 5.3.0, OFL-1.1. Exact asset hashes and
+license locations are in FONT_SOURCES.json and ../ASSETS_CREDITS.md.
+
 Node 24.19.0 and npm 11.17.0 were available at initialization. Registry metadata
 was queried before installation. Exact installed versions and npm integrity
 hashes are pinned in package-lock.json. Node/npm are tools, not redistributed.

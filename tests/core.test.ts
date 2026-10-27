@@ -79,6 +79,7 @@ describe('fiction and fixed evidence', () => {
     '<script>alert(1)</script>',
     'This repo is dead',
     'Visit https://evil.test',
+    'It whispers A:description into every corridor.',
   ])('rejects unsupported prose %s', (hook) =>
     expect(() => validateDraft({ ...TEST_DRAFT, hook }, TEST_DONORS)).toThrow(),
   );

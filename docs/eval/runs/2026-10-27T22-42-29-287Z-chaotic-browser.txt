@@ -1,0 +1,1 @@
+The Flasking Json-Slicer: It builds web routes out of pure, structured chaos! Fictional creature inspired by pallets/flask and jqlang/jq. Brain: It thinks in lightweight web frameworks and routes.. Body: A flexible torso capable of slicing and filtering data.. Curse: Every time it speaks, it forces a strict dependency layout.. Generated with @cf/google/gemma-4-26b-a4b-it.

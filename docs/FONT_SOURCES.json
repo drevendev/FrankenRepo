@@ -1,0 +1,47 @@
+{
+  "fonts": [
+    {
+      "family": "Creepster",
+      "package": "@fontsource/creepster",
+      "version": "5.3.0",
+      "source": "https://registry.npmjs.org/@fontsource/creepster/-/creepster-5.3.0.tgz",
+      "license": "OFL-1.1",
+      "files": [
+        {
+          "name": "OFL-Creepster.txt",
+          "bytes": 4398,
+          "sha256": "412ba31ea293bf21d4f399f63cd88ff41b6bf0f3a1844f40f26094529e5133e4"
+        },
+        {
+          "name": "creepster-latin-400-normal.woff2",
+          "bytes": 28120,
+          "sha256": "899f0b2dd69f34439731f2726804a9593ba8161294e9b4a1ed4fd9f84e094470"
+        }
+      ]
+    },
+    {
+      "family": "IM Fell English",
+      "package": "@fontsource/im-fell-english",
+      "version": "5.3.0",
+      "source": "https://registry.npmjs.org/@fontsource/im-fell-english/-/im-fell-english-5.3.0.tgz",
+      "license": "OFL-1.1",
+      "files": [
+        {
+          "name": "OFL-IM-Fell-English.txt",
+          "bytes": 4314,
+          "sha256": "18aabf190848725e2576eefb5c29ba06aac1029d02132252a7f312eac2e50cf3"
+        },
+        {
+          "name": "im-fell-english-latin-400-italic.woff2",
+          "bytes": 57808,
+          "sha256": "8fc678575e83868f82ce5aa6e023f056ea68d480e16dd108b3e14bc375c8fdea"
+        },
+        {
+          "name": "im-fell-english-latin-400-normal.woff2",
+          "bytes": 59880,
+          "sha256": "248300df1647bec49155a5cada1d65f719ae633ef48564d1f19b135a8a5b7f5f"
+        }
+      ]
+    }
+  ]
+}

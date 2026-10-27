@@ -2031,3 +2031,239 @@ blockquote {
     opacity: 0.27;
   }
 }
+
+@font-face {
+  font-family: 'Creepster';
+  src: url('/fonts/creepster-latin-400-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'IM Fell English';
+  src: url('/fonts/im-fell-english-latin-400-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'IM Fell English';
+  src: url('/fonts/im-fell-english-latin-400-italic.woff2') format('woff2');
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+:root {
+  --display: 'Creepster', Georgia, serif;
+  --serif: 'IM Fell English', Georgia, 'Times New Roman', serif;
+}
+.wordmark {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 32px;
+  letter-spacing: 0.5px;
+}
+.hero h1 {
+  font-family: var(--display);
+  font-size: clamp(54px, 6vw, 84px);
+  line-height: 1.02;
+  letter-spacing: 1px;
+}
+.hero h1 em {
+  font-style: normal;
+  display: inline-block;
+}
+.hero h1 em::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 85%;
+  margin-top: 9px;
+  background: linear-gradient(90deg, #c8e99975, transparent);
+}
+.sample-caption {
+  font: 9px/1.6 var(--mono);
+  color: #c4d4ac;
+  margin: 5px 0 12px;
+}
+.sample-shelf {
+  border: 1px dashed #53684b;
+  border-radius: 4px;
+  padding: 12px;
+  margin: 0 0 18px;
+  background: #182321;
+}
+.sample-shelf summary {
+  font-size: 11px;
+  line-height: 1.6;
+  color: #d1dfbd;
+  cursor: pointer;
+}
+.sample-shelf summary > span {
+  display: block;
+  font: 8px/1.6 var(--mono);
+  color: #a8ba98;
+  margin: 4px 0 0 14px;
+}
+.sample-shelf > p {
+  font-size: 10px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 12px 0;
+}
+.sample-selectors {
+  display: grid;
+  gap: 13px;
+}
+.sample-selectors label {
+  display: block;
+  font: 10px var(--mono);
+  color: #c8d7b7;
+}
+.sample-selectors select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  margin-top: 8px;
+  padding: 10px 8px;
+  background: #111b1c;
+  border: 1px solid #5c7051;
+  border-radius: 3px;
+  color: #e0e9d4;
+  font:
+    11px Arial,
+    sans-serif;
+  text-overflow: ellipsis;
+}
+.sample-selectors select:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
+}
+.sample-shelf > small {
+  display: block;
+  margin-top: 13px;
+  color: #a8b99a;
+  font-size: 9px;
+  line-height: 1.7;
+}
+.mode.selected .mode-icon {
+  animation: mode-sigil 0.55s ease-out;
+  transform-origin: center;
+}
+.chemistry-shift {
+  position: absolute;
+  inset: 4% 10% 7%;
+  border-radius: 50%;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  animation: chemistry-bloom 0.9s ease-out;
+  --reagent: #c8e999;
+  background: radial-gradient(
+    ellipse,
+    transparent 30%,
+    color-mix(in srgb, var(--reagent) 13%, transparent) 52%,
+    transparent 68%
+  );
+}
+.chemistry-cursed {
+  --reagent: #ceb1e8;
+}
+.chemistry-chaotic {
+  --reagent: #f0cc8e;
+}
+.chemistry-shift > span {
+  position: absolute;
+  left: 50%;
+  top: 38%;
+  transform: translate(-50%, -50%);
+  font:
+    70px Georgia,
+    serif;
+  color: var(--reagent);
+  text-shadow: 0 0 20px var(--reagent);
+}
+.chemistry-shift i {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  top: 45%;
+  left: 27%;
+  border: 1px solid var(--reagent);
+  transform: rotate(45deg);
+  box-shadow: 0 0 15px var(--reagent);
+}
+.chemistry-shift i:nth-of-type(2) {
+  left: 70%;
+  top: 31%;
+  width: 5px;
+  height: 5px;
+}
+.chemistry-shift i:nth-of-type(3) {
+  left: 64%;
+  top: 70%;
+  width: 6px;
+  height: 6px;
+}
+.apparatus[data-chemistry='useful'] .chamber-aura {
+  color: #c8e999;
+}
+.apparatus[data-chemistry='cursed'] .chamber-aura {
+  filter: hue-rotate(35deg);
+}
+.apparatus[data-chemistry='chaotic'] .chamber-aura {
+  filter: hue-rotate(-35deg);
+}
+@keyframes mode-sigil {
+  0% {
+    transform: rotate(-22deg) scale(0.7);
+  }
+  45% {
+    transform: rotate(9deg) scale(1.25);
+  }
+  100% {
+    transform: rotate(0) scale(1);
+  }
+}
+@keyframes chemistry-bloom {
+  0% {
+    opacity: 0;
+    transform: scale(0.65) rotate(-12deg);
+  }
+  24% {
+    opacity: 0.58;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.12) rotate(8deg);
+  }
+}
+@media (max-width: 760px) {
+  .hero h1 {
+    font-size: 66px;
+  }
+  .wordmark {
+    font-size: 30px;
+  }
+}
+@media (max-width: 520px) {
+  .hero h1 {
+    font-size: 60px;
+    letter-spacing: 0.5px;
+  }
+  .wordmark {
+    font-size: 27px;
+  }
+  .hero .eyebrow {
+    letter-spacing: 0.6px;
+  }
+}
+@media (max-width: 380px) {
+  .hero h1 {
+    font-size: 52px;
+  }
+  .wordmark {
+    font-size: 23px;
+  }
+}

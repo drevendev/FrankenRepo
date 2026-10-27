@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { LabAudio } from './lab-audio';
 import { LabAtmosphere, FlaskBubbles, LabInstruments } from './LabEffects';
+import { SAMPLE_REPOS, randomDonors } from './samples';
+import { SampleShelf } from './SampleShelf';
 import {
   FLAVORS,
   certificateSvg,
@@ -12,11 +14,6 @@ import {
   type RitualJob,
   type RitualMode,
 } from '@frankenrepo/core';
-const SAMPLES = [
-  ['withastro/astro', 'excalidraw/excalidraw'],
-  ['pallets/flask', 'jqlang/jq'],
-  ['drevendev/Devostasis', 'drevendev/CompostClub'],
-] as const;
 type Capability = { model: 'disabled' | 'unknown' | 'ready'; storage: string };
 type ApiError = Error & { code?: string };
 async function request<T>(
@@ -80,10 +77,14 @@ function Apparatus({
   busy,
   monster,
   skip,
+  mode,
+  chemistry,
 }: {
   busy: boolean;
   monster: MonsterRecord | null;
   skip: () => void;
+  mode: RitualMode;
+  chemistry: { mode: RitualMode; id: number } | null;
 }) {
   return (
     <div
@@ -91,6 +92,7 @@ function Apparatus({
         'apparatus ' + (busy ? 'is-working' : '') + (monster ? ' is-born' : '')
       }
       aria-label="The reanimation table"
+      data-chemistry={mode}
     >
       <div className="apparatus-top">
         <span>
@@ -99,6 +101,24 @@ function Apparatus({
         <span>HANDLE WITH CURIOSITY</span>
       </div>
       <div className="machine-art">
+        {chemistry && (
+          <div
+            key={chemistry.id}
+            className={'chemistry-shift chemistry-' + chemistry.mode}
+            aria-hidden="true"
+          >
+            <span>
+              {chemistry.mode === 'useful'
+                ? '✦'
+                : chemistry.mode === 'cursed'
+                  ? '☾'
+                  : '⁂'}
+            </span>
+            <i />
+            <i />
+            <i />
+          </div>
+        )}
         <svg
           className="lab-scene"
           viewBox="0 0 560 430"
@@ -479,7 +499,7 @@ function BirthCertificate({
   );
 }
 export function App() {
-  const [inputs, setInputs] = useState<[string, string]>(['', '']);
+  const [inputs, setInputs] = useState<[string, string]>(() => randomDonors());
   const [mode, setMode] = useState<RitualMode>('cursed');
   const [capability, setCapability] = useState<Capability | null>(null);
   const [connection, setConnection] = useState('Connecting to the lab…');
@@ -498,6 +518,11 @@ export function App() {
     () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
   );
   const audio = useRef<LabAudio | null>(null);
+  const [chemistry, setChemistry] = useState<{
+    mode: RitualMode;
+    id: number;
+  } | null>(null);
+  const chemistrySequence = useRef(0);
   const [skip, setSkip] = useState(false);
   const polling = useRef<AbortController | null>(null);
   const sequence = useRef(0);
@@ -570,7 +595,33 @@ export function App() {
     setDonors(null);
     setError('');
     setInspecting(false);
+    setJob(null);
   };
+  const selectSamples = (pair: [string, string]) => {
+    edit(pair);
+    setNotice(
+      'Sample donors selected. Inspect them to fetch current public facts.',
+    );
+  };
+  const changeMode = (next: RitualMode) => {
+    if (next === mode) return;
+    setMode(next);
+    setChemistry(
+      motionPaused || reducedMotion
+        ? null
+        : { mode: next, id: ++chemistrySequence.current },
+    );
+    setNotice(next[0].toUpperCase() + next.slice(1) + ' chemistry selected.');
+  };
+  useEffect(() => {
+    if (!chemistry) return;
+    if (motionPaused || reducedMotion) {
+      setChemistry(null);
+      return;
+    }
+    const timer = setTimeout(() => setChemistry(null), 950);
+    return () => clearTimeout(timer);
+  }, [chemistry, motionPaused, reducedMotion]);
   const inspect = async () => {
     inspectController.current?.abort();
     const controller = new AbortController();
@@ -955,17 +1006,21 @@ export function App() {
                 <p className="input-hint">
                   Public GitHub repos only. We read a little. We run none of it.
                 </p>
+                {inputs.every((ref) =>
+                  SAMPLE_REPOS.some(
+                    (repo) => repo.ref.toLowerCase() === ref.toLowerCase(),
+                  ),
+                ) && (
+                  <p className="sample-caption">
+                    Curated sample donors · inspect to read live public facts.
+                  </p>
+                )}
                 <div className="sample-actions">
                   <button
                     type="button"
                     className="text-button"
                     disabled={pending}
-                    onClick={() => {
-                      edit([...SAMPLES[0]]);
-                      setNotice(
-                        'Sample donors selected. Inspect them to fetch current public facts.',
-                      );
-                    }}
+                    onClick={() => selectSamples(randomDonors(inputs))}
                   >
                     ↗ Use sample donors
                   </button>
@@ -973,15 +1028,16 @@ export function App() {
                     type="button"
                     className="text-button subdued"
                     disabled={pending}
-                    onClick={() =>
-                      edit([
-                        ...SAMPLES[Math.floor(Math.random() * SAMPLES.length)],
-                      ])
-                    }
+                    onClick={() => selectSamples(randomDonors(inputs))}
                   >
                     Shuffle samples ↻
                   </button>
                 </div>
+                <SampleShelf
+                  inputs={inputs}
+                  disabled={pending}
+                  select={selectSamples}
+                />
                 <button
                   className="button inspect-button"
                   disabled={pending || inspecting}
@@ -1030,9 +1086,18 @@ export function App() {
                         name="mode"
                         value={m.value}
                         checked={mode === m.value}
-                        onChange={() => setMode(m.value)}
+                        onChange={() => changeMode(m.value)}
                       />
-                      <span className="mode-icon">{m.icon}</span>
+                      <span
+                        className="mode-icon"
+                        key={
+                          mode === m.value
+                            ? 'selected-' + chemistrySequence.current
+                            : 'idle'
+                        }
+                      >
+                        {m.icon}
+                      </span>
                       <strong>{m.label}</strong>
                       <small>{m.description}</small>
                     </label>
@@ -1082,6 +1147,8 @@ export function App() {
             </div>
             <div className="machine-column">
               <Apparatus
+                mode={mode}
+                chemistry={chemistry}
                 busy={pending}
                 monster={monster}
                 skip={() => setSkip(true)}

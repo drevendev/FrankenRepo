@@ -104,14 +104,14 @@ export type DonorGenome = {
   evidence: EvidenceAtom[];
   warnings: string[];
 };
-export const PROMPT_VERSION = 'frankenrepo/prompt/v1';
+export const PROMPT_VERSION = 'frankenrepo/prompt/v3';
 export const MODE_PRESETS = {
   useful:
-    'Invent a small plausible OSS tool. Restrained humor; one concrete useful mutation and honest uncertainty.',
+    'USEFUL: restrained gothic humor. Invent a modest developer tool with a clearly named user action. usefulMutation must name a concrete input, an operation combining BOTH donor mechanisms, and a visible output artifact. Describe a proposed prototype, never a proven capability.',
   cursed:
-    'Invent a gothic creature with a memorable comic mismatch. A curse is fictional; never accuse the real owners. Keep one useful idea.',
+    'CURSED: gothic character comedy. Make a specific donor-mechanism mismatch into the creature’s fictional personal inconvenience, never a defect of either real repository. Keep one concrete, small prototype idea using BOTH donors.',
   chaotic:
-    'Make a surprising but coherent absurd hybrid. Both donors must remain recognizable. No random word salad. Keep one useful idea.',
+    'CHAOTIC: the hook MUST show an absurd non-computing workplace or impossible physical ritual with an actor, action and object. Turn A’s actual operation into the creature’s bizarre job; make B’s actual operation transform the material it handles. Make a visible comic scene, not a spooky description of ordinary programming. Keep a concrete small prototype underneath it. Darkness, chaos and data-weaver slogans alone are insufficient.',
 } satisfies Record<RitualMode, string>;
 
 export function validateDraft(
@@ -154,10 +154,12 @@ export function validateDraft(
     draft.usefulMutation,
     draft.uncertainty,
   ].join(' ');
-  if (/[0-9]|https?:|www\.|<[^>]*>|this repo is dead/i.test(prose))
+  if (
+    /[0-9]|https?:|www\.|<[^>]*>|this repo is dead|\b[AB]:[a-z]+\b/i.test(prose)
+  )
     throw new LabError(
       'UNSAFE_DRAFT',
-      'The model included unsupported numbers, markup or factual claims. Try another ritual.',
+      'The model included unsupported numbers, markup, inline source IDs or factual claims. Try another ritual.',
       502,
       true,
     );

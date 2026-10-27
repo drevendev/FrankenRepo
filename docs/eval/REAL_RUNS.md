@@ -1,6 +1,14 @@
 # Real model runs — updated 2026-10-28
 
-**One successful real Cursed ritual, through local Chromium → Node API → Cloudflare Gemma.**
+**Seven successful real browser rituals through Chromium → Node API → Cloudflare Gemma.**
+
+The first Cursed v1 run is documented below. Six further Useful/Chaotic runs compare
+v1, v2 and final v3 prompts. [Full inheritance review and every artifact](INHERITANCE_REVIEW.md).
+Final v3: [Useful](runs/2026-10-27T22-54-55-349Z-useful-browser.json) ·
+[Chaotic](runs/2026-10-27T22-55-05-380Z-chaotic-browser.json).
+Current v3 Cursed has not been rerun.
+
+## First Cursed run — historical receipt
 
 - Model: @cf/google/gemma-4-26b-a4b-it, provider cloudflare, prompt frankenrepo/prompt/v1.
 - Inputs: pallets/flask + jqlang/jq, fresh bounded public GitHub observations.
@@ -22,7 +30,7 @@
 
 ## Scope and limitations
 
-One completed ritual is verified. Each ritual allows at most one repair, but the
+For the first receipt below, one completed Cursed ritual was verified. Each ritual allows at most one repair, but the
 exact number of upstream attempts and provider token/Neuron usage were not
 instrumented. No immutable Cloudflare weight digest or provider request ID was
 returned in the saved browser record. The model ID identifies the requested
@@ -33,15 +41,16 @@ Both donor domains are recognizable (small web applications and JSON processing)
 including their Python/C language observations. The generated useful mutation is
 generic and uses fictional hyperbole about perfect output. It is not evaluated
 technical guidance or evidence of feasibility. Humor/quality has not been blindly
-scored; Useful and Chaotic live runs and the larger ten-pair × three-mode eval
-remain unrun. Do not turn a schema pass into a quality benchmark.
+scored; Useful/Chaotic have since been run as documented in INHERITANCE_REVIEW.md.
+The larger ten-pair × three-mode evaluation remains unrun. Do not turn a schema pass into a quality benchmark.
 
 ## Reproduce deliberately
 
 Start the configured local API, then run:
 
 ```sh
-node scripts/verify-live-browser.mjs
+node scripts/verify-live-browser.mjs useful
+node scripts/verify-live-browser.mjs chaotic
 ```
 
 This makes a NEW real provider call (with at most one repair); it does not replay

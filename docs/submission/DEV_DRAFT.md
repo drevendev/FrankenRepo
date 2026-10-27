@@ -1,7 +1,7 @@
 # I Gave Two GitHub Repositories a Terrible Idea. Then I Gave It Life.
 
-**WORKING DRAFT — not publish-ready. One local Cursed Gemma result is verified;
-public hosting and a final walkthrough remain unverified.**
+**WORKING DRAFT — not publish-ready. Local Cursed and Useful/Chaotic Gemma results
+are verified; public hosting and a final walkthrough remain unverified.**
 
 The idea is small: choose two public repositories, borrow a little of their
 observable DNA, and ask an open-weight model to imagine their extremely
@@ -14,7 +14,7 @@ The lab accepts two public GitHub references and collects a bounded set of
 source-linked observations. It never runs donor code. Missing observations stay
 unknown. The original SVG creature kit has deterministic parts, the interface
 supports keyboard and reduced motion, and certificate export is browser-tested
-using explicit fixtures and one real Cloudflare Gemma run. The real inputs were
+using explicit fixtures and dated real Cloudflare Gemma runs. The real inputs were
 pallets/flask and jqlang/jq; see ../eval/REAL_RUNS.md for unchanged output,
 observed commits and saved PNG/SVG evidence.
 
@@ -30,8 +30,11 @@ The measured browser verification flow, including inspection and exports, took
 The saved receipt preserves the unchanged draft and model/prompt ID. A hosted
 weight digest and provider usage counters were not captured. Both donor domains
 are recognizable, but the useful mutation is broad and hyperbolic. This is one
-structurally valid sample, not a creative-quality benchmark. Useful/Chaotic
-live examples and the captioned demonstration still need to be recorded.
+structurally valid sample, not a creative-quality benchmark. Six subsequent
+Useful/Chaotic runs compare prompt versions v1/v2/v3; see
+../eval/INHERITANCE_REVIEW.md. The latest prompt makes Flask route requests and
+jq transform JSON, while Chaotic adds an absurd waiter/ghost scene. The technical
+idea remains modest, and the captioned demonstration still needs recording.
 
 ## A real failure learned during implementation
 

@@ -2,8 +2,17 @@
 import { chromium } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 const startedAt = new Date().toISOString();
+const mode = process.argv[2] ?? 'cursed';
+if (!['useful', 'cursed', 'chaotic'].includes(mode))
+  throw new Error('Choose useful, cursed or chaotic.');
+const inputs =
+  process.argv.length > 3
+    ? process.argv.slice(3, 5)
+    : ['pallets/flask', 'jqlang/jq'];
+if (inputs.length !== 2)
+  throw new Error('Provide exactly two donor references.');
 const prefix =
-  'docs/eval/runs/' + startedAt.replace(/[:.]/g, '-') + '-cursed-browser';
+  'docs/eval/runs/' + startedAt.replace(/[:.]/g, '-') + '-' + mode + '-browser';
 await mkdir('docs/eval/runs', { recursive: true });
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1440, height: 1050 } });
@@ -12,8 +21,8 @@ const receipt = {
   startedAt,
   endedAt: null,
   latencyMs: null,
-  inputs: ['pallets/flask', 'jqlang/jq'],
-  mode: 'cursed',
+  inputs,
+  mode,
   recording: false,
   localOrigin: 'http://127.0.0.1:3001',
   readiness: null,
@@ -61,7 +70,9 @@ try {
   await page.goto(receipt.localOrigin + '/');
   await page.locator('#donor-a').fill(receipt.inputs[0]);
   await page.locator('#donor-b').fill(receipt.inputs[1]);
-  await page.getByRole('radio', { name: 'Cursed' }).check();
+  await page
+    .getByRole('radio', { name: mode[0].toUpperCase() + mode.slice(1) })
+    .check();
   const inspected = page.waitForResponse((r) =>
     r.url().endsWith('/api/v1/donors/inspect'),
   );

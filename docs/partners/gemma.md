@@ -35,3 +35,13 @@ Setup: docs/CLOUDFLARE_SETUP_RU.md. Reproduce deliberately with the server runni
 node scripts/verify-live-browser.mjs. This consumes another real free-quota run.
 Removal: set MODEL_PROVIDER=disabled, restart API and optionally revoke the token.
 No provider SDK or public browser credential is required.
+
+## Useful/Chaotic review — 28 October 2026
+
+Six additional real rituals compare prompts v1/v2/v3 on the same Flask/jq pair.
+The final v3 modes both name the parents' distinct roles and avoid inline citation
+codes; Chaotic additionally creates an absurd physical scene. Novelty is modest.
+[All outputs, timings and editorial limits](../eval/INHERITANCE_REVIEW.md).
+Current-v3 Cursed is not separately verified. No new partner categories or public
+hosting are claimed. Reproduce one selected mode with node scripts/verify-live-browser.mjs useful
+(or chaotic); each invocation is a fresh model call, not replay.

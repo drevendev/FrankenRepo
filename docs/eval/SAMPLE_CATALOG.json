@@ -1,0 +1,150 @@
+{
+  "checkedOn": "2026-10-28",
+  "source": "GitHub connector get_repo; public metadata only",
+  "repositories": [
+    {
+      "ref": "drevendev/HungryCrab",
+      "label": "Hungry Crab",
+      "collection": "Dreven",
+      "repositoryId": "1358535145",
+      "defaultBranch": "master",
+      "url": "https://github.com/drevendev/HungryCrab",
+      "visibility": "public"
+    },
+    {
+      "ref": "drevendev/Scriptorium",
+      "label": "Scriptorium",
+      "collection": "Dreven",
+      "repositoryId": "1361967983",
+      "defaultBranch": "master",
+      "url": "https://github.com/drevendev/Scriptorium",
+      "visibility": "public"
+    },
+    {
+      "ref": "drevendev/Playmancer",
+      "label": "Playmancer",
+      "collection": "Dreven",
+      "repositoryId": "1385480979",
+      "defaultBranch": "master",
+      "url": "https://github.com/drevendev/Playmancer",
+      "visibility": "public"
+    },
+    {
+      "ref": "drevendev/Dayflare",
+      "label": "Dayflare",
+      "collection": "Dreven",
+      "repositoryId": "1385477171",
+      "defaultBranch": "master",
+      "url": "https://github.com/drevendev/Dayflare",
+      "visibility": "public"
+    },
+    {
+      "ref": "DenisSergeevitch/ex-ussr-kinship-research",
+      "label": "Kinship Research",
+      "collection": "Guests",
+      "repositoryId": "1433057196",
+      "defaultBranch": "main",
+      "url": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+      "visibility": "public"
+    },
+    {
+      "ref": "DenisSergeevitch/desktop-fly",
+      "label": "Desktop Fly",
+      "collection": "Guests",
+      "repositoryId": "1338671045",
+      "defaultBranch": "master",
+      "url": "https://github.com/DenisSergeevitch/desktop-fly",
+      "visibility": "public"
+    },
+    {
+      "ref": "withastro/astro",
+      "label": "Astro",
+      "collection": "Community",
+      "repositoryId": "348060227",
+      "defaultBranch": "main",
+      "url": "https://github.com/withastro/astro",
+      "visibility": "public"
+    },
+    {
+      "ref": "excalidraw/excalidraw",
+      "label": "Excalidraw",
+      "collection": "Community",
+      "repositoryId": "231283452",
+      "defaultBranch": "master",
+      "url": "https://github.com/excalidraw/excalidraw",
+      "visibility": "public"
+    },
+    {
+      "ref": "pallets/flask",
+      "label": "Flask",
+      "collection": "Community",
+      "repositoryId": "596892",
+      "defaultBranch": "main",
+      "url": "https://github.com/pallets/flask",
+      "visibility": "public"
+    },
+    {
+      "ref": "jqlang/jq",
+      "label": "jq",
+      "collection": "Community",
+      "repositoryId": "5101141",
+      "defaultBranch": "master",
+      "url": "https://github.com/jqlang/jq",
+      "visibility": "public"
+    },
+    {
+      "ref": "godotengine/godot",
+      "label": "Godot",
+      "collection": "Community",
+      "repositoryId": "15634981",
+      "defaultBranch": "master",
+      "url": "https://github.com/godotengine/godot",
+      "visibility": "public"
+    },
+    {
+      "ref": "blender/blender",
+      "label": "Blender",
+      "collection": "Community",
+      "repositoryId": "213916896",
+      "defaultBranch": "main",
+      "url": "https://github.com/blender/blender",
+      "visibility": "public"
+    },
+    {
+      "ref": "ollama/ollama",
+      "label": "Ollama",
+      "collection": "Community",
+      "repositoryId": "658928958",
+      "defaultBranch": "main",
+      "url": "https://github.com/ollama/ollama",
+      "visibility": "public"
+    },
+    {
+      "ref": "processing/p5.js",
+      "label": "p5.js",
+      "collection": "Community",
+      "repositoryId": "8424040",
+      "defaultBranch": "main",
+      "url": "https://github.com/processing/p5.js",
+      "visibility": "public"
+    },
+    {
+      "ref": "vitejs/vite",
+      "label": "Vite",
+      "collection": "Community",
+      "repositoryId": "257485422",
+      "defaultBranch": "main",
+      "url": "https://github.com/vitejs/vite",
+      "visibility": "public"
+    },
+    {
+      "ref": "sveltejs/svelte",
+      "label": "Svelte",
+      "collection": "Community",
+      "repositoryId": "74293321",
+      "defaultBranch": "main",
+      "url": "https://github.com/sveltejs/svelte",
+      "visibility": "public"
+    }
+  ]
+}

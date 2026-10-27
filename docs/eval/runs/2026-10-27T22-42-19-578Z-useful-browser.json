@@ -1,0 +1,300 @@
+{
+  "kind": "LIVE_BROWSER_RITUAL",
+  "startedAt": "2026-10-27T22:42:19.578Z",
+  "endedAt": "2026-10-27T22:42:28.097Z",
+  "latencyMs": 8250,
+  "inputs": ["pallets/flask", "jqlang/jq"],
+  "mode": "useful",
+  "recording": false,
+  "localOrigin": "http://127.0.0.1:3001",
+  "readiness": {
+    "model": "unknown",
+    "storage": "disabled",
+    "version": "0.1.0",
+    "recordedSamples": 0,
+    "features": {
+      "gallery": false,
+      "permalinks": false,
+      "voice": false
+    }
+  },
+  "stages": [
+    {
+      "state": "queued",
+      "observedAt": "2026-10-27T22:42:20.368Z"
+    },
+    {
+      "state": "splicing",
+      "observedAt": "2026-10-27T22:42:21.380Z"
+    },
+    {
+      "state": "completed",
+      "observedAt": "2026-10-27T22:42:26.437Z"
+    }
+  ],
+  "state": "completed",
+  "ritualId": "88c50f18-efe1-4ffe-8a5c-0f2a75cd0b14",
+  "error": null,
+  "record": {
+    "schemaVersion": "frankenrepo/monster/v1",
+    "id": "874e8c0b-0e25-43d2-bcbf-b121c39831f9",
+    "createdAt": "2026-10-27T22:42:25.430Z",
+    "mode": "useful",
+    "model": {
+      "provider": "cloudflare",
+      "id": "@cf/google/gemma-4-26b-a4b-it",
+      "promptVersion": "frankenrepo/prompt/v1"
+    },
+    "parents": [
+      {
+        "ref": "pallets/flask",
+        "url": "https://github.com/pallets/flask",
+        "observedAt": "2026-10-27T22:30:55.131Z",
+        "defaultBranch": "main",
+        "commitSha": "d086db856be187255b8ec61ef409357393020f32",
+        "license": "BSD-3-Clause",
+        "description": "The Python micro framework for building web applications.",
+        "topics": [
+          "flask",
+          "jinja",
+          "pallets",
+          "python",
+          "web-framework",
+          "werkzeug",
+          "wsgi"
+        ],
+        "languages": ["Python", "HTML", "Shell"],
+        "readme": "# Flask Flask is a lightweight [WSGI] web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. It began as a simple wrapper around [Werkzeug] and [Jinja], and has become one of the most popular Python web application frameworks. Flask offers suggestions, but doesn't enforce any dependencies or project layout. It is up to the developer to choose the tools and libraries they want to use. There are many extensions provided by the community that make adding new functionality easy. [WSGI]: https://wsgi.readthedocs.io/ [Werkzeug]: https://werkzeug.palletsprojects.com/ [Jinja]: https://jinja.palletsprojects.com/ ## A Simple Example ```python # save this as app.py from flask import Flask app = Flask(__name__) @app.route(\"/\") def hello(): return \"Hello, World!\" ``` ``` $ flask run * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) ``` ## Donate The Pallets organization develops and supports Flask and the libraries it uses. In order to grow the community of contributors and users, and allow the maintainers to devote more time to the projects, [please donate today]. [please donate today]: https://palletsprojects.com/donate ## Contributing See our [detailed contributing documentation][contrib] for many ways to contribute, including reporting issues, requesting features, asking or answering questions, and making PRs. [contrib]: https://palletsprojects.com/contributing/",
+        "evidence": [
+          {
+            "id": "A:description",
+            "field": "description",
+            "value": "The Python micro framework for building web applications.",
+            "sourceUrl": "https://github.com/pallets/flask",
+            "observedAt": "2026-10-27T22:30:55.131Z",
+            "status": "observed"
+          },
+          {
+            "id": "A:topics",
+            "field": "topics",
+            "value": "flask, jinja, pallets, python, web-framework, werkzeug, wsgi",
+            "sourceUrl": "https://github.com/pallets/flask",
+            "observedAt": "2026-10-27T22:30:55.131Z",
+            "status": "observed"
+          },
+          {
+            "id": "A:languages",
+            "field": "languages",
+            "value": "Python, HTML, Shell",
+            "sourceUrl": "https://api.github.com/repos/pallets/flask/languages",
+            "observedAt": "2026-10-27T22:30:55.131Z",
+            "status": "observed"
+          },
+          {
+            "id": "A:readme",
+            "field": "readme",
+            "value": "# Flask Flask is a lightweight [WSGI] web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. It began as a simple wrapper around [Werkzeug] and [Jinja], and has become one of the most popular Python web application frameworks. Flask offers suggestions, but doesn't enforce any dependencies or project layout. It is up to the developer to choose the tools and libraries they want to use. There are many extensions provided by the community that make adding new functionality easy. [WSGI]: https://wsgi.readthedocs.io/ [Werkzeug]: https://werkzeug.palletsprojects.com/ [Jinja]: https://jinja.palletsprojects.com/ ## A Simple Example ```python # save this as app.py from flask import Flask app = Flask(__name__) @app.route(\"/\") def hello(): return \"Hello, World!\" ``` ``` $ flask run * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) ``` ## Donate The Pallets organization develops and supports Flask and the libraries it uses. In order to grow the community of contributors and users, and allow the maintainers to devote more time to the projects, [please donate today]. [please donate today]: https://palletsprojects.com/donate ## Contributing See our [detailed contributing documentation][contrib] for many ways to contribute, including reporting issues, requesting features, asking or answering questions, and making PRs. [contrib]: https://palletsprojects.com/contributing/",
+            "sourceUrl": "https://api.github.com/repos/pallets/flask/readme?ref=d086db856be187255b8ec61ef409357393020f32",
+            "observedAt": "2026-10-27T22:30:55.131Z",
+            "status": "partial"
+          },
+          {
+            "id": "A:license",
+            "field": "license",
+            "value": "BSD-3-Clause",
+            "sourceUrl": "https://github.com/pallets/flask",
+            "observedAt": "2026-10-27T22:30:55.131Z",
+            "status": "observed"
+          }
+        ],
+        "warnings": []
+      },
+      {
+        "ref": "jqlang/jq",
+        "url": "https://github.com/jqlang/jq",
+        "observedAt": "2026-10-27T22:30:55.148Z",
+        "defaultBranch": "master",
+        "commitSha": "ac35c7dcbb991fa0f3c3196dd00ca479211e9847",
+        "license": "UNKNOWN",
+        "description": "Command-line JSON processor",
+        "topics": ["jq"],
+        "languages": ["C", "M4", "Shell"],
+        "readme": "# jq `jq` is a lightweight and flexible command-line JSON processor akin to `sed`,`awk`,`grep`, and friends for JSON data. It's written in portable C and has zero runtime dependencies, allowing you to easily slice, filter, map, and transform structured data. ## Documentation - **Official Documentation**: [jqlang.org](https://jqlang.org) - **Try jq Online**: [play.jqlang.org](https://play.jqlang.org) ## Installation ### Prebuilt Binaries Download the latest releases from the [GitHub release page](https://github.com/jqlang/jq/releases). The platform-specific assets are standalone executables, not archives. On macOS and Linux, rename the downloaded file to `jq` and make it executable with `chmod +x jq`. ### Docker Image Pull the [jq image](https://github.com/jqlang/jq/pkgs/container/jq) to start quickly with Docker. #### Run with Docker ##### Example: Extracting the version from a `package.json` file ```bash docker run --rm -i ghcr.io/jqlang/jq:latest < package.json '.version' ``` ##### Example: Extracting the version from a `package.json` file with a mounted volume ```bash docker run --rm -i -v \"$PWD:$PWD\" -w \"$PWD\" ghcr.io/jqlang/jq:latest '.version' package.json ``` ### Building from source #### Dependencies - libtool - make - automake - autoconf #### Instructions ```console git submodule update --init # if building from git to get oniguruma autoreconf -i # if building from git ./configure --with-oniguruma=builtin make clean # if upgrading from a version previously built from",
+        "evidence": [
+          {
+            "id": "B:description",
+            "field": "description",
+            "value": "Command-line JSON processor",
+            "sourceUrl": "https://github.com/jqlang/jq",
+            "observedAt": "2026-10-27T22:30:55.148Z",
+            "status": "observed"
+          },
+          {
+            "id": "B:topics",
+            "field": "topics",
+            "value": "jq",
+            "sourceUrl": "https://github.com/jqlang/jq",
+            "observedAt": "2026-10-27T22:30:55.148Z",
+            "status": "observed"
+          },
+          {
+            "id": "B:languages",
+            "field": "languages",
+            "value": "C, M4, Shell",
+            "sourceUrl": "https://api.github.com/repos/jqlang/jq/languages",
+            "observedAt": "2026-10-27T22:30:55.148Z",
+            "status": "observed"
+          },
+          {
+            "id": "B:readme",
+            "field": "readme",
+            "value": "# jq `jq` is a lightweight and flexible command-line JSON processor akin to `sed`,`awk`,`grep`, and friends for JSON data. It's written in portable C and has zero runtime dependencies, allowing you to easily slice, filter, map, and transform structured data. ## Documentation - **Official Documentation**: [jqlang.org](https://jqlang.org) - **Try jq Online**: [play.jqlang.org](https://play.jqlang.org) ## Installation ### Prebuilt Binaries Download the latest releases from the [GitHub release page](https://github.com/jqlang/jq/releases). The platform-specific assets are standalone executables, not archives. On macOS and Linux, rename the downloaded file to `jq` and make it executable with `chmod +x jq`. ### Docker Image Pull the [jq image](https://github.com/jqlang/jq/pkgs/container/jq) to start quickly with Docker. #### Run with Docker ##### Example: Extracting the version from a `package.json` file ```bash docker run --rm -i ghcr.io/jqlang/jq:latest < package.json '.version' ``` ##### Example: Extracting the version from a `package.json` file with a mounted volume ```bash docker run --rm -i -v \"$PWD:$PWD\" -w \"$PWD\" ghcr.io/jqlang/jq:latest '.version' package.json ``` ### Building from source #### Dependencies - libtool - make - automake - autoconf #### Instructions ```console git submodule update --init # if building from git to get oniguruma autoreconf -i # if building from git ./configure --with-oniguruma=builtin make clean # if upgrading from a version previously built from",
+            "sourceUrl": "https://api.github.com/repos/jqlang/jq/readme?ref=ac35c7dcbb991fa0f3c3196dd00ca479211e9847",
+            "observedAt": "2026-10-27T22:30:55.148Z",
+            "status": "partial"
+          },
+          {
+            "id": "B:license",
+            "field": "license",
+            "value": "UNKNOWN",
+            "sourceUrl": "https://github.com/jqlang/jq",
+            "observedAt": "2026-10-27T22:30:55.148Z",
+            "status": "unknown"
+          }
+        ],
+        "warnings": []
+      }
+    ],
+    "evidence": [
+      {
+        "id": "A:description",
+        "field": "description",
+        "value": "The Python micro framework for building web applications.",
+        "sourceUrl": "https://github.com/pallets/flask",
+        "observedAt": "2026-10-27T22:30:55.131Z",
+        "status": "observed"
+      },
+      {
+        "id": "A:topics",
+        "field": "topics",
+        "value": "flask, jinja, pallets, python, web-framework, werkzeug, wsgi",
+        "sourceUrl": "https://github.com/pallets/flask",
+        "observedAt": "2026-10-27T22:30:55.131Z",
+        "status": "observed"
+      },
+      {
+        "id": "A:languages",
+        "field": "languages",
+        "value": "Python, HTML, Shell",
+        "sourceUrl": "https://api.github.com/repos/pallets/flask/languages",
+        "observedAt": "2026-10-27T22:30:55.131Z",
+        "status": "observed"
+      },
+      {
+        "id": "A:readme",
+        "field": "readme",
+        "value": "# Flask Flask is a lightweight [WSGI] web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. It began as a simple wrapper around [Werkzeug] and [Jinja], and has become one of the most popular Python web application frameworks. Flask offers suggestions, but doesn't enforce any dependencies or project layout. It is up to the developer to choose the tools and libraries they want to use. There are many extensions provided by the community that make adding new functionality easy. [WSGI]: https://wsgi.readthedocs.io/ [Werkzeug]: https://werkzeug.palletsprojects.com/ [Jinja]: https://jinja.palletsprojects.com/ ## A Simple Example ```python # save this as app.py from flask import Flask app = Flask(__name__) @app.route(\"/\") def hello(): return \"Hello, World!\" ``` ``` $ flask run * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) ``` ## Donate The Pallets organization develops and supports Flask and the libraries it uses. In order to grow the community of contributors and users, and allow the maintainers to devote more time to the projects, [please donate today]. [please donate today]: https://palletsprojects.com/donate ## Contributing See our [detailed contributing documentation][contrib] for many ways to contribute, including reporting issues, requesting features, asking or answering questions, and making PRs. [contrib]: https://palletsprojects.com/contributing/",
+        "sourceUrl": "https://api.github.com/repos/pallets/flask/readme?ref=d086db856be187255b8ec61ef409357393020f32",
+        "observedAt": "2026-10-27T22:30:55.131Z",
+        "status": "partial"
+      },
+      {
+        "id": "A:license",
+        "field": "license",
+        "value": "BSD-3-Clause",
+        "sourceUrl": "https://github.com/pallets/flask",
+        "observedAt": "2026-10-27T22:30:55.131Z",
+        "status": "observed"
+      },
+      {
+        "id": "B:description",
+        "field": "description",
+        "value": "Command-line JSON processor",
+        "sourceUrl": "https://github.com/jqlang/jq",
+        "observedAt": "2026-10-27T22:30:55.148Z",
+        "status": "observed"
+      },
+      {
+        "id": "B:topics",
+        "field": "topics",
+        "value": "jq",
+        "sourceUrl": "https://github.com/jqlang/jq",
+        "observedAt": "2026-10-27T22:30:55.148Z",
+        "status": "observed"
+      },
+      {
+        "id": "B:languages",
+        "field": "languages",
+        "value": "C, M4, Shell",
+        "sourceUrl": "https://api.github.com/repos/jqlang/jq/languages",
+        "observedAt": "2026-10-27T22:30:55.148Z",
+        "status": "observed"
+      },
+      {
+        "id": "B:readme",
+        "field": "readme",
+        "value": "# jq `jq` is a lightweight and flexible command-line JSON processor akin to `sed`,`awk`,`grep`, and friends for JSON data. It's written in portable C and has zero runtime dependencies, allowing you to easily slice, filter, map, and transform structured data. ## Documentation - **Official Documentation**: [jqlang.org](https://jqlang.org) - **Try jq Online**: [play.jqlang.org](https://play.jqlang.org) ## Installation ### Prebuilt Binaries Download the latest releases from the [GitHub release page](https://github.com/jqlang/jq/releases). The platform-specific assets are standalone executables, not archives. On macOS and Linux, rename the downloaded file to `jq` and make it executable with `chmod +x jq`. ### Docker Image Pull the [jq image](https://github.com/jqlang/jq/pkgs/container/jq) to start quickly with Docker. #### Run with Docker ##### Example: Extracting the version from a `package.json` file ```bash docker run --rm -i ghcr.io/jqlang/jq:latest < package.json '.version' ``` ##### Example: Extracting the version from a `package.json` file with a mounted volume ```bash docker run --rm -i -v \"$PWD:$PWD\" -w \"$PWD\" ghcr.io/jqlang/jq:latest '.version' package.json ``` ### Building from source #### Dependencies - libtool - make - automake - autoconf #### Instructions ```console git submodule update --init # if building from git to get oniguruma autoreconf -i # if building from git ./configure --with-oniguruma=builtin make clean # if upgrading from a version previously built from",
+        "sourceUrl": "https://api.github.com/repos/jqlang/jq/readme?ref=ac35c7dcbb991fa0f3c3196dd00ca479211e9847",
+        "observedAt": "2026-10-27T22:30:55.148Z",
+        "status": "partial"
+      },
+      {
+        "id": "B:license",
+        "field": "license",
+        "value": "UNKNOWN",
+        "sourceUrl": "https://github.com/jqlang/jq",
+        "observedAt": "2026-10-27T22:30:55.148Z",
+        "status": "unknown"
+      }
+    ],
+    "draft": {
+      "name": "The Flasking Filter-Beast",
+      "hook": "It lives in your terminal, waiting to route your data through its many digestive layers.",
+      "brain": {
+        "text": "It thinks in micro-framework structures and structured data streams.",
+        "evidenceIds": ["A:description", "B:description"]
+      },
+      "body": {
+        "text": "A lightweight shell-dwelling organism with a flexible, C-based skeletal system.",
+        "evidenceIds": ["A:languages", "B:languages"]
+      },
+      "curse": {
+        "text": "It might accidentally transform your web routes into unparseable nested objects.",
+        "evidenceIds": ["A:readme", "B:readme"]
+      },
+      "firstWords": "Behold the creature that slices and maps your web requests.",
+      "usefulMutation": "It has developed the ability to automatically inject schema validation into every incoming request without requiring extra dependencies.",
+      "uncertainty": "We are not quite sure if it prefers Python or C for its morning snack.",
+      "humorTags": ["data-beast", "syntax-chaos"]
+    },
+    "sprite": {
+      "recipeVersion": "frankenrepo/sprite/v1",
+      "seed": "88c50f18-efe1-4ffe-8a5c-0f2a75cd0b14",
+      "body": 0,
+      "head": 0,
+      "accessory": 3,
+      "palette": 0,
+      "expression": 0,
+      "flavor": 5
+    },
+    "publication": {
+      "state": "ephemeral"
+    },
+    "lineage": {
+      "parentMonsterIds": [],
+      "depth": 0
+    },
+    "contentHash": "edd3ef9a17807572cc81dd81e584727015fe20b77b264375ad0972901798782f"
+  },
+  "pageErrors": [],
+  "exports": [
+    "docs/eval/runs/2026-10-27T22-42-19-578Z-useful-browser.png",
+    "docs/eval/runs/2026-10-27T22-42-19-578Z-useful-browser.svg",
+    "docs/eval/runs/2026-10-27T22-42-19-578Z-useful-browser.txt",
+    "docs/eval/runs/2026-10-27T22-42-19-578Z-useful-browser-certificate.png"
+  ],
+  "limits": {
+    "maxOutputTokensPerCall": 1000,
+    "maxAttemptsPerRitual": 2
+  }
+}

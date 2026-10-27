@@ -16,11 +16,11 @@ Existing specification and handoff files were preserved. No Drive content was ed
 - Hono selected for the Node API. Plain TypeScript orchestration precedes Mastra.
 - Ephemeral jobs expire after fifteen minutes instead of a storage-backed
   twenty-four-hour job collection. The UI exposes no persistence claims.
-- The illustrated idle specimen is artwork, explicitly labelled. No genuine
-  recorded Gemma outputs existed, so no recorded/replay mode is offered.
+- The illustrated idle specimen is artwork, explicitly labelled. Genuine model artifacts now exist as dated evaluation files, but no
+  recorded/replay mode is offered in the app.
 - First real Cursed browser/API flow succeeded on 2026-10-28 Asia/Nicosia.
-  Useful/Chaotic live runs, larger evaluation and public challenge acceptance
-  remain unverified; optional partner SDK work follows this first live slice.
+  Useful/Chaotic v3 now also have real browser receipts and an editorial comparison.
+  Larger evaluation and public challenge acceptance remain unverified.
 - Two local API/web ports share an explicit origin allowlist. Behind a hosted
   reverse proxy all visitors share the conservative socket-IP quota unless
   a separately reviewed trusted-proxy design is added.
