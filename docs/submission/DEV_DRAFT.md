@@ -8,6 +8,9 @@ observable DNA, and ask an open-weight model to imagine their extremely
 questionable offspring. A gothic laboratory turns the result into a creature
 and a downloadable birth certificate.
 
+Public source: [drevendev/FrankenRepo](https://github.com/drevendev/FrankenRepo).
+The first source preview is version 0.1.0; this is not a hosted application URL.
+
 ## What works locally today
 
 The lab accepts two public GitHub references and collects a bounded set of
@@ -95,7 +98,7 @@ The owner reports Workers Free; no billing changes were made. Neuron usage and
 the billing dashboard were not captured, so measured cost is not claimed.
 Per-process limits do not establish an unlimited free hosted service.
 
-Owner must add the authorized live/repository URLs, real 45–60s captioned
+Owner must add the authorized live application URL, real 45–60s captioned
 walkthrough, actual failure/model learning, working quickstart and only verified
 partner categories, then verify the contest's current rules and eligibility.
 No publication was attempted. Challenge deadline in owner spec:

@@ -10,4 +10,6 @@ Add regression coverage for changed security or provider boundaries.
 Use real receipts for integration claims; fixtures must be clearly labelled.
 Do not publish gallery data without a tested consent and removal mechanism.
 
-The present app has no public deployment or remote repository configured.
+Source and releases: https://github.com/drevendev/FrankenRepo.
+Check docs/KNOWN_ISSUES.md before starting an existing task. The app has no
+verified public deployment; publishing source does not establish hosted readiness.

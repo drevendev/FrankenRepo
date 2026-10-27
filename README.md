@@ -2,6 +2,12 @@
 
 _Stitch two repositories. Summon something that should not exist._
 
+**v0.1.0 — first public preview.**
+[Source](https://github.com/drevendev/FrankenRepo) ·
+[Releases](https://github.com/drevendev/FrankenRepo/releases) ·
+[Known issues](docs/KNOWN_ISSUES.md) ·
+[GitHub CI](https://github.com/drevendev/FrankenRepo/actions/workflows/ci.yml)
+
 A small gothic browser laboratory: inspect two public GitHub repositories, use
 a configured Gemma model to invent a fictional creature, then download its
 Monster Birth Certificate. Observed facts stay linked to their sources.
@@ -11,7 +17,8 @@ The creature is an imaginative interpretation, not a judgment of a project.
 Cloudflare Gemma generated a schema-valid creature from pallets/flask and jqlang/jq
 through the actual browser/API, with PNG/SVG export. [Live receipt and result](docs/eval/REAL_RUNS.md).
 Without configured credentials the default model remains disabled. Persistent
-gallery, public repository and deployment are not supplied.
+gallery and public application hosting are not supplied. This preview publishes
+the source, tests, original assets and sanitized real-run evidence.
 
 ![The actual local laboratory with illustrated specimen, model disabled](docs/images/lab-desktop.png)
 
@@ -32,9 +39,11 @@ Use the cabinet to choose Dreven projects, both DenisSergeevitch guests or commu
 favorites, or type any public GitHub reference. Shuffle avoids repeating the last pair.
 Selecting samples never starts inspection or inference.
 
-Use Node **24** and npm **11**. In this project directory:
+Use Node **24** and npm **11**:
 
 ```sh
+git clone https://github.com/drevendev/FrankenRepo.git
+cd FrankenRepo
 npm ci
 npm run dev
 ```
@@ -59,7 +68,7 @@ Click **Sound on** for the quiet original music box, organ drone and laboratory
 effects. **Audio settings** controls volume and music separately. Audio pauses
 when the tab is hidden. **Motion off** pauses decorative animation; system
 reduced-motion is respected. Changing mode adds a brief reagent/sigil pulse.
-Creepster and IM Fell English are self-hosted OFL fonts. Liquid, lights and the resident ghost are visual
+Creepster, IM Fell English, Alegreya Sans and IBM Plex Mono are self-hosted OFL fonts. Liquid, lights and the resident ghost are visual
 atmosphere and never stand in for an actual API stage.
 
 ## Enable real local Gemma
@@ -67,7 +76,8 @@ atmosphere and never stand in for an actual API stage.
 For the public contest demo, the selected primary target is
 [Cloudflare-hosted Gemma 4 26B A4B IT](docs/MODEL_DECISION.md). Its public Free-plan
 eligibility was checked; real inference through this account is now verified
-in Cursed (v1) and Useful/Chaotic (v3). The local Ollama setup below is the fallback.
+in Cursed (v1), Useful/Chaotic (v3) and a Chaotic v4 repeat. The pending Useful v4
+repeat stopped at the local budget guard. The local Ollama setup below is the fallback.
 
 For the recommended setup, follow the
 [step-by-step Cloudflare Free guide in Russian](docs/CLOUDFLARE_SETUP_RU.md):
@@ -123,5 +133,10 @@ must not be described as real Gemma runs. Screenshots show the actual default UI
 [Validation results](docs/VALIDATION.md) · [architecture](docs/ARCHITECTURE.md) ·
 [security](docs/THREAT_MODEL.md) · [deployment handoff](docs/DEPLOYMENT.md) ·
 [partner status](docs/partners/STATUS.json) · [submission draft](docs/submission/DEV_DRAFT.md).
+
+This is a local-first preview. Model text can still invent unsupported capabilities,
+and the in-memory quotas/storage are unsuitable for scaling a public demo.
+See the [eight tracked issues](docs/KNOWN_ISSUES.md) before hosting or relying on
+a proposed mutation. No deployment or new paid service is included in this release.
 
 MIT source. Dependencies/model terms are separate. [Credits](ASSETS_CREDITS.md).

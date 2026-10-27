@@ -1,15 +1,17 @@
-# Deployment preparation — nothing deployed
+# Deployment preparation — application not hosted
 
 The local production command is npm run build followed by npm start.
 Node 24 serves the UI and API together. /healthz checks the process only;
-/readyz reports model configuration as unknown until a real call proves it.
+/readyz reports a configured model as unknown; it does not yet retain recent
+inference health or remaining local quota. See [issue #7](https://github.com/drevendev/FrankenRepo/issues/7).
 
 ## Human handoff for an authorized Render Free trial
 
-1. Owner explicitly authorizes a remote repository/push and deployment, then
-   confirms Render account access without a required card or paid upgrade.
-2. Create/push the independent repository through the owner's chosen workflow.
-   No remote URL is currently configured or guaranteed available.
+1. Owner separately authorizes deployment and confirms host access without a
+   required card or paid upgrade. The existing repository-publication authorization
+   does not create a hosting account or authorize spending.
+2. Use the public [drevendev/FrankenRepo source](https://github.com/drevendev/FrankenRepo).
+   Source publication alone does not establish a working hosted application.
 3. Create a Node Web Service manually using npm ci && npm run build as build
    command and npm start as start command. Set NODE_ENV=production,
    HOST=0.0.0.0, Node 24 and the public site's exact API_ALLOWED_ORIGINS.
@@ -24,7 +26,7 @@ Node 24 serves the UI and API together. /healthz checks the process only;
 7. Record screenshots/response timestamps and sanitized model/deploy proof.
    Only then update partner statuses and DEV draft.
 
-No service configuration, domain, account signup, remote publication or deployment
+No hosting service configuration, domain, account signup or application deployment
 was performed. Render Static Site plus a separate API is an alternative future
 deployment; this implementation does not yet package a Cloudflare Worker API.
 Do not label the prepared adapter as a deployed Worker.

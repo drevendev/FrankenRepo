@@ -93,3 +93,25 @@ by these regressions. Default screenshots were preserved.
   are self-hosted; no runtime CDN fonts or new npm dependencies were added.
 - Updated desktop/mobile pages, open cabinet and final exported/model cards were
   visually inspected. Public hosting and cross-browser font rendering remain unverified.
+
+## v0.1.0 public-preview preparation — 28 October 2026
+
+- npm run verify passed: types, lint, formatting, all 61 tests, production build
+  and 107,552 gzip bytes of JavaScript against the 250,000-byte limit.
+- The model-disabled isolated Chromium suite passed all 16 desktop/mobile
+  scenarios after this build. The configured live server was left running;
+  release preparation made no new model requests.
+- npm audit --audit-level=high reported zero vulnerabilities at preparation time.
+- All ten successful real receipts and the saved local MODEL_QUOTA stop were
+  audited: 52 artifacts, hashes, source IDs, current guards for v3/v4 and exact
+  supplied-credential exclusion. Historical weaker drafts remain unchanged.
+- Reachable Git history and tracked files were checked for configured credentials,
+  environment files and private keys before the first push. Only .env.example
+  is public; node_modules, builds, .local and .env remain excluded.
+- Eight evidence-backed issues and a [release snapshot](KNOWN_ISSUES.md) record
+  the remaining limitations. The card showcase contains unchanged selected
+  outputs/receipts, editorial caveats and SHA-256 checksums.
+- Remote CI results are available separately in
+  [GitHub Actions](https://github.com/drevendev/FrankenRepo/actions/workflows/ci.yml).
+  A configured workflow is not, by itself, a successful remote run. Application
+  deployment and the final captioned recording remain unverified.

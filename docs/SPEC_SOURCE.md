@@ -13,6 +13,10 @@ Existing specification and handoff files were preserved. No Drive content was ed
 
 ## Deliberate implementation choices and staged gaps
 
+Source publication is now owner-authorized: [public repository](https://github.com/drevendev/FrankenRepo),
+first preview version 0.1.0. Known implementation/qualification gaps have
+[tracked issues](KNOWN_ISSUES.md). This is separate from application deployment.
+
 - Hono selected for the Node API. Plain TypeScript orchestration precedes Mastra.
 - Ephemeral jobs expire after fifteen minutes instead of a storage-backed
   twenty-four-hour job collection. The UI exposes no persistence claims.

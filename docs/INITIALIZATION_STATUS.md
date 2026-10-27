@@ -1,4 +1,9 @@
-> Latest update, 2026-10-28: the owner supplied Cloudflare Free settings and
+> Source-publication update, 2026-10-28: the owner authorized the new public
+> [drevendev/FrankenRepo repository](https://github.com/drevendev/FrankenRepo)
+> and first preview release, version 0.1.0. [Known issues](KNOWN_ISSUES.md) are
+> tracked publicly. Application hosting remains unverified.
+>
+> Model update, 2026-10-28: the owner supplied Cloudflare Free settings and
 > authorized real runs. Cursed and Useful/Chaotic browser/API rituals completed
 > with valid sources and PNG/SVG exports. Gemma is VERIFIED locally; one partner category
 > has live evidence. See [REAL_RUNS](eval/REAL_RUNS.md). No public deployment.
