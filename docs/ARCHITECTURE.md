@@ -38,4 +38,10 @@ All storage and optional providers are disabled. No URLs are advertised as
 permanent. A completed certificate lives only in browser memory/current process
 until downloaded. Downloaded SVG is standalone with escaped model text,
 description/alt text, source URLs and model attribution. Canvas exports PNG.
-Sound is an opt-in locally synthesized tone.
+Sound is an opt-in procedural score and effect engine using one lazy Web Audio
+context. A quiet organ drone and sparse original music-box motif sit below
+button bubbles, switch/inspection/electric and reveal sounds. No audio assets
+or provider calls are needed. Music has a separate toggle, the master level is
+bounded, muting suspends the context and hiding the tab pauses it. Decorative
+fog, bubbles, lights, steam and instrument motion can be paused; system reduced
+motion stops it. Decorative animation does not claim to be actual API progress.

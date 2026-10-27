@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
+import { LabAudio } from './lab-audio';
+import { LabAtmosphere, FlaskBubbles, LabInstruments } from './LabEffects';
 import {
   FLAVORS,
   certificateSvg,
@@ -104,6 +106,12 @@ function Apparatus({
           aria-hidden="true"
         >
           <defs>
+            <clipPath id="flask-left">
+              <rect x="53" y="307" width="46" height="29" />
+            </clipPath>
+            <clipPath id="flask-right">
+              <rect x="462" y="304" width="41" height="32" />
+            </clipPath>
             <pattern
               id="grid"
               width="28"
@@ -118,7 +126,13 @@ function Apparatus({
             </radialGradient>
           </defs>
           <rect width="560" height="430" fill="url(#grid)" />
-          <circle cx="280" cy="210" r="185" fill="url(#chamber)" />
+          <circle
+            className="chamber-aura"
+            cx="280"
+            cy="210"
+            r="185"
+            fill="url(#chamber)"
+          />
           <path
             d="M113 326V138h49M447 326V138h-49"
             stroke="#626b60"
@@ -131,8 +145,20 @@ function Apparatus({
             strokeWidth="4"
           />
           <path d="M159 96V75M401 96V75" stroke="#bac1a4" strokeWidth="5" />
-          <circle cx="159" cy="68" r="8" fill="#c4e99b" />
-          <circle cx="401" cy="68" r="8" fill="#c4e99b" />
+          <circle
+            className="coil-light coil-left"
+            cx="159"
+            cy="68"
+            r="8"
+            fill="#c4e99b"
+          />
+          <circle
+            className="coil-light coil-right"
+            cx="401"
+            cy="68"
+            r="8"
+            fill="#c4e99b"
+          />
           <path
             className="electric-arc"
             d="M166 67l31 24 26-31 31 30 24-32 33 28 28-25 31 26 23-20"
@@ -184,6 +210,8 @@ function Apparatus({
           <path d="M462 306h41v30h-41z" fill="#b497cf" fillOpacity=".6" />
           <circle cx="76" cy="322" r="3" fill="#d5ef9e" />
           <circle cx="481" cy="319" r="3" fill="#dac9eb" />
+          <FlaskBubbles />
+          <LabInstruments />
           <path d="M119 371H45m398 0h73" stroke="#606e59" strokeWidth="2" />
           <text
             x="33"
@@ -462,6 +490,14 @@ export function App() {
   const [error, setError] = useState('');
   const [notice, setNotice] = useState('');
   const [sound, setSound] = useState(false);
+  const [music, setMusic] = useState(true);
+  const [volume, setVolume] = useState(22);
+  const [audioSettings, setAudioSettings] = useState(false);
+  const [motionPaused, setMotionPaused] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(
+    () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+  );
+  const audio = useRef<LabAudio | null>(null);
   const [skip, setSkip] = useState(false);
   const polling = useRef<AbortController | null>(null);
   const sequence = useRef(0);
@@ -491,8 +527,42 @@ export function App() {
     return () => {
       polling.current?.abort();
       inspectController.current?.abort();
+      void audio.current?.dispose();
+      audio.current = null;
     };
   }, []);
+  useEffect(() => {
+    const query = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const change = () => setReducedMotion(query.matches);
+    query.addEventListener('change', change);
+    const visibility = () => {
+      void audio.current?.setHidden(document.hidden).catch(() => {});
+    };
+    document.addEventListener('visibilitychange', visibility);
+    return () => {
+      query.removeEventListener('change', change);
+      document.removeEventListener('visibilitychange', visibility);
+    };
+  }, []);
+  const toggleSound = async () => {
+    if (sound) {
+      audio.current?.disable();
+      setSound(false);
+      return;
+    }
+    try {
+      audio.current ??= new LabAudio();
+      audio.current.setVolume(volume / 100);
+      audio.current.setMusic(music);
+      await audio.current.enable();
+      setSound(true);
+      audio.current.play('bubble');
+    } catch {
+      setNotice(
+        'Audio is unavailable in this browser. The laboratory still works.',
+      );
+    }
+  };
   const edit = (values: [string, string]) => {
     inspectController.current?.abort();
     sequence.current++;
@@ -509,13 +579,17 @@ export function App() {
     setInspecting(true);
     setError('');
     setDonors(null);
+    audio.current?.play('inspect');
     try {
       const result = await request<{ donors: [DonorGenome, DonorGenome] }>(
         '/api/v1/donors/inspect',
         { donors: inputs },
         AbortSignal.any([controller.signal, AbortSignal.timeout(30_000)]),
       );
-      if (seq === sequence.current) setDonors(result.donors);
+      if (seq === sequence.current) {
+        setDonors(result.donors);
+        audio.current?.play('ready');
+      }
     } catch (e) {
       if (!controller.signal.aborted && seq === sequence.current)
         setError((e as Error).message);
@@ -523,23 +597,8 @@ export function App() {
       if (seq === sequence.current) setInspecting(false);
     }
   };
-  const playSound = () => {
-    if (!sound) return;
-    const context = new AudioContext();
-    const osc = context.createOscillator();
-    const gain = context.createGain();
-    osc.type = 'triangle';
-    osc.frequency.setValueAtTime(180, context.currentTime);
-    osc.frequency.exponentialRampToValueAtTime(420, context.currentTime + 0.25);
-    gain.gain.setValueAtTime(0.05, context.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.001, context.currentTime + 0.5);
-    osc.connect(gain);
-    gain.connect(context.destination);
-    osc.start();
-    osc.stop(context.currentTime + 0.5);
-    osc.onended = () => void context.close();
-  };
   const ritual = async () => {
+    audio.current?.play('lever');
     setPending(true);
     setError('');
     setJob(null);
@@ -586,13 +645,14 @@ export function App() {
         setJob(result);
         if (result.state === 'completed') {
           try {
-            playSound();
+            audio.current?.play('reveal');
           } catch {
             /* Audio is optional. */
           }
           return;
         }
         if (result.state === 'failed') {
+          audio.current?.play('error');
           setError(
             result.error?.message ??
               'The ritual failed. Your donor facts are preserved.',
@@ -630,10 +690,43 @@ export function App() {
     }
   };
   const monster = job?.state === 'completed' ? (job.monster ?? null) : null;
+  useEffect(() => {
+    if (job?.state === 'splicing') audio.current?.play('spark');
+  }, [job?.state]);
   const stages = ['inspecting', 'splicing', 'validating', 'completed'];
   const stage = job ? stages.indexOf(job.state) : -1;
   return (
-    <div className={'site ' + (skip ? 'skip-motion' : '')}>
+    <div
+      className={
+        'site ' +
+        (skip ? 'skip-motion ' : '') +
+        (motionPaused || reducedMotion ? 'motion-paused' : '')
+      }
+      onClickCapture={(event) => {
+        if (!(event.target instanceof Element)) return;
+        const control = event.target.closest<
+          HTMLButtonElement | HTMLInputElement
+        >('button,input[type="radio"]');
+        if (!control || control.matches(':disabled')) return;
+        if (!control.classList.contains('sound-button'))
+          audio.current?.play(
+            control.tagName === 'INPUT' ? 'switch' : 'bubble',
+          );
+        if (control.tagName === 'BUTTON') {
+          control.classList.remove('is-bubbling');
+          void control.offsetWidth;
+          control.classList.add('is-bubbling');
+        }
+      }}
+      onAnimationEnd={(event) => {
+        if (
+          event.animationName === 'button-bloop' &&
+          event.target instanceof Element
+        )
+          event.target.classList.remove('is-bubbling');
+      }}
+    >
+      <LabAtmosphere />
       <a className="skip-link" href="#lab">
         Skip to the laboratory
       </a>
@@ -648,13 +741,79 @@ export function App() {
         <div className="header-note">
           THE REANIMATION LAB<span>INDEPENDENT EXPERIMENT · MMXXVI</span>
         </div>
-        <button
-          className="sound-button"
-          onClick={() => setSound((s) => !s)}
-          aria-pressed={sound}
-        >
-          ♪ <span>Sound {sound ? 'on' : 'off'}</span>
-        </button>
+        <div className="sound-controls">
+          <button
+            className="sound-button"
+            onClick={() => void toggleSound()}
+            aria-pressed={sound}
+            title="Quiet music and laboratory sounds"
+          >
+            <span className="audio-meter" aria-hidden="true">
+              <i />
+              <i />
+              <i />
+            </span>
+            <span>Sound {sound ? 'on' : 'off'}</span>
+          </button>
+          <button
+            className="sound-settings"
+            aria-label="Audio settings"
+            aria-expanded={audioSettings}
+            aria-controls="lab-audio-settings"
+            onClick={() => setAudioSettings((s) => !s)}
+          >
+            ☷
+          </button>
+          {audioSettings && (
+            <div
+              className="audio-panel"
+              id="lab-audio-settings"
+              role="group"
+              aria-label="Laboratory audio"
+              onKeyDown={(e) => {
+                if (e.key === 'Escape') {
+                  setAudioSettings(false);
+                  document
+                    .querySelector<HTMLButtonElement>('.sound-settings')
+                    ?.focus();
+                }
+              }}
+            >
+              <span className="mini-label">SOUNDS FROM THE BASEMENT</span>
+              <label htmlFor="lab-volume">
+                Lab volume <output>{volume}%</output>
+              </label>
+              <input
+                id="lab-volume"
+                type="range"
+                min="0"
+                max="50"
+                value={volume}
+                onChange={(e) => {
+                  const next = Number(e.target.value);
+                  setVolume(next);
+                  audio.current?.setVolume(next / 100);
+                }}
+              />
+              <button
+                className="music-switch"
+                aria-pressed={music}
+                onClick={() => {
+                  setMusic(!music);
+                  audio.current?.setMusic(!music);
+                }}
+              >
+                Music {music ? 'on' : 'off'}{' '}
+                <span aria-hidden="true">{music ? '♪' : '—'}</span>
+              </button>
+              <small>
+                {sound
+                  ? 'A quiet, original haunted music box.'
+                  : 'Sound is off. Switch it on to listen.'}
+              </small>
+            </div>
+          )}
+        </div>
       </header>
       <main>
         <section className="hero">
@@ -694,20 +853,39 @@ export function App() {
             <span className="note-number">EXPERIMENT No. 001</span>
           </aside>
         </section>
-        <section className="lab" id="lab" aria-labelledby="lab-title">
+        <section
+          className={'lab' + (pending || inspecting ? ' lab-active' : '')}
+          id="lab"
+          aria-labelledby="lab-title"
+        >
           <div className="lab-toolbar">
             <h2 id="lab-title">
               <span>01 /</span> Assemble your donors
             </h2>
-            <span
-              className={
-                'status-pill ' +
-                (capability?.model === 'disabled' ? 'amber' : '')
-              }
-            >
-              <i />
-              {connection}
-            </span>
+            <div className="lab-toolbar-actions">
+              <button
+                className="motion-toggle"
+                aria-pressed={!motionPaused && !reducedMotion}
+                disabled={reducedMotion}
+                title={
+                  reducedMotion
+                    ? 'Reduced motion follows your system setting'
+                    : 'Pause decorative laboratory animations'
+                }
+                onClick={() => setMotionPaused((p) => !p)}
+              >
+                Motion {!motionPaused && !reducedMotion ? 'on' : 'off'}
+              </button>
+              <span
+                className={
+                  'status-pill ' +
+                  (capability?.model === 'disabled' ? 'amber' : '')
+                }
+              >
+                <i />
+                {connection}
+              </span>
+            </div>
           </div>
           <div className="lab-layout">
             <div className="controls">

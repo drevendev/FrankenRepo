@@ -1431,3 +1431,603 @@ blockquote {
     scroll-behavior: auto !important;
   }
 }
+
+/* A little more life in the basement. */
+.site {
+  position: relative;
+  isolation: isolate;
+}
+.lab-atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.spectral-haze {
+  position: absolute;
+  width: 720px;
+  height: 550px;
+  border-radius: 50%;
+  opacity: 0.24;
+  background: radial-gradient(
+    ellipse,
+    #47664830,
+    #35504015 42%,
+    transparent 70%
+  );
+  animation: spectral-drift 24s ease-in-out infinite alternate;
+}
+.haze-left {
+  left: -320px;
+  top: 12%;
+}
+.haze-right {
+  right: -360px;
+  top: 48%;
+  background: radial-gradient(
+    ellipse,
+    #75628a25,
+    #3b403018 40%,
+    transparent 70%
+  );
+  animation-delay: -12s;
+}
+.wandering-spores i {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  left: 8%;
+  bottom: -16px;
+  background: #c8e999;
+  box-shadow: 0 0 8px #b5ec8870;
+  opacity: 0;
+  border-radius: 50%;
+  animation: spore-drift 24s linear infinite;
+}
+.wandering-spores i:nth-child(2) {
+  left: 21%;
+  animation-delay: -9s;
+  animation-duration: 31s;
+}
+.wandering-spores i:nth-child(3) {
+  left: 35%;
+  animation-delay: -18s;
+  animation-duration: 26s;
+}
+.wandering-spores i:nth-child(4) {
+  left: 46%;
+  animation-delay: -5s;
+  animation-duration: 33s;
+  width: 2px;
+  height: 2px;
+}
+.wandering-spores i:nth-child(5) {
+  left: 59%;
+  animation-delay: -21s;
+  animation-duration: 27s;
+}
+.wandering-spores i:nth-child(6) {
+  left: 72%;
+  animation-delay: -15s;
+  animation-duration: 35s;
+}
+.wandering-spores i:nth-child(7) {
+  left: 86%;
+  animation-delay: -3s;
+  animation-duration: 23s;
+}
+.wandering-spores i:nth-child(8) {
+  left: 94%;
+  animation-delay: -12s;
+  animation-duration: 30s;
+}
+.wandering-spores i:nth-child(9) {
+  left: 3%;
+  animation-delay: -22s;
+  animation-duration: 32s;
+}
+.wandering-spores i:nth-child(10) {
+  left: 66%;
+  animation-delay: -7s;
+  animation-duration: 28s;
+  width: 2px;
+  height: 2px;
+}
+.lab {
+  transition:
+    border-color 0.5s,
+    box-shadow 0.5s;
+}
+.lab-active {
+  border-color: #95b970;
+  box-shadow:
+    0 0 34px #a5d67512,
+    inset 0 0 24px #b3de8610;
+}
+.chamber-aura {
+  animation: chamber-breath 7s ease-in-out infinite;
+  transform-origin: 280px 210px;
+}
+.coil-light {
+  filter: drop-shadow(0 0 7px #c1fa8ab0);
+  animation: bulb-hum 4.8s ease-in-out infinite;
+}
+.coil-right {
+  animation-duration: 6.2s;
+  animation-delay: -2.1s;
+}
+.is-working .coil-light {
+  animation-duration: 1.8s;
+  filter: drop-shadow(0 0 12px #c1fa8a);
+}
+.electric-arc {
+  animation: idle-current 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 3px #c9f99a40);
+}
+.brew-bubble {
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+  animation: bubble-rise 3.2s ease-in infinite;
+}
+.bubble-1 {
+  animation-duration: 2.7s;
+  animation-delay: -1.1s;
+}
+.bubble-2 {
+  animation-duration: 3.8s;
+  animation-delay: -2.6s;
+}
+.bubble-3 {
+  animation-duration: 3.4s;
+  animation-delay: -1.9s;
+}
+.violet-bubbles .bubble-0 {
+  animation-delay: -1.8s;
+}
+.violet-bubbles .bubble-1 {
+  animation-delay: -0.5s;
+}
+.violet-bubbles .bubble-2 {
+  animation-delay: -3s;
+}
+.liquid-surface {
+  animation: liquid-lap 3.4s ease-in-out infinite;
+}
+.violet-surface {
+  animation-delay: -1.7s;
+}
+.flow-current {
+  animation: current-flow 4s linear infinite;
+  opacity: 0.65;
+}
+.gauge-needle {
+  transform-origin: 417px 267px;
+  animation: pressure-wobble 7s ease-in-out infinite;
+}
+.indicator-light {
+  filter: drop-shadow(0 0 3px currentColor);
+  animation: instrument-lamp 4s ease-in-out infinite;
+}
+.indicator-two {
+  animation-delay: -2.4s;
+  animation-duration: 5.8s;
+}
+.indicator-three {
+  animation-delay: -1.5s;
+  animation-duration: 3.6s;
+}
+.steam-wisp {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: steam-curl 4.5s ease-in-out infinite;
+}
+.wisp-two {
+  animation-delay: -2s;
+  animation-duration: 5.6s;
+}
+.wisp-three {
+  animation-delay: -3s;
+}
+.apparatus-top i {
+  box-shadow: 0 0 5px #c8e99970;
+  animation: instrument-lamp 5s ease-in-out infinite;
+}
+.lab-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.motion-toggle {
+  border: 0;
+  background: transparent;
+  font: 9px var(--mono);
+  color: #b4c4a6;
+  padding: 6px 0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.motion-toggle:disabled {
+  opacity: 0.75;
+}
+.button:not(:disabled),
+.mode,
+.sound-button,
+.sound-settings {
+  transition:
+    box-shadow 0.2s,
+    border-color 0.2s,
+    background-color 0.2s;
+}
+.button:hover:not(:disabled) {
+  box-shadow:
+    0 0 16px #bbea8525,
+    inset 0 0 16px #bbea8510;
+  border-color: #a1c279;
+}
+.mode:hover {
+  border-color: #a1c279;
+  box-shadow: 0 0 15px #bbea8518;
+}
+.lever-button:not(:disabled) {
+  box-shadow:
+    0 3px 0 #71865c,
+    0 0 22px #b9ee8b25;
+}
+.lever-button:hover:not(:disabled) {
+  box-shadow:
+    0 3px 0 #71865c,
+    0 0 30px #b9ee8b45;
+}
+.is-bubbling:not(:disabled) {
+  position: relative;
+  animation: button-bloop 0.62s ease-out;
+}
+.button.is-bubbling::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  left: 49%;
+  bottom: 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1px solid #e1ffad;
+  box-shadow:
+    -30px 2px 0 -1px #cefb9670,
+    24px 7px 0 0 #cefb9670,
+    45px 0 0 -1px #d7ffc270;
+  opacity: 0;
+  animation: button-bubbles 0.6s ease-out;
+}
+.sound-controls {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  flex-shrink: 0;
+}
+.sound-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 4px 0 0 4px;
+}
+.sound-button[aria-pressed='true'] {
+  color: var(--green);
+  border-color: #6b8454;
+  box-shadow: inset 0 0 14px #c8e9990c;
+}
+.sound-settings {
+  padding: 7px 8px;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-left: 0;
+  border-radius: 0 4px 4px 0;
+  font-size: 15px;
+  color: #b4c4a6;
+}
+.audio-meter {
+  display: inline-flex;
+  gap: 2px;
+  height: 12px;
+  align-items: center;
+}
+.audio-meter i {
+  display: block;
+  height: 3px;
+  width: 2px;
+  background: currentColor;
+  border-radius: 1px;
+}
+.sound-button[aria-pressed='true'] .audio-meter i {
+  animation: meter-dance 1.6s ease-in-out infinite alternate;
+}
+.audio-meter i:nth-child(2) {
+  animation-delay: -0.6s !important;
+}
+.audio-meter i:nth-child(3) {
+  animation-delay: -1.2s !important;
+}
+.audio-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 12px);
+  width: 250px;
+  max-width: calc(100vw - 32px);
+  padding: 20px;
+  background: #202b28;
+  border: 1px solid #687c54;
+  border-radius: 6px;
+  box-shadow: 0 16px 45px #0008;
+  z-index: 20;
+}
+.audio-panel .mini-label {
+  color: var(--green);
+  font-size: 8px;
+}
+.audio-panel label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-top: 20px;
+}
+.audio-panel output {
+  font: 11px var(--mono);
+  color: #c9dda9;
+}
+.audio-panel input {
+  width: 100%;
+  accent-color: #c8e999;
+  margin: 16px 0;
+  cursor: pointer;
+}
+.music-switch {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border: 1px solid #667b52;
+  background: #2b3b2b;
+  font-size: 12px;
+  color: var(--green);
+}
+.music-switch[aria-pressed='false'] {
+  color: #b2bba7;
+  background: #232e2a;
+}
+.audio-panel small {
+  display: block;
+  color: #b4c2a8;
+  font-size: 10px;
+  line-height: 1.6;
+  margin-top: 14px;
+}
+@keyframes spectral-drift {
+  from {
+    transform: translate(-20px, -15px) scale(0.92);
+  }
+  to {
+    transform: translate(75px, 45px) scale(1.08);
+  }
+}
+@keyframes spore-drift {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  10%,
+  70% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(30px, -110vh);
+    opacity: 0;
+  }
+}
+@keyframes chamber-breath {
+  0%,
+  100% {
+    opacity: 0.65;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+@keyframes bulb-hum {
+  0%,
+  100% {
+    opacity: 0.65;
+  }
+  45% {
+    opacity: 1;
+  }
+  65% {
+    opacity: 0.82;
+  }
+}
+@keyframes idle-current {
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+  40% {
+    opacity: 0.35;
+  }
+  70% {
+    opacity: 0.2;
+  }
+}
+@keyframes bubble-rise {
+  0% {
+    transform: translate(0, 3px) scale(0.5);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(2px, -39px) scale(1.1);
+    opacity: 0;
+  }
+}
+@keyframes liquid-lap {
+  0%,
+  100% {
+    transform: translateY(1px);
+  }
+  50% {
+    transform: translateY(-1px);
+  }
+}
+@keyframes current-flow {
+  to {
+    stroke-dashoffset: -68;
+  }
+}
+@keyframes pressure-wobble {
+  0%,
+  100% {
+    transform: rotate(-14deg);
+  }
+  40% {
+    transform: rotate(13deg);
+  }
+  70% {
+    transform: rotate(-4deg);
+  }
+}
+@keyframes instrument-lamp {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  35%,
+  65% {
+    opacity: 1;
+  }
+}
+@keyframes steam-curl {
+  0% {
+    transform: translateY(2px) scaleX(0.8);
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-19px) scaleX(1.2);
+    opacity: 0;
+  }
+}
+@keyframes button-bloop {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.975, 1.035);
+  }
+  55% {
+    transform: scale(1.015, 0.985);
+  }
+  78% {
+    transform: scale(0.995, 1.01);
+  }
+}
+@keyframes button-bubbles {
+  0% {
+    transform: translateY(5px) scale(0.5);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(-32px) scale(1.25);
+    opacity: 0;
+  }
+}
+@keyframes meter-dance {
+  from {
+    height: 3px;
+  }
+  to {
+    height: 12px;
+  }
+}
+.motion-paused *,
+.motion-paused *::before,
+.motion-paused *::after {
+  animation: none !important;
+  transition: none !important;
+}
+@media (max-width: 760px) {
+  .lab-toolbar-actions {
+    gap: 14px;
+  }
+}
+@media (max-width: 520px) {
+  .site-header {
+    gap: 8px;
+  }
+  .wordmark {
+    font-size: 23px;
+  }
+  .sound-button {
+    padding: 8px;
+    gap: 6px;
+  }
+  .sound-settings {
+    padding: 6px;
+  }
+  .wandering-spores i:nth-child(n + 6) {
+    display: none;
+  }
+}
+@media (max-width: 380px) {
+  .wordmark {
+    font-size: 20px;
+  }
+  .brand-icon {
+    width: 23px;
+    height: 28px;
+    font-size: 22px;
+    margin-right: 8px;
+  }
+  .wordmark sup {
+    font-size: 8px;
+    margin-left: 3px;
+  }
+  .sound-button {
+    font-size: 9px;
+    padding: 7px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lab-atmosphere,
+  .apparatus-steam {
+    display: none;
+  }
+}
+.lab-phantom {
+  animation: resident-ghost 9s ease-in-out infinite;
+}
+@keyframes resident-ghost {
+  0%,
+  100% {
+    transform: translateY(3px);
+    opacity: 0.08;
+  }
+  50% {
+    transform: translateY(-9px);
+    opacity: 0.27;
+  }
+}

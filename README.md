@@ -42,12 +42,22 @@ No accounts, keys or model downloads are needed to open the UI. Optional sound
 starts off. Only the model-generated certificate offers PNG, SVG and alt-text
 exports. Test fixture output is confined to tests.
 
+Click **Sound on** for the quiet original music box, organ drone and laboratory
+effects. **Audio settings** controls volume and music separately. Audio pauses
+when the tab is hidden. **Motion off** pauses decorative animation; system
+reduced-motion is respected. Liquid, lights and the resident ghost are visual
+atmosphere and never stand in for an actual API stage.
+
 ## Enable real local Gemma
 
 For the public contest demo, the selected primary target is
 [Cloudflare-hosted Gemma 4 26B A4B IT](docs/MODEL_DECISION.md). Its public Free-plan
 eligibility was checked; this account's access and real inference are still
 unverified. The local Ollama setup below is the fallback.
+
+For the recommended setup, follow the
+[step-by-step Cloudflare Free guide in Russian](docs/CLOUDFLARE_SETUP_RU.md):
+account, scoped token, local .env, first ritual and actual run receipt.
 
 1. Install/start Ollama separately and explicitly select/download a Gemma model
    appropriate for your machine. FrankenRepo never downloads weights itself.

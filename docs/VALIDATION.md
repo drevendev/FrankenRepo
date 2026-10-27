@@ -39,3 +39,20 @@ Not verified: real Gemma, actual inference latency/quality, permanent storage,
 public gallery consent/removal, optional partner calls, live hosted demo, external
 independent user, 45–60s genuine AI recording, published article, remote GitHub CI.
 Corresponding endpoints/integrations are disabled or absent.
+
+## Laboratory atmosphere update — 2026-10-27
+
+- npm run verify passed: strict types, lint, formatting, all 57 core/API tests
+  and production build.
+- npm run test:e2e passed all 12 desktop/mobile Chromium scenarios.
+  The added tests use the browser's actual AudioContext, count lazy creation
+  and oscillator scheduling, and verify mute/unmute reuse, music/volume controls,
+  hidden-tab suspension, keyboard dismissal and animation pause/reduced motion.
+- Updated desktop/mobile default screenshots were visually inspected. The audio
+  settings panel was also inspected. There is no Safari/Firefox listening test,
+  calibrated sound-pressure measurement or real Gemma evidence in these checks.
+- Built web JavaScript: 106,467 gzip bytes (Node gzip, all chunks), below 250,000.
+  No new npm dependencies, external recordings, paid services or account
+  activation were needed for sound and decorative effects.
+- Added docs/CLOUDFLARE_SETUP_RU.md using current official account/token/model
+  and pricing instructions. No token was created or credential read/used.

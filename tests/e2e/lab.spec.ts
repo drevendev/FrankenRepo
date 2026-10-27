@@ -1,5 +1,136 @@
 import { test, expect } from '@playwright/test';
 import { TEST_DONORS, testMonster } from '../fixtures';
+
+test('sound is opt-in, uses one real audio context, and pauses when hidden or muted', async ({
+  page,
+}, info) => {
+  const errors: string[] = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.addInitScript(() => {
+    const Native = window.AudioContext;
+    const probe = { contexts: [] as AudioContext[], starts: 0 };
+    Object.assign(window, { __labAudio: probe });
+    window.AudioContext = class extends Native {
+      constructor(options?: AudioContextOptions) {
+        super(options);
+        probe.contexts.push(this);
+      }
+      createOscillator() {
+        const oscillator = super.createOscillator();
+        const start = oscillator.start.bind(oscillator);
+        oscillator.start = (when?: number) => {
+          probe.starts++;
+          start(when);
+        };
+        return oscillator;
+      }
+    };
+  });
+  const audioState = () =>
+    page.evaluate(() => {
+      const probe = (
+        window as typeof window & {
+          __labAudio: { contexts: AudioContext[]; starts: number };
+        }
+      ).__labAudio;
+      return {
+        count: probe.contexts.length,
+        state: probe.contexts[0]?.state,
+        starts: probe.starts,
+      };
+    });
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Audio settings' }).click();
+  await expect(
+    page.getByRole('group', { name: 'Laboratory audio' }),
+  ).toBeVisible();
+  expect((await audioState()).count).toBe(0);
+  await page.getByRole('button', { name: 'Sound off' }).click();
+  await expect.poll(async () => (await audioState()).state).toBe('running');
+  await expect
+    .poll(async () => (await audioState()).starts)
+    .toBeGreaterThanOrEqual(7);
+  await page.getByRole('slider', { name: 'Lab volume' }).focus();
+  await page.keyboard.press('Home');
+  await page.keyboard.press('ArrowRight');
+  await expect(page.getByRole('slider', { name: 'Lab volume' })).toHaveValue(
+    '1',
+  );
+  await page.getByRole('button', { name: 'Music on' }).click();
+  await expect(page.getByRole('button', { name: 'Music off' })).toHaveAttribute(
+    'aria-pressed',
+    'false',
+  );
+  await page.screenshot({
+    path: '.local/audio-settings-' + info.project.name + '.png',
+  });
+  await page.evaluate(() => {
+    Object.defineProperty(document, 'hidden', {
+      configurable: true,
+      value: true,
+    });
+    document.dispatchEvent(new Event('visibilitychange'));
+  });
+  await expect.poll(async () => (await audioState()).state).toBe('suspended');
+  await page.evaluate(() => {
+    Object.defineProperty(document, 'hidden', {
+      configurable: true,
+      value: false,
+    });
+    document.dispatchEvent(new Event('visibilitychange'));
+  });
+  await expect.poll(async () => (await audioState()).state).toBe('running');
+  await page.getByRole('button', { name: 'Sound on' }).click();
+  await expect.poll(async () => (await audioState()).state).toBe('suspended');
+  await page.getByRole('button', { name: 'Sound off' }).click();
+  await expect.poll(async () => (await audioState()).state).toBe('running');
+  expect((await audioState()).count).toBe(1);
+  await page.getByRole('button', { name: 'Sound on' }).click();
+  await page.getByRole('slider', { name: 'Lab volume' }).focus();
+  await page.keyboard.press('Escape');
+  await expect(
+    page.getByRole('group', { name: 'Laboratory audio' }),
+  ).toHaveCount(0);
+  await expect(
+    page.getByRole('button', { name: 'Audio settings' }),
+  ).toBeFocused();
+  expect(errors).toEqual([]);
+});
+
+test('decorative laboratory motion can be paused and respects the system preference', async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.goto('/');
+  const animation = (selector: string) =>
+    page
+      .locator(selector)
+      .first()
+      .evaluate((el) => getComputedStyle(el).animationName);
+  expect(await animation('.brew-bubble')).toBe('bubble-rise');
+  expect(await animation('.lab-phantom')).toBe('resident-ghost');
+  await page.getByRole('button', { name: 'Motion on' }).click();
+  for (const selector of [
+    '.brew-bubble',
+    '.coil-light',
+    '.gauge-needle',
+    '.wandering-spores i',
+    '.specimen',
+    '.lab-phantom',
+  ]) {
+    expect(await animation(selector)).toBe('none');
+  }
+  await page.getByRole('button', { name: 'Motion off' }).click();
+  expect(await animation('.brew-bubble')).toBe('bubble-rise');
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await expect(page.getByRole('button', { name: 'Motion off' })).toBeDisabled();
+  expect(await animation('.brew-bubble')).toBe('none');
+  expect(
+    await page
+      .locator('.lab-atmosphere')
+      .evaluate((el) => getComputedStyle(el).display),
+  ).toBe('none');
+});
 test('default lab is honest, keyboard usable, and fits small screens', async ({
   page,
 }, info) => {

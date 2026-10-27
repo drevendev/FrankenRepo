@@ -3,6 +3,10 @@
 All monster SVG paths, six palettes, six body shapes, six heads, five accessories,
 four expressions, laboratory drawing, typography treatment, CSS and optional
 synthesized oscillator sound were created for FrankenRepo in this implementation.
+The haunted music-box motif, organ drone, bubble/switch/scan/electric/reveal
+effects, fireflies, steam, phantom and instrument animations are original
+procedural compositions and artwork, also under MIT. Web Audio generates the
+score locally after opt-in; no external music recordings or audio services are used.
 They are covered by the repository MIT license. No external images, fonts, SFX,
 model image generator, stock recordings or private portfolio source are bundled.
 System fonts are requested by name; no font files are distributed.
