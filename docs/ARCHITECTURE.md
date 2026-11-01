@@ -1,47 +1,58 @@
 # Architecture
 
-Browser → same-origin Hono API → fixed public GitHub REST + configured Gemma.
-Production build serves the Vite assets from the same Node process.
-Development Vite proxies API and capability checks to loopback port 3001.
+React/Vite -> same-origin Hono -> Mastra ritual -> fixed GitHub REST / Gemma /
+optional approved context. One Node24 process serves production assets and API.
+Core remains browser-safe. Mongo, OpenAI, Sentry and Mastra stay on the server;
+Browserbase and Python/Tinker are explicit operator commands.
 
-| Boundary          | Responsibility                                                       |
-| ----------------- | -------------------------------------------------------------------- |
-| apps/web          | UI, accessibility, image download, state/error presentation          |
-| apps/api          | Body limits, typed errors, origins, anonymized-IP request budgets    |
-| packages/core     | Input/schema contracts, fixed evidence validation, deterministic SVG |
-| packages/adapters | Streaming HTTP caps, GitHub snapshots/cache, server model requests   |
-| packages/ritual   | Real job states, request deduplication, bounded repair, cancellation |
-| scripts           | Explicit operator-only GitHub/model verification receipts            |
+Inspection makes at most four fixed GitHub calls per donor, each bounded to
+100 kB/eight seconds. A descriptive README excerpt is capped at 1500 characters,
+excluding obvious badge/art/code lead-ins where possible, and pinned to observed
+SHA. Unknown observations stay unknown. No donor code is installed or executed.
 
-Inspection requests fetch metadata, then languages/commit in parallel, then a
-README pinned to the observed SHA when available. Four requests maximum,
-eight-second timeout and 100 kB response cap for each. README is a 1,500-character
-text excerpt. No code clones or repository installs. Cache: 128 donors,
-twelve-hour TTL; 512 bounded conditional ETag responses. Empty/missing information
-stays UNKNOWN/PARTIAL. GitHub API license metadata is an observation, not a
-completed reuse-license audit.
+Mastra steps inspect donors, add context, generate/validate and reveal. Legacy
+remains selectable. Framework retries are zero; invalid output can use one
+explicit repair. A deliberate revision uses frozen genomes and an immutable
+original link. Initial + repair OR initial + revision is the allowance. Mastra
+does not provide durable resume or Temporal semantics here.
 
-Gemma receives only bounded evidence values and identifiers inside a JSON data
-envelope. The system prompt treats them as untrusted; the model gets no tools,
-tokens, source URLs or authority to write facts. Strict Zod objects reject extra
-fields, unavailable evidence, missing parent roles, digits/URLs/HTML in generated
-prose. One repair is allowed for invalid output; transport/quota failures do not
-automatically retry. The model cannot select IDs, dates, provenance or publication.
+One Mongo CAS document atomically reserves scope/key, canonical fingerprint hash,
+calls, estimated ceiling and provider concurrency before spend. At most 512
+operation summaries retain unknown/expired attempts; operator review is needed
+at capacity. UTC daily Gemma reservations cap at 20, one active action, three
+starts per visitor/15 minutes. A stable HMAC secret signs HttpOnly/SameSite
+cookies. Global budgets do not depend on visitors keeping cookies. Forwarding
+headers are ignored; a separate socket bucket is conservative behind proxies.
+CLI live evaluation uses the same durable controls.
 
-The runner produces UUID jobs, scopes access/idempotency to a salted socket-IP
-bucket, stores at most 100 ephemeral jobs, expires after fifteen minutes and
-aborts cancelled calls. Same key/different inputs is a conflict. At most one
-ritual runs by default. Job failure contains no creature. Model calls are capped
-at twenty per UTC day per process, including repairs; restarts reset this cap.
+Jobs are bounded to 48 kB and TTL 24h. Up to 100 lifetime card slots at 40 kB,
+bounded reviews/notes and the fixed ledger keep app payload allocation below
+10 MB; database/index overhead is not measured by that payload cap. Mongo outage
+prevents new spend. Worker interruption never refunds uncertain attempts.
+Confirmed completed records can be read after restart.
 
-All storage and optional providers are disabled. No URLs are advertised as
-permanent. A completed certificate lives only in browser memory/current process
-until downloaded. Downloaded SVG is standalone with escaped model text,
-description/alt text, source URLs and model attribution. Canvas exports PNG.
-Sound is an opt-in procedural score and effect engine using one lazy Web Audio
-context. A quiet organ drone and sparse original music-box motif sit below
-button bubbles, switch/inspection/electric and reveal sounds. No audio assets
-or provider calls are needed. Music has a separate toggle, the master level is
-bounded, muting suspends the context and hiding the tab pauses it. Decorative
-fog, bubbles, lights, steam and instrument motion can be paused; system reduced
-motion stops it. Decorative animation does not claim to be actual API progress.
+Private saves return a high-entropy owner capability; only its hash is stored.
+Recovery JSON stays local; tokens travel only in Authorization. Public sharing
+defaults off, needs explicit consent and serves a no-store projection. Private
+revision context, job metadata and capabilities are stripped. Unpublish revokes
+public reads. Delete removes payloads and retains a minimal hashed-capability
+tombstone against replayed saves; job/review payloads are redacted. Gallery stays
+off without moderation/acceptance.
+
+Backboard may search three results and supply two approved canonical notes,
+checked again in Mongo. Revoked IDs never enter prompts, even while a manual
+bounded deletion outbox is pending. Its corpus is not approved or seeded.
+Ultramarine is an opt-in schema/evidence-checked opinion, never a feasibility
+certificate. Tinker has a prepared pilot/preflight with serving disabled.
+
+Sentry initializes before Hono with automatic integrations disabled. Linked AI
+spans contain model IDs, timings and known usage. Prompts, README, private text,
+cookies and capabilities are excluded. Browserbase research is opt-in, fixed-host,
+pinned-SHA and separately labelled. Public E2E requires a real Render URL.
+
+The original SVG kit and exporter remain deterministic and escape model text.
+Sound stays opt-in, using one lazy AudioContext which pauses when hidden. Motion
+controls/reduced-motion cover decorative animation. Real job states drive
+progress; no fabricated percentages or replacement specimen.
+
+See [dated receipts, costs and deferrals](partners/UPDATE_RESULT_RU.md).

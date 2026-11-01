@@ -5,6 +5,7 @@ import {
   draftJsonSchema,
   type DonorGenome,
   type RitualMode,
+  type RitualContext,
 } from '@frankenrepo/core';
 import { boundedRequest, jsonValue, objectValue, type Fetcher } from './http';
 export type ModelConfig = {
@@ -23,6 +24,8 @@ export type InferenceResult = {
   provider: 'cloudflare' | 'ollama';
   model: string;
   digest?: string;
+  usage?: { inputTokens: number | null; outputTokens: number | null };
+  requestId?: string;
 };
 export interface InferencePort {
   capability(): 'disabled' | 'unknown';
@@ -32,6 +35,7 @@ export interface InferencePort {
     seed: string,
     repair: boolean,
     signal?: AbortSignal,
+    context?: RitualContext,
   ): Promise<InferenceResult>;
 }
 export function promptMessages(
@@ -39,6 +43,7 @@ export function promptMessages(
   mode: RitualMode,
   seed: string,
   repair = false,
+  context?: RitualContext,
 ) {
   const data = donors.map((d) => ({
     ref: d.ref,
@@ -55,6 +60,7 @@ export function promptMessages(
         ' Before writing, privately select a distinctive observed mechanism or purpose from each donor. Brain should describe a mechanism from A and cite A evidence; body should embody a behavior from B and cite B evidence. Languages alone are not distinctive inheritance. Curse should arise from the collision of those two mechanisms and cite both donors when evidence permits. Across hook, traits and usefulMutation, a reader should be able to identify BOTH projects without the names. usefulMutation: one small proposed artifact or workflow, with a concrete input, combined operation and output. It must lose its meaning if either donor is removed. Avoid universal promises, automatic magic, perfect output, arbitrary mess, no dependencies, or a generic dashboard. uncertainty: one actual unanswered feasibility question or limitation about that prototype, never a joke about preferences or diet. Do not copy these directions into the output. Keep fictional personality separate from the speculative proposal; use would/could language for unbuilt features. Use an original name based on a concrete image or action, rather than a stock repository-name mashup. For usefulMutation, explicitly name each donor’s short name (spell out any digits) and assign each a different technical role: name what A hosts or produces, what B transforms, the input, and the output. If either named donor could be removed without changing the prototype, rewrite it. Keep this grounded idea even in Chaotic mode; only the creature’s scene is absurd. Brain and body must express a concrete operation, not only words such as flexible, lightweight, portable or tool choice. Put citations ONLY in evidenceIds arrays; never include parenthetical source codes or A:description-style identifiers in prose. ' +
         ' Ground every inherited operation in the actual evidence excerpt, not an imagined feature: measurements are not sentiment analysis, a simulation is not a bug detector, and a source register is not automatic proof of identity. If the evidence is partial, inherit the narrower observed purpose. A proposed adapter may map an existing output to an existing input or visual behavior, but must name that mapping; never claim data magically becomes a brain, genealogical truth or executable code. Choose a small surprising task created by the collision, rather than placing two independent reports side by side. In Useful, name the user and their concrete question. The answer may flag a candidate for human review, never prove it. In firstWords, let the creature complain about the SAME specific collision as its curse, rather than uttering a generic gothic slogan. ' +
         ' Prompt version: ' +
+        ' A reviewer can also hallucinate: accept only advice supported by the actual bounded evidence. Keep archival comedy about fictional paperwork, stamps and filing rules; never make repression, deportation or real human fates the joke. Never promise verified lineage, proven identity or genealogical proof from a source register or literary metrics. A useful archival prototype may flag source-linked candidates for human review only. ' +
         PROMPT_VERSION +
         (repair
           ? ' The previous attempt did not match the contract. Repair only the JSON structure, length bounds and evidence IDs. Do not add any fields.'
@@ -67,6 +73,9 @@ export function promptMessages(
         mode,
         seed,
         donors: data,
+        previousInterpretations: context?.lessons ?? [],
+        browserResearch: context?.research ?? [],
+        revision: context?.revision ?? null,
         outputSchema: draftJsonSchema,
       }),
     },
@@ -130,12 +139,22 @@ export class InferenceAdapter implements InferencePort {
     seed: string,
     repair: boolean,
     signal?: AbortSignal,
+    context?: RitualContext,
   ): Promise<InferenceResult> {
     const c = this.config;
     if (c.provider === 'disabled')
       throw new LabError(
         'MODEL_DISABLED',
         'Live Gemma is unavailable. Configure a verified local Ollama model or an authorized free provider. No recorded model result is bundled yet.',
+        503,
+      );
+    if (
+      c.provider === 'cloudflare' &&
+      c.cfModel !== '@cf/google/gemma-4-26b-a4b-it'
+    )
+      throw new LabError(
+        'MODEL_PRICE_UNVERIFIED',
+        'This hosted model needs a dated price and cost-ceiling review before inference.',
         503,
       );
     const today = new Date().toISOString().slice(0, 10);
@@ -151,7 +170,7 @@ export class InferenceAdapter implements InferencePort {
         true,
       );
     this.calls++;
-    const messages = promptMessages(donors, mode, seed, repair);
+    const messages = promptMessages(donors, mode, seed, repair, context);
     const isOllama = c.provider === 'ollama';
     const url = isOllama
       ? (c.ollamaBaseUrl ?? 'http://127.0.0.1:11434').replace(/\/$/, '') +
@@ -161,6 +180,12 @@ export class InferenceAdapter implements InferencePort {
         '/ai/run/' +
         c.cfModel;
     const model = isOllama ? c.ollamaModel! : c.cfModel!;
+    if (new TextEncoder().encode(JSON.stringify(messages)).byteLength > 40_000)
+      throw new LabError(
+        'MODEL_INPUT_LIMIT',
+        'This input exceeds the bounded inference budget. No upstream call was made.',
+        413,
+      );
     const body = isOllama
       ? {
           model,
@@ -253,6 +278,29 @@ export class InferenceAdapter implements InferencePort {
       value: output,
       provider: isOllama ? 'ollama' : 'cloudflare',
       model,
+      usage: isOllama
+        ? {
+            inputTokens:
+              typeof result.prompt_eval_count === 'number'
+                ? result.prompt_eval_count
+                : null,
+            outputTokens:
+              typeof result.eval_count === 'number' ? result.eval_count : null,
+          }
+        : (() => {
+            const usage = objectValue(objectValue(result.result).usage ?? {});
+            return {
+              inputTokens:
+                typeof usage.prompt_tokens === 'number'
+                  ? usage.prompt_tokens
+                  : null,
+              outputTokens:
+                typeof usage.completion_tokens === 'number'
+                  ? usage.completion_tokens
+                  : null,
+            };
+          })(),
+      requestId: response.headers.get('cf-ray') ?? undefined,
     };
   }
   async installedModel(): Promise<{ name: string; digest: string } | null> {

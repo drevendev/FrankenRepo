@@ -1,0 +1,448 @@
+{
+  "kind": "LIVE_CARD_REVISION",
+  "startedAt": "2026-10-31T14:23:42.050Z",
+  "inputReceipt": "docs/eval/runs/2026-10-31T14-21-17-817Z-useful-browser.json",
+  "status": "passed",
+  "publicHosting": false,
+  "readAfterServerRestart": true,
+  "originalContentHash": "e215113ccf89961849ee91602a4a6e0d768912037c50bc68760ab59c9ac3a4ad",
+  "originalStillUnchanged": true,
+  "frozenSnapshots": true,
+  "record": {
+    "schemaVersion": "frankenrepo/monster/v1",
+    "id": "1a122355-8892-453f-9edf-77ed1cbd5161",
+    "createdAt": "2026-10-31T14:23:51.962Z",
+    "mode": "useful",
+    "model": {
+      "provider": "cloudflare",
+      "id": "@cf/google/gemma-4-26b-a4b-it",
+      "promptVersion": "frankenrepo/prompt/v5"
+    },
+    "parents": [
+      {
+        "ref": "drevendev/Scriptorium",
+        "url": "https://github.com/drevendev/Scriptorium",
+        "observedAt": "2026-10-31T14:21:22.468Z",
+        "defaultBranch": "master",
+        "commitSha": "7ffd7e8b5c17a421532dea8a4bb768df38e6b2e7",
+        "license": "UNKNOWN",
+        "description": null,
+        "topics": [],
+        "languages": ["Python", "JavaScript", "HTML"],
+        "readme": "**[🌐 Open the interactive Scriptorium Reader (GitHub Pages) →](https://drevendev.github.io/Scriptorium/)** **Tenth measured Russian novel — Dostoevsky's *Humiliated and Insulted*:** The [exact, source-free 29-field analysis](corpus/candidates/diagnostics/dostoevsky-humiliated-and-insulted-ru.retained.json) merged in #370 after the [pinned Wikisource replay](https://github.com/drevendev/Scriptorium/actions/runs/41111720059), oldid `5611473`: 713,925 characters including spaces, 118,157 words, 10,381 sentences, **24 numeric and five NOT_RUN** fields. The [tenth Reader card, charts and comparisons](https://drevendev.github.io/Scriptorium/?book=humiliated#measurements) merged in [#371](https://github.com/drevendev/Scriptorium/pull/371), making **10 measured / 12 catalogued books, 269 fields** in `master`. Live Pages HTTP and desktop/mobile rendering remain **NOT_VERIFIED**; a merged source page is not proof of deployment. No literary prose is committed. Print edition NOT_RUN, FantLab input UNKNOWN, **M2 0/5**. **Inspect the existing FantLab evidence from a repository checkout (no books downloaded):** Run `scriptorium evidence --root . --format markdown` for the human-readable cross-work report, or use `--format json` / `--format csv --output evidence.csv` for reproducible, source-free field deltas. This command validates the retained five-work readiness/matrix plus a separately labelled sixth diagnostic; it **does not run a new analyzer, establish FantLab input identity or repor",
+        "evidence": [
+          {
+            "id": "A:description",
+            "field": "description",
+            "value": "UNKNOWN",
+            "sourceUrl": "https://github.com/drevendev/Scriptorium",
+            "observedAt": "2026-10-31T14:21:22.468Z",
+            "status": "unknown"
+          },
+          {
+            "id": "A:topics",
+            "field": "topics",
+            "value": "UNKNOWN",
+            "sourceUrl": "https://github.com/drevendev/Scriptorium",
+            "observedAt": "2026-10-31T14:21:22.468Z",
+            "status": "unknown"
+          },
+          {
+            "id": "A:languages",
+            "field": "languages",
+            "value": "Python, JavaScript, HTML",
+            "sourceUrl": "https://api.github.com/repos/drevendev/Scriptorium/languages",
+            "observedAt": "2026-10-31T14:21:22.468Z",
+            "status": "observed"
+          },
+          {
+            "id": "A:readme",
+            "field": "readme",
+            "value": "**[🌐 Open the interactive Scriptorium Reader (GitHub Pages) →](https://drevendev.github.io/Scriptorium/)** **Tenth measured Russian novel — Dostoevsky's *Humiliated and Insulted*:** The [exact, source-free 29-field analysis](corpus/candidates/diagnostics/dostoevsky-humiliated-and-insulted-ru.retained.json) merged in #370 after the [pinned Wikisource replay](https://github.com/drevendev/Scriptorium/actions/runs/41111720059), oldid `5611473`: 713,925 characters including spaces, 118,157 words, 10,381 sentences, **24 numeric and five NOT_RUN** fields. The [tenth Reader card, charts and comparisons](https://drevendev.github.io/Scriptorium/?book=humiliated#measurements) merged in [#371](https://github.com/drevendev/Scriptorium/pull/371), making **10 measured / 12 catalogued books, 269 fields** in `master`. Live Pages HTTP and desktop/mobile rendering remain **NOT_VERIFIED**; a merged source page is not proof of deployment. No literary prose is committed. Print edition NOT_RUN, FantLab input UNKNOWN, **M2 0/5**. **Inspect the existing FantLab evidence from a repository checkout (no books downloaded):** Run `scriptorium evidence --root . --format markdown` for the human-readable cross-work report, or use `--format json` / `--format csv --output evidence.csv` for reproducible, source-free field deltas. This command validates the retained five-work readiness/matrix plus a separately labelled sixth diagnostic; it **does not run a new analyzer, establish FantLab input identity or repor",
+            "sourceUrl": "https://api.github.com/repos/drevendev/Scriptorium/readme?ref=7ffd7e8b5c17a421532dea8a4bb768df38e6b2e7",
+            "observedAt": "2026-10-31T14:21:22.468Z",
+            "status": "partial"
+          },
+          {
+            "id": "A:license",
+            "field": "license",
+            "value": "UNKNOWN",
+            "sourceUrl": "https://github.com/drevendev/Scriptorium",
+            "observedAt": "2026-10-31T14:21:22.468Z",
+            "status": "unknown"
+          }
+        ],
+        "warnings": []
+      },
+      {
+        "ref": "DenisSergeevitch/ex-ussr-kinship-research",
+        "url": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+        "observedAt": "2026-10-31T14:21:22.308Z",
+        "defaultBranch": "main",
+        "commitSha": "8d93b8b3e5410e63acab9fce5d21bf340c66ce8e",
+        "license": "MIT",
+        "description": "Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Replies in your language.",
+        "topics": [
+          "agent-skills",
+          "archives",
+          "claude-code",
+          "codex",
+          "family-history",
+          "familysearch",
+          "genealogy",
+          "ussr"
+        ],
+        "languages": ["Python", "HTML"],
+        "readme": "Languages: [English](README.md) / [Русский](README.ru.md) / [Беларуская](README.be.md) / [Қазақша](README.kk.md) / [Українська](README.uk.md) / [Polski](README.pl.md) / [Deutsch](README.de.md) / [Română](README.ro.md) / [Eesti](README.et.md) / [Latviešu](README.lv.md) / [Lietuvių](README.lt.md) / [ქართული](README.ka.md) / [Հայերեն](README.hy.md) / [Azərbaycanca](README.az.md) / [Кыргызча](README.ky.md) / [Тоҷикӣ](README.tg.md) / [Türkmençe](README.tk.md) / [O‘zbekcha](README.uz.md) **An evidence-first genealogy skill for AI agents (Codex, Claude Code and other Agent Skills runtimes).** It turns an agent into a careful family-history researcher for the former USSR, the Soviet Union and the Russian Empire. The agent reads church books and civil records, military, deportation and repression files, and unindexed archive scans. It keeps every find traceable, separates records from interpretation and says plainly what is proven and what is not. Coverage includes all 15 former Soviet republics: Russia, Ukraine, Belarus, Moldova, Estonia, Latvia, Lithuania, Georgia, Armenia, Azerbaijan, Kazakhstan, Kyrgyzstan, Tajikistan, Turkmenistan and Uzbekistan. Archives are chosen by the event's historical jurisdiction and current record custodian; a regional example does not replace local research. The skill's instructions are written in Russian, but **the agent talks to you in your language**: English, Ukrainian, Russian, Polish, German and so on. It quotes sources in their original spelling ",
+        "evidence": [
+          {
+            "id": "B:description",
+            "field": "description",
+            "value": "Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Replies in your language.",
+            "sourceUrl": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+            "observedAt": "2026-10-31T14:21:22.308Z",
+            "status": "observed"
+          },
+          {
+            "id": "B:topics",
+            "field": "topics",
+            "value": "agent-skills, archives, claude-code, codex, family-history, familysearch, genealogy, ussr",
+            "sourceUrl": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+            "observedAt": "2026-10-31T14:21:22.308Z",
+            "status": "observed"
+          },
+          {
+            "id": "B:languages",
+            "field": "languages",
+            "value": "Python, HTML",
+            "sourceUrl": "https://api.github.com/repos/DenisSergeevitch/ex-ussr-kinship-research/languages",
+            "observedAt": "2026-10-31T14:21:22.308Z",
+            "status": "observed"
+          },
+          {
+            "id": "B:readme",
+            "field": "readme",
+            "value": "Languages: [English](README.md) / [Русский](README.ru.md) / [Беларуская](README.be.md) / [Қазақша](README.kk.md) / [Українська](README.uk.md) / [Polski](README.pl.md) / [Deutsch](README.de.md) / [Română](README.ro.md) / [Eesti](README.et.md) / [Latviešu](README.lv.md) / [Lietuvių](README.lt.md) / [ქართული](README.ka.md) / [Հայերեն](README.hy.md) / [Azərbaycanca](README.az.md) / [Кыргызча](README.ky.md) / [Тоҷикӣ](README.tg.md) / [Türkmençe](README.tk.md) / [O‘zbekcha](README.uz.md) **An evidence-first genealogy skill for AI agents (Codex, Claude Code and other Agent Skills runtimes).** It turns an agent into a careful family-history researcher for the former USSR, the Soviet Union and the Russian Empire. The agent reads church books and civil records, military, deportation and repression files, and unindexed archive scans. It keeps every find traceable, separates records from interpretation and says plainly what is proven and what is not. Coverage includes all 15 former Soviet republics: Russia, Ukraine, Belarus, Moldova, Estonia, Latvia, Lithuania, Georgia, Armenia, Azerbaijan, Kazakhstan, Kyrgyzstan, Tajikistan, Turkmenistan and Uzbekistan. Archives are chosen by the event's historical jurisdiction and current record custodian; a regional example does not replace local research. The skill's instructions are written in Russian, but **the agent talks to you in your language**: English, Ukrainian, Russian, Polish, German and so on. It quotes sources in their original spelling ",
+            "sourceUrl": "https://api.github.com/repos/DenisSergeevitch/ex-ussr-kinship-research/readme?ref=8d93b8b3e5410e63acab9fce5d21bf340c66ce8e",
+            "observedAt": "2026-10-31T14:21:22.308Z",
+            "status": "partial"
+          },
+          {
+            "id": "B:license",
+            "field": "license",
+            "value": "MIT",
+            "sourceUrl": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+            "observedAt": "2026-10-31T14:21:22.308Z",
+            "status": "observed"
+          }
+        ],
+        "warnings": []
+      }
+    ],
+    "evidence": [
+      {
+        "id": "A:description",
+        "field": "description",
+        "value": "UNKNOWN",
+        "sourceUrl": "https://github.com/drevendev/Scriptorium",
+        "observedAt": "2026-10-31T14:21:22.468Z",
+        "status": "unknown"
+      },
+      {
+        "id": "A:topics",
+        "field": "topics",
+        "value": "UNKNOWN",
+        "sourceUrl": "https://github.com/drevendev/Scriptorium",
+        "observedAt": "2026-10-31T14:21:22.468Z",
+        "status": "unknown"
+      },
+      {
+        "id": "A:languages",
+        "field": "languages",
+        "value": "Python, JavaScript, HTML",
+        "sourceUrl": "https://api.github.com/repos/drevendev/Scriptorium/languages",
+        "observedAt": "2026-10-31T14:21:22.468Z",
+        "status": "observed"
+      },
+      {
+        "id": "A:readme",
+        "field": "readme",
+        "value": "**[🌐 Open the interactive Scriptorium Reader (GitHub Pages) →](https://drevendev.github.io/Scriptorium/)** **Tenth measured Russian novel — Dostoevsky's *Humiliated and Insulted*:** The [exact, source-free 29-field analysis](corpus/candidates/diagnostics/dostoevsky-humiliated-and-insulted-ru.retained.json) merged in #370 after the [pinned Wikisource replay](https://github.com/drevendev/Scriptorium/actions/runs/41111720059), oldid `5611473`: 713,925 characters including spaces, 118,157 words, 10,381 sentences, **24 numeric and five NOT_RUN** fields. The [tenth Reader card, charts and comparisons](https://drevendev.github.io/Scriptorium/?book=humiliated#measurements) merged in [#371](https://github.com/drevendev/Scriptorium/pull/371), making **10 measured / 12 catalogued books, 269 fields** in `master`. Live Pages HTTP and desktop/mobile rendering remain **NOT_VERIFIED**; a merged source page is not proof of deployment. No literary prose is committed. Print edition NOT_RUN, FantLab input UNKNOWN, **M2 0/5**. **Inspect the existing FantLab evidence from a repository checkout (no books downloaded):** Run `scriptorium evidence --root . --format markdown` for the human-readable cross-work report, or use `--format json` / `--format csv --output evidence.csv` for reproducible, source-free field deltas. This command validates the retained five-work readiness/matrix plus a separately labelled sixth diagnostic; it **does not run a new analyzer, establish FantLab input identity or repor",
+        "sourceUrl": "https://api.github.com/repos/drevendev/Scriptorium/readme?ref=7ffd7e8b5c17a421532dea8a4bb768df38e6b2e7",
+        "observedAt": "2026-10-31T14:21:22.468Z",
+        "status": "partial"
+      },
+      {
+        "id": "A:license",
+        "field": "license",
+        "value": "UNKNOWN",
+        "sourceUrl": "https://github.com/drevendev/Scriptorium",
+        "observedAt": "2026-10-31T14:21:22.468Z",
+        "status": "unknown"
+      },
+      {
+        "id": "B:description",
+        "field": "description",
+        "value": "Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Replies in your language.",
+        "sourceUrl": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+        "observedAt": "2026-10-31T14:21:22.308Z",
+        "status": "observed"
+      },
+      {
+        "id": "B:topics",
+        "field": "topics",
+        "value": "agent-skills, archives, claude-code, codex, family-history, familysearch, genealogy, ussr",
+        "sourceUrl": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+        "observedAt": "2026-10-31T14:21:22.308Z",
+        "status": "observed"
+      },
+      {
+        "id": "B:languages",
+        "field": "languages",
+        "value": "Python, HTML",
+        "sourceUrl": "https://api.github.com/repos/DenisSergeevitch/ex-ussr-kinship-research/languages",
+        "observedAt": "2026-10-31T14:21:22.308Z",
+        "status": "observed"
+      },
+      {
+        "id": "B:readme",
+        "field": "readme",
+        "value": "Languages: [English](README.md) / [Русский](README.ru.md) / [Беларуская](README.be.md) / [Қазақша](README.kk.md) / [Українська](README.uk.md) / [Polski](README.pl.md) / [Deutsch](README.de.md) / [Română](README.ro.md) / [Eesti](README.et.md) / [Latviešu](README.lv.md) / [Lietuvių](README.lt.md) / [ქართული](README.ka.md) / [Հայերեն](README.hy.md) / [Azərbaycanca](README.az.md) / [Кыргызча](README.ky.md) / [Тоҷикӣ](README.tg.md) / [Türkmençe](README.tk.md) / [O‘zbekcha](README.uz.md) **An evidence-first genealogy skill for AI agents (Codex, Claude Code and other Agent Skills runtimes).** It turns an agent into a careful family-history researcher for the former USSR, the Soviet Union and the Russian Empire. The agent reads church books and civil records, military, deportation and repression files, and unindexed archive scans. It keeps every find traceable, separates records from interpretation and says plainly what is proven and what is not. Coverage includes all 15 former Soviet republics: Russia, Ukraine, Belarus, Moldova, Estonia, Latvia, Lithuania, Georgia, Armenia, Azerbaijan, Kazakhstan, Kyrgyzstan, Tajikistan, Turkmenistan and Uzbekistan. Archives are chosen by the event's historical jurisdiction and current record custodian; a regional example does not replace local research. The skill's instructions are written in Russian, but **the agent talks to you in your language**: English, Ukrainian, Russian, Polish, German and so on. It quotes sources in their original spelling ",
+        "sourceUrl": "https://api.github.com/repos/DenisSergeevitch/ex-ussr-kinship-research/readme?ref=8d93b8b3e5410e63acab9fce5d21bf340c66ce8e",
+        "observedAt": "2026-10-31T14:21:22.308Z",
+        "status": "partial"
+      },
+      {
+        "id": "B:license",
+        "field": "license",
+        "value": "MIT",
+        "sourceUrl": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+        "observedAt": "2026-10-31T14:21:22.308Z",
+        "status": "observed"
+      }
+    ],
+    "draft": {
+      "name": "The Dossier Phantom",
+      "hook": "A translucent clerk drifting through a fog of parsed metrics and unindexed Soviet archives.",
+      "brain": {
+        "text": "It attempts to organize literary works into a multi-field analysis using structured JSON fields.",
+        "evidenceIds": ["A:readme"]
+      },
+      "body": {
+        "text": "It meticulously separates raw archival findings from mere interpretation in civil and military records.",
+        "evidenceIds": ["B:readme"]
+      },
+      "curse": {
+        "text": "It cannot distinguish between a character's tragic fate in a novel and a real deportation record.",
+        "evidenceIds": ["A:readme", "B:readme"]
+      },
+      "firstWords": "Is this a sentence from a novel or a line from a repression file?",
+      "usefulMutation": "A historian could use the Scriptorium analyzer to extract names from a text and then use the ex-ussr-kinship-research agent to search for those specific names in archival records to produce a verified lineage report.",
+      "uncertainty": "It is unknown if the system could accurately map parsed literary names to specific unindexed archive scans.",
+      "humorTags": ["gothic-bureaucracy", "archival-horror"]
+    },
+    "sprite": {
+      "recipeVersion": "frankenrepo/sprite/v1",
+      "seed": "48a436d3-5f19-440d-b49c-0af167f8af2b",
+      "body": 1,
+      "head": 1,
+      "accessory": 2,
+      "palette": 3,
+      "expression": 0,
+      "flavor": 11
+    },
+    "publication": {
+      "state": "ephemeral"
+    },
+    "lineage": {
+      "parentMonsterIds": [],
+      "depth": 0
+    },
+    "context": {
+      "revision": {
+        "original": {
+          "name": "The Ink-Stained Archivist",
+          "hook": "A spectral clerk perpetually trapped between a mountain of unindexed scans and a pile of measured literary metrics.",
+          "brain": {
+            "text": "It attempts to categorize every sentence of a Russian novel into a fixed twenty-nine field structure.",
+            "evidenceIds": ["A:readme"]
+          },
+          "body": {
+            "text": "It wanders through deportation and repression records, separating raw findings from mere interpretation.",
+            "evidenceIds": ["B:readme"]
+          },
+          "curse": {
+            "text": "It cannot decide if a name is a literary character or a historical person found in a church book.",
+            "evidenceIds": ["A:readme", "B:readme"]
+          },
+          "firstWords": "Why must every tragic hero also appear in a military service file?",
+          "usefulMutation": "A researcher could use the Scriptorium parser to extract text from a novel and then use the ex-ussr-kinship-research agent to transform those characters into a genealogical report of potential Soviet-era ancestors.",
+          "uncertainty": "It is unclear if the agent could distinguish between a fictional surname and a real person in an unindexed scan.",
+          "humorTags": ["gothic-bureaucracy", "spectral-clerk"]
+        },
+        "advice": "{\"parentA\":\"Scriptorium\",\"parentB\":\"ex-ussr-kinship-research\",\"jointMechanism\":\"Pipeline: Scriptorium parses a Russian novel into text/fields (A), then kinship-research agent queries archives on extracted names (B).\",\"unsupportedClaims\":[{\"field\":\"usefulMutation\",\"claim\":\"Transforming fictional characters into real genealogical reports implies archive agents can link fictional surnames to actual persons, which no evidence demonstrates.\",\"reason\":\"Evidence only shows parsing (A) and archive search (B); fictional-to-real matching is asserted, not shown.\",\"evidenceIds\":[\"A:readme\",\"B:description\"]}],\"proposedMutation\":\"Change usefulMutation: pipeline indexes historical names found in real documents via Scriptorium-style parsing, then queries kinship-research archives for those documented persons only.\",\"limitation\":\"Categorizing a novel's sentences (B body) is not supported by B's evidence; that belongs to A.\",\"evidenceIds\":[\"A:readme\",\"B:readme\"]}",
+        "originalCardId": "20b3e724-791d-4056-b6ca-86048cd32664",
+        "originalContentHash": "e215113ccf89961849ee91602a4a6e0d768912037c50bc68760ab59c9ac3a4ad",
+        "reviewId": "da6d40f2-e12e-429e-a462-82d2e36d36a3",
+        "originalOperationId": "bbbf4ece-3f10-4656-bb1b-22cd436844a1",
+        "parents": [
+          {
+            "ref": "drevendev/Scriptorium",
+            "url": "https://github.com/drevendev/Scriptorium",
+            "observedAt": "2026-10-31T14:21:22.468Z",
+            "defaultBranch": "master",
+            "commitSha": "7ffd7e8b5c17a421532dea8a4bb768df38e6b2e7",
+            "license": "UNKNOWN",
+            "description": null,
+            "topics": [],
+            "languages": ["Python", "JavaScript", "HTML"],
+            "readme": "**[🌐 Open the interactive Scriptorium Reader (GitHub Pages) →](https://drevendev.github.io/Scriptorium/)** **Tenth measured Russian novel — Dostoevsky's *Humiliated and Insulted*:** The [exact, source-free 29-field analysis](corpus/candidates/diagnostics/dostoevsky-humiliated-and-insulted-ru.retained.json) merged in #370 after the [pinned Wikisource replay](https://github.com/drevendev/Scriptorium/actions/runs/41111720059), oldid `5611473`: 713,925 characters including spaces, 118,157 words, 10,381 sentences, **24 numeric and five NOT_RUN** fields. The [tenth Reader card, charts and comparisons](https://drevendev.github.io/Scriptorium/?book=humiliated#measurements) merged in [#371](https://github.com/drevendev/Scriptorium/pull/371), making **10 measured / 12 catalogued books, 269 fields** in `master`. Live Pages HTTP and desktop/mobile rendering remain **NOT_VERIFIED**; a merged source page is not proof of deployment. No literary prose is committed. Print edition NOT_RUN, FantLab input UNKNOWN, **M2 0/5**. **Inspect the existing FantLab evidence from a repository checkout (no books downloaded):** Run `scriptorium evidence --root . --format markdown` for the human-readable cross-work report, or use `--format json` / `--format csv --output evidence.csv` for reproducible, source-free field deltas. This command validates the retained five-work readiness/matrix plus a separately labelled sixth diagnostic; it **does not run a new analyzer, establish FantLab input identity or repor",
+            "evidence": [
+              {
+                "id": "A:description",
+                "field": "description",
+                "value": "UNKNOWN",
+                "sourceUrl": "https://github.com/drevendev/Scriptorium",
+                "observedAt": "2026-10-31T14:21:22.468Z",
+                "status": "unknown"
+              },
+              {
+                "id": "A:topics",
+                "field": "topics",
+                "value": "UNKNOWN",
+                "sourceUrl": "https://github.com/drevendev/Scriptorium",
+                "observedAt": "2026-10-31T14:21:22.468Z",
+                "status": "unknown"
+              },
+              {
+                "id": "A:languages",
+                "field": "languages",
+                "value": "Python, JavaScript, HTML",
+                "sourceUrl": "https://api.github.com/repos/drevendev/Scriptorium/languages",
+                "observedAt": "2026-10-31T14:21:22.468Z",
+                "status": "observed"
+              },
+              {
+                "id": "A:readme",
+                "field": "readme",
+                "value": "**[🌐 Open the interactive Scriptorium Reader (GitHub Pages) →](https://drevendev.github.io/Scriptorium/)** **Tenth measured Russian novel — Dostoevsky's *Humiliated and Insulted*:** The [exact, source-free 29-field analysis](corpus/candidates/diagnostics/dostoevsky-humiliated-and-insulted-ru.retained.json) merged in #370 after the [pinned Wikisource replay](https://github.com/drevendev/Scriptorium/actions/runs/41111720059), oldid `5611473`: 713,925 characters including spaces, 118,157 words, 10,381 sentences, **24 numeric and five NOT_RUN** fields. The [tenth Reader card, charts and comparisons](https://drevendev.github.io/Scriptorium/?book=humiliated#measurements) merged in [#371](https://github.com/drevendev/Scriptorium/pull/371), making **10 measured / 12 catalogued books, 269 fields** in `master`. Live Pages HTTP and desktop/mobile rendering remain **NOT_VERIFIED**; a merged source page is not proof of deployment. No literary prose is committed. Print edition NOT_RUN, FantLab input UNKNOWN, **M2 0/5**. **Inspect the existing FantLab evidence from a repository checkout (no books downloaded):** Run `scriptorium evidence --root . --format markdown` for the human-readable cross-work report, or use `--format json` / `--format csv --output evidence.csv` for reproducible, source-free field deltas. This command validates the retained five-work readiness/matrix plus a separately labelled sixth diagnostic; it **does not run a new analyzer, establish FantLab input identity or repor",
+                "sourceUrl": "https://api.github.com/repos/drevendev/Scriptorium/readme?ref=7ffd7e8b5c17a421532dea8a4bb768df38e6b2e7",
+                "observedAt": "2026-10-31T14:21:22.468Z",
+                "status": "partial"
+              },
+              {
+                "id": "A:license",
+                "field": "license",
+                "value": "UNKNOWN",
+                "sourceUrl": "https://github.com/drevendev/Scriptorium",
+                "observedAt": "2026-10-31T14:21:22.468Z",
+                "status": "unknown"
+              }
+            ],
+            "warnings": []
+          },
+          {
+            "ref": "DenisSergeevitch/ex-ussr-kinship-research",
+            "url": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+            "observedAt": "2026-10-31T14:21:22.308Z",
+            "defaultBranch": "main",
+            "commitSha": "8d93b8b3e5410e63acab9fce5d21bf340c66ce8e",
+            "license": "MIT",
+            "description": "Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Replies in your language.",
+            "topics": [
+              "agent-skills",
+              "archives",
+              "claude-code",
+              "codex",
+              "family-history",
+              "familysearch",
+              "genealogy",
+              "ussr"
+            ],
+            "languages": ["Python", "HTML"],
+            "readme": "Languages: [English](README.md) / [Русский](README.ru.md) / [Беларуская](README.be.md) / [Қазақша](README.kk.md) / [Українська](README.uk.md) / [Polski](README.pl.md) / [Deutsch](README.de.md) / [Română](README.ro.md) / [Eesti](README.et.md) / [Latviešu](README.lv.md) / [Lietuvių](README.lt.md) / [ქართული](README.ka.md) / [Հայերեն](README.hy.md) / [Azərbaycanca](README.az.md) / [Кыргызча](README.ky.md) / [Тоҷикӣ](README.tg.md) / [Türkmençe](README.tk.md) / [O‘zbekcha](README.uz.md) **An evidence-first genealogy skill for AI agents (Codex, Claude Code and other Agent Skills runtimes).** It turns an agent into a careful family-history researcher for the former USSR, the Soviet Union and the Russian Empire. The agent reads church books and civil records, military, deportation and repression files, and unindexed archive scans. It keeps every find traceable, separates records from interpretation and says plainly what is proven and what is not. Coverage includes all 15 former Soviet republics: Russia, Ukraine, Belarus, Moldova, Estonia, Latvia, Lithuania, Georgia, Armenia, Azerbaijan, Kazakhstan, Kyrgyzstan, Tajikistan, Turkmenistan and Uzbekistan. Archives are chosen by the event's historical jurisdiction and current record custodian; a regional example does not replace local research. The skill's instructions are written in Russian, but **the agent talks to you in your language**: English, Ukrainian, Russian, Polish, German and so on. It quotes sources in their original spelling ",
+            "evidence": [
+              {
+                "id": "B:description",
+                "field": "description",
+                "value": "Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Replies in your language.",
+                "sourceUrl": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+                "observedAt": "2026-10-31T14:21:22.308Z",
+                "status": "observed"
+              },
+              {
+                "id": "B:topics",
+                "field": "topics",
+                "value": "agent-skills, archives, claude-code, codex, family-history, familysearch, genealogy, ussr",
+                "sourceUrl": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+                "observedAt": "2026-10-31T14:21:22.308Z",
+                "status": "observed"
+              },
+              {
+                "id": "B:languages",
+                "field": "languages",
+                "value": "Python, HTML",
+                "sourceUrl": "https://api.github.com/repos/DenisSergeevitch/ex-ussr-kinship-research/languages",
+                "observedAt": "2026-10-31T14:21:22.308Z",
+                "status": "observed"
+              },
+              {
+                "id": "B:readme",
+                "field": "readme",
+                "value": "Languages: [English](README.md) / [Русский](README.ru.md) / [Беларуская](README.be.md) / [Қазақша](README.kk.md) / [Українська](README.uk.md) / [Polski](README.pl.md) / [Deutsch](README.de.md) / [Română](README.ro.md) / [Eesti](README.et.md) / [Latviešu](README.lv.md) / [Lietuvių](README.lt.md) / [ქართული](README.ka.md) / [Հայերեն](README.hy.md) / [Azərbaycanca](README.az.md) / [Кыргызча](README.ky.md) / [Тоҷикӣ](README.tg.md) / [Türkmençe](README.tk.md) / [O‘zbekcha](README.uz.md) **An evidence-first genealogy skill for AI agents (Codex, Claude Code and other Agent Skills runtimes).** It turns an agent into a careful family-history researcher for the former USSR, the Soviet Union and the Russian Empire. The agent reads church books and civil records, military, deportation and repression files, and unindexed archive scans. It keeps every find traceable, separates records from interpretation and says plainly what is proven and what is not. Coverage includes all 15 former Soviet republics: Russia, Ukraine, Belarus, Moldova, Estonia, Latvia, Lithuania, Georgia, Armenia, Azerbaijan, Kazakhstan, Kyrgyzstan, Tajikistan, Turkmenistan and Uzbekistan. Archives are chosen by the event's historical jurisdiction and current record custodian; a regional example does not replace local research. The skill's instructions are written in Russian, but **the agent talks to you in your language**: English, Ukrainian, Russian, Polish, German and so on. It quotes sources in their original spelling ",
+                "sourceUrl": "https://api.github.com/repos/DenisSergeevitch/ex-ussr-kinship-research/readme?ref=8d93b8b3e5410e63acab9fce5d21bf340c66ce8e",
+                "observedAt": "2026-10-31T14:21:22.308Z",
+                "status": "partial"
+              },
+              {
+                "id": "B:license",
+                "field": "license",
+                "value": "MIT",
+                "sourceUrl": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+                "observedAt": "2026-10-31T14:21:22.308Z",
+                "status": "observed"
+              }
+            ],
+            "warnings": []
+          }
+        ]
+      },
+      "research": []
+    },
+    "revision": {
+      "originalCardId": "20b3e724-791d-4056-b6ca-86048cd32664",
+      "originalContentHash": "e215113ccf89961849ee91602a4a6e0d768912037c50bc68760ab59c9ac3a4ad",
+      "reviewId": "da6d40f2-e12e-429e-a462-82d2e36d36a3",
+      "number": 1
+    },
+    "workflow": {
+      "engine": "mastra",
+      "runId": "48a436d3-5f19-440d-b49c-0af167f8af2b",
+      "traceId": "31acfc7c97ae40e3929d435d73712ca8",
+      "steps": [
+        {
+          "name": "inspect-donors",
+          "state": "completed",
+          "durationMs": 188
+        },
+        {
+          "name": "approved-context",
+          "state": "completed",
+          "durationMs": 3
+        },
+        {
+          "name": "gemma-and-contract",
+          "state": "completed",
+          "durationMs": 5671
+        },
+        {
+          "name": "reveal",
+          "state": "completed",
+          "durationMs": 0
+        }
+      ]
+    },
+    "contentHash": "be3713389ff6bdb3e7fecd949fd865f799cc1099254eaf3c9f59b5cfcc8895d3"
+  },
+  "endedAt": "2026-10-31T14:23:53.575Z"
+}

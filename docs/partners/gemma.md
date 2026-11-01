@@ -1,5 +1,10 @@
 # Gemma — verified local scenario
 
+31 October update: [new local qualification](UPDATE_RESULT_RU.md) adds real
+Mastra/Atlas runs and reviews. Prompt v6 Chaotic/Cursed succeeded; Useful v6 was
+rejected by the archival-humor gate after one repair. Do not claim all current
+modes passed or a public demo exists. [New quality review](../eval/V02_QUALITY_REVIEW.md).
+
 Verified completion: 28 October 2026, 00:31 Asia/Nicosia.
 Provider/model: Cloudflare Workers AI / @cf/google/gemma-4-26b-a4b-it.
 Purpose: turn two bounded, source-linked public donor genomes into a fictional

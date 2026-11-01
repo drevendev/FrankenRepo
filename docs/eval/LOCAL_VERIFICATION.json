@@ -1,0 +1,51 @@
+{
+  "kind": "FINAL_LOCAL_VERIFICATION",
+  "checkedAt": "2026-10-31 15:10:53 UTC",
+  "environment": { "node": "24.19.0", "npm": "11.17.0", "platform": "Windows" },
+  "worktreeDirty": true,
+  "checks": {
+    "npmCi": { "status": "passed" },
+    "npmRunVerify": {
+      "status": "passed",
+      "testFiles": 9,
+      "tests": 78,
+      "includes": [
+        "typecheck",
+        "lint",
+        "format",
+        "unit/contract/policy/regressions",
+        "production build",
+        "bundle budget",
+        "evidence/secret/capability scan"
+      ]
+    },
+    "builtPlaywright": {
+      "status": "passed",
+      "tests": 18,
+      "projects": ["desktop", "mobile"],
+      "port": 3003,
+      "model": "disabled",
+      "storage": "disabled",
+      "sentry": "disabled",
+      "successFixtures": "test-only; separate from actual live receipts",
+      "durationSeconds": 50.3
+    },
+    "npmAudit": { "status": "passed", "vulnerabilities": 0 },
+    "browserJsGzipBytes": 111585,
+    "browserJsGzipLimit": 250000,
+    "lockedLicenseRecords": 385,
+    "unknownLicenseMetadata": 0,
+    "canonicalSpecificationAndInitializationUnchanged": true,
+    "gitDiffCheck": "passed",
+    "pythonExperimentSyntax": "passed; no training or sampling executed"
+  },
+  "liveOperatorServer": "stopped; no scheduler",
+  "publicDemoUrl": null,
+  "pushDeployReleaseArticlePublication": "not performed",
+  "limitations": [
+    "Current Useful v6 failed the archival-humor safety gate",
+    "Useful revision did not improve semantic quality",
+    "Tinker labels/training, Backboard corpus, Render and public E2E await owner-dependent actions",
+    "New category review deferred; only prior Gemma remains VERIFIED"
+  ]
+}

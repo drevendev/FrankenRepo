@@ -1,3 +1,9 @@
+# Current demonstration
+
+A real 52-second local Gemma recording is now included in the [published DEV submission](https://dev.to/drevendev/i-gave-two-github-repositories-a-terrible-idea-then-i-gave-it-life-1ge9). See [capture receipt](DEMO_REAL_RECEIPT.json), [MP4](DEMO_REAL.mp4), [GIF](DEMO_REAL.gif), [captions](DEMO_REAL.vtt), and [publication confirmation](PUBLISHED.json). The new recording uses Flask + jq, Cursed, and prompt v6; it produced The Scribe of Bracketed Sighs and exported its actual PNG. Public application hosting remains unavailable.
+
+The older instructions below describe the 28 October state and are retained as historical context.
+
 # Demonstration handoff
 
 Current verification, 28 October 2026: real Cursed and Useful/Chaotic browser/API

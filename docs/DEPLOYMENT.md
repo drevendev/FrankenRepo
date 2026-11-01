@@ -1,39 +1,38 @@
-# Deployment preparation — application not hosted
+# Prepared Render Free deployment — not deployed
 
-The local production command is npm run build followed by npm start.
-Node 24 serves the UI and API together. /healthz checks the process only;
-/readyz reports a configured model as unknown; it does not yet retain recent
-inference health or remaining local quota. See [issue #7](https://github.com/drevendev/FrankenRepo/issues/7).
+The source integration update is published after the challenge deadline;
+see the [README timing disclosure](../README.md#post-deadline-source-update--1-november-2026).
+render.yaml prepares one Free Node24
+service, Frankfurt, auto-deploy off, npm ci && npm run build, npm start,
+HOST=0.0.0.0 and Render's PORT. No service or public URL has been created.
+[Official Blueprint fields](https://render.com/docs/blueprint-spec) and
+[Free limits](https://render.com/docs/free) were checked on 31 October 2026.
 
-## Human handoff for an authorized Render Free trial
+The existing dashboard is accessible. The owner separately authorized committing
+and pushing the guarded source update on 1 November. The `v0.1.0` tag remains the
+earlier preview. Source publication does not create a Render service or authorize
+the remaining network/terms actions. Do not choose paid compute from credit.
 
-1. Owner separately authorizes deployment and confirms host access without a
-   required card or paid upgrade. The existing repository-publication authorization
-   does not create a hosting account or authorize spending.
-2. Use the public [drevendev/FrankenRepo source](https://github.com/drevendev/FrankenRepo).
-   Source publication alone does not establish a working hosted application.
-3. Create a Node Web Service manually using npm ci && npm run build as build
-   command and npm start as start command. Set NODE_ENV=production,
-   HOST=0.0.0.0, Node 24 and the public site's exact API_ALLOWED_ORIGINS.
-   PORT is supplied by Render.
-4. Enable only an authorized and independently confirmed free Gemma endpoint.
-   Keep its token server-side. Ollama loopback does not provide hosted inference
-   unless an actual model service exists in that environment.
-5. Review the conservative proxy-IP quota limitation in THREAT_MODEL.md before
-   opening guest traffic. Keep a single instance. Confirm provider hard budget.
-6. Test health, readiness, two arbitrary public donors, all three modes, quotas,
-   cancellation, export and cold-start errors at the actual URL.
-7. Record screenshots/response timestamps and sanitized model/deploy proof.
-   Only then update partner statuses and DEV draft.
+For a separately authorized future deployment:
 
-No hosting service configuration, domain, account signup or application deployment
-was performed. Render Static Site plus a separate API is an alternative future
-deployment; this implementation does not yet package a Cloudflare Worker API.
-Do not label the prepared adapter as a deployed Worker.
+1. Select the actual reviewed source commit and record its SHA.
+2. Create the prepared Free service, one instance; no card, paid upgrade, disk
+   or scheduler. Required signup/terms remain human actions.
+3. Set the exact service origin and keep one generated SESSION_SECRET across
+   redeploys. Server credentials never use VITE_* or enter the browser bundle.
+4. Read the selected service's documented outbound ranges. Obtain required
+   approval before adding only those ranges to Atlas. Never add 0.0.0.0/0.
+5. Check healthz/readyz with model disabled. Then explicitly enable authorized
+   Gemma and validated features. Mongo reservations must succeed before inference.
+   Keep corpus/training/gallery off until their respective approval gates pass.
+6. Verify actual cold start, supported modes/failures, save/reload/export,
+   wrong-key denial, share consent and unpublish/delete on the actual URL.
+7. Run bounded Browserbase public E2E and record deployment, traces and usage.
+   Only then update public-demo/category claims.
 
-Provider API references used in implementation:
-[Hono Node](https://hono.dev/docs/getting-started/nodejs),
-[GitHub repository contents](https://docs.github.com/en/rest/repos/contents),
-[Ollama structured outputs](https://docs.ollama.com/capabilities/structured-outputs),
-[Cloudflare model run](https://developers.cloudflare.com/api/resources/ai/methods/run/).
-Specific account/model eligibility and live pricing remain to be checked before activation.
+Free services may sleep; cold-start UI preserves inputs and offers manual retry.
+No keep-alive automation. Global budgets are independent of cleared cookies;
+forwarding headers are ignored until a trusted proxy path is separately reviewed.
+
+Local checks use npm run verify and built npm run test:e2e on isolated 3003.
+Operator live checks use a separate explicit 3002 entry point; they do not deploy.

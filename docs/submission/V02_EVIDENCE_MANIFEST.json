@@ -1,0 +1,241 @@
+{
+  "schemaVersion": "frankenrepo/local-evidence-bundle/v1",
+  "createdAt": "2026-11-01T11:28:37.560Z",
+  "baseCommit": "6729a4efd7b1594f186d513bdf513645ce9609bb",
+  "worktreeDirty": true,
+  "publicDemoUrl": null,
+  "articlePublished": true,
+  "articleUrl": "https://dev.to/drevendev/i-gave-two-github-repositories-a-terrible-idea-then-i-gave-it-life-1ge9",
+  "publicationRecord": "docs/submission/PUBLISHED.json",
+  "articleRecordingReceipt": "docs/submission/DEMO_REAL_RECEIPT.json",
+  "releaseCreated": false,
+  "categoryReview": "docs/submission/CATEGORY_REVIEW.json",
+  "verifiedLocalScenarios": [
+    "Gemma",
+    "Mastra",
+    "MongoDB Atlas",
+    "Browserbase",
+    "Ultramarine",
+    "Sentry Agent Tracing"
+  ],
+  "postDeadlineSourceUpdate": true,
+  "runs": [
+    {
+      "path": "docs/eval/runs/2026-10-31T13-47-53-046Z-chaotic-browser.json",
+      "kind": "LIVE_BROWSER_RITUAL",
+      "startedAt": "2026-10-31T13:47:53.046Z",
+      "state": "completed",
+      "recordName": "The Digesting Glider",
+      "promptVersion": "frankenrepo/prompt/v5",
+      "model": "@cf/google/gemma-4-26b-a4b-it",
+      "hasReview": false,
+      "error": null,
+      "originalPreserved": null,
+      "frozenSnapshots": null,
+      "exports": [
+        "docs/eval/runs/2026-10-31T13-47-53-046Z-chaotic-browser.png",
+        "docs/eval/runs/2026-10-31T13-47-53-046Z-chaotic-browser.svg",
+        "docs/eval/runs/2026-10-31T13-47-53-046Z-chaotic-browser.txt",
+        "docs/eval/runs/2026-10-31T13-47-53-046Z-chaotic-browser-certificate.png"
+      ],
+      "selectionApprovedByHuman": false
+    },
+    {
+      "path": "docs/eval/runs/2026-10-31T13-49-15-497Z-useful-browser.json",
+      "kind": "LIVE_BROWSER_RITUAL",
+      "startedAt": "2026-10-31T13:49:15.497Z",
+      "state": "completed",
+      "recordName": "The Archivist's Ink-Stained Wraith",
+      "promptVersion": "frankenrepo/prompt/v5",
+      "model": "@cf/google/gemma-4-26b-a4b-it",
+      "hasReview": false,
+      "error": {
+        "code": "VERIFICATION_FAILED",
+        "message": "page.waitForResponse: Timeout 60000ms exceeded while waiting for event \"response\""
+      },
+      "originalPreserved": null,
+      "frozenSnapshots": null,
+      "exports": [
+        "docs/eval/runs/2026-10-31T13-49-15-497Z-useful-browser.png",
+        "docs/eval/runs/2026-10-31T13-49-15-497Z-useful-browser.svg",
+        "docs/eval/runs/2026-10-31T13-49-15-497Z-useful-browser.txt",
+        "docs/eval/runs/2026-10-31T13-49-15-497Z-useful-browser-certificate.png"
+      ],
+      "selectionApprovedByHuman": false
+    },
+    {
+      "path": "docs/eval/runs/2026-10-31T14-06-24-828Z-chaotic-browser.json",
+      "kind": "LIVE_BROWSER_RITUAL",
+      "startedAt": "2026-10-31T14:06:24.828Z",
+      "state": "completed",
+      "recordName": "The Scavenging Glider",
+      "promptVersion": "frankenrepo/prompt/v5",
+      "model": "@cf/google/gemma-4-26b-a4b-it",
+      "hasReview": true,
+      "error": null,
+      "originalPreserved": null,
+      "frozenSnapshots": null,
+      "exports": [
+        "docs/eval/runs/2026-10-31T14-06-24-828Z-chaotic-browser.png",
+        "docs/eval/runs/2026-10-31T14-06-24-828Z-chaotic-browser.svg",
+        "docs/eval/runs/2026-10-31T14-06-24-828Z-chaotic-browser.txt",
+        "docs/eval/runs/2026-10-31T14-06-24-828Z-chaotic-browser-certificate.png"
+      ],
+      "selectionApprovedByHuman": false
+    },
+    {
+      "path": "docs/eval/runs/2026-10-31T14-16-26-906Z-revision.json",
+      "kind": "LIVE_CARD_REVISION",
+      "startedAt": "2026-10-31T14:16:26.906Z",
+      "state": "failed",
+      "recordName": null,
+      "promptVersion": null,
+      "model": null,
+      "hasReview": false,
+      "error": "REVISION_LIMIT",
+      "originalPreserved": null,
+      "frozenSnapshots": null,
+      "exports": [],
+      "selectionApprovedByHuman": false
+    },
+    {
+      "path": "docs/eval/runs/2026-10-31T14-17-20-526Z-cursed-browser.json",
+      "kind": "LIVE_BROWSER_RITUAL",
+      "startedAt": "2026-10-31T14:17:20.526Z",
+      "state": "completed",
+      "recordName": "The Sieve-Wrought Specter",
+      "promptVersion": "frankenrepo/prompt/v5",
+      "model": "@cf/google/gemma-4-26b-a4b-it",
+      "hasReview": false,
+      "error": null,
+      "originalPreserved": null,
+      "frozenSnapshots": null,
+      "exports": [
+        "docs/eval/runs/2026-10-31T14-17-20-526Z-cursed-browser.png",
+        "docs/eval/runs/2026-10-31T14-17-20-526Z-cursed-browser.svg",
+        "docs/eval/runs/2026-10-31T14-17-20-526Z-cursed-browser.txt",
+        "docs/eval/runs/2026-10-31T14-17-20-526Z-cursed-browser-certificate.png"
+      ],
+      "selectionApprovedByHuman": false
+    },
+    {
+      "path": "docs/eval/runs/2026-10-31T14-17-36-153Z-permissions.json",
+      "kind": "LIVE_CARD_PERMISSIONS",
+      "startedAt": "2026-10-31T14:17:36.153Z",
+      "state": "passed",
+      "recordName": null,
+      "promptVersion": null,
+      "model": null,
+      "hasReview": false,
+      "error": null,
+      "originalPreserved": null,
+      "frozenSnapshots": null,
+      "exports": [],
+      "selectionApprovedByHuman": false
+    },
+    {
+      "path": "docs/eval/runs/2026-10-31T14-21-17-817Z-useful-browser.json",
+      "kind": "LIVE_BROWSER_RITUAL",
+      "startedAt": "2026-10-31T14:21:17.817Z",
+      "state": "completed",
+      "recordName": "The Ink-Stained Archivist",
+      "promptVersion": "frankenrepo/prompt/v5",
+      "model": "@cf/google/gemma-4-26b-a4b-it",
+      "hasReview": true,
+      "error": null,
+      "originalPreserved": null,
+      "frozenSnapshots": null,
+      "exports": [
+        "docs/eval/runs/2026-10-31T14-21-17-817Z-useful-browser.png",
+        "docs/eval/runs/2026-10-31T14-21-17-817Z-useful-browser.svg",
+        "docs/eval/runs/2026-10-31T14-21-17-817Z-useful-browser.txt",
+        "docs/eval/runs/2026-10-31T14-21-17-817Z-useful-browser-certificate.png"
+      ],
+      "selectionApprovedByHuman": false
+    },
+    {
+      "path": "docs/eval/runs/2026-10-31T14-23-42-050Z-revision.json",
+      "kind": "LIVE_CARD_REVISION",
+      "startedAt": "2026-10-31T14:23:42.050Z",
+      "state": "passed",
+      "recordName": "The Dossier Phantom",
+      "promptVersion": "frankenrepo/prompt/v5",
+      "model": "@cf/google/gemma-4-26b-a4b-it",
+      "hasReview": false,
+      "error": null,
+      "originalPreserved": true,
+      "frozenSnapshots": true,
+      "exports": [],
+      "selectionApprovedByHuman": false
+    },
+    {
+      "path": "docs/eval/runs/2026-10-31T14-30-13-808Z-chaotic-browser.json",
+      "kind": "LIVE_BROWSER_RITUAL",
+      "startedAt": "2026-10-31T14:30:13.808Z",
+      "state": "completed",
+      "recordName": "The Gluttonous Wing-Scraper",
+      "promptVersion": "frankenrepo/prompt/v6",
+      "model": "@cf/google/gemma-4-26b-a4b-it",
+      "hasReview": false,
+      "error": null,
+      "originalPreserved": null,
+      "frozenSnapshots": null,
+      "exports": [
+        "docs/eval/runs/2026-10-31T14-30-13-808Z-chaotic-browser.png",
+        "docs/eval/runs/2026-10-31T14-30-13-808Z-chaotic-browser.svg",
+        "docs/eval/runs/2026-10-31T14-30-13-808Z-chaotic-browser.txt",
+        "docs/eval/runs/2026-10-31T14-30-13-808Z-chaotic-browser-certificate.png"
+      ],
+      "selectionApprovedByHuman": false
+    },
+    {
+      "path": "docs/eval/runs/2026-10-31T14-30-38-334Z-useful-browser.json",
+      "kind": "LIVE_BROWSER_RITUAL",
+      "startedAt": "2026-10-31T14:30:38.334Z",
+      "state": "failed",
+      "recordName": null,
+      "promptVersion": null,
+      "model": null,
+      "hasReview": false,
+      "error": {
+        "code": "RITUAL_FAILED",
+        "message": "The creature could not be validated. Your inputs are preserved; try a new ritual.",
+        "retryable": true
+      },
+      "originalPreserved": null,
+      "frozenSnapshots": null,
+      "exports": [],
+      "selectionApprovedByHuman": false
+    },
+    {
+      "path": "docs/eval/runs/2026-10-31T14-30-53-569Z-cursed-browser.json",
+      "kind": "LIVE_BROWSER_RITUAL",
+      "startedAt": "2026-10-31T14:30:53.569Z",
+      "state": "completed",
+      "recordName": "The Sallow Scribe of Brackets",
+      "promptVersion": "frankenrepo/prompt/v6",
+      "model": "@cf/google/gemma-4-26b-a4b-it",
+      "hasReview": false,
+      "error": null,
+      "originalPreserved": null,
+      "frozenSnapshots": null,
+      "exports": [
+        "docs/eval/runs/2026-10-31T14-30-53-569Z-cursed-browser.png",
+        "docs/eval/runs/2026-10-31T14-30-53-569Z-cursed-browser.svg",
+        "docs/eval/runs/2026-10-31T14-30-53-569Z-cursed-browser.txt",
+        "docs/eval/runs/2026-10-31T14-30-53-569Z-cursed-browser-certificate.png"
+      ],
+      "selectionApprovedByHuman": false
+    }
+  ],
+  "partnerReceipts": [
+    "docs/eval/ATLAS_V2_QUALIFICATION.json",
+    "docs/eval/PARTNER_QUALIFICATION_ROLLUP.json",
+    "docs/eval/SENTRY_CONSOLE_VERIFICATION.json",
+    "docs/eval/SENTRY_CONTROLLED_FAILURE.json",
+    "docs/eval/BROWSERBASE_RESEARCH.json",
+    "docs/eval/TINKER_PREFLIGHT.json"
+  ],
+  "negativeEditorialReview": "docs/eval/V02_QUALITY_REVIEW.md",
+  "deferredList": "docs/partners/UPDATE_RESULT_RU.md"
+}

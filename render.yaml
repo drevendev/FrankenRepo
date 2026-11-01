@@ -1,0 +1,46 @@
+# Prepared configuration only. No service is created by local builds.
+services:
+  - type: web
+    name: frankenrepo
+    runtime: node
+    region: frankfurt
+    plan: free
+    numInstances: 1
+    repo: https://github.com/drevendev/FrankenRepo
+    autoDeployTrigger: off
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_VERSION
+        value: 24.19.0
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: MODEL_PROVIDER
+        value: disabled
+      - key: ORCHESTRATOR
+        value: mastra
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: API_ALLOWED_ORIGINS
+        sync: false
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGODB_DB
+        value: frankenrepo
+      - key: PUBLIC_SHARING_ENABLED
+        value: 'false'
+      - key: ULTRAMARINE_REVIEW_ENABLED
+        value: 'false'
+      - key: BACKBOARD_MEMORY_ENABLED
+        value: 'false'
+      - key: TINKER_REVIEW_ENABLED
+        value: 'false'
+      - key: SENTRY_ENABLED
+        value: 'false'
+      - key: MODEL_CALLS_PER_DAY
+        value: '20'
+      - key: MAX_PARALLEL_RITUALS
+        value: '1'

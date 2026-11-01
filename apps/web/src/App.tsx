@@ -3,6 +3,7 @@ import { LabAudio } from './lab-audio';
 import { LabAtmosphere, FlaskBubbles, LabInstruments } from './LabEffects';
 import { SAMPLE_REPOS, randomDonors } from './samples';
 import { SampleShelf } from './SampleShelf';
+import { SavedCards } from './SavedCards';
 import {
   FLAVORS,
   certificateSvg,
@@ -14,7 +15,13 @@ import {
   type RitualJob,
   type RitualMode,
 } from '@frankenrepo/core';
-type Capability = { model: 'disabled' | 'unknown' | 'ready'; storage: string };
+type Capability = {
+  model: 'disabled' | 'unknown' | 'ready';
+  storage: string;
+  features?: { permalinks?: boolean; reviews?: boolean };
+  localQuota?: { limit: number; reserved: number };
+  recentInference?: { completedAt: string; model: string } | null;
+};
 type ApiError = Error & { code?: string };
 async function request<T>(
   path: string,
@@ -408,7 +415,9 @@ function BirthCertificate({
       <div className="export-bar">
         <div>
           <span className="mini-label">TAKE YOUR MONSTER HOME</span>
-          <p>Ephemeral experiment. Download it before leaving.</p>
+          <p>
+            Download your card, or use the private archive below when available.
+          </p>
         </div>
         <div className="export-buttons">
           <button
@@ -459,9 +468,51 @@ function BirthCertificate({
         </div>
       </div>
       <p className="sharing-note">
-        Sharing link unavailable — permanent storage and public gallery are not
-        enabled.
+        Private archive keys are secret. Public links require separate consent
+        in the archive when sharing is available. The gallery is unavailable.
       </p>
+      <details className="dna-disclosure">
+        <summary>Inheritance dossier · AI interpretation</summary>
+        <p>
+          Brain inherits a role from {m.parents[0].ref}: {m.draft.brain.text} (
+          {m.draft.brain.evidenceIds.join(', ')}).
+        </p>
+        <p>
+          Body inherits a role from {m.parents[1].ref}: {m.draft.body.text} (
+          {m.draft.body.evidenceIds.join(', ')}).
+        </p>
+        <p>Proposed mechanism: {m.draft.usefulMutation}</p>
+        <p>
+          Unanswered question: {m.draft.uncertainty}. This is an unbuilt
+          proposal, not verified repository behavior.
+        </p>
+        {m.revision && (
+          <p>
+            Separate revision of specimen {m.revision.originalCardId}. The
+            original remains unchanged; donor snapshots are frozen.
+          </p>
+        )}
+        {m.context?.lessons?.length ? (
+          <details>
+            <summary>
+              Lab notebook · approved historical interpretations
+            </summary>
+            {m.context.lessons.map((l) => (
+              <p key={l.id}>
+                {l.text} <small>Source: {l.source}</small>
+              </p>
+            ))}
+          </details>
+        ) : (
+          <p>No notebook context was used for this specimen.</p>
+        )}
+        {m.context?.research?.map((r) => (
+          <p key={r.hash}>
+            Browserbase research: {r.excerpt}{' '}
+            <a href={r.sourceUrl}>Pinned source</a> · observed {r.observedAt}
+          </p>
+        ))}
+      </details>
       <details className="dna-disclosure">
         <summary>
           View DNA{' '}
@@ -506,6 +557,7 @@ export function App() {
   const [donors, setDonors] = useState<[DonorGenome, DonorGenome] | null>(null);
   const [inspecting, setInspecting] = useState(false);
   const [job, setJob] = useState<RitualJob | null>(null);
+  const [restoredCard, setRestoredCard] = useState<MonsterRecord | null>(null);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState('');
   const [notice, setNotice] = useState('');
@@ -549,6 +601,22 @@ export function App() {
   };
   useEffect(() => {
     void loadCapabilities();
+    const exhibit = new URLSearchParams(location.search).get('exhibit');
+    if (exhibit && /^[0-9a-f-]{36}$/.test(exhibit))
+      void request<{ monster: MonsterRecord }>('/api/v1/exhibits/' + exhibit)
+        .then((r) => {
+          setRestoredCard(r.monster);
+          setNotice(
+            'Saved public specimen · created ' +
+              r.monster.createdAt +
+              '. This is not a new live ritual.',
+          );
+        })
+        .catch(() =>
+          setNotice(
+            'This public specimen is unavailable or its publication was revoked.',
+          ),
+        );
     return () => {
       polling.current?.abort();
       inspectController.current?.abort();
@@ -589,6 +657,7 @@ export function App() {
     }
   };
   const edit = (values: [string, string]) => {
+    setRestoredCard(null);
     inspectController.current?.abort();
     sequence.current++;
     setInputs(values);
@@ -649,6 +718,7 @@ export function App() {
     }
   };
   const ritual = async () => {
+    setRestoredCard(null);
     audio.current?.play('lever');
     setPending(true);
     setError('');
@@ -740,7 +810,8 @@ export function App() {
       }
     }
   };
-  const monster = job?.state === 'completed' ? (job.monster ?? null) : null;
+  const monster =
+    restoredCard ?? (job?.state === 'completed' ? (job.monster ?? null) : null);
   useEffect(() => {
     if (job?.state === 'splicing') audio.current?.play('spark');
   }, [job?.state]);
@@ -1138,6 +1209,22 @@ export function App() {
                   ? 'Current stage: ' + (job?.state ?? 'requesting') + '.'
                   : notice}
               </div>
+              {capability?.recentInference && (
+                <p className="input-hint">
+                  Last confirmed ritual:{' '}
+                  {new Date(
+                    capability.recentInference.completedAt,
+                  ).toLocaleString()}
+                  . Current upstream availability can change.
+                </p>
+              )}
+              {capability?.localQuota && (
+                <p className="input-hint">
+                  Daily allowance: {capability.localQuota.reserved} of{' '}
+                  {capability.localQuota.limit} attempts reserved. Unused and
+                  uncertain reservations remain held.
+                </p>
+              )}
               {error && (
                 <div className="error-box" role="alert">
                   <strong>The experiment needs a moment.</strong>
@@ -1199,6 +1286,7 @@ export function App() {
             monster={monster}
             onNotice={setNotice}
             onRemix={() => {
+              setRestoredCard(null);
               setJob(null);
               setSkip(false);
               document
@@ -1207,6 +1295,18 @@ export function App() {
             }}
           />
         )}
+        <SavedCards
+          features={capability?.features}
+          ready={capability?.storage === 'ready'}
+          jobId={
+            !restoredCard && job?.state === 'completed'
+              ? job.ritualId
+              : undefined
+          }
+          monster={monster}
+          onOpen={setRestoredCard}
+          onNotice={setNotice}
+        />
         {(capability?.model === 'disabled' || !capability) && (
           <div className="setup-note">
             <span className="setup-symbol">⌁</span>

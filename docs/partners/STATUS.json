@@ -1,63 +1,63 @@
 {
   "schemaVersion": "frankenrepo/partner-status/v1",
-  "updatedOn": "2026-10-28",
-  "verifiedCount": 1,
+  "updatedOn": "2026-11-01",
+  "verifiedCount": 6,
   "publicDemoUrl": null,
   "categories": [
     {
       "name": "Gemma",
       "priority": "P0",
       "status": "VERIFIED",
-      "reason": "Real local browser rituals completed across Cursed v1 and Useful/Chaotic v1/v2/v3, including HungryCrab/fly and Scriptorium/kinship. A Chaotic v4 repeat is also saved. Schema/evidence checks and exports passed; editorial reviews document unsupported interpretations and remaining limits.",
+      "reason": "Historical real local qualification retained. New v5 runs/revision and v6 Chaotic/Cursed are live, source-linked and exported. Useful v6 was rejected by the archival-humor safety gate; no current three-mode qualification or public hosting is claimed.",
       "evidencePath": "docs/partners/gemma.md",
       "verifiedAt": "2026-10-27T22:31:01.862Z",
       "enabledInPublicDemo": false,
-      "workingUserScenario": "Inspect a verified public donor pair, select a ritual mode, generate a source-linked fictional creature and export PNG/SVG. Exact model and prompt versions are in each dated receipt; current-prompt Cursed is not independently rerun.",
-      "costEvidence": "Owner reports Workers Free; no billing, card or provider quota setting was changed. The restarted local prompt-v4 process was additionally capped at two upstream calls for verification. Exact historical repair/call count, Neurons and billing dashboard were not captured."
+      "workingUserScenario": "Inspect public donors, generate a fictional source-linked creature and export it. New private save/reload is evidenced locally; all examples are dated, and failed/weak runs remain visible.",
+      "costEvidence": "This task: 11 actual attempts, 17/20 durable reservations including unused allowance. Cloudflare Neurons/billed cost remain unknown; no billing settings or paid fallback changed."
     },
     {
       "name": "Render",
       "priority": "P0",
       "status": "BLOCKED",
-      "reason": "No deployment authorization or verified account. Local deployment instructions prepared only.",
-      "evidencePath": null,
+      "reason": "Existing dashboard and prepared Free/one-instance/auto-deploy-off configuration. The owner separately authorized post-deadline source publication on 1 November. No Render service has been created; exact Atlas outbound allowlist and real public verification remain pending.",
+      "evidencePath": "docs/partners/render.md",
       "verifiedAt": null,
       "enabledInPublicDemo": false,
       "workingUserScenario": null,
-      "costEvidence": "No service activation or billable partner calls were made."
+      "costEvidence": "No hosting resources created; existing Hobby/no-card/$50 audit retained. Paid compute not selected."
     },
     {
       "name": "Mastra",
       "priority": "P0",
-      "status": "PLANNED",
-      "reason": "Deferred until the real Gemma vertical slice works; current runner is plain TypeScript.",
-      "evidencePath": null,
-      "verifiedAt": null,
+      "status": "VERIFIED",
+      "reason": "Local scenario evidence reviewed for the owner-authorized DEV submission on 1 November. Actual inspect/context/Gemma-validation/reveal workflow with run IDs and step timings, including real success and failure. Public hosting and full-update acceptance remain incomplete; contest eligibility is decided by judges.",
+      "evidencePath": "docs/partners/mastra.md",
+      "verifiedAt": "2026-11-01T06:53:33.366Z",
       "enabledInPublicDemo": false,
-      "workingUserScenario": null,
-      "costEvidence": "No service activation or billable partner calls were made."
+      "workingUserScenario": "Actual inspect/context/Gemma-validation/reveal workflow with run IDs and step timings, including real success and failure.",
+      "costEvidence": "Local framework only; no Mastra Cloud account or subscription."
     },
     {
       "name": "MongoDB Atlas",
       "priority": "P0",
-      "status": "BLOCKED",
-      "reason": "No authorized Atlas connection. Storage, publication and permalinks are disabled.",
-      "evidencePath": null,
-      "verifiedAt": null,
+      "status": "VERIFIED",
+      "reason": "Local scenario evidence reviewed for the owner-authorized DEV submission on 1 November. Actual private save, restart/read, wrong-key denial, consented public read, unpublish/delete and concurrent durable reservations. Public hosting and full-update acceptance remain incomplete; contest eligibility is decided by judges.",
+      "evidencePath": "docs/partners/mongodb.md",
+      "verifiedAt": "2026-11-01T06:53:33.366Z",
       "enabledInPublicDemo": false,
-      "workingUserScenario": null,
-      "costEvidence": "No service activation or billable partner calls were made."
+      "workingUserScenario": "Actual private save, restart/read, wrong-key denial, consented public read, unpublish/delete and concurrent durable reservations.",
+      "costEvidence": "Existing FREE tier; bounded app payload allocations, 100 card slots, 512 ledger operations and 24h jobs. No cluster upgrade, unrestricted IP allowlist or card added."
     },
     {
       "name": "Sentry Agent Tracing",
       "priority": "P0",
-      "status": "PLANNED",
-      "reason": "No configured tracing or verified account; deferred after core live generation.",
-      "evidencePath": null,
-      "verifiedAt": null,
+      "status": "VERIFIED",
+      "reason": "Actual linked workflow/tool/Gemma spans were observed in the authenticated Sentry console. The owner explicitly authorized public screenshot disclosure; the screenshot and category row were published after the deadline as a dated addition. This is local-scenario verification, not confirmed contest acceptance or public application hosting.",
+      "evidencePath": "docs/partners/sentry.md",
+      "verifiedAt": "2026-11-01T07:08:08.484Z",
       "enabledInPublicDemo": false,
-      "workingUserScenario": null,
-      "costEvidence": "No service activation or billable partner calls were made."
+      "workingUserScenario": "Diagnose a real 10.92-second ritual with six linked spans, including a 7.82-second model request, actual model/token metadata, empty input/output bodies, and separately labelled optional-timeout diagnostics.",
+      "costEvidence": "Existing Sponsored Business/pay-as-you-go $0 audit; no billing settings changed. Operator demo sampling bounded; production sampling 0.1."
     },
     {
       "name": "Entire",
@@ -106,24 +106,24 @@
     {
       "name": "Browserbase",
       "priority": "P1",
-      "status": "PLANNED",
-      "reason": "Deferred; no Browserbase session or extraction run.",
-      "evidencePath": null,
-      "verifiedAt": null,
+      "status": "VERIFIED",
+      "reason": "Local scenario evidence reviewed for the owner-authorized DEV submission on 1 November. Actual cloud browser retrieval of a pinned GitHub README paragraph subsequently included in a real Gemma input; no hosted-site E2E claim. Public hosting and full-update acceptance remain incomplete; contest eligibility is decided by judges.",
+      "evidencePath": "docs/partners/browserbase.md",
+      "verifiedAt": "2026-11-01T06:53:33.366Z",
       "enabledInPublicDemo": false,
-      "workingUserScenario": null,
-      "costEvidence": "No service activation or billable partner calls were made."
+      "workingUserScenario": "Actual cloud browser retrieval of a pinned GitHub README paragraph subsequently included in a real Gemma input; no hosted-site E2E claim.",
+      "costEvidence": "One new research flow 12.686 seconds elapsed, 120 seconds reserved. Provider-billed minutes unknown. Free/no proxy/no CAPTCHA/LLM; paid promo excluded."
     },
     {
       "name": "Backboard",
       "priority": "P1",
-      "status": "PLANNED",
-      "reason": "Deferred; no cross-session memory or account access verified.",
-      "evidencePath": null,
+      "status": "IMPLEMENTED",
+      "reason": "Manual memory adapter, consent-filtered Mongo manifest and bounded deletion outbox implemented. Price and balance read live. Human corpus approval was deferred by owner; unapproved disposable write was rejected by automatic review and no lifecycle mutation ran.",
+      "evidencePath": "docs/partners/backboard.md",
       "verifiedAt": null,
       "enabledInPublicDemo": false,
       "workingUserScenario": null,
-      "costEvidence": "No service activation or billable partner calls were made."
+      "costEvidence": "Free balance remains $4.967132; paid/subscription $0, no card, auto-reload false. Starter Memory Lite/RAG .0039/op observed; conservative query reservation .02. No new memory spend."
     },
     {
       "name": "Auth0 for AI Agents",
@@ -161,13 +161,13 @@
     {
       "name": "Ultramarine",
       "priority": "P2",
-      "status": "PLANNED",
-      "reason": "Deferred; no account/credits/license or real side-analysis verified.",
-      "evidencePath": null,
-      "verifiedAt": null,
+      "status": "VERIFIED",
+      "reason": "Local scenario evidence reviewed for the owner-authorized DEV submission on 1 November. Two actual evidence-linked second opinions via official OpenAI SDK, recorded tokens and credit delta; no improved-quality guarantee. Public hosting and full-update acceptance remain incomplete; contest eligibility is decided by judges.",
+      "evidencePath": "docs/partners/ultramarine.md",
+      "verifiedAt": "2026-11-01T06:53:33.366Z",
       "enabledInPublicDemo": false,
-      "workingUserScenario": null,
-      "costEvidence": "No service activation or billable partner calls were made."
+      "workingUserScenario": "Two actual evidence-linked second opinions via official OpenAI SDK, recorded tokens and credit delta; no improved-quality guarantee.",
+      "costEvidence": "Three requests; observed account delta $0.00108065 from $5 to $4.99891935, reserved $0. Per-response estimates and unknown first-attempt usage stay distinct."
     },
     {
       "name": "TabPFN (Prior Labs)",
@@ -183,13 +183,13 @@
     {
       "name": "Tinker (Thinking Machines)",
       "priority": "P2",
-      "status": "PLANNED",
-      "reason": "Deferred; no real finetune/checkpoint/evaluation.",
-      "evidencePath": null,
+      "status": "BLOCKED",
+      "reason": "Read-only live preflight, official Python SDK/tokenizer, 36-case donor-disjoint pilot, frozen rubric/config and one-run LoRA/evaluation command prepared. Owner deferred required human label review. No baseline sampling, training, checkpoint or improvement evidence; serving remains off.",
+      "evidencePath": "docs/partners/tinker.md",
       "verifiedAt": null,
       "enabledInPublicDemo": false,
       "workingUserScenario": null,
-      "costEvidence": "No service activation or billable partner calls were made."
+      "costEvidence": "$10 credits through 2027-11-01, auto-reload off and Free checkpoint storage observed. Qwen3-8B trainable/sampleable. Estimated upper with margin $0.17416282 under $3 cap; actual train/sample spend zero."
     },
     {
       "name": "Arduino UNO Q",
@@ -224,5 +224,6 @@
       "workingUserScenario": null,
       "costEvidence": "No service activation or billable partner calls were made."
     }
-  ]
+  ],
+  "qualificationReview": "New category approvals and owner-dependent branches deferred by owner. IMPLEMENTED does not mean contest-qualified."
 }

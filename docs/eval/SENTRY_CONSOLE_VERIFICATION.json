@@ -1,0 +1,43 @@
+{
+  "kind": "LIVE_SENTRY_CONSOLE_OBSERVATION",
+  "observedOn": "2026-10-31",
+  "method": "Authenticated in-app browser, read-only Sentry Trace Details and Agent Activity",
+  "publicAccessGranted": false,
+  "observations": [
+    {
+      "traceId": "29dbddb9e4e94fa4ab9b85c097f014fa",
+      "sdk": "initial 11.10.0 run, later replaced to remove vulnerable bundler dependencies",
+      "root": "FrankenRepo ritual",
+      "spans": 8,
+      "rootDurationSeconds": 19.01,
+      "agentActivityVisible": true,
+      "actualModelVisible": "@cf/google/gemma-4-26b-a4b-it",
+      "inferenceCallsVisible": 2,
+      "tokenCountsVisible": true,
+      "inputPanel": "No input for this span",
+      "outputPanel": "No output for this span",
+      "costPanelLimitation": "Sentry's displayed estimate is not a provider invoice or captured Cloudflare billed cost."
+    },
+    {
+      "traceId": "e72b439a37ff47eb9123a4775f4ad3c4",
+      "sdk": "final pinned 10.78.0",
+      "root": "FrankenRepo ritual",
+      "spans": 6,
+      "rootDurationSeconds": 10.92,
+      "workflowAndToolAndInferenceLinked": true,
+      "sourceReceipt": "docs/eval/runs/2026-10-31T14-17-20-526Z-cursed-browser.json"
+    },
+    {
+      "traceId": "84d86e7ba1fd431fb23bd4a720b66e4c",
+      "syntheticFailure": true,
+      "spans": 2,
+      "rootDurationMs": 23.21,
+      "tool": "controlled notebook timeout",
+      "diagnosis": "Optional memory timeout is handled by continuing without memory. This is deliberately injected diagnostic evidence, not an actual Backboard outage."
+    }
+  ],
+  "finalSdkControlledFailureReceipt": "docs/eval/SENTRY_CONTROLLED_FAILURE.json",
+  "ownerQualificationReview": "User authorized category audit/publication and explicitly consented to public sanitized Sentry screenshot. Local evidence reviewed; category addition made after deadline, organizer acceptance unconfirmed.",
+  "consoleLinksRequireExistingAccountAccess": true,
+  "publicScreenshot": "docs/submission/SENTRY_AGENT.jpg"
+}

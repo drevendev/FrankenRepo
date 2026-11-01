@@ -1,3 +1,13 @@
+# Actual recorded demonstration
+
+Recorded on 1 November 2026 before the challenge deadline: 52.121 seconds, continuous real local browser flow, Flask + jq / Cursed, Cloudflare Gemma prompt v6. The actual result is The Scribe of Bracketed Sighs. No fixture, replay, cuts, speed changes, donor execution, new hosted demo or public persistence is implied.
+
+[MP4](DEMO_REAL.mp4) · [GIF used on DEV](DEMO_REAL.gif) · [sanitized receipt](DEMO_REAL_RECEIPT.json) · [usage](DEMO_REAL_USAGE.json) · [optional WebVTT captions](DEMO_REAL.vtt).
+
+The recording shows donor inputs, inspection, real model generation, certificate, DNA disclosure and PNG export. Sound is off. The GIF has the application's English labels and an article caption; the separate VTT is supplied for a video player. The operator provider server was stopped after capture.
+
+## Earlier plan retained for context
+
 # Walkthrough script — 55 seconds, not yet recorded
 
 Record actual UI after a real Gemma flow is proven. Caption every step. No stock

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "frankenrepo/apprentice-dataset/v1",
+  "createdAt": "2026-10-31T13:50:29.865Z",
+  "sha256": "91fa2e8eae796f3d3df340b70eafdd89c3718e5114fd2da29a909795029a6d19",
+  "rubricSha256": "0b9c1345b7a40933a89afce99381273a19d1524dfaaf70a677cc4f29cc20c92e",
+  "splits": {
+    "train": 16,
+    "validation": 8,
+    "holdout": 12
+  },
+  "pilot": true,
+  "independentDonorComponents": 3,
+  "splitBeforeDerivation": true,
+  "donorOverlapAcrossSplits": false,
+  "humanReview": {
+    "state": "pending",
+    "approvedBy": null
+  },
+  "license": "Project-authored annotations MIT; source excerpts retain donor terms; no donor code executed or copied for implementation",
+  "training": {
+    "model": "Qwen/Qwen3-8B",
+    "rank": 8,
+    "epochs": 2,
+    "learningRate": 0.0001,
+    "temperature": 0,
+    "maxOutputTokens": 180,
+    "maxInputTokens": 1800,
+    "candidateCount": 1,
+    "checkpointSelection": "last epoch; fixed before holdout",
+    "maxCreditsUsd": 3
+  },
+  "holdoutFrozen": true
+}

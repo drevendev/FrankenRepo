@@ -1,0 +1,296 @@
+{
+  "kind": "LIVE_PARTNER_QUALIFICATION_ROLLUP",
+  "at": "2026-10-31T14:33:28.719Z",
+  "baseCommit": "6729a4efd7b1594f186d513bdf513645ce9609bb",
+  "worktreeDirty": true,
+  "publicDemoUrl": null,
+  "operations": [
+    {
+      "id": "a04867a1-72a5-40c6-a5e2-689586e99db9",
+      "kind": "gemma",
+      "state": "completed",
+      "createdAt": "2026-10-31T13:48:01.316Z",
+      "reservedCalls": 2,
+      "reservedMaxUsd": 0,
+      "attempts": [
+        {
+          "id": "784356c5-6248-4141-97f6-30a32444f723",
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "startedAt": "2026-10-31T13:48:03.523Z",
+          "outcome": "completed",
+          "inputTokens": 2224,
+          "outputTokens": 238,
+          "costUsd": null
+        }
+      ]
+    },
+    {
+      "id": "b903ff6e-786d-47ba-9950-51ea198c31fd",
+      "kind": "gemma",
+      "state": "completed",
+      "createdAt": "2026-10-31T13:49:18.130Z",
+      "reservedCalls": 2,
+      "reservedMaxUsd": 0,
+      "attempts": [
+        {
+          "id": "ceee44a4-4370-4f28-8e57-7df01586b300",
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "startedAt": "2026-10-31T13:49:18.706Z",
+          "outcome": "completed",
+          "inputTokens": 2206,
+          "outputTokens": 325,
+          "costUsd": null
+        }
+      ]
+    },
+    {
+      "id": "eb02774b-1061-4b77-aaeb-2cc1104d3816",
+      "kind": "ultramarine",
+      "state": "unknown",
+      "createdAt": "2026-10-31T13:49:32.388Z",
+      "reservedCalls": 1,
+      "reservedMaxUsd": 0.1,
+      "attempts": [
+        {
+          "id": "eb02774b-1061-4b77-aaeb-2cc1104d3816",
+          "model": "ultramarine-1-flash",
+          "startedAt": "2026-10-31T13:49:33.003Z",
+          "outcome": "unknown",
+          "inputTokens": null,
+          "outputTokens": null,
+          "costUsd": null
+        }
+      ]
+    },
+    {
+      "id": "db050a58-b272-4e25-ab43-a865fef78dde",
+      "kind": "gemma",
+      "state": "completed",
+      "createdAt": "2026-10-31T14:06:30.798Z",
+      "reservedCalls": 2,
+      "reservedMaxUsd": 0,
+      "attempts": [
+        {
+          "id": "be79c79d-7440-40bf-bc04-51f026db3e56",
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "startedAt": "2026-10-31T14:06:34.753Z",
+          "outcome": "completed",
+          "inputTokens": 2518,
+          "outputTokens": 357,
+          "costUsd": null
+        },
+        {
+          "id": "f070109a-0038-4868-8494-71deff76a1e3",
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "startedAt": "2026-10-31T14:06:40.468Z",
+          "outcome": "completed",
+          "inputTokens": 2544,
+          "outputTokens": 325,
+          "costUsd": null
+        }
+      ]
+    },
+    {
+      "id": "d96630d4-7f30-4503-b128-0c752ca06ef3",
+      "kind": "ultramarine",
+      "state": "completed",
+      "createdAt": "2026-10-31T14:06:55.932Z",
+      "reservedCalls": 1,
+      "reservedMaxUsd": 0.1,
+      "attempts": [
+        {
+          "id": "d96630d4-7f30-4503-b128-0c752ca06ef3",
+          "model": "ultramarine-1-flash",
+          "startedAt": "2026-10-31T14:06:56.544Z",
+          "outcome": "completed",
+          "inputTokens": 907,
+          "outputTokens": 355,
+          "costUsd": 0.00031354999999999995
+        }
+      ]
+    },
+    {
+      "id": "62a4f1f0-2ec4-4fb7-bb83-89717191854f",
+      "kind": "gemma",
+      "state": "completed",
+      "createdAt": "2026-10-31T14:17:23.583Z",
+      "reservedCalls": 2,
+      "reservedMaxUsd": 0,
+      "attempts": [
+        {
+          "id": "95f07dab-d0a1-4203-a7cb-1d67d713cdb3",
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "startedAt": "2026-10-31T14:17:25.929Z",
+          "outcome": "completed",
+          "inputTokens": 2079,
+          "outputTokens": 312,
+          "costUsd": null
+        }
+      ]
+    },
+    {
+      "id": "bbbf4ece-3f10-4656-bb1b-22cd436844a1",
+      "kind": "gemma",
+      "state": "completed",
+      "createdAt": "2026-10-31T14:21:23.121Z",
+      "reservedCalls": 2,
+      "reservedMaxUsd": 0,
+      "attempts": [
+        {
+          "id": "a904e806-4171-49a3-9753-567653281b11",
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "startedAt": "2026-10-31T14:21:25.095Z",
+          "outcome": "completed",
+          "inputTokens": 2197,
+          "outputTokens": 332,
+          "costUsd": null
+        }
+      ]
+    },
+    {
+      "id": "fcd8d05d-970f-4963-bfee-cc820d7f43ce",
+      "kind": "ultramarine",
+      "state": "completed",
+      "createdAt": "2026-10-31T14:21:39.200Z",
+      "reservedCalls": 1,
+      "reservedMaxUsd": 0.1,
+      "attempts": [
+        {
+          "id": "fcd8d05d-970f-4963-bfee-cc820d7f43ce",
+          "model": "ultramarine-1-flash",
+          "startedAt": "2026-10-31T14:21:39.782Z",
+          "outcome": "completed",
+          "inputTokens": 956,
+          "outputTokens": 246,
+          "costUsd": 0.00026639999999999997
+        }
+      ]
+    },
+    {
+      "id": "48a436d3-5f19-440d-b49c-0af167f8af2b",
+      "kind": "gemma",
+      "state": "completed",
+      "createdAt": "2026-10-31T14:23:45.903Z",
+      "reservedCalls": 1,
+      "reservedMaxUsd": 0,
+      "attempts": [
+        {
+          "id": "271c8fe3-11d8-48dc-bc4f-61a960eb5d51",
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "startedAt": "2026-10-31T14:23:46.481Z",
+          "outcome": "completed",
+          "inputTokens": 5659,
+          "outputTokens": 322,
+          "costUsd": null
+        }
+      ]
+    },
+    {
+      "id": "417af924-341a-49df-85bf-209213161819",
+      "kind": "gemma",
+      "state": "completed",
+      "createdAt": "2026-10-31T14:30:20.090Z",
+      "reservedCalls": 2,
+      "reservedMaxUsd": 0,
+      "attempts": [
+        {
+          "id": "297dc028-c238-49b8-8a6d-0e21925ef57c",
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "startedAt": "2026-10-31T14:30:22.964Z",
+          "outcome": "completed",
+          "inputTokens": 2471,
+          "outputTokens": 333,
+          "costUsd": null
+        }
+      ]
+    },
+    {
+      "id": "9ba7b1f2-4bb0-417a-b9af-6b2bd01eb81f",
+      "kind": "gemma",
+      "state": "unknown",
+      "createdAt": "2026-10-31T14:30:41.141Z",
+      "reservedCalls": 2,
+      "reservedMaxUsd": 0,
+      "attempts": [
+        {
+          "id": "e8421a56-fcf8-4d01-a6ac-1434335f9eec",
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "startedAt": "2026-10-31T14:30:41.732Z",
+          "outcome": "completed",
+          "inputTokens": 2274,
+          "outputTokens": 338,
+          "costUsd": null
+        },
+        {
+          "id": "fdaf334c-6b70-47ae-a09e-6aee60fcf61f",
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "startedAt": "2026-10-31T14:30:46.277Z",
+          "outcome": "completed",
+          "inputTokens": 2301,
+          "outputTokens": 339,
+          "costUsd": null
+        }
+      ]
+    },
+    {
+      "id": "5bec4543-8703-4a86-9488-9ebceaf6d4ec",
+      "kind": "gemma",
+      "state": "completed",
+      "createdAt": "2026-10-31T14:30:55.827Z",
+      "reservedCalls": 2,
+      "reservedMaxUsd": 0,
+      "attempts": [
+        {
+          "id": "50e42424-3245-4a87-8a37-7cbe1a98dca3",
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "startedAt": "2026-10-31T14:30:56.409Z",
+          "outcome": "completed",
+          "inputTokens": 1400,
+          "outputTokens": 329,
+          "costUsd": null
+        }
+      ]
+    }
+  ],
+  "cost": {
+    "paper": {
+      "initialAvailableUsd": 5,
+      "availableUsd": 4.99891935,
+      "reservedUsd": 0,
+      "accountBalanceDeltaUsd": 0.0010806499999995722,
+      "requests": 3,
+      "promptTokens": 2811,
+      "completionTokens": 1318,
+      "basis": "Account-wide observed balance delta since this task preflight; no other account activity is established."
+    },
+    "backboard": {
+      "freeBeforeUsd": 4.967132,
+      "freeAfterUsd": 4.967132,
+      "mutatingCallsRun": false,
+      "autoReload": false,
+      "hasCard": false
+    },
+    "tinker": {
+      "trainingRun": false,
+      "samplingRun": false,
+      "modelCalls": 0,
+      "ownPaymentsUsd": 0
+    },
+    "cloudflare": {
+      "reservedCalls": 17,
+      "attempts": 11,
+      "billedUsd": null,
+      "neurons": null,
+      "reason": "Provider usage/billing dashboard not captured; unknown is not zero."
+    },
+    "ownPaymentsUsd": 0
+  },
+  "deferredByOwner": [
+    "human label review and Tinker training",
+    "public notebook corpus approval and Backboard lifecycle",
+    "source push / public Render deployment prerequisites",
+    "operator category/quality approval",
+    "public Browserbase E2E",
+    "article publication, release and push"
+  ]
+}

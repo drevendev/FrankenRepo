@@ -1,5 +1,34 @@
 # Known issues — v0.1.0
 
+## Local update, 31 October 2026
+
+The published snapshot below is retained as history; GitHub issues were not
+closed or edited. [Current evidence and owner-deferred work](partners/UPDATE_RESULT_RU.md).
+
+- #1 remains: the Useful revision still invented a verified lineage report.
+  The new v6 gate rejects that specific promise and archival tragedy jokes;
+  Useful v6 failed safely. General semantic grounding and +2/10 quality acceptance
+  are not solved by a reviewer or a schema.
+- #2 now has tested Mongo CAS reservations, persistent idempotency and unknown
+  retention. One configured live provider requires Mongo and stable session secret.
+- #3 has signed visitor cookies plus global model limits. The conservative socket
+  bucket remains; actual Render proxy behavior is not qualified.
+- #4 has private recovery, immutable revisions, explicit share consent, public
+  projection, unpublish/delete and tombstones. Gallery/moderation stay off;
+  external notebook deletion still needs an approved live corpus test.
+- #5 now has persisted attempts/known usage and live v6 Chaotic/Cursed. Useful v6
+  rejected; Cloudflare provider billed cost/Neuron usage still unknown.
+- #6 now selects descriptive prose before the bounded excerpt. It remains a
+  heuristic, not proof that all relevant mechanisms were read.
+- #7 exposes configuration, last dated success and durable reserved allowance.
+  A prior successful inference does not establish current upstream health.
+- #8 and the public/category/video acceptance remain deferred, as do human Tinker
+  labels, training and notebook corpus approval. #9 CI action maintenance remains.
+
+No public deployment, push, article publication, release or scheduler was run.
+
+## Published v0.1.0 snapshot
+
 First public preview, 28 October 2026. These are confirmed implementation limits
 or explicitly incomplete qualification work, not claims of defects in donor repos.
 GitHub issues carry the evidence and acceptance criteria; this list is the release

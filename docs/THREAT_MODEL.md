@@ -1,35 +1,45 @@
-# Threat model and current limits
+# Threat model and current boundaries
 
-Untrusted inputs: public repository references, GitHub metadata/README, model
-output, anonymous API requests and browser text.
+Untrusted inputs are GitHub references/README, model and reviewer output,
+anonymous requests, browser excerpts and imported recovery files.
 
-| Threat                      | Current boundary                                                                                             |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| SSRF / execution            | Strict GitHub-only regex; fixed api.github.com paths; redirects rejected; no clone/shell/donor install       |
-| Prompt injection            | README stays data; model has no tools/secrets; strict schema and code-created evidence IDs                   |
-| XSS / SVG injection         | React text rendering, encoded static SVG images, escaped certificate text; no raw donor HTML                 |
-| Denial of service           | 20 kB JSON bodies, 100 kB streamed sources, timeouts, fixed tokens, request quotas, one generation at a time |
-| Duplicate inference         | Scope + UUID idempotency key; conflict on differing payload; bounded TTL                                     |
-| Leaked credentials          | Server-only environment, sanitized errors; no provider error bodies/stack logging or telemetry               |
-| Public data disclosure      | No gallery, publishing, capability-token or permalink route implemented                                      |
-| Forged client IP            | Forwarding headers ignored; direct socket address is salted/HMACed per boot                                  |
-| Persistent false provenance | UUID/time/source created by server; model citations checked against actually read evidence                   |
+| Threat                       | Boundary                                                                                                                                  |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| SSRF / donor execution       | Strict public GitHub refs, fixed REST endpoints, redirects rejected, no clone/install/shell/donor code execution                          |
+| Prompt injection             | Bounded data envelopes, no model tools or secrets, strict output/evidence checks; reviewer advice is also untrusted                       |
+| Semantic overclaim           | Specific lineage/tragedy regressions; broad factual grounding still needs review and is not solved                                        |
+| XSS / SVG injection          | React text, escaped certificate SVG, no raw donor/reviewer HTML                                                                           |
+| Duplicate spend              | Atomic Mongo scope/key/fingerprint reservations before provider attempts; unknown holds its reserve; no automatic network retry           |
+| Denial of service            | 20 kB JSON requests, capped source streams/tokens/input, timeouts, signed session limits and conservative socket bucket                   |
+| Cookie reset / forged IP     | Global budgets and model concurrency independent of cookies; forwarding headers ignored                                                   |
+| Private card disclosure      | Hashed high-entropy owner capabilities, Authorization only, no-store responses, recovery file kept local                                  |
+| Public projection            | Separate explicit consent, no owner capability/private revision context/job metadata, unpublish and deletion tombstones; gallery off      |
+| Memory revocation            | Mongo tombstone and consent manifest checked at retrieval; bounded manual outbox for provider deletion, pending status available to owner |
+| Credential/telemetry leakage | Server-only environment, sanitized upstream errors, metadata-only manual Sentry spans, no body/header/README capture; artifact scan       |
 
-Origin allowlist protects browser access and JSON POST prevents simple cross-site
-forms. This is not user authentication. Random job IDs plus scope reduce accidental
-job disclosure, but same-IP visitors are not separate identities; no personal
-inputs are accepted. Per-IP state is process-local and expires. No raw IP is
-stored in certificates.
+Origin allowlist and JSON-only POST protect the browser surface but do not
+establish human identity. HttpOnly/SameSite session cookies require a stable
+random secret; changing it changes visitor scope. Global spending caps do not
+reset when a guest clears a cookie. A direct client can make new sessions, so
+per-session limits alone are not a billing boundary.
 
-Do not expose a reverse-proxied multi-instance service without reviewing trusted
-client identity, aggregate quota persistence and provider free-tier hard limits.
-Current quotas reset at process restart. Operator .env mistakes cannot guarantee
-a free provider account; no account activation has occurred.
+Mongo must reserve before new inference. One stopped worker is interrupted,
+not a durable-resume promise; unknown attempts are not refunded or auto-retried.
+Jobs expire after 24 hours, operation summaries are retained up to a bounded
+ledger capacity, and deleted payloads leave minimal hashed-capability tombstones.
+Actual Render allowlist/proxy behavior remains owner-dependent acceptance.
 
-Body streams are size-bounded. Slow clients still rely on Node server request
-timeouts. Model prompt defenses reduce risk, not a mathematical guarantee of
-semantic truth or safe humor. Public gallery moderation and creator capability
-abuse tests are deferred along with those absent endpoints. They are not claimed
-as passed consent/storage features.
+Backboard private-card upload is never implicit. Its public lesson corpus is
+unapproved and disabled. Reviewer output can hallucinate; a completed revision
+in this task did not improve quality. Tinker serving is off; its prepared pilot
+has no human-approved labels, trained checkpoint or validated gain.
 
-See tests/ for offline contract coverage and docs/eval/ for actual external evidence.
+Downloaded/publicly copied exports cannot be recalled by unpublishing. Owner
+capabilities can be used by anyone who obtains them; recovery files must stay
+private. Server removal revokes canonical reads and related memory references;
+remote memory deletion is separately confirmed. No unlimited retention/erasure
+or exactly-once provider billing guarantee is claimed.
+
+Default model remains disabled. Free/promotional eligibility does not permit a
+card, paid subscription, own payment or automatic upgrade. See the dated
+[receipts and deferrals](partners/UPDATE_RESULT_RU.md).

@@ -2,11 +2,43 @@
 
 _Stitch two repositories. Summon something that should not exist._
 
-**v0.1.0 — first public preview.**
+**Latest tagged release: v0.1.0. Source integration update: 1 November 2026.**
 [Source](https://github.com/drevendev/FrankenRepo) ·
 [Releases](https://github.com/drevendev/FrankenRepo/releases) ·
 [Known issues](docs/KNOWN_ISSUES.md) ·
 [GitHub CI](https://github.com/drevendev/FrankenRepo/actions/workflows/ci.yml)
+
+## Post-deadline source update — 1 November 2026
+
+The challenge deadline was **31 October 2026, 23:59 PDT**
+(1 November, 06:59 UTC / 08:59 Asia/Nicosia). **All commits introduced by this
+source update are after that deadline.** They publish previously local work and
+include subsequent documentation and publication changes. They are not the
+public repository state at the submission deadline.
+The [previous public snapshot](https://github.com/drevendev/FrankenRepo/tree/6729a4efd7b1594f186d513bdf513645ce9609bb)
+and existing `v0.1.0` tag are preserved.
+
+The post-deadline source update includes:
+
+- MongoDB private recovery, consented sharing/removal, durable jobs, idempotency,
+  budget reservations and signed guest sessions.
+- Mastra workflows, metadata-only Sentry tracing, optional Ultramarine second
+  opinions and frozen-snapshot Gemma revisions; prompt v6 and regression guards.
+- Browserbase research/operator scripts, bounded Backboard memory tooling and
+  a proposed Tinker pilot. Memory-corpus approval and actual training remain
+  deferred; including proposal files does not approve or run them.
+- Tests, setup documentation, dated successes/failures, the real 52-second local
+  demo and the authorized Sentry screenshot used in the published article.
+  The Render Free blueprint is prepared; no application has been deployed.
+
+The [DEV article](https://dev.to/drevendev/i-gave-two-github-repositories-a-terrible-idea-then-i-gave-it-life-1ge9)
+and its first five category entries were published before the deadline. Its
+Sentry screenshot and sixth category entry were added afterward and labelled
+as a post-submission update. Earlier dates on local run receipts describe those
+runs, not the publication time of these commits. The
+[publication record](docs/submission/PUBLISHED.json) and
+[category review](docs/submission/CATEGORY_REVIEW.json) retain this distinction;
+organizer acceptance of the late addition is unconfirmed.
 
 A small gothic browser laboratory: inspect two public GitHub repositories, use
 a configured Gemma model to invent a fictional creature, then download its
@@ -17,8 +49,13 @@ The creature is an imaginative interpretation, not a judgment of a project.
 Cloudflare Gemma generated a schema-valid creature from pallets/flask and jqlang/jq
 through the actual browser/API, with PNG/SVG export. [Live receipt and result](docs/eval/REAL_RUNS.md).
 Without configured credentials the default model remains disabled. Persistent
-gallery and public application hosting are not supplied. This preview publishes
-the source, tests, original assets and sanitized real-run evidence.
+gallery and public application hosting are not supplied. This source update now
+adds an optional MongoDB private archive, durable budgets, Mastra workflows,
+metadata-only Sentry traces and opt-in second opinions/revisions.
+[Current implementation, real receipts and deferred work](docs/partners/UPDATE_RESULT_RU.md).
+This source snapshot publishes the implementation described in the article,
+tests, original assets and sanitized real-run evidence. It is separate from
+the existing tagged preview and from application hosting.
 
 ![The actual local laboratory with illustrated specimen, model disabled](docs/images/lab-desktop.png)
 
@@ -73,11 +110,21 @@ atmosphere and never stand in for an actual API stage.
 
 ## Enable real local Gemma
 
+Any live provider now requires `MONGODB_URI`, `MONGODB_DB` and a stable random
+`SESSION_SECRET` of at least 43 characters. Durable reservations must succeed
+before inference. Keep the secret between restarts; recovery capabilities remain
+private. The ordinary disabled-model UI still needs no account. See
+[storage/security boundaries](docs/ARCHITECTURE.md) and the
+[current deployment handoff](docs/DEPLOYMENT.md).
+
 For the public contest demo, the selected primary target is
 [Cloudflare-hosted Gemma 4 26B A4B IT](docs/MODEL_DECISION.md). Its public Free-plan
-eligibility was checked; real inference through this account is now verified
-in Cursed (v1), Useful/Chaotic (v3) and a Chaotic v4 repeat. The pending Useful v4
-repeat stopped at the local budget guard. The local Ollama setup below is the fallback.
+eligibility was checked; dated real runs include Cursed (v1), Useful/Chaotic (v3),
+a Chaotic v4 repeat, and v6 Chaotic/Cursed. Useful v6 was rejected after its
+bounded repair; it is not a successful current-mode qualification. The
+[1 November recorded Cursed run](docs/submission/DEMO_REAL_RECEIPT.json)
+uses the actual v6 provider flow. The local Ollama adapter below is an
+unqualified fallback, not a demonstrated equivalent model.
 
 For the recommended setup, follow the
 [step-by-step Cloudflare Free guide in Russian](docs/CLOUDFLARE_SETUP_RU.md):
@@ -107,15 +154,16 @@ unverified. No credentials are bundled or read from other projects.
 
 ## What is implemented
 
-| Area          | Current behavior                                                                                                                                    |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| GitHub        | Strict reference parser, fixed public REST endpoints, max four calls/donor, size/time caps, ETag + bounded cache, source links, honest missing data |
-| Model         | Disabled / Ollama / Cloudflare, server-only, strict JSON + evidence validation, one repair maximum, daily process cap                               |
-| Game          | Three prompt styles, deterministic original layered SVG, reveal/skip, muted synthesized sound, responsive keyboard/reduced-motion UI                |
-| Certificate   | Source-aware traits, first words, speculative useful mutation, PNG/SVG + alt text + copied share text                                               |
-| Jobs          | Actual stages, scoped idempotency, quota/concurrency caps, cancellation, fifteen-minute ephemeral TTL                                               |
-| Persistence   | Disabled; no public gallery, sharing link, account, voice or breeding                                                                               |
-| Qualification | Gemma verified locally with a live receipt; other categories and public hosting unverified                                                          |
+| Area          | Current behavior                                                                                                                                                    |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| GitHub        | Strict reference parser, fixed public REST endpoints, max four calls/donor, size/time caps, ETag + bounded cache, source links, honest missing data                 |
+| Model         | Disabled / Ollama / Cloudflare, server-only, strict JSON + evidence validation, durable daily reservations, one repair or deliberate revision                       |
+| Game          | Three prompt styles, deterministic original layered SVG, reveal/skip, muted synthesized sound, responsive keyboard/reduced-motion UI                                |
+| Certificate   | Source-aware traits, first words, speculative useful mutation, PNG/SVG + alt text + copied share text                                                               |
+| Jobs          | Mastra or legacy stages, Mongo idempotency/budgets, signed browser sessions, global concurrency cap and 24h durable job TTL                                         |
+| Persistence   | Optional private Mongo archive and recovery files; separately consented public read/unpublish/delete behind a default-off flag; gallery disabled                    |
+| Partners      | Live Mastra, Atlas, Sentry, Ultramarine and Browserbase research receipts; Backboard corpus and Tinker training await owner review                                  |
+| Qualification | Six scoped local scenarios reviewed for the article; current v6 Useful rejected a safety violation; Sentry category added after deadline; public hosting unverified |
 
 [Useful/Chaotic output and inheritance review](docs/eval/INHERITANCE_REVIEW.md)
 compares six real runs across prompt revisions and keeps the weak examples too.
@@ -132,11 +180,14 @@ Browser tests use explicit test provider fixtures for the success path and
 must not be described as real Gemma runs. Screenshots show the actual default UI.
 [Validation results](docs/VALIDATION.md) · [architecture](docs/ARCHITECTURE.md) ·
 [security](docs/THREAT_MODEL.md) · [deployment handoff](docs/DEPLOYMENT.md) ·
-[partner status](docs/partners/STATUS.json) · [submission draft](docs/submission/DEV_DRAFT.md).
+[partner status](docs/partners/STATUS.json) · [published article source](docs/submission/DEV_DRAFT.md).
 
-This is a local-first preview. Model text can still invent unsupported capabilities,
-and the in-memory quotas/storage are unsuitable for scaling a public demo.
+This is a local-first preview. Model text and reviews can still invent unsupported capabilities.
+Mongo guards do not establish exactly-once provider billing or guarantee semantic truth.
 See the [tracked issues](docs/KNOWN_ISSUES.md) before hosting or relying on
-a proposed mutation. No deployment or new paid service is included in this release.
+a proposed mutation. Source publication was authorized separately after the
+deadline; no application deployment, new release or new paid service is part of
+this update. [31 October observed credit usage](docs/eval/PARTNER_QUALIFICATION_ROLLUP.json)
+and [1 November demo usage](docs/submission/DEMO_REAL_USAGE.json).
 
 MIT source. Dependencies/model terms are separate. [Credits](ASSETS_CREDITS.md).

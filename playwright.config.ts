@@ -6,7 +6,7 @@ export default defineConfig({
   timeout: 30000,
   reporter: [['list'], ['html', { open: 'never' }]],
   use: {
-    baseURL: 'http://127.0.0.1:3001',
+    baseURL: 'http://127.0.0.1:3003',
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
     headless: true,
@@ -30,9 +30,18 @@ export default defineConfig({
   ],
   webServer: {
     command: 'npm start',
-    url: 'http://127.0.0.1:3001/healthz',
-    reuseExistingServer: !process.env.CI,
+    url: 'http://127.0.0.1:3003/healthz',
+    reuseExistingServer: false,
     timeout: 30000,
-    env: { MODEL_PROVIDER: 'disabled' },
+    env: {
+      NODE_ENV: 'test',
+      PORT: '3003',
+      API_ALLOWED_ORIGINS: 'http://127.0.0.1:3003',
+      MODEL_PROVIDER: 'disabled',
+      MONGODB_URI: '',
+      SENTRY_ENABLED: 'false',
+      SESSION_SECRET: 'test-only-session-secret-'.repeat(3),
+      BACKBOARD_MEMORY_ENABLED: 'false',
+    },
   },
 });

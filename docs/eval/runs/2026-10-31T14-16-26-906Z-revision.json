@@ -1,0 +1,10 @@
+{
+  "kind": "LIVE_CARD_REVISION",
+  "startedAt": "2026-10-31T14:16:26.906Z",
+  "inputReceipt": "docs/eval/runs/2026-10-31T14-06-24-828Z-chaotic-browser.json",
+  "status": "failed",
+  "publicHosting": false,
+  "readAfterServerRestart": true,
+  "error": "REVISION_LIMIT",
+  "endedAt": "2026-10-31T14:16:30.660Z"
+}

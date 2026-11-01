@@ -1,0 +1,27 @@
+{
+  "kind": "LIVE_ARTICLE_DEMO_USAGE",
+  "checkedAt": "2026-11-01T06:50:07.502Z",
+  "source": "read-only Atlas ledger query",
+  "operations": [
+    {
+      "id": "f78e04ad-49ae-4413-875f-694911266bda",
+      "state": "completed",
+      "reservedCalls": 2,
+      "reservedMaxUsd": 0.01,
+      "attempts": [
+        {
+          "id": "5cedeaf6-e178-4c45-b669-742202d4f7de",
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "startedAt": "2026-11-01T06:43:50.122Z",
+          "outcome": "completed",
+          "inputTokens": 2013,
+          "outputTokens": 330,
+          "costUsd": null
+        }
+      ]
+    }
+  ],
+  "cloudflareBilledUsd": null,
+  "neurons": null,
+  "reason": "Reservations and provider token metadata are not a billing receipt. No Paper, Backboard, Browserbase or Tinker request was made for this recording."
+}

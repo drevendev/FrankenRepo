@@ -1,6 +1,10 @@
 import { writeFile, mkdir } from 'node:fs/promises';
 import { randomUUID } from 'node:crypto';
-import { GitHubAdapter, InferenceAdapter } from '@frankenrepo/adapters';
+import {
+  GitHubAdapter,
+  InferenceAdapter,
+  MongoCardStore,
+} from '@frankenrepo/adapters';
 import { RitualRunner } from '@frankenrepo/ritual';
 import { donorPair, modeSchema } from '@frankenrepo/core';
 import { readConfig } from '../apps/api/src/config';
@@ -19,18 +23,37 @@ if (config.MODEL_PROVIDER === 'ollama' && !installed)
   throw new Error(
     'The explicitly selected Gemma model is not installed. No weights will be downloaded automatically.',
   );
+const store = new MongoCardStore(config.MONGODB_URI!, config.MONGODB_DB);
 const runner = new RitualRunner(
   new GitHubAdapter({ token: config.GITHUB_READ_TOKEN }),
   inference,
+  {
+    store,
+    controls: store.controls,
+    dailyCalls: config.MODEL_CALLS_PER_DAY,
+    maxUsdPerCall: config.MODEL_PROVIDER === 'cloudflare' ? 0.005 : 0,
+    orchestrator: config.ORCHESTRATOR,
+  },
 );
 const startedAt = new Date().toISOString();
 const start = performance.now();
-const job = runner.start('operator-local-eval', randomUUID(), donors, mode);
+const job = await runner.startDurable(
+  'operator-local-eval',
+  randomUUID(),
+  donors,
+  mode,
+);
 let latest = job;
-while (!['completed', 'failed', 'cancelled'].includes(latest.state)) {
+const deadline = Date.now() + 245_000;
+while (
+  !['completed', 'failed', 'cancelled'].includes(latest.state) &&
+  Date.now() < deadline
+) {
   await new Promise((r) => setTimeout(r, 250));
   latest = runner.get(job.ritualId, 'operator-local-eval');
 }
+if (!['completed', 'failed', 'cancelled'].includes(latest.state))
+  latest = runner.cancel(job.ritualId, 'operator-local-eval');
 const endedAt = new Date().toISOString();
 await mkdir('docs/eval/runs', { recursive: true });
 const path =
@@ -60,4 +83,5 @@ const receipt = {
 };
 await writeFile(path, JSON.stringify(receipt, null, 2) + '\n');
 console.log(latest.state + ' · ' + path);
+await store.close();
 if (latest.state !== 'completed') process.exitCode = 1;

@@ -1,0 +1,47 @@
+{
+  "kind": "DEV_CATEGORY_EVIDENCE_REVIEW",
+  "reviewedAt": "2026-11-01T06:53:33.366Z",
+  "authorization": "Owner explicitly requested checking all intended eligible categories and publishing the prepared DEV article.",
+  "basis": "Official category descriptions and actual saved local receipts; local verification is distinct from public hosting and judge acceptance.",
+  "included": [
+    {
+      "name": "Gemma",
+      "evidencePath": "docs/partners/gemma.md",
+      "scenario": "Inspect public donors, generate a fictional source-linked creature and export it. New private save/reload is evidenced locally; all examples are dated, and failed/weak runs remain visible."
+    },
+    {
+      "name": "Mastra",
+      "evidencePath": "docs/partners/mastra.md",
+      "scenario": "Actual inspect/context/Gemma-validation/reveal workflow with run IDs and step timings, including real success and failure."
+    },
+    {
+      "name": "MongoDB Atlas",
+      "evidencePath": "docs/partners/mongodb.md",
+      "scenario": "Actual private save, restart/read, wrong-key denial, consented public read, unpublish/delete and concurrent durable reservations."
+    },
+    {
+      "name": "Browserbase",
+      "evidencePath": "docs/partners/browserbase.md",
+      "scenario": "Actual cloud browser retrieval of a pinned GitHub README paragraph subsequently included in a real Gemma input; no hosted-site E2E claim."
+    },
+    {
+      "name": "Ultramarine",
+      "evidencePath": "docs/partners/ultramarine.md",
+      "scenario": "Two actual evidence-linked second opinions via official OpenAI SDK, recorded tokens and credit delta; no improved-quality guarantee."
+    },
+    {
+      "name": "Sentry Agent Tracing",
+      "evidencePath": "docs/partners/sentry.md",
+      "scenario": "Diagnose a real 10.92-second ritual with six linked spans, including a 7.82-second model request, actual model/token metadata, empty input/output bodies, and separately labelled optional-timeout diagnostics.",
+      "afterDeadline": true,
+      "acceptanceByOrganizersUnconfirmed": true
+    }
+  ],
+  "sentry": "Explicit disclosure consent received; screenshot and sixth category row published as a dated post-deadline addition.",
+  "excluded": [
+    "Render: no deployed service",
+    "Tinker: no training/checkpoint/improvement",
+    "Backboard: no approved memory lifecycle",
+    "Other planned categories: no genuine completed use"
+  ]
+}

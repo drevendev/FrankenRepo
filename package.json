@@ -11,9 +11,12 @@
     "apps/*",
     "packages/*"
   ],
+  "overrides": {
+    "minimatch": "11.0.3"
+  },
   "scripts": {
     "dev": "concurrently -k -n api,web \"npm:dev:api\" \"npm:dev:web\"",
-    "dev:api": "node --env-file-if-exists=.env --import tsx --watch apps/api/src/server.ts",
+    "dev:api": "node --env-file-if-exists=.env --import tsx --watch apps/api/src/bootstrap.ts",
     "dev:web": "vite --config apps/web/vite.config.ts",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
@@ -21,9 +24,10 @@
     "format:check": "prettier --check .",
     "test": "vitest run",
     "test:e2e": "playwright test",
-    "build": "npm run typecheck && vite build --config apps/web/vite.config.ts && esbuild apps/api/src/server.ts --bundle --platform=node --target=node24 --format=esm --outfile=dist/api.mjs",
+    "build": "npm run typecheck && vite build --config apps/web/vite.config.ts && esbuild apps/api/src/bootstrap.ts --bundle --platform=node --target=node24 --format=esm --packages=external --alias:@frankenrepo/core=./packages/core/src/index.ts --alias:@frankenrepo/adapters=./packages/adapters/src/index.ts --alias:@frankenrepo/ritual=./packages/ritual/src/index.ts --outfile=dist/api.mjs",
     "start": "node --env-file-if-exists=.env dist/api.mjs",
-    "verify": "npm run typecheck && npm run lint && npm run format:check && npm test && npm run build && npm run check:bundle",
+    "verify": "npm run typecheck && npm run lint && npm run format:check && npm test && npm run build && npm run check:bundle && npm run check:evidence",
+    "check:evidence": "node scripts/check-evidence.mjs",
     "check:bundle": "node scripts/check-bundle.mjs",
     "test:live": "node --env-file-if-exists=.env --import tsx scripts/live-eval.ts"
   },

@@ -17,21 +17,31 @@ Source publication is now owner-authorized: [public repository](https://github.c
 first preview version 0.1.0. Known implementation/qualification gaps have
 [tracked issues](KNOWN_ISSUES.md). This is separate from application deployment.
 
-- Hono selected for the Node API. Plain TypeScript orchestration precedes Mastra.
-- Ephemeral jobs expire after fifteen minutes instead of a storage-backed
-  twenty-four-hour job collection. The UI exposes no persistence claims.
+- Hono selected for the Node API. The post-deadline source update adds real Mastra steps,
+  with a legacy runner option, and retains the provider ports.
+- Mongo-backed jobs use twenty-four-hour TTL and durable idempotency/budget
+  reservations. Legacy test-only memory jobs retain their fifteen-minute TTL.
 - The illustrated idle specimen is artwork, explicitly labelled. Genuine model artifacts now exist as dated evaluation files, but no
   recorded/replay mode is offered in the app.
 - First real Cursed browser/API flow succeeded on 2026-10-28 Asia/Nicosia.
   Useful/Chaotic v3 and a Chaotic v4 repeat now also have real browser receipts,
   including the HungryCrab/fly and Scriptorium/kinship pairs and editorial reviews.
   Larger evaluation and public challenge acceptance remain unverified.
-- Two local API/web ports share an explicit origin allowlist. Behind a hosted
-  reverse proxy all visitors share the conservative socket-IP quota unless
-  a separately reviewed trusted-proxy design is added.
-- Per-process quotas/caches/idempotency are bounded but reset on restart.
-  They are not a distributed billing guard. Do not scale publicly as-is.
-- Default memory has no gallery or public/private monster read routes.
-  Consent, capability-token, Mongo persistence and moderation work is deferred.
-- The gameplay/end-to-end recording and article are preparation documents.
-  No fake demo media or external publication is produced.
+- Explicit origin allowlist, signed HttpOnly/SameSite guest sessions and global
+  Mongo limits coexist with a conservative socket-address request bucket.
+  Forwarding headers are ignored; Render proxy/allowlist acceptance remains pending.
+- Durable reservations retain unknown outcomes. A stopped worker is interrupted,
+  not automatically resumed or refunded; no exactly-once billing guarantee.
+- Private capability reads and consented public projections/removal are implemented
+  with real Atlas receipts. Gallery/moderation remain disabled; public deployment
+  and owner-dependent corpus/training approval remain deferred. Six bounded local
+  scenarios were reviewed for the owner-authorized article; this does not certify
+  judge acceptance or a hosted application.
+- The real 52-second local Gemma recording and the DEV article were published
+  before the deadline. The Sentry screenshot/category addition and this source
+  publication are afterward; [README](../README.md#post-deadline-source-update--1-november-2026)
+  and [publication record](submission/PUBLISHED.json) distinguish them.
+
+The canonical specification and initialization file remain unchanged. The dated
+[update result](partners/UPDATE_RESULT_RU.md) records implementation and failures;
+it does not retroactively change the initial contract or public release evidence.

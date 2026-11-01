@@ -1,5 +1,29 @@
 # Initialization validation — 2026-10-27
 
+## Local partner update — 31 October 2026
+
+Current evidence: [update result](partners/UPDATE_RESULT_RU.md),
+[live rollup](eval/PARTNER_QUALIFICATION_ROLLUP.json). Earlier dated checks below
+remain historical. No new remote CI or public Render run is claimed.
+
+The local checks include 78 unit/contract/policy/regression tests, strict types,
+lint/Prettier, the production build, the 250 kB gzip JS budget and an evidence /
+server-secret / owner-capability scan. Built Playwright acceptance covers desktop
+and mobile (18 cases); those fixtures remain test-only. Final command receipts
+are recorded in eval/LOCAL_VERIFICATION.json after execution.
+
+Real tests independently cover Atlas reconnect, negative auth, tombstones,
+concurrent reservations and HTTP consent/unpublish after API restart; actual
+Gemma/Mastra exports, Ultramarine failures/reviews/revision and Browserbase
+research. Sentry reception/Agent Activity was inspected in the authenticated UI.
+The Useful revision failed editorial quality, and current Useful v6 was rejected
+by the safety gate. These failures are retained, not converted into passing tests.
+
+Tinker human labels, approved Backboard corpus, public deployment/E2E, video and
+owner category review were explicitly deferred. They are not checkmarks here.
+
+## Historical initialization checks
+
 Environment: Windows, Node 24.19.0, npm 11.17.0. No remote CI run is claimed.
 
 | Check                                                             | Observed result                                                              |
@@ -117,3 +141,30 @@ by these regressions. Default screenshots were preserved.
   action-runtime warning is tracked in issue #9. Later commit results are
   listed separately in [GitHub Actions](https://github.com/drevendev/FrankenRepo/actions/workflows/ci.yml).
   Application deployment and the final captioned recording remain unverified.
+
+## Post-deadline source publication — 1 November 2026
+
+The owner authorized committing and pushing the previously local integration
+update so the public source matches the published DEV article. README identifies
+all commits in this update as post-deadline and preserves the earlier public
+snapshot and v0.1.0 tag. This is source publication, not a new application deploy
+or a new tagged release.
+
+- `npm run verify` passed: strict types, lint, formatting, all 78 tests in nine
+  files, production web/API build, JavaScript budget and evidence/secret checks.
+- After that build, `npm run test:e2e` passed all 18 desktop/mobile scenarios in
+  30.6 seconds on isolated localhost:3003. Model, Mongo and telemetry were disabled;
+  success fixtures remain test evidence rather than live inference.
+- `npm audit --audit-level=high` reported zero vulnerabilities. The locked
+  dependency inventory contains 385 records with no unknown license metadata.
+- Built browser JavaScript remains 111,585 gzip bytes against a 250,000-byte limit.
+- All publication candidates were checked against configured secrets and private
+  recovery capabilities without printing their values. Environment files,
+  `.local`, builds, browser reports and the Python virtualenv remain excluded.
+  No private keys or private DEV preview capabilities were found.
+- Canonical specification and initialization prompt are unchanged. No provider
+  inference, training, memory mutation, hosting resource or scheduler was started
+  for this publication verification.
+
+Remote CI for the resulting commit is tracked in GitHub Actions. Earlier passing
+CI runs belong to their recorded historical commits and are not proof of this diff.

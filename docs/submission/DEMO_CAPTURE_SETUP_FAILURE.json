@@ -1,0 +1,21 @@
+{
+  "kind": "REAL_LOCAL_ARTICLE_SCREEN_RECORDING",
+  "startedAt": "2026-11-01T06:41:14.831Z",
+  "model": null,
+  "inputs": ["pallets/flask", "jqlang/jq"],
+  "mode": "cursed",
+  "fixture": false,
+  "replay": false,
+  "localOrigin": "http://127.0.0.1:3002",
+  "stages": [],
+  "record": null,
+  "error": {
+    "code": "RECORDING_FAILED",
+    "message": "locator.check: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('radio', { name: 'Cursed', exact: true })\u001b[22m\n"
+  },
+  "exports": [],
+  "video": "docs/submission/DEMO_REAL.webm",
+  "publicHostedDemo": false,
+  "endedAt": "2026-11-01T06:41:45.501Z",
+  "elapsedMs": 30670
+}

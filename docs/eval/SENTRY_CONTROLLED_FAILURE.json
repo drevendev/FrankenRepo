@@ -1,0 +1,12 @@
+{
+  "kind": "LIVE_SENTRY_CONTROLLED_DIAGNOSTIC",
+  "at": "2026-10-31T14:23:53.510Z",
+  "syntheticFailure": true,
+  "privateContentCaptured": false,
+  "modelCalled": false,
+  "status": "sent-pending-console-verification",
+  "traceId": "ae56a97fd02445489f9415e966c142ce",
+  "eventId": "2642a70069624ee68951f536ee382bb4",
+  "flushed": true,
+  "consoleUrl": "https://dreven.sentry.io/explore/traces/trace/ae56a97fd02445489f9415e966c142ce/"
+}
