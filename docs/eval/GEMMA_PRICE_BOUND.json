@@ -1,0 +1,16 @@
+{
+  "kind": "OFFICIAL_RATE_CARD_CHECK",
+  "checkedOn": "2026-10-31",
+  "model": "@cf/google/gemma-4-26b-a4b-it",
+  "source": "https://developers.cloudflare.com/workers-ai/models/gemma-4-26b-a4b-it/",
+  "inputUsdPerMillion": 0.1,
+  "outputUsdPerMillion": 0.3,
+  "inputMessagesByteLimit": 40000,
+  "maxOutputTokens": 1000,
+  "conservativeReservedUsdPerCall": 0.005,
+  "basis": "Conservative token ceiling using input bytes plus margin. Final runtime guard; earlier local receipts retained their original free-policy call-only reservations. This is not an invoice.",
+  "freePlanSource": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+  "freeAllocationNeuronsPerUtcDay": 10000,
+  "accountNeuronsUsed": null,
+  "accountBilledUsd": null
+}

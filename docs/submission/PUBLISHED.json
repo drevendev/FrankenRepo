@@ -1,0 +1,41 @@
+{
+  "kind": "PUBLISHED_DEV_CHALLENGE_SUBMISSION",
+  "observedAt": "2026-11-01T06:55:44.778Z",
+  "url": "https://dev.to/drevendev/i-gave-two-github-repositories-a-terrible-idea-then-i-gave-it-life-1ge9",
+  "confirmation": "Public article has Posted on date, no Unpublished banner, and official Ghost in the Machine Submission badge.",
+  "tags": ["devchallenge", "hf26challenge", "ai", "opensource"],
+  "categories": [
+    "Gemma",
+    "Mastra",
+    "MongoDB Atlas",
+    "Browserbase",
+    "Ultramarine",
+    "Sentry Agent Tracing"
+  ],
+  "aiDisclosure": "Fully Autonomous",
+  "sentry": {
+    "addedAt": "2026-11-01T07:08:08.484Z",
+    "screenshot": "docs/submission/SENTRY_AGENT.jpg",
+    "uploadedImage": "https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/7p940f2zptopdkabh05h.jpg",
+    "authorization": "Explicit user permission for public Sentry screenshot with model, tokens, latency and estimated cost.",
+    "afterDeadline": true,
+    "eligibility": "Organizers decide whether to accept this additional category. The original five categories were published before the deadline."
+  },
+  "publicHostedApplication": false,
+  "sourcePush": false,
+  "release": false,
+  "ownProviderServer": "stopped",
+  "proof": ".local/DEV_PUBLISHED.jpg",
+  "demoMediaUpdate": {
+    "at": "2026-11-01T06:58:43.717Z",
+    "reason": "Reduce GIF from 12.9 MB to 2.7 MB for DEV image processing; same continuous recording, no cuts or speed change.",
+    "path": "docs/submission/DEMO_WEB.gif"
+  },
+  "categoriesAtInitialPublication": [
+    "Gemma",
+    "Mastra",
+    "MongoDB Atlas",
+    "Browserbase",
+    "Ultramarine"
+  ]
+}

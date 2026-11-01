@@ -1,0 +1,16 @@
+{
+  "kind": "LIVE_BROWSERBASE_UI_QA",
+  "startedAt": "2026-10-31T11:35:26.239Z",
+  "modelCalled": false,
+  "hostedPublicDemo": false,
+  "backend": "disabled test response; static assets from the production build",
+  "sessionUrl": "https://www.browserbase.com/sessions/8c677de4-0dc3-493c-8c83-d5d0ce3ee68f",
+  "checks": {
+    "apiKeyAccepted": true,
+    "productionUiLoaded": true
+  },
+  "status": "failed",
+  "error": "Error",
+  "releaseRequested": true,
+  "endedAt": "2026-10-31T11:35:37.417Z"
+}

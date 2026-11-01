@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "frankenrepo/approved-notes-proposal/v1",
+  "humanApproval": "pending",
+  "notes": [
+    {
+      "id": "digest-is-not-bug-detection",
+      "source": "docs/eval/PAIR_REVIEW_2026-10-28.md",
+      "cardPath": "docs/eval/runs/2026-10-27T23-10-32-687Z-chaotic-browser.json",
+      "text": "Historical editorial lesson: HungryCrab digesting repository material and desktop-fly moving articulated legs do not establish automatic bug detection. A proposed prototype must name the mapping from a digest field to a motor or visual behavior."
+    },
+    {
+      "id": "name-the-mapping",
+      "source": "docs/eval/PAIR_REVIEW_2026-10-28.md",
+      "cardPath": "docs/eval/runs/2026-10-27T23-15-18-165Z-chaotic-browser.json",
+      "text": "Historical editorial lesson: mapping logic flows to joint movements is too vague without a named input field and an explicit mapping rule. Keep a proposed adapter visibly separate from either donor's existing capabilities."
+    },
+    {
+      "id": "measurements-not-sentiment",
+      "source": "docs/eval/PAIR_REVIEW_2026-10-28.md",
+      "cardPath": "docs/eval/runs/2026-10-27T23-10-51-622Z-useful-browser.json",
+      "text": "Historical editorial lesson: edition-linked literary measurements are not evidence of sentiment analysis. Use only the narrower purpose supported by the actual Scriptorium excerpt."
+    },
+    {
+      "id": "register-not-proof",
+      "source": "docs/eval/PAIR_REVIEW_2026-10-28.md",
+      "cardPath": "docs/eval/runs/2026-10-27T23-10-51-622Z-useful-browser.json",
+      "text": "Historical editorial lesson: a kinship source register organizes artifacts and claims; it does not automatically prove identity or family relationships. A useful proposal can create a queue for human archival review."
+    },
+    {
+      "id": "same-collision-for-comedy",
+      "source": "docs/eval/PAIR_REVIEW_2026-10-28.md",
+      "cardPath": "docs/eval/runs/2026-10-27T23-15-18-165Z-chaotic-browser.json",
+      "text": "Historical editorial lesson: carry the same donor-specific collision through hook, curse and first words. A random prop or job can be funny while providing weak recognizable inheritance. Fictional inconvenience is not a diagnosis of a real repository."
+    },
+    {
+      "id": "review-is-an-opinion",
+      "source": "docs/eval/PAIR_REVIEW_2026-10-28.md",
+      "cardPath": "docs/eval/runs/2026-10-27T23-10-51-622Z-useful-browser.json",
+      "text": "Historical editorial lesson: a schema-valid card with valid evidence IDs can still overstate a technical bridge. A second model's review is an interpretation and cannot certify that the proposed prototype is feasible."
+    }
+  ]
+}

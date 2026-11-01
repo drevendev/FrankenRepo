@@ -1,0 +1,72 @@
+{
+  "kind": "LIVE_BROWSER_RITUAL",
+  "startedAt": "2026-10-31T14:30:38.334Z",
+  "endedAt": "2026-10-31T14:30:52.994Z",
+  "latencyMs": 14355,
+  "inputs": [
+    "drevendev/Scriptorium",
+    "DenisSergeevitch/ex-ussr-kinship-research"
+  ],
+  "mode": "useful",
+  "recording": false,
+  "localOrigin": "http://127.0.0.1:3002",
+  "readiness": {
+    "model": "unknown",
+    "storage": "ready",
+    "version": "0.2.0-local",
+    "configuration": "configured",
+    "recentInference": {
+      "completedAt": "2026-10-31T14:30:20.090Z",
+      "model": "@cf/google/gemma-4-26b-a4b-it",
+      "note": "A dated success does not guarantee current upstream availability."
+    },
+    "localQuota": {
+      "limit": 20,
+      "reserved": 13,
+      "basis": "durable reservations; unused/unknown reservations retained",
+      "window": "UTC day"
+    },
+    "visitorLimit": "Signed browser session; global budgets apply independently. Forwarding headers are not trusted.",
+    "recordedSamples": 0,
+    "features": {
+      "gallery": false,
+      "permalinks": true,
+      "reviews": true,
+      "voice": false,
+      "apprentice": false
+    }
+  },
+  "stages": [
+    {
+      "state": "queued",
+      "observedAt": "2026-10-31T14:30:41.341Z"
+    },
+    {
+      "state": "splicing",
+      "observedAt": "2026-10-31T14:30:42.353Z"
+    },
+    {
+      "state": "validating",
+      "observedAt": "2026-10-31T14:30:46.387Z"
+    },
+    {
+      "state": "failed",
+      "observedAt": "2026-10-31T14:30:52.578Z"
+    }
+  ],
+  "state": "failed",
+  "ritualId": "9ba7b1f2-4bb0-417a-b9af-6b2bd01eb81f",
+  "error": {
+    "code": "RITUAL_FAILED",
+    "message": "The creature could not be validated. Your inputs are preserved; try a new ritual.",
+    "retryable": true
+  },
+  "record": null,
+  "pageErrors": [],
+  "exports": [],
+  "archiveChecks": {},
+  "limits": {
+    "maxOutputTokensPerCall": 1000,
+    "maxAttemptsPerRitual": 2
+  }
+}

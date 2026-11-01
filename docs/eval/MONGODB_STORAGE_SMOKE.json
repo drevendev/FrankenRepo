@@ -1,0 +1,16 @@
+{
+  "kind": "LIVE_MONGODB_STORAGE_VERIFICATION",
+  "modelCalled": false,
+  "sourceReceipt": "docs/eval/runs/2026-10-27T23-15-18-165Z-chaotic-browser.json",
+  "at": "2026-10-31T11:25:53.107Z",
+  "checks": {
+    "ping": true,
+    "insert": true,
+    "read": true,
+    "wrongTokenRejected": true,
+    "newClientRead": true,
+    "deleteAndWrongDelete": true,
+    "privateRealCardRetained": true
+  },
+  "savedCardId": "90a23d7b-113d-4bea-b7d3-5d7abcfbcfe3"
+}

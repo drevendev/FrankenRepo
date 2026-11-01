@@ -1,0 +1,357 @@
+{
+  "kind": "LIVE_BROWSER_RITUAL",
+  "startedAt": "2026-10-31T14:30:53.569Z",
+  "endedAt": "2026-10-31T14:31:08.970Z",
+  "latencyMs": 15149,
+  "inputs": ["pallets/flask", "jqlang/jq"],
+  "mode": "cursed",
+  "recording": false,
+  "localOrigin": "http://127.0.0.1:3002",
+  "readiness": {
+    "model": "unknown",
+    "storage": "ready",
+    "version": "0.2.0-local",
+    "configuration": "configured",
+    "recentInference": {
+      "completedAt": "2026-10-31T14:30:20.090Z",
+      "model": "@cf/google/gemma-4-26b-a4b-it",
+      "note": "A dated success does not guarantee current upstream availability."
+    },
+    "localQuota": {
+      "limit": 20,
+      "reserved": 15,
+      "basis": "durable reservations; unused/unknown reservations retained",
+      "window": "UTC day"
+    },
+    "visitorLimit": "Signed browser session; global budgets apply independently. Forwarding headers are not trusted.",
+    "recordedSamples": 0,
+    "features": {
+      "gallery": false,
+      "permalinks": true,
+      "reviews": true,
+      "voice": false,
+      "apprentice": false
+    }
+  },
+  "stages": [
+    {
+      "state": "queued",
+      "observedAt": "2026-10-31T14:30:56.029Z"
+    },
+    {
+      "state": "splicing",
+      "observedAt": "2026-10-31T14:30:57.037Z"
+    },
+    {
+      "state": "completed",
+      "observedAt": "2026-10-31T14:31:06.149Z"
+    }
+  ],
+  "state": "completed",
+  "ritualId": "5bec4543-8703-4a86-9488-9ebceaf6d4ec",
+  "error": null,
+  "record": {
+    "schemaVersion": "frankenrepo/monster/v1",
+    "id": "acc9cd16-3976-4824-9a46-fee7897ba03d",
+    "createdAt": "2026-10-31T14:31:05.565Z",
+    "mode": "cursed",
+    "model": {
+      "provider": "cloudflare",
+      "id": "@cf/google/gemma-4-26b-a4b-it",
+      "promptVersion": "frankenrepo/prompt/v6"
+    },
+    "parents": [
+      {
+        "ref": "pallets/flask",
+        "url": "https://github.com/pallets/flask",
+        "observedAt": "2026-10-31T14:30:55.503Z",
+        "defaultBranch": "main",
+        "commitSha": null,
+        "license": "BSD-3-Clause",
+        "description": "The Python micro framework for building web applications.",
+        "topics": [
+          "flask",
+          "jinja",
+          "pallets",
+          "python",
+          "web-framework",
+          "werkzeug",
+          "wsgi"
+        ],
+        "languages": ["Python", "HTML", "Shell"],
+        "readme": null,
+        "evidence": [
+          {
+            "id": "A:description",
+            "field": "description",
+            "value": "The Python micro framework for building web applications.",
+            "sourceUrl": "https://github.com/pallets/flask",
+            "observedAt": "2026-10-31T14:30:55.503Z",
+            "status": "observed"
+          },
+          {
+            "id": "A:topics",
+            "field": "topics",
+            "value": "flask, jinja, pallets, python, web-framework, werkzeug, wsgi",
+            "sourceUrl": "https://github.com/pallets/flask",
+            "observedAt": "2026-10-31T14:30:55.503Z",
+            "status": "observed"
+          },
+          {
+            "id": "A:languages",
+            "field": "languages",
+            "value": "Python, HTML, Shell",
+            "sourceUrl": "https://api.github.com/repos/pallets/flask/languages",
+            "observedAt": "2026-10-31T14:30:55.503Z",
+            "status": "observed"
+          },
+          {
+            "id": "A:readme",
+            "field": "readme",
+            "value": "UNKNOWN",
+            "sourceUrl": "https://api.github.com/repos/pallets/flask/readme",
+            "observedAt": "2026-10-31T14:30:55.503Z",
+            "status": "unknown"
+          },
+          {
+            "id": "A:license",
+            "field": "license",
+            "value": "BSD-3-Clause",
+            "sourceUrl": "https://github.com/pallets/flask",
+            "observedAt": "2026-10-31T14:30:55.503Z",
+            "status": "observed"
+          }
+        ],
+        "warnings": [
+          "Commit SHA unavailable: UNKNOWN.",
+          "README unavailable: PARTIAL (GITHUB_RATE_LIMIT)."
+        ]
+      },
+      {
+        "ref": "jqlang/jq",
+        "url": "https://github.com/jqlang/jq",
+        "observedAt": "2026-10-31T14:30:55.488Z",
+        "defaultBranch": "master",
+        "commitSha": null,
+        "license": "UNKNOWN",
+        "description": "Command-line JSON processor",
+        "topics": ["jq"],
+        "languages": ["C", "M4", "Shell"],
+        "readme": null,
+        "evidence": [
+          {
+            "id": "B:description",
+            "field": "description",
+            "value": "Command-line JSON processor",
+            "sourceUrl": "https://github.com/jqlang/jq",
+            "observedAt": "2026-10-31T14:30:55.488Z",
+            "status": "observed"
+          },
+          {
+            "id": "B:topics",
+            "field": "topics",
+            "value": "jq",
+            "sourceUrl": "https://github.com/jqlang/jq",
+            "observedAt": "2026-10-31T14:30:55.488Z",
+            "status": "observed"
+          },
+          {
+            "id": "B:languages",
+            "field": "languages",
+            "value": "C, M4, Shell",
+            "sourceUrl": "https://api.github.com/repos/jqlang/jq/languages",
+            "observedAt": "2026-10-31T14:30:55.488Z",
+            "status": "observed"
+          },
+          {
+            "id": "B:readme",
+            "field": "readme",
+            "value": "UNKNOWN",
+            "sourceUrl": "https://api.github.com/repos/jqlang/jq/readme",
+            "observedAt": "2026-10-31T14:30:55.488Z",
+            "status": "unknown"
+          },
+          {
+            "id": "B:license",
+            "field": "license",
+            "value": "UNKNOWN",
+            "sourceUrl": "https://github.com/jqlang/jq",
+            "observedAt": "2026-10-31T14:30:55.488Z",
+            "status": "unknown"
+          }
+        ],
+        "warnings": [
+          "Commit SHA unavailable: UNKNOWN.",
+          "README unavailable: PARTIAL (GITHUB_RATE_LIMIT)."
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "id": "A:description",
+        "field": "description",
+        "value": "The Python micro framework for building web applications.",
+        "sourceUrl": "https://github.com/pallets/flask",
+        "observedAt": "2026-10-31T14:30:55.503Z",
+        "status": "observed"
+      },
+      {
+        "id": "A:topics",
+        "field": "topics",
+        "value": "flask, jinja, pallets, python, web-framework, werkzeug, wsgi",
+        "sourceUrl": "https://github.com/pallets/flask",
+        "observedAt": "2026-10-31T14:30:55.503Z",
+        "status": "observed"
+      },
+      {
+        "id": "A:languages",
+        "field": "languages",
+        "value": "Python, HTML, Shell",
+        "sourceUrl": "https://api.github.com/repos/pallets/flask/languages",
+        "observedAt": "2026-10-31T14:30:55.503Z",
+        "status": "observed"
+      },
+      {
+        "id": "A:readme",
+        "field": "readme",
+        "value": "UNKNOWN",
+        "sourceUrl": "https://api.github.com/repos/pallets/flask/readme",
+        "observedAt": "2026-10-31T14:30:55.503Z",
+        "status": "unknown"
+      },
+      {
+        "id": "A:license",
+        "field": "license",
+        "value": "BSD-3-Clause",
+        "sourceUrl": "https://github.com/pallets/flask",
+        "observedAt": "2026-10-31T14:30:55.503Z",
+        "status": "observed"
+      },
+      {
+        "id": "B:description",
+        "field": "description",
+        "value": "Command-line JSON processor",
+        "sourceUrl": "https://github.com/jqlang/jq",
+        "observedAt": "2026-10-31T14:30:55.488Z",
+        "status": "observed"
+      },
+      {
+        "id": "B:topics",
+        "field": "topics",
+        "value": "jq",
+        "sourceUrl": "https://github.com/jqlang/jq",
+        "observedAt": "2026-10-31T14:30:55.488Z",
+        "status": "observed"
+      },
+      {
+        "id": "B:languages",
+        "field": "languages",
+        "value": "C, M4, Shell",
+        "sourceUrl": "https://api.github.com/repos/jqlang/jq/languages",
+        "observedAt": "2026-10-31T14:30:55.488Z",
+        "status": "observed"
+      },
+      {
+        "id": "B:readme",
+        "field": "readme",
+        "value": "UNKNOWN",
+        "sourceUrl": "https://api.github.com/repos/jqlang/jq/readme",
+        "observedAt": "2026-10-31T14:30:55.488Z",
+        "status": "unknown"
+      },
+      {
+        "id": "B:license",
+        "field": "license",
+        "value": "UNKNOWN",
+        "sourceUrl": "https://github.com/jqlang/jq",
+        "observedAt": "2026-10-31T14:30:55.488Z",
+        "status": "unknown"
+      }
+    ],
+    "draft": {
+      "name": "The Sallow Scribe of Brackets",
+      "hook": "A spindly specter haunting the corridors of a digital scriptorium, forever trapped between a web of requests and a sea of curly braces.",
+      "brain": {
+        "text": "It obsessively structures its thoughts into tiny, modular web applications.",
+        "evidenceIds": ["A:description"]
+      },
+      "body": {
+        "text": "It moves only by filtering its very essence through complex command-line streams.",
+        "evidenceIds": ["B:description"]
+      },
+      "curse": {
+        "text": "It suffers when a web request demands a response that must be parsed through a command-line processor.",
+        "evidenceIds": ["A:description", "B:description"]
+      },
+      "firstWords": "Oh, the agony of receiving a request only to find the payload is buried in a nested bracket nightmare!",
+      "usefulMutation": "An archivist could provide a raw JSON log to a flask-produced web server which then uses jq to transform the stream into a filtered HTML table for human review.",
+      "uncertainty": "It is unclear if the latency of the command-line transformation would break the web server connection.",
+      "humorTags": ["gothic-bureaucracy", "syntax-suffering"]
+    },
+    "sprite": {
+      "recipeVersion": "frankenrepo/sprite/v1",
+      "seed": "5bec4543-8703-4a86-9488-9ebceaf6d4ec",
+      "body": 3,
+      "head": 2,
+      "accessory": 2,
+      "palette": 0,
+      "expression": 0,
+      "flavor": 2
+    },
+    "publication": {
+      "state": "ephemeral"
+    },
+    "lineage": {
+      "parentMonsterIds": [],
+      "depth": 0
+    },
+    "context": {
+      "research": []
+    },
+    "workflow": {
+      "engine": "mastra",
+      "runId": "5bec4543-8703-4a86-9488-9ebceaf6d4ec",
+      "traceId": "c8385cf013304457a3c9f22758f5b561",
+      "steps": [
+        {
+          "name": "inspect-donors",
+          "state": "completed",
+          "durationMs": 188
+        },
+        {
+          "name": "approved-context",
+          "state": "completed",
+          "durationMs": 3
+        },
+        {
+          "name": "gemma-and-contract",
+          "state": "completed",
+          "durationMs": 9341
+        },
+        {
+          "name": "reveal",
+          "state": "completed",
+          "durationMs": 0
+        }
+      ]
+    },
+    "contentHash": "5fec7cf26ea6f8231ceb9c2622aabc8c1da397e666feed3a0852baea9474719c"
+  },
+  "pageErrors": [],
+  "exports": [
+    "docs/eval/runs/2026-10-31T14-30-53-569Z-cursed-browser.png",
+    "docs/eval/runs/2026-10-31T14-30-53-569Z-cursed-browser.svg",
+    "docs/eval/runs/2026-10-31T14-30-53-569Z-cursed-browser.txt",
+    "docs/eval/runs/2026-10-31T14-30-53-569Z-cursed-browser-certificate.png"
+  ],
+  "archiveChecks": {
+    "savedPrivately": true,
+    "recoveryDownloaded": true,
+    "readAfterReload": true,
+    "wrongKeyDenied": true
+  },
+  "limits": {
+    "maxOutputTokensPerCall": 1000,
+    "maxAttemptsPerRitual": 2
+  }
+}

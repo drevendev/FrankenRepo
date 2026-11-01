@@ -17,6 +17,23 @@ type Options = {
   ttlMs?: number;
   now?: () => number;
 };
+export function readmeExcerpt(raw: string): string {
+  const prose = raw
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .replace(/```[\s\S]*?```/g, '')
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+    .replace(/<img\b[^>]*>/gi, '');
+  const paragraphs = prose.split(/\n\s*\n/).filter((p) => {
+    const text = cleanText(p, 2000);
+    const letters = text.match(/\p{L}/gu)?.length ?? 0;
+    return (
+      text.length >= 60 &&
+      letters / text.length > 0.45 &&
+      !/^\s*\[?\[?!?\[/.test(p)
+    );
+  });
+  return cleanText(paragraphs.length ? paragraphs.join('\n\n') : prose, 1500);
+}
 export class GitHubAdapter {
   private fetcher: Fetcher;
   private cache = new Map<string, { expires: number; value: DonorGenome }>();
@@ -180,13 +197,12 @@ export class GitHubAdapter {
     }
     if (!commitSha) warnings.push('Commit SHA unavailable: UNKNOWN.');
     try {
-      readme = cleanText(
+      readme = readmeExcerpt(
         await this.request(
           canonical + '/readme' + (commitSha ? '?ref=' + commitSha : ''),
           true,
           signal,
         ),
-        1500,
       );
     } catch (err) {
       warnings.push(

@@ -1,0 +1,25 @@
+{
+  "kind": "LIVE_BROWSERBASE_RESEARCH",
+  "startedAt": "2026-10-31T13:55:20.725Z",
+  "status": "passed",
+  "sessionId": "f454018e-4ae3-410d-9e11-c9c6baf702c2",
+  "maximumSeconds": 120,
+  "checks": {
+    "pinnedGitHubParagraph": true
+  },
+  "error": null,
+  "context": {
+    "ref": "drevendev/HungryCrab",
+    "sourceUrl": "https://github.com/drevendev/HungryCrab/blob/9f8540b14e0059592bdf916526fdc2160390bbae/README.md",
+    "observedAt": "2026-10-31T13:55:28.438Z",
+    "excerpt": "Somewhere out there is a repository that fixed your flaky CI two years ago, wrote the AGENTS.md you keep meaning to write, and learned the hard way which file breaks every single time anyone touches it. Reading it properly costs you an afternoon. Reading fifty of them costs you a month.",
+    "hash": "8ba17c2edfe017e1f34751bf9c190720a1ac693944cf18344702e3c3d905db8b",
+    "sessionId": "f454018e-4ae3-410d-9e11-c9c6baf702c2",
+    "snapshot": "9f8540b14e0059592bdf916526fdc2160390bbae",
+    "method": "Playwright CDP, rendered GitHub README article paragraph",
+    "recordPath": "docs/eval/runs/2026-10-31T13-47-53-046Z-chaotic-browser.json"
+  },
+  "releaseRequested": true,
+  "endedAt": "2026-10-31T13:55:33.411Z",
+  "elapsedSeconds": 12.686
+}

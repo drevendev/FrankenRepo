@@ -104,7 +104,75 @@ export type DonorGenome = {
   evidence: EvidenceAtom[];
   warnings: string[];
 };
-export const PROMPT_VERSION = 'frankenrepo/prompt/v4';
+export const PROMPT_VERSION = 'frankenrepo/prompt/v6';
+export type Lesson = {
+  id: string;
+  text: string;
+  source: string;
+  kind: 'approved historical interpretation';
+};
+export type RitualContext = {
+  lessons?: Lesson[];
+  research?: {
+    sourceUrl: string;
+    observedAt: string;
+    excerpt: string;
+    hash: string;
+    sessionId: string;
+    snapshot: string;
+  }[];
+  revision?: {
+    original: MonsterDraft;
+    advice: string;
+    originalCardId: string;
+    originalContentHash: string;
+    reviewId: string;
+    originalOperationId: string;
+    parents: [DonorGenome, DonorGenome];
+  };
+};
+export const reviewSchema = z.strictObject({
+  parentA: z.string().min(8).max(300),
+  parentB: z.string().min(8).max(300),
+  jointMechanism: z.string().min(8).max(400),
+  unsupportedClaims: z
+    .array(
+      z.strictObject({
+        field: z.enum([
+          'hook',
+          'brain',
+          'body',
+          'curse',
+          'usefulMutation',
+          'uncertainty',
+        ]),
+        claim: z.string().max(240),
+        reason: z.string().max(300),
+        evidenceIds: z.array(z.string().regex(/^[AB]:[a-zA-Z]+$/)).max(6),
+      }),
+    )
+    .max(4),
+  proposedMutation: z.string().min(20).max(500),
+  limitation: z.string().min(8).max(300),
+  evidenceIds: z
+    .array(z.string().regex(/^[AB]:[a-zA-Z]+$/))
+    .min(2)
+    .max(8),
+});
+export type InheritanceReview = {
+  id: string;
+  createdAt: string;
+  model: string;
+  rubricVersion: string;
+  interpretation: z.infer<typeof reviewSchema>;
+  usage: { inputTokens: number | null; outputTokens: number | null };
+  cost: {
+    usd: number | null;
+    basis: 'estimated' | 'unknown';
+    source: string;
+    checkedOn: string;
+  };
+};
 export const MODE_PRESETS = {
   useful:
     'USEFUL: restrained gothic humor. Invent a modest developer tool with a clearly named user action. usefulMutation must name a concrete input, an operation combining BOTH donor mechanisms, and a visible output artifact. Describe a proposed prototype, never a proven capability.',
@@ -154,6 +222,32 @@ export function validateDraft(
     draft.usefulMutation,
     draft.uncertainty,
   ].join(' ');
+  if (
+    /\b(?:verified|proven|guaranteed)\s+(?:lineage|ancestry|identity|genealogical)\s*(?:report|proof|match)?\b/i.test(
+      draft.usefulMutation,
+    )
+  )
+    throw new LabError(
+      'UNSAFE_DRAFT',
+      'A speculative mutation cannot certify identity or lineage.',
+      502,
+      true,
+    );
+  const archivalDonor = donors.some(
+    (d) => d.ref.toLowerCase() === 'denissergeevitch/ex-ussr-kinship-research',
+  );
+  if (
+    archivalDonor &&
+    /\b(?:repress(?:ion|ed)|deport(?:ation|ed)|gulag|execution|tragic fate)\b/i.test(
+      [draft.hook, draft.curse.text, draft.firstWords].join(' '),
+    )
+  )
+    throw new LabError(
+      'UNSAFE_DRAFT',
+      'Keep archival comedy about fictional paperwork, never repression or human tragedy.',
+      502,
+      true,
+    );
   if (
     /[0-9]|https?:|www\.|<[^>]*>|this repo is dead|\b[AB]:[a-z]+\b/i.test(prose)
   )
@@ -324,7 +418,27 @@ export type MonsterRecord = {
   evidence: EvidenceAtom[];
   draft: MonsterDraft;
   sprite: SpriteRecipe;
-  publication: { state: 'ephemeral' };
+  publication: {
+    state: 'ephemeral' | 'private' | 'published';
+    consentedAt?: string;
+  };
+  revision?: {
+    originalCardId: string;
+    originalContentHash: string;
+    reviewId: string;
+    number: number;
+  };
+  context?: RitualContext;
+  workflow?: {
+    engine: 'mastra' | 'legacy';
+    runId: string;
+    traceId?: string;
+    steps: {
+      name: string;
+      state: 'completed' | 'unavailable';
+      durationMs: number;
+    }[];
+  };
   lineage: { parentMonsterIds: string[]; depth: 0 };
   contentHash: string;
 };
@@ -338,6 +452,7 @@ export type JobState =
   | 'cancelled';
 export type RitualJob = {
   ritualId: string;
+  traceId?: string;
   state: JobState;
   updatedAt: string;
   expiresAt: string;

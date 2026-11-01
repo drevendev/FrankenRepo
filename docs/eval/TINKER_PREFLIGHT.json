@@ -1,0 +1,41 @@
+{
+  "kind": "LIVE_TINKER_READ_ONLY_PREFLIGHT",
+  "checkedAt": "2026-10-31T14:09:09.117917+00:00",
+  "model": "Qwen/Qwen3-8B",
+  "capability": {
+    "model_name": "Qwen/Qwen3-8B",
+    "max_context_length": 32768,
+    "trainable": true,
+    "sampleable": true
+  },
+  "ratesPerMillion": {
+    "prefill": 0.195,
+    "sample": 0.6,
+    "train": 0.44
+  },
+  "pricingSource": "https://tinker-docs.thinkingmachines.ai/tinker/models.json",
+  "license": "Apache-2.0",
+  "licenseSource": "https://huggingface.co/Qwen/Qwen3-8B",
+  "datasetSha256": "91fa2e8eae796f3d3df340b70eafdd89c3718e5114fd2da29a909795029a6d19",
+  "splitSizes": {
+    "train": 16,
+    "validation": 8,
+    "holdout": 12
+  },
+  "maxActualPromptTokens": 977,
+  "trainingTokensUpper": 31856,
+  "samplingInputTokensUpper": 32740,
+  "samplingOutputTokensUpper": 7200,
+  "estimatedUpperUsd": 0.02472094,
+  "upperWithMarginUsd": 0.17416282,
+  "creditCapUsd": 3,
+  "balanceEvidence": {
+    "source": "Operator browser, Tinker Billing and Credit grants",
+    "remainingUsd": 10,
+    "expiresOn": "2027-11-01",
+    "autoReload": false,
+    "checkpointStorage": "Free 100 GB / 100 checkpoints"
+  },
+  "humanLabels": "pending",
+  "trainingStarted": false
+}

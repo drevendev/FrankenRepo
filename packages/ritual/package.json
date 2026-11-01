@@ -5,7 +5,8 @@
   "type": "module",
   "exports": "./src/index.ts",
   "dependencies": {
+    "@frankenrepo/adapters": "0.1.0",
     "@frankenrepo/core": "0.1.0",
-    "@frankenrepo/adapters": "0.1.0"
+    "@mastra/core": "1.81.0"
   }
 }

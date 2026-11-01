@@ -1,0 +1,14 @@
+{
+  "kind": "LIVE_CARD_PERMISSIONS",
+  "startedAt": "2026-10-31T14:17:36.153Z",
+  "inputReceipt": "docs/eval/runs/2026-10-31T14-06-24-828Z-chaotic-browser.json",
+  "status": "passed",
+  "publicHosting": false,
+  "readAfterServerRestart": true,
+  "explicitConsentRequired": true,
+  "publicRead": true,
+  "noOwnerToken": true,
+  "noPrivateRevisionContext": true,
+  "unpublishRevokesPublicRead": true,
+  "endedAt": "2026-10-31T14:17:38.312Z"
+}

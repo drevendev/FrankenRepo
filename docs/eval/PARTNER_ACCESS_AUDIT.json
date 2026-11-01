@@ -1,0 +1,76 @@
+{
+  "checkedAt": "2026-10-31T12:37:02.886Z",
+  "scope": "Read-only API authentication and balance audit; no inference, training, sessions, paid calls or external changes",
+  "results": [
+    {
+      "service": "Tinker",
+      "keyPresent": true,
+      "endpoint": "https://tinker.thinkingmachines.dev/services/tinker-prod/api/v1/get_server_capabilities",
+      "method": "GET",
+      "httpStatus": 200,
+      "invalidKeyStatus": 401,
+      "authenticated": true,
+      "supportedModelCount": 35,
+      "responseFieldNames": ["supported_models"]
+    },
+    {
+      "service": "Paper Instruments",
+      "keyPresent": true,
+      "endpoint": "https://api.paperinstruments.com/v1/usage",
+      "method": "GET",
+      "httpStatus": 200,
+      "invalidKeyStatus": 401,
+      "authenticated": true,
+      "availableUsd": 5,
+      "reservedUsd": 0,
+      "responseFieldNames": [
+        "object",
+        "organization",
+        "billing_status",
+        "available_nanodollars",
+        "reserved_nanodollars",
+        "period_start",
+        "period_end",
+        "requests",
+        "prompt_tokens",
+        "cached_prompt_tokens",
+        "completion_tokens",
+        "reasoning_tokens",
+        "total_tokens",
+        "limits"
+      ]
+    },
+    {
+      "service": "Backboard",
+      "keyPresent": true,
+      "endpoint": "https://app.backboard.io/api/billing/balance",
+      "method": "GET",
+      "httpStatus": 200,
+      "invalidKeyStatus": 401,
+      "authenticated": true,
+      "balanceUsd": 4.967132,
+      "autoReloadEnabled": false,
+      "responseFieldNames": [
+        "id",
+        "client_id",
+        "balance_usd",
+        "paid_credit_usd",
+        "free_credit_usd",
+        "subscription_credits_usd",
+        "nash_credit_usd",
+        "nash_allocation_usd",
+        "auto_reload_enabled",
+        "auto_reload_threshold_usd",
+        "auto_reload_amount_usd",
+        "stripe_payment_method_id",
+        "created_at",
+        "updated_at"
+      ],
+      "paidCreditUsd": 0,
+      "freeCreditUsd": 4.967132,
+      "subscriptionCreditsUsd": 0,
+      "nashCreditUsd": 0,
+      "cardOnFile": false
+    }
+  ]
+}

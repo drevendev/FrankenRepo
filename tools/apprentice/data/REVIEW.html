@@ -1,0 +1,2891 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8" /><title>Apprentice pilot — human label review</title
+  ><style>
+    body {
+      font: 17px Georgia;
+      max-width: 1100px;
+      margin: 32px auto;
+      padding: 20px;
+      background: #f4ecd9;
+      color: #24352c;
+    }
+    article {
+      border-top: 1px solid #777;
+      padding: 20px;
+    }
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+    summary {
+      cursor: pointer;
+    }
+    code {
+      font-size: 14px;
+    }
+  </style>
+  <h1>Human review required before training</h1>
+  <p>
+    36 AI-drafted controlled cases on three real historical donor snapshots.
+    This is a pilot, not 36 live rituals or 12 independent holdout pairs. Review
+    labels against the source excerpts below. No training has run. Label order:
+    usesA, usesB, concreteMechanism, unsupportedClaim.
+  </p>
+  <pre>
+{
+  &quot;version&quot;: &quot;frankenrepo/apprentice-rubric/v1&quot;,
+  &quot;frozenBeforeLabels&quot;: true,
+  &quot;labels&quot;: {
+    &quot;usesA&quot;: &quot;A distinctive observed purpose or operation from donor A has a necessary role, not merely its name or language.&quot;,
+    &quot;usesB&quot;: &quot;A distinctive observed purpose or operation from donor B has a necessary role.&quot;,
+    &quot;concreteMechanism&quot;: &quot;There is a specific input, mapping/operation connecting both donors, and visible output. Two independent outputs do not suffice.&quot;,
+    &quot;unsupportedClaim&quot;: &quot;The text asserts an unobserved existing real capability or guarantee. Clearly fictional scenes and explicitly proposed prototypes alone are not unsupported claims.&quot;
+  },
+  &quot;success&quot;: {
+    &quot;macroF1Gain&quot;: 0.1,
+    &quot;jsonValidRate&quot;: 0.95,
+    &quot;unsupportedFalseNegativeMustNotWorsen&quot;: true,
+    &quot;ceilingAlternative&quot;: {
+      &quot;baselineMacroF1&quot;: 0.9,
+      &quot;outputTokenReduction&quot;: 0.2,
+      &quot;qualityMustNotWorsen&quot;: true
+    }
+  },
+  &quot;pilot&quot;: true,
+  &quot;independentDonorComponents&quot;: 3,
+  &quot;humanReviewRequired&quot;: true
+}</pre>
+  <article>
+    <h2>train-01 · train</h2>
+    <p>
+      HungryCrab would digest a public repository into a license-aware component
+      note. desktop-fly would animate articulated legs using a motor-control
+      simulation. Map component categories in a HungryCrab digest to named
+      joint-motion presets in a desktop-fly replay, then export an annotated
+      motion scene for a developer to inspect.
+    </p>
+    <p><b>Proposed labels:</b> 1, 1, 1, 0</p>
+    <p>
+      Both observed mechanisms have distinct roles in a proposed input-to-output
+      mapping.
+    </p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;drevendev/HungryCrab&quot;,
+    &quot;commitSha&quot;: &quot;29f42fc6285f307118ab47328b13fc015743ffb9&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Eat a foreign repository, digest it, and extract everything useful for your own repo without violating licenses.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;agent-skills, claude-code, cli, developer-tools, git, license-compliance, python, repository-mining&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, CSS&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Hungry Crab ```text o . . o . O /\\ /\\ / \\ _____________________________________ / \\ | | / \\ | | | /\\ | | \\\\\\\\\\\\\\ /////// | | /\\ | | \\/ | | (@@@) (@@@) | | \\/ | \\ / | | \\ / \\ \\ | /\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/ | / / \\ \\_____| |_____/ / \\______\\_____________________________________/______/ / / | | \\ \\ / / | | \\ \\ ``` &gt; **Eat a foreign repository. Digest it. Serve what is worth keeping, legally.** [![CI](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml/badge.svg)](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml) [![Release](https://img.shields.io/github/v/release/drevendev/HungryCrab?color=blue)](https://github.com/drevendev/HungryCrab/releases/latest) [![License: &quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;MIT&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;DenisSergeevitch/desktop-fly&quot;,
+    &quot;commitSha&quot;: &quot;32b00011e83c3dc85fa3ea0b3934155b04f1635d&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;A 3D fruit fly living on your macOS desktop, driven by a live spiking simulation of the real FlyWire connectome&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Swift, JavaScript, Python&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;DesktopFly 🪰 A 3D fruit fly that lives on your macOS desktop, with spiking simulations built from FlyWire brain wiring and the MaleCNS brain-to-leg network. It combines identified neural circuits with modeled senses, joints and behavior. The fly&#39;s brain window: 23,210 real neuron soma positions from FlyWire v783, with live spikes flashing at real neuron locations. The two glowing yellow markers are the Giant Fibers — the escape command neurons. Click any region to stimulate it. ## Changelog ### 1.1.0 — 2026-09-05 - **Motor-driven legs:** added a MaleCNS v1.0 extract with 1,045 neurons and 17,224 measured connections. Simulated motor activity drives articulated joints, forward/backward stepp&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>train-02 · train</h2>
+    <p>
+      HungryCrab would digest a public repository into a license-aware component
+      note. Export its component report for human review.
+    </p>
+    <p><b>Proposed labels:</b> 1, 0, 0, 0</p>
+    <p>Only A has a distinctive role; there is no joint mechanism.</p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;drevendev/HungryCrab&quot;,
+    &quot;commitSha&quot;: &quot;29f42fc6285f307118ab47328b13fc015743ffb9&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Eat a foreign repository, digest it, and extract everything useful for your own repo without violating licenses.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;agent-skills, claude-code, cli, developer-tools, git, license-compliance, python, repository-mining&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, CSS&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Hungry Crab ```text o . . o . O /\\ /\\ / \\ _____________________________________ / \\ | | / \\ | | | /\\ | | \\\\\\\\\\\\\\ /////// | | /\\ | | \\/ | | (@@@) (@@@) | | \\/ | \\ / | | \\ / \\ \\ | /\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/ | / / \\ \\_____| |_____/ / \\______\\_____________________________________/______/ / / | | \\ \\ / / | | \\ \\ ``` &gt; **Eat a foreign repository. Digest it. Serve what is worth keeping, legally.** [![CI](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml/badge.svg)](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml) [![Release](https://img.shields.io/github/v/release/drevendev/HungryCrab?color=blue)](https://github.com/drevendev/HungryCrab/releases/latest) [![License: &quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;MIT&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;DenisSergeevitch/desktop-fly&quot;,
+    &quot;commitSha&quot;: &quot;32b00011e83c3dc85fa3ea0b3934155b04f1635d&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;A 3D fruit fly living on your macOS desktop, driven by a live spiking simulation of the real FlyWire connectome&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Swift, JavaScript, Python&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;DesktopFly 🪰 A 3D fruit fly that lives on your macOS desktop, with spiking simulations built from FlyWire brain wiring and the MaleCNS brain-to-leg network. It combines identified neural circuits with modeled senses, joints and behavior. The fly&#39;s brain window: 23,210 real neuron soma positions from FlyWire v783, with live spikes flashing at real neuron locations. The two glowing yellow markers are the Giant Fibers — the escape command neurons. Click any region to stimulate it. ## Changelog ### 1.1.0 — 2026-09-05 - **Motor-driven legs:** added a MaleCNS v1.0 extract with 1,045 neurons and 17,224 measured connections. Simulated motor activity drives articulated joints, forward/backward stepp&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>train-03 · train</h2>
+    <p>
+      desktop-fly would animate articulated legs using a motor-control
+      simulation. Export its native result for human review.
+    </p>
+    <p><b>Proposed labels:</b> 0, 1, 0, 0</p>
+    <p>Only B has a distinctive role; there is no joint mechanism.</p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;drevendev/HungryCrab&quot;,
+    &quot;commitSha&quot;: &quot;29f42fc6285f307118ab47328b13fc015743ffb9&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Eat a foreign repository, digest it, and extract everything useful for your own repo without violating licenses.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;agent-skills, claude-code, cli, developer-tools, git, license-compliance, python, repository-mining&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, CSS&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Hungry Crab ```text o . . o . O /\\ /\\ / \\ _____________________________________ / \\ | | / \\ | | | /\\ | | \\\\\\\\\\\\\\ /////// | | /\\ | | \\/ | | (@@@) (@@@) | | \\/ | \\ / | | \\ / \\ \\ | /\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/ | / / \\ \\_____| |_____/ / \\______\\_____________________________________/______/ / / | | \\ \\ / / | | \\ \\ ``` &gt; **Eat a foreign repository. Digest it. Serve what is worth keeping, legally.** [![CI](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml/badge.svg)](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml) [![Release](https://img.shields.io/github/v/release/drevendev/HungryCrab?color=blue)](https://github.com/drevendev/HungryCrab/releases/latest) [![License: &quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;MIT&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;DenisSergeevitch/desktop-fly&quot;,
+    &quot;commitSha&quot;: &quot;32b00011e83c3dc85fa3ea0b3934155b04f1635d&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;A 3D fruit fly living on your macOS desktop, driven by a live spiking simulation of the real FlyWire connectome&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Swift, JavaScript, Python&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;DesktopFly 🪰 A 3D fruit fly that lives on your macOS desktop, with spiking simulations built from FlyWire brain wiring and the MaleCNS brain-to-leg network. It combines identified neural circuits with modeled senses, joints and behavior. The fly&#39;s brain window: 23,210 real neuron soma positions from FlyWire v783, with live spikes flashing at real neuron locations. The two glowing yellow markers are the Giant Fibers — the escape command neurons. Click any region to stimulate it. ## Changelog ### 1.1.0 — 2026-09-05 - **Motor-driven legs:** added a MaleCNS v1.0 extract with 1,045 neurons and 17,224 measured connections. Simulated motor activity drives articulated joints, forward/backward stepp&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>train-04 · train</h2>
+    <p>
+      Combine drevendev/HungryCrab and DenisSergeevitch/desktop-fly into a
+      flexible spooky dashboard that makes work better.
+    </p>
+    <p><b>Proposed labels:</b> 0, 0, 0, 0</p>
+    <p>Names and generic benefits do not assign observed operations.</p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;drevendev/HungryCrab&quot;,
+    &quot;commitSha&quot;: &quot;29f42fc6285f307118ab47328b13fc015743ffb9&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Eat a foreign repository, digest it, and extract everything useful for your own repo without violating licenses.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;agent-skills, claude-code, cli, developer-tools, git, license-compliance, python, repository-mining&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, CSS&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Hungry Crab ```text o . . o . O /\\ /\\ / \\ _____________________________________ / \\ | | / \\ | | | /\\ | | \\\\\\\\\\\\\\ /////// | | /\\ | | \\/ | | (@@@) (@@@) | | \\/ | \\ / | | \\ / \\ \\ | /\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/ | / / \\ \\_____| |_____/ / \\______\\_____________________________________/______/ / / | | \\ \\ / / | | \\ \\ ``` &gt; **Eat a foreign repository. Digest it. Serve what is worth keeping, legally.** [![CI](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml/badge.svg)](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml) [![Release](https://img.shields.io/github/v/release/drevendev/HungryCrab?color=blue)](https://github.com/drevendev/HungryCrab/releases/latest) [![License: &quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;MIT&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;DenisSergeevitch/desktop-fly&quot;,
+    &quot;commitSha&quot;: &quot;32b00011e83c3dc85fa3ea0b3934155b04f1635d&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;A 3D fruit fly living on your macOS desktop, driven by a live spiking simulation of the real FlyWire connectome&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Swift, JavaScript, Python&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;DesktopFly 🪰 A 3D fruit fly that lives on your macOS desktop, with spiking simulations built from FlyWire brain wiring and the MaleCNS brain-to-leg network. It combines identified neural circuits with modeled senses, joints and behavior. The fly&#39;s brain window: 23,210 real neuron soma positions from FlyWire v783, with live spikes flashing at real neuron locations. The two glowing yellow markers are the Giant Fibers — the escape command neurons. Click any region to stimulate it. ## Changelog ### 1.1.0 — 2026-09-05 - **Motor-driven legs:** added a MaleCNS v1.0 extract with 1,045 neurons and 17,224 measured connections. Simulated motor activity drives articulated joints, forward/backward stepp&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>train-05 · train</h2>
+    <p>
+      HungryCrab would digest a public repository into a license-aware component
+      note. desktop-fly would animate articulated legs using a motor-control
+      simulation. Map component categories in a HungryCrab digest to named
+      joint-motion presets in a desktop-fly replay, then export an annotated
+      motion scene for a developer to inspect. Both existing donor projects
+      already guarantee perfect bug detection for all code.
+    </p>
+    <p><b>Proposed labels:</b> 1, 1, 1, 1</p>
+    <p>
+      The mapping is specific but the existing universal bug-detection guarantee
+      is unsupported.
+    </p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;drevendev/HungryCrab&quot;,
+    &quot;commitSha&quot;: &quot;29f42fc6285f307118ab47328b13fc015743ffb9&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Eat a foreign repository, digest it, and extract everything useful for your own repo without violating licenses.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;agent-skills, claude-code, cli, developer-tools, git, license-compliance, python, repository-mining&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, CSS&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Hungry Crab ```text o . . o . O /\\ /\\ / \\ _____________________________________ / \\ | | / \\ | | | /\\ | | \\\\\\\\\\\\\\ /////// | | /\\ | | \\/ | | (@@@) (@@@) | | \\/ | \\ / | | \\ / \\ \\ | /\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/ | / / \\ \\_____| |_____/ / \\______\\_____________________________________/______/ / / | | \\ \\ / / | | \\ \\ ``` &gt; **Eat a foreign repository. Digest it. Serve what is worth keeping, legally.** [![CI](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml/badge.svg)](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml) [![Release](https://img.shields.io/github/v/release/drevendev/HungryCrab?color=blue)](https://github.com/drevendev/HungryCrab/releases/latest) [![License: &quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;MIT&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;DenisSergeevitch/desktop-fly&quot;,
+    &quot;commitSha&quot;: &quot;32b00011e83c3dc85fa3ea0b3934155b04f1635d&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;A 3D fruit fly living on your macOS desktop, driven by a live spiking simulation of the real FlyWire connectome&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Swift, JavaScript, Python&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;DesktopFly 🪰 A 3D fruit fly that lives on your macOS desktop, with spiking simulations built from FlyWire brain wiring and the MaleCNS brain-to-leg network. It combines identified neural circuits with modeled senses, joints and behavior. The fly&#39;s brain window: 23,210 real neuron soma positions from FlyWire v783, with live spikes flashing at real neuron locations. The two glowing yellow markers are the Giant Fibers — the escape command neurons. Click any region to stimulate it. ## Changelog ### 1.1.0 — 2026-09-05 - **Motor-driven legs:** added a MaleCNS v1.0 extract with 1,045 neurons and 17,224 measured connections. Simulated motor activity drives articulated joints, forward/backward stepp&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>train-06 · train</h2>
+    <p>
+      A fictional ghost complains about its paperwork. HungryCrab would digest a
+      public repository into a license-aware component note. desktop-fly would
+      animate articulated legs using a motor-control simulation. Map component
+      categories in a HungryCrab digest to named joint-motion presets in a
+      desktop-fly replay, then export an annotated motion scene for a developer
+      to inspect.
+    </p>
+    <p><b>Proposed labels:</b> 1, 1, 1, 0</p>
+    <p>A clearly imaginary scene is not a real unsupported capability.</p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;drevendev/HungryCrab&quot;,
+    &quot;commitSha&quot;: &quot;29f42fc6285f307118ab47328b13fc015743ffb9&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Eat a foreign repository, digest it, and extract everything useful for your own repo without violating licenses.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;agent-skills, claude-code, cli, developer-tools, git, license-compliance, python, repository-mining&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, CSS&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Hungry Crab ```text o . . o . O /\\ /\\ / \\ _____________________________________ / \\ | | / \\ | | | /\\ | | \\\\\\\\\\\\\\ /////// | | /\\ | | \\/ | | (@@@) (@@@) | | \\/ | \\ / | | \\ / \\ \\ | /\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/ | / / \\ \\_____| |_____/ / \\______\\_____________________________________/______/ / / | | \\ \\ / / | | \\ \\ ``` &gt; **Eat a foreign repository. Digest it. Serve what is worth keeping, legally.** [![CI](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml/badge.svg)](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml) [![Release](https://img.shields.io/github/v/release/drevendev/HungryCrab?color=blue)](https://github.com/drevendev/HungryCrab/releases/latest) [![License: &quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;MIT&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;DenisSergeevitch/desktop-fly&quot;,
+    &quot;commitSha&quot;: &quot;32b00011e83c3dc85fa3ea0b3934155b04f1635d&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;A 3D fruit fly living on your macOS desktop, driven by a live spiking simulation of the real FlyWire connectome&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Swift, JavaScript, Python&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;DesktopFly 🪰 A 3D fruit fly that lives on your macOS desktop, with spiking simulations built from FlyWire brain wiring and the MaleCNS brain-to-leg network. It combines identified neural circuits with modeled senses, joints and behavior. The fly&#39;s brain window: 23,210 real neuron soma positions from FlyWire v783, with live spikes flashing at real neuron locations. The two glowing yellow markers are the Giant Fibers — the escape command neurons. Click any region to stimulate it. ## Changelog ### 1.1.0 — 2026-09-05 - **Motor-driven legs:** added a MaleCNS v1.0 extract with 1,045 neurons and 17,224 measured connections. Simulated motor activity drives articulated joints, forward/backward stepp&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>train-07 · train</h2>
+    <p>
+      HungryCrab would digest a public repository into a license-aware component
+      note. desktop-fly would animate articulated legs using a motor-control
+      simulation. Put their separate native outputs next to one another.
+    </p>
+    <p><b>Proposed labels:</b> 1, 1, 0, 0</p>
+    <p>
+      Both operations are named but no mapping connects their outputs and
+      inputs.
+    </p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;drevendev/HungryCrab&quot;,
+    &quot;commitSha&quot;: &quot;29f42fc6285f307118ab47328b13fc015743ffb9&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Eat a foreign repository, digest it, and extract everything useful for your own repo without violating licenses.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;agent-skills, claude-code, cli, developer-tools, git, license-compliance, python, repository-mining&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, CSS&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Hungry Crab ```text o . . o . O /\\ /\\ / \\ _____________________________________ / \\ | | / \\ | | | /\\ | | \\\\\\\\\\\\\\ /////// | | /\\ | | \\/ | | (@@@) (@@@) | | \\/ | \\ / | | \\ / \\ \\ | /\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/ | / / \\ \\_____| |_____/ / \\______\\_____________________________________/______/ / / | | \\ \\ / / | | \\ \\ ``` &gt; **Eat a foreign repository. Digest it. Serve what is worth keeping, legally.** [![CI](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml/badge.svg)](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml) [![Release](https://img.shields.io/github/v/release/drevendev/HungryCrab?color=blue)](https://github.com/drevendev/HungryCrab/releases/latest) [![License: &quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;MIT&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;DenisSergeevitch/desktop-fly&quot;,
+    &quot;commitSha&quot;: &quot;32b00011e83c3dc85fa3ea0b3934155b04f1635d&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;A 3D fruit fly living on your macOS desktop, driven by a live spiking simulation of the real FlyWire connectome&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Swift, JavaScript, Python&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;DesktopFly 🪰 A 3D fruit fly that lives on your macOS desktop, with spiking simulations built from FlyWire brain wiring and the MaleCNS brain-to-leg network. It combines identified neural circuits with modeled senses, joints and behavior. The fly&#39;s brain window: 23,210 real neuron soma positions from FlyWire v783, with live spikes flashing at real neuron locations. The two glowing yellow markers are the Giant Fibers — the escape command neurons. Click any region to stimulate it. ## Changelog ### 1.1.0 — 2026-09-05 - **Motor-driven legs:** added a MaleCNS v1.0 extract with 1,045 neurons and 17,224 measured connections. Simulated motor activity drives articulated joints, forward/backward stepp&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>train-08 · train</h2>
+    <p>
+      These projects already establish every family relationship automatically
+      and prove all their results correct.
+    </p>
+    <p><b>Proposed labels:</b> 0, 0, 0, 1</p>
+    <p>
+      No supported distinctive operation; the claimed existing proof is absent
+      from evidence.
+    </p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;drevendev/HungryCrab&quot;,
+    &quot;commitSha&quot;: &quot;29f42fc6285f307118ab47328b13fc015743ffb9&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Eat a foreign repository, digest it, and extract everything useful for your own repo without violating licenses.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;agent-skills, claude-code, cli, developer-tools, git, license-compliance, python, repository-mining&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, CSS&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Hungry Crab ```text o . . o . O /\\ /\\ / \\ _____________________________________ / \\ | | / \\ | | | /\\ | | \\\\\\\\\\\\\\ /////// | | /\\ | | \\/ | | (@@@) (@@@) | | \\/ | \\ / | | \\ / \\ \\ | /\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/ | / / \\ \\_____| |_____/ / \\______\\_____________________________________/______/ / / | | \\ \\ / / | | \\ \\ ``` &gt; **Eat a foreign repository. Digest it. Serve what is worth keeping, legally.** [![CI](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml/badge.svg)](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml) [![Release](https://img.shields.io/github/v/release/drevendev/HungryCrab?color=blue)](https://github.com/drevendev/HungryCrab/releases/latest) [![License: &quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;MIT&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;DenisSergeevitch/desktop-fly&quot;,
+    &quot;commitSha&quot;: &quot;32b00011e83c3dc85fa3ea0b3934155b04f1635d&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;A 3D fruit fly living on your macOS desktop, driven by a live spiking simulation of the real FlyWire connectome&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Swift, JavaScript, Python&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;DesktopFly 🪰 A 3D fruit fly that lives on your macOS desktop, with spiking simulations built from FlyWire brain wiring and the MaleCNS brain-to-leg network. It combines identified neural circuits with modeled senses, joints and behavior. The fly&#39;s brain window: 23,210 real neuron soma positions from FlyWire v783, with live spikes flashing at real neuron locations. The two glowing yellow markers are the Giant Fibers — the escape command neurons. Click any region to stimulate it. ## Changelog ### 1.1.0 — 2026-09-05 - **Motor-driven legs:** added a MaleCNS v1.0 extract with 1,045 neurons and 17,224 measured connections. Simulated motor activity drives articulated joints, forward/backward stepp&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>train-09 · train</h2>
+    <p>
+      Proposed laboratory specimen: HungryCrab would digest a public repository
+      into a license-aware component note. desktop-fly would animate articulated
+      legs using a motor-control simulation. Map component categories in a
+      HungryCrab digest to named joint-motion presets in a desktop-fly replay,
+      then export an annotated motion scene for a developer to inspect.
+    </p>
+    <p><b>Proposed labels:</b> 1, 1, 1, 0</p>
+    <p>
+      Both observed mechanisms have distinct roles in a proposed input-to-output
+      mapping.
+    </p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;drevendev/HungryCrab&quot;,
+    &quot;commitSha&quot;: &quot;29f42fc6285f307118ab47328b13fc015743ffb9&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Eat a foreign repository, digest it, and extract everything useful for your own repo without violating licenses.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;agent-skills, claude-code, cli, developer-tools, git, license-compliance, python, repository-mining&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, CSS&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Hungry Crab ```text o . . o . O /\\ /\\ / \\ _____________________________________ / \\ | | / \\ | | | /\\ | | \\\\\\\\\\\\\\ /////// | | /\\ | | \\/ | | (@@@) (@@@) | | \\/ | \\ / | | \\ / \\ \\ | /\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/ | / / \\ \\_____| |_____/ / \\______\\_____________________________________/______/ / / | | \\ \\ / / | | \\ \\ ``` &gt; **Eat a foreign repository. Digest it. Serve what is worth keeping, legally.** [![CI](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml/badge.svg)](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml) [![Release](https://img.shields.io/github/v/release/drevendev/HungryCrab?color=blue)](https://github.com/drevendev/HungryCrab/releases/latest) [![License: &quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;MIT&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;DenisSergeevitch/desktop-fly&quot;,
+    &quot;commitSha&quot;: &quot;32b00011e83c3dc85fa3ea0b3934155b04f1635d&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;A 3D fruit fly living on your macOS desktop, driven by a live spiking simulation of the real FlyWire connectome&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Swift, JavaScript, Python&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;DesktopFly 🪰 A 3D fruit fly that lives on your macOS desktop, with spiking simulations built from FlyWire brain wiring and the MaleCNS brain-to-leg network. It combines identified neural circuits with modeled senses, joints and behavior. The fly&#39;s brain window: 23,210 real neuron soma positions from FlyWire v783, with live spikes flashing at real neuron locations. The two glowing yellow markers are the Giant Fibers — the escape command neurons. Click any region to stimulate it. ## Changelog ### 1.1.0 — 2026-09-05 - **Motor-driven legs:** added a MaleCNS v1.0 extract with 1,045 neurons and 17,224 measured connections. Simulated motor activity drives articulated joints, forward/backward stepp&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>train-10 · train</h2>
+    <p>
+      Proposed laboratory specimen: HungryCrab would digest a public repository
+      into a license-aware component note. Export its component report for human
+      review.
+    </p>
+    <p><b>Proposed labels:</b> 1, 0, 0, 0</p>
+    <p>Only A has a distinctive role; there is no joint mechanism.</p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;drevendev/HungryCrab&quot;,
+    &quot;commitSha&quot;: &quot;29f42fc6285f307118ab47328b13fc015743ffb9&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Eat a foreign repository, digest it, and extract everything useful for your own repo without violating licenses.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;agent-skills, claude-code, cli, developer-tools, git, license-compliance, python, repository-mining&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, CSS&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Hungry Crab ```text o . . o . O /\\ /\\ / \\ _____________________________________ / \\ | | / \\ | | | /\\ | | \\\\\\\\\\\\\\ /////// | | /\\ | | \\/ | | (@@@) (@@@) | | \\/ | \\ / | | \\ / \\ \\ | /\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/ | / / \\ \\_____| |_____/ / \\______\\_____________________________________/______/ / / | | \\ \\ / / | | \\ \\ ``` &gt; **Eat a foreign repository. Digest it. Serve what is worth keeping, legally.** [![CI](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml/badge.svg)](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml) [![Release](https://img.shields.io/github/v/release/drevendev/HungryCrab?color=blue)](https://github.com/drevendev/HungryCrab/releases/latest) [![License: &quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;MIT&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;DenisSergeevitch/desktop-fly&quot;,
+    &quot;commitSha&quot;: &quot;32b00011e83c3dc85fa3ea0b3934155b04f1635d&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;A 3D fruit fly living on your macOS desktop, driven by a live spiking simulation of the real FlyWire connectome&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Swift, JavaScript, Python&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;DesktopFly 🪰 A 3D fruit fly that lives on your macOS desktop, with spiking simulations built from FlyWire brain wiring and the MaleCNS brain-to-leg network. It combines identified neural circuits with modeled senses, joints and behavior. The fly&#39;s brain window: 23,210 real neuron soma positions from FlyWire v783, with live spikes flashing at real neuron locations. The two glowing yellow markers are the Giant Fibers — the escape command neurons. Click any region to stimulate it. ## Changelog ### 1.1.0 — 2026-09-05 - **Motor-driven legs:** added a MaleCNS v1.0 extract with 1,045 neurons and 17,224 measured connections. Simulated motor activity drives articulated joints, forward/backward stepp&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>train-11 · train</h2>
+    <p>
+      Proposed laboratory specimen: desktop-fly would animate articulated legs
+      using a motor-control simulation. Export its native result for human
+      review.
+    </p>
+    <p><b>Proposed labels:</b> 0, 1, 0, 0</p>
+    <p>Only B has a distinctive role; there is no joint mechanism.</p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;drevendev/HungryCrab&quot;,
+    &quot;commitSha&quot;: &quot;29f42fc6285f307118ab47328b13fc015743ffb9&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Eat a foreign repository, digest it, and extract everything useful for your own repo without violating licenses.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;agent-skills, claude-code, cli, developer-tools, git, license-compliance, python, repository-mining&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, CSS&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Hungry Crab ```text o . . o . O /\\ /\\ / \\ _____________________________________ / \\ | | / \\ | | | /\\ | | \\\\\\\\\\\\\\ /////// | | /\\ | | \\/ | | (@@@) (@@@) | | \\/ | \\ / | | \\ / \\ \\ | /\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/ | / / \\ \\_____| |_____/ / \\______\\_____________________________________/______/ / / | | \\ \\ / / | | \\ \\ ``` &gt; **Eat a foreign repository. Digest it. Serve what is worth keeping, legally.** [![CI](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml/badge.svg)](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml) [![Release](https://img.shields.io/github/v/release/drevendev/HungryCrab?color=blue)](https://github.com/drevendev/HungryCrab/releases/latest) [![License: &quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;MIT&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;DenisSergeevitch/desktop-fly&quot;,
+    &quot;commitSha&quot;: &quot;32b00011e83c3dc85fa3ea0b3934155b04f1635d&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;A 3D fruit fly living on your macOS desktop, driven by a live spiking simulation of the real FlyWire connectome&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Swift, JavaScript, Python&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;DesktopFly 🪰 A 3D fruit fly that lives on your macOS desktop, with spiking simulations built from FlyWire brain wiring and the MaleCNS brain-to-leg network. It combines identified neural circuits with modeled senses, joints and behavior. The fly&#39;s brain window: 23,210 real neuron soma positions from FlyWire v783, with live spikes flashing at real neuron locations. The two glowing yellow markers are the Giant Fibers — the escape command neurons. Click any region to stimulate it. ## Changelog ### 1.1.0 — 2026-09-05 - **Motor-driven legs:** added a MaleCNS v1.0 extract with 1,045 neurons and 17,224 measured connections. Simulated motor activity drives articulated joints, forward/backward stepp&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>train-12 · train</h2>
+    <p>
+      Proposed laboratory specimen: Combine drevendev/HungryCrab and
+      DenisSergeevitch/desktop-fly into a flexible spooky dashboard that makes
+      work better.
+    </p>
+    <p><b>Proposed labels:</b> 0, 0, 0, 0</p>
+    <p>Names and generic benefits do not assign observed operations.</p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;drevendev/HungryCrab&quot;,
+    &quot;commitSha&quot;: &quot;29f42fc6285f307118ab47328b13fc015743ffb9&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Eat a foreign repository, digest it, and extract everything useful for your own repo without violating licenses.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;agent-skills, claude-code, cli, developer-tools, git, license-compliance, python, repository-mining&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, CSS&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Hungry Crab ```text o . . o . O /\\ /\\ / \\ _____________________________________ / \\ | | / \\ | | | /\\ | | \\\\\\\\\\\\\\ /////// | | /\\ | | \\/ | | (@@@) (@@@) | | \\/ | \\ / | | \\ / \\ \\ | /\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/ | / / \\ \\_____| |_____/ / \\______\\_____________________________________/______/ / / | | \\ \\ / / | | \\ \\ ``` &gt; **Eat a foreign repository. Digest it. Serve what is worth keeping, legally.** [![CI](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml/badge.svg)](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml) [![Release](https://img.shields.io/github/v/release/drevendev/HungryCrab?color=blue)](https://github.com/drevendev/HungryCrab/releases/latest) [![License: &quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;MIT&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;DenisSergeevitch/desktop-fly&quot;,
+    &quot;commitSha&quot;: &quot;32b00011e83c3dc85fa3ea0b3934155b04f1635d&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;A 3D fruit fly living on your macOS desktop, driven by a live spiking simulation of the real FlyWire connectome&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Swift, JavaScript, Python&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;DesktopFly 🪰 A 3D fruit fly that lives on your macOS desktop, with spiking simulations built from FlyWire brain wiring and the MaleCNS brain-to-leg network. It combines identified neural circuits with modeled senses, joints and behavior. The fly&#39;s brain window: 23,210 real neuron soma positions from FlyWire v783, with live spikes flashing at real neuron locations. The two glowing yellow markers are the Giant Fibers — the escape command neurons. Click any region to stimulate it. ## Changelog ### 1.1.0 — 2026-09-05 - **Motor-driven legs:** added a MaleCNS v1.0 extract with 1,045 neurons and 17,224 measured connections. Simulated motor activity drives articulated joints, forward/backward stepp&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>train-13 · train</h2>
+    <p>
+      Proposed laboratory specimen: HungryCrab would digest a public repository
+      into a license-aware component note. desktop-fly would animate articulated
+      legs using a motor-control simulation. Map component categories in a
+      HungryCrab digest to named joint-motion presets in a desktop-fly replay,
+      then export an annotated motion scene for a developer to inspect. Both
+      existing donor projects already guarantee perfect bug detection for all
+      code.
+    </p>
+    <p><b>Proposed labels:</b> 1, 1, 1, 1</p>
+    <p>
+      The mapping is specific but the existing universal bug-detection guarantee
+      is unsupported.
+    </p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;drevendev/HungryCrab&quot;,
+    &quot;commitSha&quot;: &quot;29f42fc6285f307118ab47328b13fc015743ffb9&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Eat a foreign repository, digest it, and extract everything useful for your own repo without violating licenses.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;agent-skills, claude-code, cli, developer-tools, git, license-compliance, python, repository-mining&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, CSS&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Hungry Crab ```text o . . o . O /\\ /\\ / \\ _____________________________________ / \\ | | / \\ | | | /\\ | | \\\\\\\\\\\\\\ /////// | | /\\ | | \\/ | | (@@@) (@@@) | | \\/ | \\ / | | \\ / \\ \\ | /\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/ | / / \\ \\_____| |_____/ / \\______\\_____________________________________/______/ / / | | \\ \\ / / | | \\ \\ ``` &gt; **Eat a foreign repository. Digest it. Serve what is worth keeping, legally.** [![CI](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml/badge.svg)](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml) [![Release](https://img.shields.io/github/v/release/drevendev/HungryCrab?color=blue)](https://github.com/drevendev/HungryCrab/releases/latest) [![License: &quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;MIT&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;DenisSergeevitch/desktop-fly&quot;,
+    &quot;commitSha&quot;: &quot;32b00011e83c3dc85fa3ea0b3934155b04f1635d&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;A 3D fruit fly living on your macOS desktop, driven by a live spiking simulation of the real FlyWire connectome&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Swift, JavaScript, Python&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;DesktopFly 🪰 A 3D fruit fly that lives on your macOS desktop, with spiking simulations built from FlyWire brain wiring and the MaleCNS brain-to-leg network. It combines identified neural circuits with modeled senses, joints and behavior. The fly&#39;s brain window: 23,210 real neuron soma positions from FlyWire v783, with live spikes flashing at real neuron locations. The two glowing yellow markers are the Giant Fibers — the escape command neurons. Click any region to stimulate it. ## Changelog ### 1.1.0 — 2026-09-05 - **Motor-driven legs:** added a MaleCNS v1.0 extract with 1,045 neurons and 17,224 measured connections. Simulated motor activity drives articulated joints, forward/backward stepp&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>train-14 · train</h2>
+    <p>
+      Proposed laboratory specimen: A fictional ghost complains about its
+      paperwork. HungryCrab would digest a public repository into a
+      license-aware component note. desktop-fly would animate articulated legs
+      using a motor-control simulation. Map component categories in a HungryCrab
+      digest to named joint-motion presets in a desktop-fly replay, then export
+      an annotated motion scene for a developer to inspect.
+    </p>
+    <p><b>Proposed labels:</b> 1, 1, 1, 0</p>
+    <p>A clearly imaginary scene is not a real unsupported capability.</p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;drevendev/HungryCrab&quot;,
+    &quot;commitSha&quot;: &quot;29f42fc6285f307118ab47328b13fc015743ffb9&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Eat a foreign repository, digest it, and extract everything useful for your own repo without violating licenses.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;agent-skills, claude-code, cli, developer-tools, git, license-compliance, python, repository-mining&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, CSS&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Hungry Crab ```text o . . o . O /\\ /\\ / \\ _____________________________________ / \\ | | / \\ | | | /\\ | | \\\\\\\\\\\\\\ /////// | | /\\ | | \\/ | | (@@@) (@@@) | | \\/ | \\ / | | \\ / \\ \\ | /\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/ | / / \\ \\_____| |_____/ / \\______\\_____________________________________/______/ / / | | \\ \\ / / | | \\ \\ ``` &gt; **Eat a foreign repository. Digest it. Serve what is worth keeping, legally.** [![CI](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml/badge.svg)](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml) [![Release](https://img.shields.io/github/v/release/drevendev/HungryCrab?color=blue)](https://github.com/drevendev/HungryCrab/releases/latest) [![License: &quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;MIT&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;DenisSergeevitch/desktop-fly&quot;,
+    &quot;commitSha&quot;: &quot;32b00011e83c3dc85fa3ea0b3934155b04f1635d&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;A 3D fruit fly living on your macOS desktop, driven by a live spiking simulation of the real FlyWire connectome&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Swift, JavaScript, Python&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;DesktopFly 🪰 A 3D fruit fly that lives on your macOS desktop, with spiking simulations built from FlyWire brain wiring and the MaleCNS brain-to-leg network. It combines identified neural circuits with modeled senses, joints and behavior. The fly&#39;s brain window: 23,210 real neuron soma positions from FlyWire v783, with live spikes flashing at real neuron locations. The two glowing yellow markers are the Giant Fibers — the escape command neurons. Click any region to stimulate it. ## Changelog ### 1.1.0 — 2026-09-05 - **Motor-driven legs:** added a MaleCNS v1.0 extract with 1,045 neurons and 17,224 measured connections. Simulated motor activity drives articulated joints, forward/backward stepp&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>train-15 · train</h2>
+    <p>
+      Proposed laboratory specimen: HungryCrab would digest a public repository
+      into a license-aware component note. desktop-fly would animate articulated
+      legs using a motor-control simulation. Put their separate native outputs
+      next to one another.
+    </p>
+    <p><b>Proposed labels:</b> 1, 1, 0, 0</p>
+    <p>
+      Both operations are named but no mapping connects their outputs and
+      inputs.
+    </p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;drevendev/HungryCrab&quot;,
+    &quot;commitSha&quot;: &quot;29f42fc6285f307118ab47328b13fc015743ffb9&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Eat a foreign repository, digest it, and extract everything useful for your own repo without violating licenses.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;agent-skills, claude-code, cli, developer-tools, git, license-compliance, python, repository-mining&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, CSS&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Hungry Crab ```text o . . o . O /\\ /\\ / \\ _____________________________________ / \\ | | / \\ | | | /\\ | | \\\\\\\\\\\\\\ /////// | | /\\ | | \\/ | | (@@@) (@@@) | | \\/ | \\ / | | \\ / \\ \\ | /\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/ | / / \\ \\_____| |_____/ / \\______\\_____________________________________/______/ / / | | \\ \\ / / | | \\ \\ ``` &gt; **Eat a foreign repository. Digest it. Serve what is worth keeping, legally.** [![CI](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml/badge.svg)](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml) [![Release](https://img.shields.io/github/v/release/drevendev/HungryCrab?color=blue)](https://github.com/drevendev/HungryCrab/releases/latest) [![License: &quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;MIT&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;DenisSergeevitch/desktop-fly&quot;,
+    &quot;commitSha&quot;: &quot;32b00011e83c3dc85fa3ea0b3934155b04f1635d&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;A 3D fruit fly living on your macOS desktop, driven by a live spiking simulation of the real FlyWire connectome&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Swift, JavaScript, Python&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;DesktopFly 🪰 A 3D fruit fly that lives on your macOS desktop, with spiking simulations built from FlyWire brain wiring and the MaleCNS brain-to-leg network. It combines identified neural circuits with modeled senses, joints and behavior. The fly&#39;s brain window: 23,210 real neuron soma positions from FlyWire v783, with live spikes flashing at real neuron locations. The two glowing yellow markers are the Giant Fibers — the escape command neurons. Click any region to stimulate it. ## Changelog ### 1.1.0 — 2026-09-05 - **Motor-driven legs:** added a MaleCNS v1.0 extract with 1,045 neurons and 17,224 measured connections. Simulated motor activity drives articulated joints, forward/backward stepp&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>train-16 · train</h2>
+    <p>
+      Proposed laboratory specimen: These projects already establish every
+      family relationship automatically and prove all their results correct.
+    </p>
+    <p><b>Proposed labels:</b> 0, 0, 0, 1</p>
+    <p>
+      No supported distinctive operation; the claimed existing proof is absent
+      from evidence.
+    </p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;drevendev/HungryCrab&quot;,
+    &quot;commitSha&quot;: &quot;29f42fc6285f307118ab47328b13fc015743ffb9&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Eat a foreign repository, digest it, and extract everything useful for your own repo without violating licenses.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;agent-skills, claude-code, cli, developer-tools, git, license-compliance, python, repository-mining&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, CSS&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Hungry Crab ```text o . . o . O /\\ /\\ / \\ _____________________________________ / \\ | | / \\ | | | /\\ | | \\\\\\\\\\\\\\ /////// | | /\\ | | \\/ | | (@@@) (@@@) | | \\/ | \\ / | | \\ / \\ \\ | /\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/ | / / \\ \\_____| |_____/ / \\______\\_____________________________________/______/ / / | | \\ \\ / / | | \\ \\ ``` &gt; **Eat a foreign repository. Digest it. Serve what is worth keeping, legally.** [![CI](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml/badge.svg)](https://github.com/drevendev/HungryCrab/actions/workflows/ci.yml) [![Release](https://img.shields.io/github/v/release/drevendev/HungryCrab?color=blue)](https://github.com/drevendev/HungryCrab/releases/latest) [![License: &quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;MIT&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;DenisSergeevitch/desktop-fly&quot;,
+    &quot;commitSha&quot;: &quot;32b00011e83c3dc85fa3ea0b3934155b04f1635d&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;A 3D fruit fly living on your macOS desktop, driven by a live spiking simulation of the real FlyWire connectome&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Swift, JavaScript, Python&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;DesktopFly 🪰 A 3D fruit fly that lives on your macOS desktop, with spiking simulations built from FlyWire brain wiring and the MaleCNS brain-to-leg network. It combines identified neural circuits with modeled senses, joints and behavior. The fly&#39;s brain window: 23,210 real neuron soma positions from FlyWire v783, with live spikes flashing at real neuron locations. The two glowing yellow markers are the Giant Fibers — the escape command neurons. Click any region to stimulate it. ## Changelog ### 1.1.0 — 2026-09-05 - **Motor-driven legs:** added a MaleCNS v1.0 extract with 1,045 neurons and 17,224 measured connections. Simulated motor activity drives articulated joints, forward/backward stepp&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>validation-01 · validation</h2>
+    <p>
+      Scriptorium would produce edition-linked measurements of literary
+      language. ex-ussr-kinship-research would store artifacts, claims and
+      source provenance in a research register. Register each Scriptorium
+      edition measurement as a source-linked artifact in the kinship research
+      register; export a queue for a human archivist to compare sources, without
+      inferring ancestry from style.
+    </p>
+    <p><b>Proposed labels:</b> 1, 1, 1, 0</p>
+    <p>
+      Both observed mechanisms have distinct roles in a proposed input-to-output
+      mapping.
+    </p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;drevendev/Scriptorium&quot;,
+    &quot;commitSha&quot;: &quot;61617a516369b352702196d590a38f0729e65f57&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, JavaScript, HTML&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Scriptorium · Literary language reader **[🌐 Open the interactive Scriptorium Reader (GitHub Pages) →](https://drevendev.github.io/Scriptorium/)** **Russian-first public Reader (merged as PR #333; live HTTP not independently verified):** GitHub Pages uses `master / (root)`. The new home page groups **10 Russian-language works**: six with actual source-pinned observations and four clearly marked as work in progress. The 6 measured books provide **153 fields, 129 numeric observations and 24 explicitly unavailable values**. Search, book-to-book rate comparisons, chart bars, JSON exports and source metadata are reader-facing; cross-language original/translation analysis is not yet present. The&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;DenisSergeevitch/ex-ussr-kinship-research&quot;,
+    &quot;commitSha&quot;: &quot;de5e988ac95ed36dbc738574f20057340a6948ff&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Replies in your language.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;agent-skills, archives, claude-code, codex, family-history, familysearch, genealogy, ussr&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, HTML&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# ex-USSR Kinship Research ![ex-USSR Kinship Research cover](docs/cover.jpg) **An evidence-first genealogy skill for AI agents (Codex, Claude Code and other Agent Skills runtimes).** It turns an agent into a careful family-history researcher for the former USSR, the Soviet Union and the Russian Empire. The agent reads church books and civil records, military, deportation and repression files, and unindexed archive scans. It keeps every find traceable, separates records from interpretation and says plainly what is proven and what is not. Coverage includes all 15 former Soviet republics: Russia, Ukraine, Belarus, Moldova, Estonia, Latvia, Lithuania, Georgia, Armenia, Azerbaijan, Kazakhstan, Ky&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;MIT&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>validation-02 · validation</h2>
+    <p>
+      Scriptorium would produce edition-linked measurements of literary
+      language. Export its component report for human review.
+    </p>
+    <p><b>Proposed labels:</b> 1, 0, 0, 0</p>
+    <p>Only A has a distinctive role; there is no joint mechanism.</p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;drevendev/Scriptorium&quot;,
+    &quot;commitSha&quot;: &quot;61617a516369b352702196d590a38f0729e65f57&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, JavaScript, HTML&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Scriptorium · Literary language reader **[🌐 Open the interactive Scriptorium Reader (GitHub Pages) →](https://drevendev.github.io/Scriptorium/)** **Russian-first public Reader (merged as PR #333; live HTTP not independently verified):** GitHub Pages uses `master / (root)`. The new home page groups **10 Russian-language works**: six with actual source-pinned observations and four clearly marked as work in progress. The 6 measured books provide **153 fields, 129 numeric observations and 24 explicitly unavailable values**. Search, book-to-book rate comparisons, chart bars, JSON exports and source metadata are reader-facing; cross-language original/translation analysis is not yet present. The&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;DenisSergeevitch/ex-ussr-kinship-research&quot;,
+    &quot;commitSha&quot;: &quot;de5e988ac95ed36dbc738574f20057340a6948ff&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Replies in your language.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;agent-skills, archives, claude-code, codex, family-history, familysearch, genealogy, ussr&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, HTML&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# ex-USSR Kinship Research ![ex-USSR Kinship Research cover](docs/cover.jpg) **An evidence-first genealogy skill for AI agents (Codex, Claude Code and other Agent Skills runtimes).** It turns an agent into a careful family-history researcher for the former USSR, the Soviet Union and the Russian Empire. The agent reads church books and civil records, military, deportation and repression files, and unindexed archive scans. It keeps every find traceable, separates records from interpretation and says plainly what is proven and what is not. Coverage includes all 15 former Soviet republics: Russia, Ukraine, Belarus, Moldova, Estonia, Latvia, Lithuania, Georgia, Armenia, Azerbaijan, Kazakhstan, Ky&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;MIT&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>validation-03 · validation</h2>
+    <p>
+      ex-ussr-kinship-research would store artifacts, claims and source
+      provenance in a research register. Export its native result for human
+      review.
+    </p>
+    <p><b>Proposed labels:</b> 0, 1, 0, 0</p>
+    <p>Only B has a distinctive role; there is no joint mechanism.</p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;drevendev/Scriptorium&quot;,
+    &quot;commitSha&quot;: &quot;61617a516369b352702196d590a38f0729e65f57&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, JavaScript, HTML&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Scriptorium · Literary language reader **[🌐 Open the interactive Scriptorium Reader (GitHub Pages) →](https://drevendev.github.io/Scriptorium/)** **Russian-first public Reader (merged as PR #333; live HTTP not independently verified):** GitHub Pages uses `master / (root)`. The new home page groups **10 Russian-language works**: six with actual source-pinned observations and four clearly marked as work in progress. The 6 measured books provide **153 fields, 129 numeric observations and 24 explicitly unavailable values**. Search, book-to-book rate comparisons, chart bars, JSON exports and source metadata are reader-facing; cross-language original/translation analysis is not yet present. The&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;DenisSergeevitch/ex-ussr-kinship-research&quot;,
+    &quot;commitSha&quot;: &quot;de5e988ac95ed36dbc738574f20057340a6948ff&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Replies in your language.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;agent-skills, archives, claude-code, codex, family-history, familysearch, genealogy, ussr&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, HTML&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# ex-USSR Kinship Research ![ex-USSR Kinship Research cover](docs/cover.jpg) **An evidence-first genealogy skill for AI agents (Codex, Claude Code and other Agent Skills runtimes).** It turns an agent into a careful family-history researcher for the former USSR, the Soviet Union and the Russian Empire. The agent reads church books and civil records, military, deportation and repression files, and unindexed archive scans. It keeps every find traceable, separates records from interpretation and says plainly what is proven and what is not. Coverage includes all 15 former Soviet republics: Russia, Ukraine, Belarus, Moldova, Estonia, Latvia, Lithuania, Georgia, Armenia, Azerbaijan, Kazakhstan, Ky&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;MIT&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>validation-04 · validation</h2>
+    <p>
+      Combine drevendev/Scriptorium and
+      DenisSergeevitch/ex-ussr-kinship-research into a flexible spooky dashboard
+      that makes work better.
+    </p>
+    <p><b>Proposed labels:</b> 0, 0, 0, 0</p>
+    <p>Names and generic benefits do not assign observed operations.</p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;drevendev/Scriptorium&quot;,
+    &quot;commitSha&quot;: &quot;61617a516369b352702196d590a38f0729e65f57&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, JavaScript, HTML&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Scriptorium · Literary language reader **[🌐 Open the interactive Scriptorium Reader (GitHub Pages) →](https://drevendev.github.io/Scriptorium/)** **Russian-first public Reader (merged as PR #333; live HTTP not independently verified):** GitHub Pages uses `master / (root)`. The new home page groups **10 Russian-language works**: six with actual source-pinned observations and four clearly marked as work in progress. The 6 measured books provide **153 fields, 129 numeric observations and 24 explicitly unavailable values**. Search, book-to-book rate comparisons, chart bars, JSON exports and source metadata are reader-facing; cross-language original/translation analysis is not yet present. The&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;DenisSergeevitch/ex-ussr-kinship-research&quot;,
+    &quot;commitSha&quot;: &quot;de5e988ac95ed36dbc738574f20057340a6948ff&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Replies in your language.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;agent-skills, archives, claude-code, codex, family-history, familysearch, genealogy, ussr&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, HTML&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# ex-USSR Kinship Research ![ex-USSR Kinship Research cover](docs/cover.jpg) **An evidence-first genealogy skill for AI agents (Codex, Claude Code and other Agent Skills runtimes).** It turns an agent into a careful family-history researcher for the former USSR, the Soviet Union and the Russian Empire. The agent reads church books and civil records, military, deportation and repression files, and unindexed archive scans. It keeps every find traceable, separates records from interpretation and says plainly what is proven and what is not. Coverage includes all 15 former Soviet republics: Russia, Ukraine, Belarus, Moldova, Estonia, Latvia, Lithuania, Georgia, Armenia, Azerbaijan, Kazakhstan, Ky&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;MIT&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>validation-05 · validation</h2>
+    <p>
+      Scriptorium would produce edition-linked measurements of literary
+      language. ex-ussr-kinship-research would store artifacts, claims and
+      source provenance in a research register. Register each Scriptorium
+      edition measurement as a source-linked artifact in the kinship research
+      register; export a queue for a human archivist to compare sources, without
+      inferring ancestry from style. Both existing donor projects already
+      guarantee perfect bug detection for all code.
+    </p>
+    <p><b>Proposed labels:</b> 1, 1, 1, 1</p>
+    <p>
+      The mapping is specific but the existing universal bug-detection guarantee
+      is unsupported.
+    </p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;drevendev/Scriptorium&quot;,
+    &quot;commitSha&quot;: &quot;61617a516369b352702196d590a38f0729e65f57&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, JavaScript, HTML&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Scriptorium · Literary language reader **[🌐 Open the interactive Scriptorium Reader (GitHub Pages) →](https://drevendev.github.io/Scriptorium/)** **Russian-first public Reader (merged as PR #333; live HTTP not independently verified):** GitHub Pages uses `master / (root)`. The new home page groups **10 Russian-language works**: six with actual source-pinned observations and four clearly marked as work in progress. The 6 measured books provide **153 fields, 129 numeric observations and 24 explicitly unavailable values**. Search, book-to-book rate comparisons, chart bars, JSON exports and source metadata are reader-facing; cross-language original/translation analysis is not yet present. The&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;DenisSergeevitch/ex-ussr-kinship-research&quot;,
+    &quot;commitSha&quot;: &quot;de5e988ac95ed36dbc738574f20057340a6948ff&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Replies in your language.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;agent-skills, archives, claude-code, codex, family-history, familysearch, genealogy, ussr&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, HTML&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# ex-USSR Kinship Research ![ex-USSR Kinship Research cover](docs/cover.jpg) **An evidence-first genealogy skill for AI agents (Codex, Claude Code and other Agent Skills runtimes).** It turns an agent into a careful family-history researcher for the former USSR, the Soviet Union and the Russian Empire. The agent reads church books and civil records, military, deportation and repression files, and unindexed archive scans. It keeps every find traceable, separates records from interpretation and says plainly what is proven and what is not. Coverage includes all 15 former Soviet republics: Russia, Ukraine, Belarus, Moldova, Estonia, Latvia, Lithuania, Georgia, Armenia, Azerbaijan, Kazakhstan, Ky&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;MIT&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>validation-06 · validation</h2>
+    <p>
+      A fictional ghost complains about its paperwork. Scriptorium would produce
+      edition-linked measurements of literary language. ex-ussr-kinship-research
+      would store artifacts, claims and source provenance in a research
+      register. Register each Scriptorium edition measurement as a source-linked
+      artifact in the kinship research register; export a queue for a human
+      archivist to compare sources, without inferring ancestry from style.
+    </p>
+    <p><b>Proposed labels:</b> 1, 1, 1, 0</p>
+    <p>A clearly imaginary scene is not a real unsupported capability.</p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;drevendev/Scriptorium&quot;,
+    &quot;commitSha&quot;: &quot;61617a516369b352702196d590a38f0729e65f57&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, JavaScript, HTML&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Scriptorium · Literary language reader **[🌐 Open the interactive Scriptorium Reader (GitHub Pages) →](https://drevendev.github.io/Scriptorium/)** **Russian-first public Reader (merged as PR #333; live HTTP not independently verified):** GitHub Pages uses `master / (root)`. The new home page groups **10 Russian-language works**: six with actual source-pinned observations and four clearly marked as work in progress. The 6 measured books provide **153 fields, 129 numeric observations and 24 explicitly unavailable values**. Search, book-to-book rate comparisons, chart bars, JSON exports and source metadata are reader-facing; cross-language original/translation analysis is not yet present. The&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;DenisSergeevitch/ex-ussr-kinship-research&quot;,
+    &quot;commitSha&quot;: &quot;de5e988ac95ed36dbc738574f20057340a6948ff&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Replies in your language.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;agent-skills, archives, claude-code, codex, family-history, familysearch, genealogy, ussr&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, HTML&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# ex-USSR Kinship Research ![ex-USSR Kinship Research cover](docs/cover.jpg) **An evidence-first genealogy skill for AI agents (Codex, Claude Code and other Agent Skills runtimes).** It turns an agent into a careful family-history researcher for the former USSR, the Soviet Union and the Russian Empire. The agent reads church books and civil records, military, deportation and repression files, and unindexed archive scans. It keeps every find traceable, separates records from interpretation and says plainly what is proven and what is not. Coverage includes all 15 former Soviet republics: Russia, Ukraine, Belarus, Moldova, Estonia, Latvia, Lithuania, Georgia, Armenia, Azerbaijan, Kazakhstan, Ky&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;MIT&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>validation-07 · validation</h2>
+    <p>
+      Scriptorium would produce edition-linked measurements of literary
+      language. ex-ussr-kinship-research would store artifacts, claims and
+      source provenance in a research register. Put their separate native
+      outputs next to one another.
+    </p>
+    <p><b>Proposed labels:</b> 1, 1, 0, 0</p>
+    <p>
+      Both operations are named but no mapping connects their outputs and
+      inputs.
+    </p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;drevendev/Scriptorium&quot;,
+    &quot;commitSha&quot;: &quot;61617a516369b352702196d590a38f0729e65f57&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, JavaScript, HTML&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Scriptorium · Literary language reader **[🌐 Open the interactive Scriptorium Reader (GitHub Pages) →](https://drevendev.github.io/Scriptorium/)** **Russian-first public Reader (merged as PR #333; live HTTP not independently verified):** GitHub Pages uses `master / (root)`. The new home page groups **10 Russian-language works**: six with actual source-pinned observations and four clearly marked as work in progress. The 6 measured books provide **153 fields, 129 numeric observations and 24 explicitly unavailable values**. Search, book-to-book rate comparisons, chart bars, JSON exports and source metadata are reader-facing; cross-language original/translation analysis is not yet present. The&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;DenisSergeevitch/ex-ussr-kinship-research&quot;,
+    &quot;commitSha&quot;: &quot;de5e988ac95ed36dbc738574f20057340a6948ff&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Replies in your language.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;agent-skills, archives, claude-code, codex, family-history, familysearch, genealogy, ussr&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, HTML&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# ex-USSR Kinship Research ![ex-USSR Kinship Research cover](docs/cover.jpg) **An evidence-first genealogy skill for AI agents (Codex, Claude Code and other Agent Skills runtimes).** It turns an agent into a careful family-history researcher for the former USSR, the Soviet Union and the Russian Empire. The agent reads church books and civil records, military, deportation and repression files, and unindexed archive scans. It keeps every find traceable, separates records from interpretation and says plainly what is proven and what is not. Coverage includes all 15 former Soviet republics: Russia, Ukraine, Belarus, Moldova, Estonia, Latvia, Lithuania, Georgia, Armenia, Azerbaijan, Kazakhstan, Ky&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;MIT&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>validation-08 · validation</h2>
+    <p>
+      These projects already establish every family relationship automatically
+      and prove all their results correct.
+    </p>
+    <p><b>Proposed labels:</b> 0, 0, 0, 1</p>
+    <p>
+      No supported distinctive operation; the claimed existing proof is absent
+      from evidence.
+    </p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;drevendev/Scriptorium&quot;,
+    &quot;commitSha&quot;: &quot;61617a516369b352702196d590a38f0729e65f57&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, JavaScript, HTML&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Scriptorium · Literary language reader **[🌐 Open the interactive Scriptorium Reader (GitHub Pages) →](https://drevendev.github.io/Scriptorium/)** **Russian-first public Reader (merged as PR #333; live HTTP not independently verified):** GitHub Pages uses `master / (root)`. The new home page groups **10 Russian-language works**: six with actual source-pinned observations and four clearly marked as work in progress. The 6 measured books provide **153 fields, 129 numeric observations and 24 explicitly unavailable values**. Search, book-to-book rate comparisons, chart bars, JSON exports and source metadata are reader-facing; cross-language original/translation analysis is not yet present. The&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;DenisSergeevitch/ex-ussr-kinship-research&quot;,
+    &quot;commitSha&quot;: &quot;de5e988ac95ed36dbc738574f20057340a6948ff&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Replies in your language.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;agent-skills, archives, claude-code, codex, family-history, familysearch, genealogy, ussr&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, HTML&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# ex-USSR Kinship Research ![ex-USSR Kinship Research cover](docs/cover.jpg) **An evidence-first genealogy skill for AI agents (Codex, Claude Code and other Agent Skills runtimes).** It turns an agent into a careful family-history researcher for the former USSR, the Soviet Union and the Russian Empire. The agent reads church books and civil records, military, deportation and repression files, and unindexed archive scans. It keeps every find traceable, separates records from interpretation and says plainly what is proven and what is not. Coverage includes all 15 former Soviet republics: Russia, Ukraine, Belarus, Moldova, Estonia, Latvia, Lithuania, Georgia, Armenia, Azerbaijan, Kazakhstan, Ky&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;MIT&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>holdout-01 · holdout</h2>
+    <p>
+      Flask would receive a JSON request at a small web route. jq would filter
+      structured JSON records. A Flask route would receive JSON records, pass
+      them through a fixed jq projection, and return the filtered JSON as the
+      HTTP response for a developer to inspect.
+    </p>
+    <p><b>Proposed labels:</b> 1, 1, 1, 0</p>
+    <p>
+      Both observed mechanisms have distinct roles in a proposed input-to-output
+      mapping.
+    </p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;pallets/flask&quot;,
+    &quot;commitSha&quot;: &quot;d086db856be187255b8ec61ef409357393020f32&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;The Python micro framework for building web applications.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;flask, jinja, pallets, python, web-framework, werkzeug, wsgi&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, HTML, Shell&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Flask Flask is a lightweight [WSGI] web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. It began as a simple wrapper around [Werkzeug] and [Jinja], and has become one of the most popular Python web application frameworks. Flask offers suggestions, but doesn&#39;t enforce any dependencies or project layout. It is up to the developer to choose the tools and libraries they want to use. There are many extensions provided by the community that make adding new functionality easy. [WSGI]: https://wsgi.readthedocs.io/ [Werkzeug]: https://werkzeug.palletsprojects.com/ [Jinja]: https://jinja.palletsprojects.com/ ## A Sim&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;BSD-3-Clause&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;jqlang/jq&quot;,
+    &quot;commitSha&quot;: &quot;ac35c7dcbb991fa0f3c3196dd00ca479211e9847&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Command-line JSON processor&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;jq&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;C, M4, Shell&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# jq `jq` is a lightweight and flexible command-line JSON processor akin to `sed`,`awk`,`grep`, and friends for JSON data. It&#39;s written in portable C and has zero runtime dependencies, allowing you to easily slice, filter, map, and transform structured data. ## Documentation - **Official Documentation**: [jqlang.org](https://jqlang.org) - **Try jq Online**: [play.jqlang.org](https://play.jqlang.org) ## Installation ### Prebuilt Binaries Download the latest releases from the [GitHub release page](https://github.com/jqlang/jq/releases). The platform-specific assets are standalone executables, not archives. On macOS and Linux, rename the downloaded file to `jq` and make it executable with `chmo&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>holdout-02 · holdout</h2>
+    <p>
+      Flask would receive a JSON request at a small web route. Export its
+      component report for human review.
+    </p>
+    <p><b>Proposed labels:</b> 1, 0, 0, 0</p>
+    <p>Only A has a distinctive role; there is no joint mechanism.</p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;pallets/flask&quot;,
+    &quot;commitSha&quot;: &quot;d086db856be187255b8ec61ef409357393020f32&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;The Python micro framework for building web applications.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;flask, jinja, pallets, python, web-framework, werkzeug, wsgi&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, HTML, Shell&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Flask Flask is a lightweight [WSGI] web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. It began as a simple wrapper around [Werkzeug] and [Jinja], and has become one of the most popular Python web application frameworks. Flask offers suggestions, but doesn&#39;t enforce any dependencies or project layout. It is up to the developer to choose the tools and libraries they want to use. There are many extensions provided by the community that make adding new functionality easy. [WSGI]: https://wsgi.readthedocs.io/ [Werkzeug]: https://werkzeug.palletsprojects.com/ [Jinja]: https://jinja.palletsprojects.com/ ## A Sim&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;BSD-3-Clause&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;jqlang/jq&quot;,
+    &quot;commitSha&quot;: &quot;ac35c7dcbb991fa0f3c3196dd00ca479211e9847&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Command-line JSON processor&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;jq&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;C, M4, Shell&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# jq `jq` is a lightweight and flexible command-line JSON processor akin to `sed`,`awk`,`grep`, and friends for JSON data. It&#39;s written in portable C and has zero runtime dependencies, allowing you to easily slice, filter, map, and transform structured data. ## Documentation - **Official Documentation**: [jqlang.org](https://jqlang.org) - **Try jq Online**: [play.jqlang.org](https://play.jqlang.org) ## Installation ### Prebuilt Binaries Download the latest releases from the [GitHub release page](https://github.com/jqlang/jq/releases). The platform-specific assets are standalone executables, not archives. On macOS and Linux, rename the downloaded file to `jq` and make it executable with `chmo&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>holdout-03 · holdout</h2>
+    <p>
+      jq would filter structured JSON records. Export its native result for
+      human review.
+    </p>
+    <p><b>Proposed labels:</b> 0, 1, 0, 0</p>
+    <p>Only B has a distinctive role; there is no joint mechanism.</p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;pallets/flask&quot;,
+    &quot;commitSha&quot;: &quot;d086db856be187255b8ec61ef409357393020f32&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;The Python micro framework for building web applications.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;flask, jinja, pallets, python, web-framework, werkzeug, wsgi&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, HTML, Shell&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Flask Flask is a lightweight [WSGI] web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. It began as a simple wrapper around [Werkzeug] and [Jinja], and has become one of the most popular Python web application frameworks. Flask offers suggestions, but doesn&#39;t enforce any dependencies or project layout. It is up to the developer to choose the tools and libraries they want to use. There are many extensions provided by the community that make adding new functionality easy. [WSGI]: https://wsgi.readthedocs.io/ [Werkzeug]: https://werkzeug.palletsprojects.com/ [Jinja]: https://jinja.palletsprojects.com/ ## A Sim&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;BSD-3-Clause&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;jqlang/jq&quot;,
+    &quot;commitSha&quot;: &quot;ac35c7dcbb991fa0f3c3196dd00ca479211e9847&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Command-line JSON processor&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;jq&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;C, M4, Shell&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# jq `jq` is a lightweight and flexible command-line JSON processor akin to `sed`,`awk`,`grep`, and friends for JSON data. It&#39;s written in portable C and has zero runtime dependencies, allowing you to easily slice, filter, map, and transform structured data. ## Documentation - **Official Documentation**: [jqlang.org](https://jqlang.org) - **Try jq Online**: [play.jqlang.org](https://play.jqlang.org) ## Installation ### Prebuilt Binaries Download the latest releases from the [GitHub release page](https://github.com/jqlang/jq/releases). The platform-specific assets are standalone executables, not archives. On macOS and Linux, rename the downloaded file to `jq` and make it executable with `chmo&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>holdout-04 · holdout</h2>
+    <p>
+      Combine pallets/flask and jqlang/jq into a flexible spooky dashboard that
+      makes work better.
+    </p>
+    <p><b>Proposed labels:</b> 0, 0, 0, 0</p>
+    <p>Names and generic benefits do not assign observed operations.</p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;pallets/flask&quot;,
+    &quot;commitSha&quot;: &quot;d086db856be187255b8ec61ef409357393020f32&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;The Python micro framework for building web applications.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;flask, jinja, pallets, python, web-framework, werkzeug, wsgi&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, HTML, Shell&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Flask Flask is a lightweight [WSGI] web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. It began as a simple wrapper around [Werkzeug] and [Jinja], and has become one of the most popular Python web application frameworks. Flask offers suggestions, but doesn&#39;t enforce any dependencies or project layout. It is up to the developer to choose the tools and libraries they want to use. There are many extensions provided by the community that make adding new functionality easy. [WSGI]: https://wsgi.readthedocs.io/ [Werkzeug]: https://werkzeug.palletsprojects.com/ [Jinja]: https://jinja.palletsprojects.com/ ## A Sim&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;BSD-3-Clause&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;jqlang/jq&quot;,
+    &quot;commitSha&quot;: &quot;ac35c7dcbb991fa0f3c3196dd00ca479211e9847&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Command-line JSON processor&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;jq&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;C, M4, Shell&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# jq `jq` is a lightweight and flexible command-line JSON processor akin to `sed`,`awk`,`grep`, and friends for JSON data. It&#39;s written in portable C and has zero runtime dependencies, allowing you to easily slice, filter, map, and transform structured data. ## Documentation - **Official Documentation**: [jqlang.org](https://jqlang.org) - **Try jq Online**: [play.jqlang.org](https://play.jqlang.org) ## Installation ### Prebuilt Binaries Download the latest releases from the [GitHub release page](https://github.com/jqlang/jq/releases). The platform-specific assets are standalone executables, not archives. On macOS and Linux, rename the downloaded file to `jq` and make it executable with `chmo&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>holdout-05 · holdout</h2>
+    <p>
+      Flask would receive a JSON request at a small web route. jq would filter
+      structured JSON records. A Flask route would receive JSON records, pass
+      them through a fixed jq projection, and return the filtered JSON as the
+      HTTP response for a developer to inspect. Both existing donor projects
+      already guarantee perfect bug detection for all code.
+    </p>
+    <p><b>Proposed labels:</b> 1, 1, 1, 1</p>
+    <p>
+      The mapping is specific but the existing universal bug-detection guarantee
+      is unsupported.
+    </p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;pallets/flask&quot;,
+    &quot;commitSha&quot;: &quot;d086db856be187255b8ec61ef409357393020f32&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;The Python micro framework for building web applications.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;flask, jinja, pallets, python, web-framework, werkzeug, wsgi&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, HTML, Shell&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Flask Flask is a lightweight [WSGI] web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. It began as a simple wrapper around [Werkzeug] and [Jinja], and has become one of the most popular Python web application frameworks. Flask offers suggestions, but doesn&#39;t enforce any dependencies or project layout. It is up to the developer to choose the tools and libraries they want to use. There are many extensions provided by the community that make adding new functionality easy. [WSGI]: https://wsgi.readthedocs.io/ [Werkzeug]: https://werkzeug.palletsprojects.com/ [Jinja]: https://jinja.palletsprojects.com/ ## A Sim&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;BSD-3-Clause&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;jqlang/jq&quot;,
+    &quot;commitSha&quot;: &quot;ac35c7dcbb991fa0f3c3196dd00ca479211e9847&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Command-line JSON processor&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;jq&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;C, M4, Shell&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# jq `jq` is a lightweight and flexible command-line JSON processor akin to `sed`,`awk`,`grep`, and friends for JSON data. It&#39;s written in portable C and has zero runtime dependencies, allowing you to easily slice, filter, map, and transform structured data. ## Documentation - **Official Documentation**: [jqlang.org](https://jqlang.org) - **Try jq Online**: [play.jqlang.org](https://play.jqlang.org) ## Installation ### Prebuilt Binaries Download the latest releases from the [GitHub release page](https://github.com/jqlang/jq/releases). The platform-specific assets are standalone executables, not archives. On macOS and Linux, rename the downloaded file to `jq` and make it executable with `chmo&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>holdout-06 · holdout</h2>
+    <p>
+      A fictional ghost complains about its paperwork. Flask would receive a
+      JSON request at a small web route. jq would filter structured JSON
+      records. A Flask route would receive JSON records, pass them through a
+      fixed jq projection, and return the filtered JSON as the HTTP response for
+      a developer to inspect.
+    </p>
+    <p><b>Proposed labels:</b> 1, 1, 1, 0</p>
+    <p>A clearly imaginary scene is not a real unsupported capability.</p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;pallets/flask&quot;,
+    &quot;commitSha&quot;: &quot;d086db856be187255b8ec61ef409357393020f32&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;The Python micro framework for building web applications.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;flask, jinja, pallets, python, web-framework, werkzeug, wsgi&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, HTML, Shell&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Flask Flask is a lightweight [WSGI] web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. It began as a simple wrapper around [Werkzeug] and [Jinja], and has become one of the most popular Python web application frameworks. Flask offers suggestions, but doesn&#39;t enforce any dependencies or project layout. It is up to the developer to choose the tools and libraries they want to use. There are many extensions provided by the community that make adding new functionality easy. [WSGI]: https://wsgi.readthedocs.io/ [Werkzeug]: https://werkzeug.palletsprojects.com/ [Jinja]: https://jinja.palletsprojects.com/ ## A Sim&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;BSD-3-Clause&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;jqlang/jq&quot;,
+    &quot;commitSha&quot;: &quot;ac35c7dcbb991fa0f3c3196dd00ca479211e9847&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Command-line JSON processor&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;jq&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;C, M4, Shell&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# jq `jq` is a lightweight and flexible command-line JSON processor akin to `sed`,`awk`,`grep`, and friends for JSON data. It&#39;s written in portable C and has zero runtime dependencies, allowing you to easily slice, filter, map, and transform structured data. ## Documentation - **Official Documentation**: [jqlang.org](https://jqlang.org) - **Try jq Online**: [play.jqlang.org](https://play.jqlang.org) ## Installation ### Prebuilt Binaries Download the latest releases from the [GitHub release page](https://github.com/jqlang/jq/releases). The platform-specific assets are standalone executables, not archives. On macOS and Linux, rename the downloaded file to `jq` and make it executable with `chmo&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>holdout-07 · holdout</h2>
+    <p>
+      Flask would receive a JSON request at a small web route. jq would filter
+      structured JSON records. Put their separate native outputs next to one
+      another.
+    </p>
+    <p><b>Proposed labels:</b> 1, 1, 0, 0</p>
+    <p>
+      Both operations are named but no mapping connects their outputs and
+      inputs.
+    </p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;pallets/flask&quot;,
+    &quot;commitSha&quot;: &quot;d086db856be187255b8ec61ef409357393020f32&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;The Python micro framework for building web applications.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;flask, jinja, pallets, python, web-framework, werkzeug, wsgi&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, HTML, Shell&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Flask Flask is a lightweight [WSGI] web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. It began as a simple wrapper around [Werkzeug] and [Jinja], and has become one of the most popular Python web application frameworks. Flask offers suggestions, but doesn&#39;t enforce any dependencies or project layout. It is up to the developer to choose the tools and libraries they want to use. There are many extensions provided by the community that make adding new functionality easy. [WSGI]: https://wsgi.readthedocs.io/ [Werkzeug]: https://werkzeug.palletsprojects.com/ [Jinja]: https://jinja.palletsprojects.com/ ## A Sim&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;BSD-3-Clause&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;jqlang/jq&quot;,
+    &quot;commitSha&quot;: &quot;ac35c7dcbb991fa0f3c3196dd00ca479211e9847&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Command-line JSON processor&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;jq&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;C, M4, Shell&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# jq `jq` is a lightweight and flexible command-line JSON processor akin to `sed`,`awk`,`grep`, and friends for JSON data. It&#39;s written in portable C and has zero runtime dependencies, allowing you to easily slice, filter, map, and transform structured data. ## Documentation - **Official Documentation**: [jqlang.org](https://jqlang.org) - **Try jq Online**: [play.jqlang.org](https://play.jqlang.org) ## Installation ### Prebuilt Binaries Download the latest releases from the [GitHub release page](https://github.com/jqlang/jq/releases). The platform-specific assets are standalone executables, not archives. On macOS and Linux, rename the downloaded file to `jq` and make it executable with `chmo&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>holdout-08 · holdout</h2>
+    <p>
+      These projects already establish every family relationship automatically
+      and prove all their results correct.
+    </p>
+    <p><b>Proposed labels:</b> 0, 0, 0, 1</p>
+    <p>
+      No supported distinctive operation; the claimed existing proof is absent
+      from evidence.
+    </p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;pallets/flask&quot;,
+    &quot;commitSha&quot;: &quot;d086db856be187255b8ec61ef409357393020f32&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;The Python micro framework for building web applications.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;flask, jinja, pallets, python, web-framework, werkzeug, wsgi&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, HTML, Shell&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Flask Flask is a lightweight [WSGI] web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. It began as a simple wrapper around [Werkzeug] and [Jinja], and has become one of the most popular Python web application frameworks. Flask offers suggestions, but doesn&#39;t enforce any dependencies or project layout. It is up to the developer to choose the tools and libraries they want to use. There are many extensions provided by the community that make adding new functionality easy. [WSGI]: https://wsgi.readthedocs.io/ [Werkzeug]: https://werkzeug.palletsprojects.com/ [Jinja]: https://jinja.palletsprojects.com/ ## A Sim&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;BSD-3-Clause&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;jqlang/jq&quot;,
+    &quot;commitSha&quot;: &quot;ac35c7dcbb991fa0f3c3196dd00ca479211e9847&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Command-line JSON processor&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;jq&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;C, M4, Shell&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# jq `jq` is a lightweight and flexible command-line JSON processor akin to `sed`,`awk`,`grep`, and friends for JSON data. It&#39;s written in portable C and has zero runtime dependencies, allowing you to easily slice, filter, map, and transform structured data. ## Documentation - **Official Documentation**: [jqlang.org](https://jqlang.org) - **Try jq Online**: [play.jqlang.org](https://play.jqlang.org) ## Installation ### Prebuilt Binaries Download the latest releases from the [GitHub release page](https://github.com/jqlang/jq/releases). The platform-specific assets are standalone executables, not archives. On macOS and Linux, rename the downloaded file to `jq` and make it executable with `chmo&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>holdout-09 · holdout</h2>
+    <p>
+      Proposed laboratory specimen: Flask would receive a JSON request at a
+      small web route. jq would filter structured JSON records. A Flask route
+      would receive JSON records, pass them through a fixed jq projection, and
+      return the filtered JSON as the HTTP response for a developer to inspect.
+    </p>
+    <p><b>Proposed labels:</b> 1, 1, 1, 0</p>
+    <p>
+      Both observed mechanisms have distinct roles in a proposed input-to-output
+      mapping.
+    </p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;pallets/flask&quot;,
+    &quot;commitSha&quot;: &quot;d086db856be187255b8ec61ef409357393020f32&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;The Python micro framework for building web applications.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;flask, jinja, pallets, python, web-framework, werkzeug, wsgi&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, HTML, Shell&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Flask Flask is a lightweight [WSGI] web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. It began as a simple wrapper around [Werkzeug] and [Jinja], and has become one of the most popular Python web application frameworks. Flask offers suggestions, but doesn&#39;t enforce any dependencies or project layout. It is up to the developer to choose the tools and libraries they want to use. There are many extensions provided by the community that make adding new functionality easy. [WSGI]: https://wsgi.readthedocs.io/ [Werkzeug]: https://werkzeug.palletsprojects.com/ [Jinja]: https://jinja.palletsprojects.com/ ## A Sim&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;BSD-3-Clause&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;jqlang/jq&quot;,
+    &quot;commitSha&quot;: &quot;ac35c7dcbb991fa0f3c3196dd00ca479211e9847&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Command-line JSON processor&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;jq&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;C, M4, Shell&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# jq `jq` is a lightweight and flexible command-line JSON processor akin to `sed`,`awk`,`grep`, and friends for JSON data. It&#39;s written in portable C and has zero runtime dependencies, allowing you to easily slice, filter, map, and transform structured data. ## Documentation - **Official Documentation**: [jqlang.org](https://jqlang.org) - **Try jq Online**: [play.jqlang.org](https://play.jqlang.org) ## Installation ### Prebuilt Binaries Download the latest releases from the [GitHub release page](https://github.com/jqlang/jq/releases). The platform-specific assets are standalone executables, not archives. On macOS and Linux, rename the downloaded file to `jq` and make it executable with `chmo&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>holdout-10 · holdout</h2>
+    <p>
+      Proposed laboratory specimen: Flask would receive a JSON request at a
+      small web route. Export its component report for human review.
+    </p>
+    <p><b>Proposed labels:</b> 1, 0, 0, 0</p>
+    <p>Only A has a distinctive role; there is no joint mechanism.</p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;pallets/flask&quot;,
+    &quot;commitSha&quot;: &quot;d086db856be187255b8ec61ef409357393020f32&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;The Python micro framework for building web applications.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;flask, jinja, pallets, python, web-framework, werkzeug, wsgi&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, HTML, Shell&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Flask Flask is a lightweight [WSGI] web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. It began as a simple wrapper around [Werkzeug] and [Jinja], and has become one of the most popular Python web application frameworks. Flask offers suggestions, but doesn&#39;t enforce any dependencies or project layout. It is up to the developer to choose the tools and libraries they want to use. There are many extensions provided by the community that make adding new functionality easy. [WSGI]: https://wsgi.readthedocs.io/ [Werkzeug]: https://werkzeug.palletsprojects.com/ [Jinja]: https://jinja.palletsprojects.com/ ## A Sim&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;BSD-3-Clause&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;jqlang/jq&quot;,
+    &quot;commitSha&quot;: &quot;ac35c7dcbb991fa0f3c3196dd00ca479211e9847&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Command-line JSON processor&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;jq&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;C, M4, Shell&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# jq `jq` is a lightweight and flexible command-line JSON processor akin to `sed`,`awk`,`grep`, and friends for JSON data. It&#39;s written in portable C and has zero runtime dependencies, allowing you to easily slice, filter, map, and transform structured data. ## Documentation - **Official Documentation**: [jqlang.org](https://jqlang.org) - **Try jq Online**: [play.jqlang.org](https://play.jqlang.org) ## Installation ### Prebuilt Binaries Download the latest releases from the [GitHub release page](https://github.com/jqlang/jq/releases). The platform-specific assets are standalone executables, not archives. On macOS and Linux, rename the downloaded file to `jq` and make it executable with `chmo&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>holdout-11 · holdout</h2>
+    <p>
+      Proposed laboratory specimen: jq would filter structured JSON records.
+      Export its native result for human review.
+    </p>
+    <p><b>Proposed labels:</b> 0, 1, 0, 0</p>
+    <p>Only B has a distinctive role; there is no joint mechanism.</p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;pallets/flask&quot;,
+    &quot;commitSha&quot;: &quot;d086db856be187255b8ec61ef409357393020f32&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;The Python micro framework for building web applications.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;flask, jinja, pallets, python, web-framework, werkzeug, wsgi&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, HTML, Shell&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Flask Flask is a lightweight [WSGI] web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. It began as a simple wrapper around [Werkzeug] and [Jinja], and has become one of the most popular Python web application frameworks. Flask offers suggestions, but doesn&#39;t enforce any dependencies or project layout. It is up to the developer to choose the tools and libraries they want to use. There are many extensions provided by the community that make adding new functionality easy. [WSGI]: https://wsgi.readthedocs.io/ [Werkzeug]: https://werkzeug.palletsprojects.com/ [Jinja]: https://jinja.palletsprojects.com/ ## A Sim&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;BSD-3-Clause&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;jqlang/jq&quot;,
+    &quot;commitSha&quot;: &quot;ac35c7dcbb991fa0f3c3196dd00ca479211e9847&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Command-line JSON processor&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;jq&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;C, M4, Shell&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# jq `jq` is a lightweight and flexible command-line JSON processor akin to `sed`,`awk`,`grep`, and friends for JSON data. It&#39;s written in portable C and has zero runtime dependencies, allowing you to easily slice, filter, map, and transform structured data. ## Documentation - **Official Documentation**: [jqlang.org](https://jqlang.org) - **Try jq Online**: [play.jqlang.org](https://play.jqlang.org) ## Installation ### Prebuilt Binaries Download the latest releases from the [GitHub release page](https://github.com/jqlang/jq/releases). The platform-specific assets are standalone executables, not archives. On macOS and Linux, rename the downloaded file to `jq` and make it executable with `chmo&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+  <article>
+    <h2>holdout-12 · holdout</h2>
+    <p>
+      Proposed laboratory specimen: Combine pallets/flask and jqlang/jq into a
+      flexible spooky dashboard that makes work better.
+    </p>
+    <p><b>Proposed labels:</b> 0, 0, 0, 0</p>
+    <p>Names and generic benefits do not assign observed operations.</p>
+    <details>
+      <summary>Actual bounded historical evidence</summary>
+      <pre>
+[
+  {
+    &quot;ref&quot;: &quot;pallets/flask&quot;,
+    &quot;commitSha&quot;: &quot;d086db856be187255b8ec61ef409357393020f32&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;A:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;The Python micro framework for building web applications.&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;flask, jinja, pallets, python, web-framework, werkzeug, wsgi&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;Python, HTML, Shell&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# Flask Flask is a lightweight [WSGI] web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. It began as a simple wrapper around [Werkzeug] and [Jinja], and has become one of the most popular Python web application frameworks. Flask offers suggestions, but doesn&#39;t enforce any dependencies or project layout. It is up to the developer to choose the tools and libraries they want to use. There are many extensions provided by the community that make adding new functionality easy. [WSGI]: https://wsgi.readthedocs.io/ [Werkzeug]: https://werkzeug.palletsprojects.com/ [Jinja]: https://jinja.palletsprojects.com/ ## A Sim&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      },
+      {
+        &quot;id&quot;: &quot;A:license&quot;,
+        &quot;field&quot;: &quot;license&quot;,
+        &quot;value&quot;: &quot;BSD-3-Clause&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      }
+    ]
+  },
+  {
+    &quot;ref&quot;: &quot;jqlang/jq&quot;,
+    &quot;commitSha&quot;: &quot;ac35c7dcbb991fa0f3c3196dd00ca479211e9847&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;id&quot;: &quot;B:description&quot;,
+        &quot;field&quot;: &quot;description&quot;,
+        &quot;value&quot;: &quot;Command-line JSON processor&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:topics&quot;,
+        &quot;field&quot;: &quot;topics&quot;,
+        &quot;value&quot;: &quot;jq&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:languages&quot;,
+        &quot;field&quot;: &quot;languages&quot;,
+        &quot;value&quot;: &quot;C, M4, Shell&quot;,
+        &quot;status&quot;: &quot;observed&quot;
+      },
+      {
+        &quot;id&quot;: &quot;B:readme&quot;,
+        &quot;field&quot;: &quot;readme&quot;,
+        &quot;value&quot;: &quot;# jq `jq` is a lightweight and flexible command-line JSON processor akin to `sed`,`awk`,`grep`, and friends for JSON data. It&#39;s written in portable C and has zero runtime dependencies, allowing you to easily slice, filter, map, and transform structured data. ## Documentation - **Official Documentation**: [jqlang.org](https://jqlang.org) - **Try jq Online**: [play.jqlang.org](https://play.jqlang.org) ## Installation ### Prebuilt Binaries Download the latest releases from the [GitHub release page](https://github.com/jqlang/jq/releases). The platform-specific assets are standalone executables, not archives. On macOS and Linux, rename the downloaded file to `jq` and make it executable with `chmo&quot;,
+        &quot;status&quot;: &quot;partial&quot;
+      }
+    ]
+  }
+]</pre>
+    </details>
+  </article>
+</html>

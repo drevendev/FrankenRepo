@@ -2,6 +2,47 @@ import { test, expect } from '@playwright/test';
 import { TEST_DONORS, testMonster } from '../fixtures';
 import { SAMPLE_REPOS } from '../../apps/web/src/samples';
 
+test('private archive restores a recovery key, survives reload, and deletes with its bearer key', async ({
+  page,
+}) => {
+  const id = 'f26f9b52-873c-4463-a681-6a146dc7ca3a',
+    token = 'a'.repeat(43);
+  let removed = false;
+  await page.route('**/readyz', (r) =>
+    r.fulfill({ json: { model: 'disabled', storage: 'ready' } }),
+  );
+  await page.route('**/api/v1/cards/' + id, async (r) => {
+    expect(r.request().headers().authorization).toBe('Bearer ' + token);
+    if (r.request().method() === 'DELETE') {
+      removed = true;
+      await r.fulfill({ json: { removed: true } });
+    } else await r.fulfill({ json: { monster: testMonster() } });
+  });
+  await page.goto('/');
+  await page.getByLabel('Restore a private recovery key').setInputFiles({
+    name: 'fixture-key.json',
+    mimeType: 'application/json',
+    buffer: Buffer.from(JSON.stringify({ id, token })),
+  });
+  await expect(
+    page.getByRole('heading', { name: 'The Merge Wraith' }),
+  ).toBeVisible();
+  await page.reload();
+  await page.getByRole('button', { name: 'Open saved card' }).click();
+  await expect(
+    page.getByRole('heading', { name: 'The Merge Wraith' }),
+  ).toBeVisible();
+  const download = page.waitForEvent('download');
+  await page.getByRole('button', { name: 'Download recovery key' }).click();
+  expect(await (await download).failure()).toBeNull();
+  page.once('dialog', (dialog) => dialog.accept());
+  await page.getByRole('button', { name: 'Delete saved card' }).click();
+  await expect(
+    page.getByRole('button', { name: 'Open saved card' }),
+  ).toHaveCount(0);
+  expect(removed).toBe(true);
+});
+
 test('specimen cabinet offers requested repos and rerolls without calling inspection', async ({
   page,
 }, info) => {

@@ -969,6 +969,7 @@ blockquote {
   margin: 6px 0 24px;
 }
 .dna-disclosure {
+  overflow-wrap: anywhere;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   padding: 20px 0;

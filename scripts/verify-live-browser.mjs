@@ -1,7 +1,12 @@
 // Operator-only real provider run against an already configured local server.
 import { chromium } from '@playwright/test';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile, readFile } from 'node:fs/promises';
 const startedAt = new Date().toISOString();
+const origin = process.env.LIVE_ORIGIN ?? 'http://127.0.0.1:3001';
+if (!/^http:\/\/127\.0\.0\.1:\d{4,5}$/.test(origin))
+  throw new Error(
+    'Use a fixed local operator origin. Public QA uses the separate Browserbase command.',
+  );
 const mode = process.argv[2] ?? 'cursed';
 if (!['useful', 'cursed', 'chaotic'].includes(mode))
   throw new Error('Choose useful, cursed or chaotic.');
@@ -24,7 +29,7 @@ const receipt = {
   inputs,
   mode,
   recording: false,
-  localOrigin: 'http://127.0.0.1:3001',
+  localOrigin: origin,
   readiness: null,
   stages: [],
   state: 'not-started',
@@ -33,6 +38,7 @@ const receipt = {
   record: null,
   pageErrors: [],
   exports: [],
+  archiveChecks: {},
   limits: { maxOutputTokensPerCall: 1000, maxAttemptsPerRitual: 2 },
 };
 const begun = performance.now();
@@ -116,6 +122,66 @@ try {
     .locator('#birth-certificate')
     .screenshot({ path: prefix + '-certificate.png' });
   receipt.exports.push(prefix + '-certificate.png');
+  if (receipt.readiness.storage === 'ready') {
+    const savedResponse = page.waitForResponse(
+      (r) => r.url().endsWith('/save') && r.request().method() === 'POST',
+    );
+    await page
+      .getByRole('button', { name: 'Save card privately', exact: true })
+      .click();
+    const response = await savedResponse;
+    if (!response.ok()) throw new Error('ARCHIVE_SAVE_FAILED');
+    const access = await response.json();
+    await mkdir('.local', { recursive: true });
+    let cards = [];
+    try {
+      cards = JSON.parse(
+        await readFile('.local/qualification-cards.json', 'utf8'),
+      );
+    } catch {
+      /* first run */
+    }
+    cards.push({ ...access, recordPath: prefix + '.json' });
+    await writeFile(
+      '.local/qualification-cards.json',
+      JSON.stringify(cards, null, 2),
+    );
+    receipt.archiveChecks.savedPrivately = true;
+    const recovery = page.waitForEvent('download');
+    await page.getByRole('button', { name: 'Download recovery key' }).click();
+    await (await recovery).saveAs('.local/recovery-' + access.id + '.json');
+    receipt.archiveChecks.recoveryDownloaded = true;
+    await page.reload();
+    await page.getByRole('button', { name: 'Open saved card' }).click();
+    await page
+      .getByRole('heading', { name: receipt.record.draft.name, exact: true })
+      .waitFor();
+    receipt.archiveChecks.readAfterReload = true;
+    const denial = await page.request.get(
+      origin + '/api/v1/cards/' + access.id,
+      { headers: { Authorization: 'Bearer ' + 'x'.repeat(43) } },
+    );
+    receipt.archiveChecks.wrongKeyDenied = denial.status() === 404;
+    await page
+      .getByText('Specimen permissions & second opinion', { exact: true })
+      .click();
+    if (process.env.QUALIFY_REVIEW === 'true') {
+      await page
+        .getByLabel('Send this card and its bounded public evidence')
+        .check();
+      const completed = page.waitForResponse(
+        async (r) =>
+          r.url().includes('/reviews/') &&
+          (await r.json().catch(() => ({}))).state === 'completed',
+        { timeout: 60000 },
+      );
+      await page
+        .getByRole('button', { name: 'Second opinion', exact: true })
+        .click();
+      receipt.review = (await (await completed).json()).review;
+      await page.screenshot({ path: prefix + '-review.png', fullPage: true });
+    }
+  }
   console.log('Real creature: ' + receipt.record.draft.name);
 } catch (error) {
   receipt.error ??= {

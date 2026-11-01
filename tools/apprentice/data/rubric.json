@@ -1,0 +1,23 @@
+{
+  "version": "frankenrepo/apprentice-rubric/v1",
+  "frozenBeforeLabels": true,
+  "labels": {
+    "usesA": "A distinctive observed purpose or operation from donor A has a necessary role, not merely its name or language.",
+    "usesB": "A distinctive observed purpose or operation from donor B has a necessary role.",
+    "concreteMechanism": "There is a specific input, mapping/operation connecting both donors, and visible output. Two independent outputs do not suffice.",
+    "unsupportedClaim": "The text asserts an unobserved existing real capability or guarantee. Clearly fictional scenes and explicitly proposed prototypes alone are not unsupported claims."
+  },
+  "success": {
+    "macroF1Gain": 0.1,
+    "jsonValidRate": 0.95,
+    "unsupportedFalseNegativeMustNotWorsen": true,
+    "ceilingAlternative": {
+      "baselineMacroF1": 0.9,
+      "outputTokenReduction": 0.2,
+      "qualityMustNotWorsen": true
+    }
+  },
+  "pilot": true,
+  "independentDonorComponents": 3,
+  "humanReviewRequired": true
+}
